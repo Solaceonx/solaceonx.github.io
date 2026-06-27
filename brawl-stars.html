@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Luke Y. Xia's Brawl Stars progress, ranked goals, trophy logs, and hall of fame screenshots.">
+  <title>Brawl Stars — Luke Y. Xia</title>
+  <link rel="stylesheet" href="styles.css?v=20260627c">
+</head>
+<body class="brawl-tracker-page starfield-page">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="index.html">Luke Y. Xia</a>
+    <button class="menu-button" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links"><a href="index.html">About</a><a href="research.html">Research</a><a href="clash-of-clans.html">Clash of Clans</a><a href="clash-royale.html">Clash Royale</a><a class="active" href="brawl-stars.html">Brawl Stars</a><a href="resources.html">Resources</a><button class="theme-toggle" aria-label="Switch to light mode">☀</button><div class="font-switcher"><button class="font-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Change site font">Aa</button><div class="font-menu" role="menu"><button type="button" data-font="" role="menuitem">Default</button><button type="button" data-font="lora" role="menuitem"><span>Lora</span><span class="font-sample" style="font-family:'Lora',serif">Aa</span></button><button type="button" data-font="rubik" role="menuitem"><span>Rubik</span><span class="font-sample" style="font-family:'Rubik',sans-serif">Aa</span></button><button type="button" data-font="hieroglyphs" role="menuitem"><span>Hieroglyphs</span><span class="font-sample" style="font-family:'Noto Sans Egyptian Hieroglyphs',sans-serif">𓀀𓀁</span></button><button type="button" data-font="alien" role="menuitem"><span>Alien</span><span class="font-sample" style="font-family:'Noto Sans Linear A',sans-serif">𐘀𐘁</span></button></div></div></nav>
+  </header>
+
+  <main class="page">
+    <section class="brawl-intro-section">
+      <div class="shell">
+        <article class="brawl-intro-card">
+          <div class="bio-heading">
+            <h1>Brawl Stars</h1>
+            <span></span>
+          </div>
+          <p>I picked up Brawl Stars late, near the end of my Sophomore year of College.</p>
+          <p>My favorite brawlers are Barley, Bo, Byron, and Frank before he got the buff–it’s fun trying to get good at the worst brawlers. My goal is to hit Masters in ranked but unfortunately I never have enough time to push…</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="brawl-dashboard-section">
+      <div class="shell">
+        <article class="weekly-summary-panel">
+          <div class="panel-heading">
+            <div><h3>Stats of Past 7 Days</h3></div>
+          </div>
+          <div class="weekly-summary-grid" id="brawl-weekly-summary"></div>
+        </article>
+
+        <article class="brawl-dashboard">
+          <section class="tracker-panel tracker-panel-wide">
+            <div class="panel-heading">
+              <div><h3>Trophies</h3></div>
+            </div>
+            <div class="brawl-stack">
+              <div class="brawl-chart-card">
+                <div class="mini-chart-head"><h4>Trophies over time</h4><strong id="brawl-trophy-latest">—</strong></div>
+                <div class="line-chart" id="brawl-trophy-chart"></div>
+              </div>
+              <div class="brawl-chart-card">
+                <div class="mini-chart-head"><h4>Most recent trophy games</h4><strong id="brawl-recent-count">—</strong></div>
+                <div class="brawl-game-list" id="brawl-recent-games"></div>
+              </div>
+              <div class="brawl-chart-grid">
+                <div class="brawl-chart-card">
+                  <div class="mini-chart-head"><h4>Lifetime wins over time</h4><strong id="brawl-trophy-games-latest">—</strong></div>
+                  <div class="mini-chart" id="brawl-trophy-games-chart"></div>
+                </div>
+                <div class="brawl-chart-card">
+                  <div class="mini-chart-head"><h4>Games by mode</h4><strong id="brawl-mode-total">—</strong></div>
+                  <div class="brawl-bar-chart" id="brawl-mode-histogram"></div>
+                </div>
+              </div>
+              <div class="brawl-chart-card">
+                <div class="mini-chart-head"><h4>Top 10 brawlers</h4></div>
+                <div class="brawl-rank-list" id="brawl-top-brawlers"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tracker-panel tracker-panel-wide">
+            <div class="panel-heading">
+              <div><h3>Ranked</h3></div>
+            </div>
+            <div class="brawl-stack">
+              <div class="brawl-chart-card">
+                <div class="mini-chart-head"><h4>Ranked points over time</h4><strong id="brawl-ranked-latest">—</strong></div>
+                <div class="line-chart" id="brawl-ranked-chart"></div>
+              </div>
+              <div class="brawl-chart-grid">
+                <div class="brawl-chart-card">
+                  <div class="mini-chart-head"><h4>Ranked games over time</h4><strong id="brawl-ranked-games-latest">—</strong></div>
+                  <div class="mini-chart" id="brawl-ranked-games-chart"></div>
+                </div>
+                <div class="brawl-chart-card">
+                  <div class="mini-chart-head"><h4>Ranked games by mode</h4><strong id="brawl-ranked-mode-total">—</strong></div>
+                  <div class="brawl-bar-chart" id="brawl-ranked-mode-histogram"></div>
+                </div>
+              </div>
+              <div class="brawl-chart-grid">
+                <div class="brawl-chart-card">
+                  <div class="mini-chart-head"><h4>Most played — current season</h4><strong id="brawl-current-ranked-total">—</strong></div>
+                  <div class="brawl-rank-list" id="brawl-current-ranked-brawlers"></div>
+                </div>
+                <div class="brawl-chart-card">
+                  <div class="mini-chart-head"><h4>Most played — all time</h4><strong id="brawl-all-ranked-total">—</strong></div>
+                  <div class="brawl-rank-list" id="brawl-all-ranked-brawlers"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tracker-panel tracker-panel-wide">
+            <div class="panel-heading">
+              <div><h3>Hall of Fame</h3></div>
+            </div>
+            <figure class="brawl-hall" id="brawl-hall">
+              <button class="brawl-hall-button" type="button" id="brawl-hall-prev" aria-label="Previous highlight">←</button>
+              <img id="brawl-hall-image" alt="Brawl Stars highlight screenshot">
+              <button class="brawl-hall-button" type="button" id="brawl-hall-next" aria-label="Next highlight">→</button>
+            </figure>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell"><div class="footer-bottom"><span>© 2026 Luke Y. Xia</span><span>Unofficial Brawl Stars tracker.</span></div></div></footer>
+  <script src="script.js?v=20260627f"></script>
+  <script src="brawl-data.js?v=20260626l"></script>
+  <script src="brawl-tracker.js?v=20260626q"></script>
+</body>
+</html>

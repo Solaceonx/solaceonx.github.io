@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Application feedback and informal coffee chats with Luke Y. Xia.">
+  <title>Resources — Luke Y. Xia</title><link rel="stylesheet" href="styles.css?v=20260627c">
+</head>
+<body class="simple-resource-page starfield-page">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="index.html">Luke Y. Xia</a>
+    <button class="menu-button" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links"><a href="index.html">About</a><a href="research.html">Research</a><a href="clash-of-clans.html">Clash of Clans</a><a href="clash-royale.html">Clash Royale</a><a href="brawl-stars.html">Brawl Stars</a><a class="active" href="resources.html">Resources</a><button class="theme-toggle" aria-label="Switch to light mode">☀</button><div class="font-switcher"><button class="font-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Change site font">Aa</button><div class="font-menu" role="menu"><button type="button" data-font="" role="menuitem">Default</button><button type="button" data-font="lora" role="menuitem"><span>Lora</span><span class="font-sample" style="font-family:'Lora',serif">Aa</span></button><button type="button" data-font="rubik" role="menuitem"><span>Rubik</span><span class="font-sample" style="font-family:'Rubik',sans-serif">Aa</span></button><button type="button" data-font="hieroglyphs" role="menuitem"><span>Hieroglyphs</span><span class="font-sample" style="font-family:'Noto Sans Egyptian Hieroglyphs',sans-serif">𓀀𓀁</span></button><button type="button" data-font="alien" role="menuitem"><span>Alien</span><span class="font-sample" style="font-family:'Noto Sans Linear A',sans-serif">𐘀𐘁</span></button></div></div></nav>
+  </header>
+  <main class="page">
+    <section class="resource-help-page">
+      <div class="shell resource-help-layout">
+        <div class="resource-help-copy">
+          <h1>Free application help</h1>
+          <p>I've been lucky enough to be accepted to Stanford as a Stanford Graduate Fellow (one of four in this year's incoming physics cohort) and a KIPAC Fellow, and to receive the Goldwater Scholarship and an NSF Graduate Research Fellowship along the way. None of that happened on my own — mentors gave up their time to read my drafts and talk things through, and I'd genuinely like to pass that forward.</p>
+          <p>This is mostly aimed at rising juniors getting ready to apply to graduate school, but if you happen to have found this page, the offer stands for you too. I'm glad to read over your graduate school or fellowship materials, talk through strategy, or just grab a coffee chat to answer questions, completely free of charge. I can't promise to get to every request, so I work through them roughly first-come, first-served, but I'll always do my best to make time.</p>
+        </div>
+
+        <form class="resource-help-form" id="application-help-form" action="https://formsubmit.co/lyxia@stanford.edu" method="POST">
+          <input type="hidden" name="_subject" value="New application help request">
+          <input type="hidden" name="_template" value="table">
+          <input class="form-honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off">
+          <div class="form-field">
+            <label for="help-name">Name</label>
+            <input id="help-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="help-email">University email</label>
+            <input id="help-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="help-source">How did you find my site?</label>
+            <input id="help-source" name="source" required>
+          </div>
+          <div class="form-field">
+            <label for="help-request">What would you like help with?</label>
+            <textarea id="help-request" name="request" required></textarea>
+          </div>
+          <button class="button" type="submit">Send request <span class="arrow">→</span></button>
+          <p class="resource-form-note">Protected by CAPTCHA to reduce spam.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="script.js?v=20260627f"></script>
+</body>
+</html>

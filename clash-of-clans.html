@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Luke Y. Xia's Clash of Clans accounts, rankings, activity, and upgrade progress.">
+  <title>Clash of Clans Tracker — Luke Y. Xia</title><link rel="stylesheet" href="styles.css?v=20260627c">
+</head>
+<body class="coc-tracker-page starfield-page">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="index.html">Luke Y. Xia</a>
+    <button class="menu-button" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links"><a href="index.html">About</a><a href="research.html">Research</a><a class="active" href="clash-of-clans.html">Clash of Clans</a><a href="clash-royale.html">Clash Royale</a><a href="brawl-stars.html">Brawl Stars</a><a href="resources.html">Resources</a><button class="theme-toggle" aria-label="Switch to light mode">☀</button><div class="font-switcher"><button class="font-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Change site font">Aa</button><div class="font-menu" role="menu"><button type="button" data-font="" role="menuitem">Default</button><button type="button" data-font="lora" role="menuitem"><span>Lora</span><span class="font-sample" style="font-family:'Lora',serif">Aa</span></button><button type="button" data-font="rubik" role="menuitem"><span>Rubik</span><span class="font-sample" style="font-family:'Rubik',sans-serif">Aa</span></button><button type="button" data-font="hieroglyphs" role="menuitem"><span>Hieroglyphs</span><span class="font-sample" style="font-family:'Noto Sans Egyptian Hieroglyphs',sans-serif">𓀀𓀁</span></button><button type="button" data-font="alien" role="menuitem"><span>Alien</span><span class="font-sample" style="font-family:'Noto Sans Linear A',sans-serif">𐘀𐘁</span></button></div></div></nav>
+  </header>
+
+  <main class="page">
+    <section class="coc-intro"><div class="shell">
+      <div class="bio-heading"><h1>Clash of Clans</h1><span></span></div>
+      <p class="bio-text">I <strong>love</strong> Clash of Clans. I have 6 accounts (3 adopted from my brothers) that I play on and off. My highlights include reaching <strong>#1 in the world</strong> at Town Hall 12, 13, 14, and 15, and <strong>#36 in the world</strong> at Town Hall 16.</p>
+    </div></section>
+
+    <section class="tracker-section"><div class="shell">
+      <article class="weekly-summary-panel">
+        <div class="panel-heading"><div><span>All accounts</span><h3>Stats of Past 7 Days</h3></div></div>
+        <div class="weekly-summary-grid" id="coc-weekly-summary"></div>
+      </article>
+
+      <div class="account-tabs" id="coc-account-tabs" role="tablist" aria-label="Clash of Clans accounts"></div>
+
+      <article class="tracker-dashboard" id="coc-dashboard">
+        <header class="tracker-profile">
+          <div>
+            <p class="tracker-kicker" id="coc-status">Snapshot</p>
+            <h3 id="coc-name">Account</h3>
+            <p class="tracker-tag" id="coc-tag"></p>
+            <p class="tracker-description" id="coc-description"></p>
+          </div>
+          <div class="tracker-th">
+            <span>Town Hall</span>
+            <strong id="coc-townhall">—</strong>
+          </div>
+        </header>
+
+        <div class="tracker-stats tracker-stats-main">
+          <div class="tracker-stat tracker-league-stat">
+            <span>Current league</span>
+            <div class="league-display">
+              <img id="coc-league-icon" alt="" hidden>
+              <div>
+                <strong id="coc-league-name">Unranked</strong>
+                <small><b id="coc-trophies">—</b> trophies</small>
+              </div>
+            </div>
+          </div>
+          <div class="tracker-stat"><span>Legacy best trophies</span><strong id="coc-legacy-best">—</strong></div>
+        </div>
+
+        <div class="tracker-grid">
+          <section class="tracker-panel tracker-panel-wide">
+            <div class="panel-heading"><div><span>Ranked battles</span><h3>Weekly history</h3></div></div>
+            <div class="league-season-card" id="coc-league-season"></div>
+          </section>
+
+          <section class="tracker-panel tracker-panel-wide">
+            <div class="panel-heading"><div><span>Achievements</span><h3>Achievement graphs</h3></div></div>
+            <div class="mini-chart-grid" id="coc-achievement-graphs"></div>
+          </section>
+
+          <section class="tracker-panel tracker-panel-wide">
+            <div class="panel-heading"><div><span>Completion</span><h3>Upgrade progress</h3></div></div>
+            <div class="mini-chart-grid" id="coc-upgrade-graphs"></div>
+          </section>
+
+          <section class="tracker-panel tracker-panel-wide">
+            <div class="panel-heading"><div><span>Milestones</span><h3>Placement history</h3></div></div>
+            <div class="placement-list" id="coc-placements"></div>
+          </section>
+        </div>
+      </article>
+    </div></section>
+  </main>
+
+  <footer class="footer"><div class="shell"><div class="footer-bottom"><span>© 2026 Luke Y. Xia</span><span>Unofficial Clash of Clans tracker.</span></div></div></footer>
+  <script src="coc-data.js?v=20260626l"></script>
+  <script src="script.js?v=20260627f"></script>
+  <script src="coc-tracker.js?v=20260626l"></script>
+</body>
+</html>

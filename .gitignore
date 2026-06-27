@@ -1,0 +1,8 @@
+.env
+coc-api-response*.json
+coc-update*.log
+game-update*.log
+royale-update*.log
+brawl-update*.log
+.DS_Store
+*.plist

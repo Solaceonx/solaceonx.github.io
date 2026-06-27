@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="My Clash Royale account, trophy history, and seven-year deck commitment.">
+  <title>Clash Royale — Luke Y. Xia</title>
+  <link rel="stylesheet" href="styles.css?v=20260627c">
+</head>
+<body class="royale-tracker-page starfield-page">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <a class="brand" href="index.html">Luke Y. Xia</a>
+    <button class="menu-button" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links"><a href="index.html">About</a><a href="research.html">Research</a><a href="clash-of-clans.html">Clash of Clans</a><a class="active" href="clash-royale.html">Clash Royale</a><a href="brawl-stars.html">Brawl Stars</a><a href="resources.html">Resources</a><button class="theme-toggle" aria-label="Switch to light mode">☀</button><div class="font-switcher"><button class="font-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Change site font">Aa</button><div class="font-menu" role="menu"><button type="button" data-font="" role="menuitem">Default</button><button type="button" data-font="lora" role="menuitem"><span>Lora</span><span class="font-sample" style="font-family:'Lora',serif">Aa</span></button><button type="button" data-font="rubik" role="menuitem"><span>Rubik</span><span class="font-sample" style="font-family:'Rubik',sans-serif">Aa</span></button><button type="button" data-font="hieroglyphs" role="menuitem"><span>Hieroglyphs</span><span class="font-sample" style="font-family:'Noto Sans Egyptian Hieroglyphs',sans-serif">𓀀𓀁</span></button><button type="button" data-font="alien" role="menuitem"><span>Alien</span><span class="font-sample" style="font-family:'Noto Sans Linear A',sans-serif">𐘀𐘁</span></button></div></div></nav>
+  </header>
+
+  <main class="page">
+    <section class="royale-section">
+      <div class="shell">
+        <article class="royale-dashboard">
+          <header class="royale-intro">
+            <div>
+              <div class="bio-heading">
+                <h1>Clash Royale</h1>
+                <span></span>
+              </div>
+              <p>I have one singular account that is completely free to play, and I have ran the same deck for the last 7 years. The strategy is to count elixir and play defense, while waiting for a good opportunity to build a big Giant + Sparky push or quickly punish with the Lumberjack/Minion Horde. It's not the best deck and has some auto-losses (classic inferno tower log bait, any E-dragon deck, etc), but it's possible to win since a lot of players running those decks have less than optimal thinking capacity.</p>
+              <p>At this point, I enjoy BMing my opponents more than I enjoy the game :)</p>
+            </div>
+            <figure class="royale-deck-shot">
+              <img src="assets/clash-royale-deck.jpg" alt="Luke's Clash Royale deck">
+            </figure>
+          </header>
+        </article>
+
+        <article class="weekly-summary-panel">
+          <div class="panel-heading">
+            <div><h3>Stats of Past 7 Days</h3></div>
+          </div>
+          <div class="weekly-summary-grid" id="royale-weekly-summary"></div>
+        </article>
+
+        <article class="royale-dashboard royale-data-dashboard">
+          <section class="royale-stats" aria-label="Clash Royale summary stats">
+            <div><span>Current trophies</span><strong id="royale-current-trophies">—</strong></div>
+            <div><span>Best trophies</span><strong id="royale-best-trophies">—</strong></div>
+            <div><span>Recent win rate</span><strong id="royale-win-rate">—</strong></div>
+            <div class="royale-wide-stat"><span>Overall win rate</span><strong id="royale-overall-win-rate">—</strong></div>
+          </section>
+
+          <div class="tracker-grid royale-grid">
+            <section class="tracker-panel tracker-panel-wide">
+              <div class="panel-heading">
+                <div><h3>Graphs</h3></div>
+              </div>
+              <div class="royale-chart-grid" id="royale-chart-grid"></div>
+            </section>
+
+            <section class="tracker-panel tracker-panel-wide">
+              <div class="panel-heading">
+                <div><h3>Collection progress</h3></div>
+              </div>
+              <div class="royale-progress-grid" id="royale-progress-grid"></div>
+            </section>
+
+            <section class="tracker-panel tracker-panel-wide">
+              <div class="panel-heading">
+                <div><h3>Battle log</h3></div>
+              </div>
+              <div class="royale-form" id="royale-form"></div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell"><div class="footer-bottom"><span>© 2026 Luke Y. Xia</span><span>Unofficial Clash Royale tracker.</span></div></div></footer>
+  <script src="script.js?v=20260627f"></script>
+  <script src="royale-data.js?v=20260626l"></script>
+  <script src="royale-tracker.js?v=20260626l"></script>
+</body>
+</html>
