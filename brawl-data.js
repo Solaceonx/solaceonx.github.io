@@ -5,6 +5,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "trophies": 34696
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "trophies": 34738
       }
     ],
     "recentGames": [
@@ -21,6 +26,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "games": 1
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "games": 1
       }
     ],
     "lifetimeWinsHistory": [
@@ -28,6 +38,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "wins": 7455
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "wins": 7460
       }
     ],
     "winsHistory": [
@@ -35,12 +50,22 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "wins": 0
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "wins": 0
       }
     ],
     "lossesHistory": [
       {
         "date": "2026-06-26",
         "label": "Jun 26",
+        "losses": 0
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
         "losses": 0
       }
     ],
@@ -140,6 +165,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "points": 3206
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "points": 3206
       }
     ],
     "gamesHistory": [
@@ -147,6 +177,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "games": 24
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "games": 34
       }
     ],
     "winsHistory": [
@@ -154,6 +189,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "wins": 0
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "wins": 5
       }
     ],
     "lossesHistory": [
@@ -161,11 +201,26 @@ window.BRAWL_DATA = {
         "date": "2026-06-26",
         "label": "Jun 26",
         "losses": 0
+      },
+      {
+        "date": "2026-06-27",
+        "label": "Jun 27",
+        "losses": 5
       }
     ],
     "modes": [
       {
+        "mode": "Brawl Ball",
+        "count": 12,
+        "image": null
+      },
+      {
         "mode": "Heist",
+        "count": 6,
+        "image": null
+      },
+      {
+        "mode": "Hot Zone",
         "count": 6,
         "image": null
       },
@@ -175,17 +230,7 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Brawl Ball",
-        "count": 5,
-        "image": null
-      },
-      {
         "mode": "Gem Grab",
-        "count": 3,
-        "image": null
-      },
-      {
-        "mode": "Hot Zone",
         "count": 3,
         "image": null
       },
@@ -196,6 +241,11 @@ window.BRAWL_DATA = {
       }
     ],
     "currentSeasonBrawlers": [
+      {
+        "name": "LUMI",
+        "count": 8,
+        "image": "assets/brawlers/16000091.png"
+      },
       {
         "name": "BUZZ",
         "count": 5,
@@ -242,9 +292,19 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000001.png"
       },
       {
+        "name": "DRACO",
+        "count": 1,
+        "image": "assets/brawlers/16000080.png"
+      },
+      {
         "name": "FRANK",
         "count": 1,
         "image": "assets/brawlers/16000020.png"
+      },
+      {
+        "name": "KAZE",
+        "count": 1,
+        "image": "assets/brawlers/16000094.png"
       },
       {
         "name": "KENJI",
@@ -269,6 +329,11 @@ window.BRAWL_DATA = {
     ],
     "allTimeBrawlers": [
       {
+        "name": "LUMI",
+        "count": 8,
+        "image": "assets/brawlers/16000091.png"
+      },
+      {
         "name": "BUZZ",
         "count": 5,
         "image": "assets/brawlers/16000049.png"
@@ -314,9 +379,19 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000001.png"
       },
       {
+        "name": "DRACO",
+        "count": 1,
+        "image": "assets/brawlers/16000080.png"
+      },
+      {
         "name": "FRANK",
         "count": 1,
         "image": "assets/brawlers/16000020.png"
+      },
+      {
+        "name": "KAZE",
+        "count": 1,
+        "image": "assets/brawlers/16000094.png"
       },
       {
         "name": "KENJI",
