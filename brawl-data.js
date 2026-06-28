@@ -10,17 +10,14 @@ window.BRAWL_DATA = {
         "date": "2026-06-27",
         "label": "Jun 27",
         "trophies": 34738
-      }
-    ],
-    "recentGames": [
+      },
       {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Duo Showdown",
-        "result": "win",
-        "battleTime": "20260624T065306.000Z"
+        "date": "2026-06-28",
+        "label": "Jun 28",
+        "trophies": 34777
       }
     ],
+    "recentGames": [],
     "gamesHistory": [
       {
         "date": "2026-06-26",
@@ -30,6 +27,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-06-27",
         "label": "Jun 27",
+        "games": 1
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
         "games": 1
       }
     ],
@@ -43,6 +45,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-27",
         "label": "Jun 27",
         "wins": 7460
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
+        "wins": 7463
       }
     ],
     "winsHistory": [
@@ -55,6 +62,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-27",
         "label": "Jun 27",
         "wins": 0
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
+        "wins": 0
       }
     ],
     "lossesHistory": [
@@ -66,6 +78,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-06-27",
         "label": "Jun 27",
+        "losses": 0
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
         "losses": 0
       }
     ],
@@ -170,6 +187,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-27",
         "label": "Jun 27",
         "points": 3206
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
+        "points": 3206
       }
     ],
     "gamesHistory": [
@@ -182,6 +204,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-27",
         "label": "Jun 27",
         "games": 34
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
+        "games": 37
       }
     ],
     "winsHistory": [
@@ -194,6 +221,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-27",
         "label": "Jun 27",
         "wins": 5
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
+        "wins": 8
       }
     ],
     "lossesHistory": [
@@ -206,6 +238,11 @@ window.BRAWL_DATA = {
         "date": "2026-06-27",
         "label": "Jun 27",
         "losses": 5
+      },
+      {
+        "date": "2026-06-28",
+        "label": "Jun 28",
+        "losses": 5
       }
     ],
     "modes": [
@@ -216,7 +253,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Heist",
-        "count": 6,
+        "count": 9,
         "image": null
       },
       {
@@ -243,7 +280,7 @@ window.BRAWL_DATA = {
     "currentSeasonBrawlers": [
       {
         "name": "LUMI",
-        "count": 8,
+        "count": 11,
         "image": "assets/brawlers/16000091.png"
       },
       {
@@ -330,7 +367,7 @@ window.BRAWL_DATA = {
     "allTimeBrawlers": [
       {
         "name": "LUMI",
-        "count": 8,
+        "count": 11,
         "image": "assets/brawlers/16000091.png"
       },
       {

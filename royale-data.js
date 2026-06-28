@@ -1,12 +1,12 @@
 window.ROYALE_DATA = {
-  "updatedAt": "Updated 2026-06-27",
+  "updatedAt": "Updated 2026-06-28",
   "tag": "#JL8UYPQC",
   "name": "Solaceonx",
-  "currentTrophies": 12528,
-  "bestTrophies": 12528,
-  "recentWinRate": 90,
+  "currentTrophies": 12714,
+  "bestTrophies": 12714,
+  "recentWinRate": 80,
   "overallWinRate": 56.5,
-  "totalGames": 7767,
+  "totalGames": 7780,
   "favoriteCard": "Giant",
   "currentDeck": [
     {
@@ -60,7 +60,7 @@ window.ROYALE_DATA = {
   ],
   "collectionProgress": {
     "cardLevels": {
-      "current": 1690,
+      "current": 1693,
       "max": 1936,
       "total": 121,
       "maxed": 8,
@@ -78,23 +78,23 @@ window.ROYALE_DATA = {
         },
         {
           "level": 15,
-          "count": 16,
-          "percent": 13.2
+          "count": 18,
+          "percent": 14.9
         },
         {
           "level": 14,
-          "count": 71,
-          "percent": 58.7
+          "count": 69,
+          "percent": 57
         },
         {
           "level": 13,
-          "count": 16,
-          "percent": 13.2
+          "count": 17,
+          "percent": 14
         },
         {
           "level": 12,
-          "count": 10,
-          "percent": 8.3
+          "count": 9,
+          "percent": 7.4
         }
       ]
     },
@@ -118,11 +118,11 @@ window.ROYALE_DATA = {
       ]
     },
     "towerTroops": {
-      "current": 55,
+      "current": 56,
       "max": 64,
       "total": 4,
       "maxed": 1,
-      "percent": 86
+      "percent": 88
     }
   },
   "trophyHistory": [
@@ -145,6 +145,11 @@ window.ROYALE_DATA = {
       "label": "Jun 27",
       "date": "2026-06-27",
       "trophies": 12528
+    },
+    {
+      "label": "Jun 28",
+      "date": "2026-06-28",
+      "trophies": 12714
     }
   ],
   "winHistory": [
@@ -167,6 +172,11 @@ window.ROYALE_DATA = {
       "label": "Jun 27",
       "date": "2026-06-27",
       "wins": 4385
+    },
+    {
+      "label": "Jun 28",
+      "date": "2026-06-28",
+      "wins": 4394
     }
   ],
   "lossHistory": [
@@ -189,6 +199,11 @@ window.ROYALE_DATA = {
       "label": "Jun 27",
       "date": "2026-06-27",
       "losses": 3382
+    },
+    {
+      "label": "Jun 28",
+      "date": "2026-06-28",
+      "losses": 3386
     }
   ],
   "gameHistory": [
@@ -211,6 +226,11 @@ window.ROYALE_DATA = {
       "label": "Jun 27",
       "date": "2026-06-27",
       "games": 7767
+    },
+    {
+      "label": "Jun 28",
+      "date": "2026-06-28",
+      "games": 7780
     }
   ],
   "overallWinRateHistory": [
@@ -233,9 +253,92 @@ window.ROYALE_DATA = {
       "label": "Jun 27",
       "date": "2026-06-27",
       "winRate": 56.5
+    },
+    {
+      "label": "Jun 28",
+      "date": "2026-06-28",
+      "winRate": 56.5
     }
   ],
   "recentBattles": [
+    {
+      "result": "win",
+      "mode": "Ladder",
+      "crowns": "2-0",
+      "battleTime": "20260628T062324.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Ladder",
+      "crowns": "3-0",
+      "battleTime": "20260628T062014.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "TeamVsTeam",
+      "crowns": "0-1",
+      "battleTime": "20260628T061841.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "TeamVsTeam",
+      "crowns": "0-1",
+      "battleTime": "20260628T061508.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "TeamVsTeam",
+      "crowns": "1-0",
+      "battleTime": "20260628T060931.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "TeamVsTeam",
+      "crowns": "0-1",
+      "battleTime": "20260628T060522.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "TeamVsTeam",
+      "crowns": "1-0",
+      "battleTime": "20260628T060032.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "TeamVsTeam",
+      "crowns": "0-1",
+      "battleTime": "20260628T055643.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "TeamVsTeam",
+      "crowns": "1-0",
+      "battleTime": "20260628T055251.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Ladder",
+      "crowns": "1-0",
+      "battleTime": "20260627T203111.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Ladder",
+      "crowns": "3-0",
+      "battleTime": "20260627T202425.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Ladder",
+      "crowns": "1-0",
+      "battleTime": "20260627T202141.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Ladder",
+      "crowns": "3-0",
+      "battleTime": "20260627T201831.000Z"
+    },
     {
       "result": "win",
       "mode": "Ladder",
@@ -277,84 +380,6 @@ window.ROYALE_DATA = {
       "mode": "Ladder",
       "crowns": "2-0",
       "battleTime": "20260625T070710.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "3-0",
-      "battleTime": "20260625T070321.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260625T070009.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260625T065657.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Ladder",
-      "crowns": "0-3",
-      "battleTime": "20260625T065046.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260625T040807.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260625T040442.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260625T040051.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "3-0",
-      "battleTime": "20260625T035741.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Ladder",
-      "crowns": "0-1",
-      "battleTime": "20260617T202916.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "2-0",
-      "battleTime": "20260616T200200.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260616T195825.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260616T004835.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Ladder",
-      "crowns": "1-0",
-      "battleTime": "20260616T004457.000Z"
     }
   ],
   "modes": [
@@ -378,9 +403,9 @@ window.ROYALE_DATA = {
     },
     {
       "label": "Lifetime",
-      "wins": 4385,
-      "losses": 3382,
-      "note": "2505 three-crown wins."
+      "wins": 4394,
+      "losses": 3386,
+      "note": "2508 three-crown wins."
     }
   ],
   "history": [
@@ -1479,6 +1504,285 @@ window.ROYALE_DATA = {
           "mode": "Ladder",
           "crowns": "1-0",
           "battleTime": "20260616T004457.000Z"
+        }
+      ],
+      "twoVTwo": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      },
+      "challenges": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      },
+      "pathOfLegends": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      }
+    },
+    {
+      "date": "2026-06-28",
+      "label": "Jun 28",
+      "fetchedAt": "2026-06-28T16:04:46.716Z",
+      "tag": "#JL8UYPQC",
+      "name": "Solaceonx",
+      "trophies": 12714,
+      "bestTrophies": 12714,
+      "expLevel": 65,
+      "wins": 4394,
+      "losses": 3386,
+      "battleCount": 7780,
+      "threeCrownWins": 2508,
+      "challengeCardsWon": 1087,
+      "challengeMaxWins": 9,
+      "tournamentCardsWon": 0,
+      "tournamentBattleCount": 669,
+      "favoriteCard": "Giant",
+      "currentDeck": [
+        {
+          "name": "Lumberjack",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/E6RWrnCuk13xMX5OE1EQtLEKTZQV6B78d00y8PlXt6Q.png"
+        },
+        {
+          "name": "Giant",
+          "level": 14,
+          "maxLevel": 14,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/Axr4ox5_b7edmLsoHxBX3vmgijAIibuF6RImTbqLlXE.png"
+        },
+        {
+          "name": "Skeleton Army",
+          "level": 11,
+          "maxLevel": 11,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png"
+        },
+        {
+          "name": "Sparky",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/2GKMkBrArZXgQxf2ygFjDs4VvGYPbx8F6Lj_68iVhIM.png"
+        },
+        {
+          "name": "The Log",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png"
+        },
+        {
+          "name": "Minion Horde",
+          "level": 16,
+          "maxLevel": 16,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/Wyjq5l0IXHTkX9Rmpap6HaH08MvjbxFp1xBO9a47YSI.png"
+        },
+        {
+          "name": "Fireball",
+          "level": 14,
+          "maxLevel": 14,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png"
+        },
+        {
+          "name": "Fire Spirit",
+          "level": 16,
+          "maxLevel": 16,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/16-BqusVvynIgYI8_Jci3LDC-r8AI_xaIYLgXqtlmS8.png"
+        }
+      ],
+      "collectionProgress": {
+        "cardLevels": {
+          "current": 1693,
+          "max": 1936,
+          "total": 121,
+          "maxed": 8,
+          "percent": 87
+        },
+        "maxedCards": {
+          "current": 8,
+          "total": 121,
+          "percent": 7,
+          "levelDistribution": [
+            {
+              "level": 16,
+              "count": 8,
+              "percent": 6.6
+            },
+            {
+              "level": 15,
+              "count": 18,
+              "percent": 14.9
+            },
+            {
+              "level": 14,
+              "count": 69,
+              "percent": 57
+            },
+            {
+              "level": 13,
+              "count": 17,
+              "percent": 14
+            },
+            {
+              "level": 12,
+              "count": 9,
+              "percent": 7.4
+            }
+          ]
+        },
+        "evolutions": {
+          "current": 24,
+          "max": 69,
+          "total": 52,
+          "unlocked": 18,
+          "percent": 35
+        },
+        "heroes": {
+          "unlocked": 5,
+          "total": 14,
+          "percent": 36,
+          "names": [
+            "Wizard",
+            "Musketeer",
+            "Giant",
+            "Knight",
+            "Mini P.E.K.K.A"
+          ]
+        },
+        "towerTroops": {
+          "current": 56,
+          "max": 64,
+          "total": 4,
+          "maxed": 1,
+          "percent": 88
+        }
+      },
+      "recentWins": 16,
+      "recentLosses": 4,
+      "recentWinRate": 80,
+      "recentBattles": [
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "2-0",
+          "battleTime": "20260628T062324.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "3-0",
+          "battleTime": "20260628T062014.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "TeamVsTeam",
+          "crowns": "0-1",
+          "battleTime": "20260628T061841.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "TeamVsTeam",
+          "crowns": "0-1",
+          "battleTime": "20260628T061508.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "TeamVsTeam",
+          "crowns": "1-0",
+          "battleTime": "20260628T060931.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "TeamVsTeam",
+          "crowns": "0-1",
+          "battleTime": "20260628T060522.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "TeamVsTeam",
+          "crowns": "1-0",
+          "battleTime": "20260628T060032.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "TeamVsTeam",
+          "crowns": "0-1",
+          "battleTime": "20260628T055643.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "TeamVsTeam",
+          "crowns": "1-0",
+          "battleTime": "20260628T055251.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "1-0",
+          "battleTime": "20260627T203111.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "3-0",
+          "battleTime": "20260627T202425.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "1-0",
+          "battleTime": "20260627T202141.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "3-0",
+          "battleTime": "20260627T201831.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "1-0",
+          "battleTime": "20260627T012534.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "2-1",
+          "battleTime": "20260627T012108.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "1-0",
+          "battleTime": "20260627T011638.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "1-0",
+          "battleTime": "20260625T191115.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "1-0",
+          "battleTime": "20260625T072028.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Showdown_Friendly",
+          "crowns": "3-1",
+          "battleTime": "20260625T071525.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Ladder",
+          "crowns": "2-0",
+          "battleTime": "20260625T070710.000Z"
         }
       ],
       "twoVTwo": {
