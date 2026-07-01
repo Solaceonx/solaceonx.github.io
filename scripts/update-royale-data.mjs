@@ -3,6 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 const API_BASE = "https://api.clashroyale.com/v1";
 const PLAYER_TAG = "#JL8UYPQC";
 const SNAPSHOT_PATH = new URL("../royale-snapshots.json", import.meta.url);
+const BATTLE_HISTORY_PATH = new URL("../royale-battle-history.json", import.meta.url);
 const DATA_PATH = new URL("../royale-data.js", import.meta.url);
 const HERO_CARD_NAMES = [
   "Knight",
@@ -84,6 +85,80 @@ function battleMode(battle) {
   return battle.gameMode?.name || battle.type || "Battle";
 }
 
+function humanizeBattleMode(mode) {
+  const labels = {
+    Ladder: "Trophy Road",
+    TeamVsTeam: "2v2",
+    Showdown_Friendly: "Friendly Battle",
+    ClanMate: "Friendly Battle",
+    Tournament: "Tournament",
+    Challenge: "Challenge"
+  };
+  if (labels[mode]) return labels[mode];
+  return String(mode || "Battle")
+    .replace(/_/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/\b\w/g, letter => letter.toUpperCase());
+}
+
+function battleCategory(mode) {
+  return /^(ladder|trophy road)$/i.test(String(mode || "")) ? "trophy-road" : "other";
+}
+
+function normalizeStoredBattle(battle) {
+  const rawMode = battle.mode || "Battle";
+  return {
+    result: battle.result || "draw",
+    mode: humanizeBattleMode(rawMode),
+    category: battle.category || battleCategory(rawMode),
+    crowns: battle.crowns || "0-0",
+    trophyChange: typeof battle.trophyChange === "number" ? battle.trophyChange : null,
+    opponent: battle.opponent || null,
+    battleTime: battle.battleTime || null
+  };
+}
+
+function normalizeBattle(battle) {
+  const rawMode = battleMode(battle);
+  const player = battle.team?.find(member => member.tag === PLAYER_TAG) || battle.team?.[0];
+  return normalizeStoredBattle({
+    result: battleResult(battle),
+    mode: rawMode,
+    category: battleCategory(rawMode),
+    crowns: `${player?.crowns ?? 0}-${battle.opponent?.[0]?.crowns ?? 0}`,
+    trophyChange: player?.trophyChange,
+    opponent: battle.opponent?.[0]?.name,
+    battleTime: battle.battleTime ?? null
+  });
+}
+
+function battleKey(battle) {
+  return battle.battleTime || [
+    battle.result,
+    battle.mode,
+    battle.crowns,
+    battle.opponent
+  ].join("|");
+}
+
+function mergeBattleHistory(existing, snapshots, currentBattles) {
+  const merged = new Map();
+  const candidates = [
+    ...existing,
+    ...snapshots.flatMap(snapshot => snapshot.recentBattles || []),
+    ...currentBattles
+  ];
+
+  for (const candidate of candidates) {
+    const battle = normalizeStoredBattle(candidate);
+    merged.set(battleKey(battle), battle);
+  }
+
+  return [...merged.values()]
+    .sort((a, b) => String(b.battleTime || "").localeCompare(String(a.battleTime || "")))
+    .slice(0, 5000);
+}
+
 function isMode(battle, pattern) {
   const text = `${battleMode(battle)} ${battle.type || ""}`.toLowerCase();
   return pattern.test(text);
@@ -99,12 +174,7 @@ function summarizeBattles(battles) {
     recentWins: wins,
     recentLosses: losses,
     recentWinRate: finished.length ? Math.round((wins / finished.length) * 100) : null,
-    recentBattles: recentBattles.map(battle => ({
-      result: battleResult(battle),
-      mode: battleMode(battle),
-      crowns: `${battle.team?.[0]?.crowns ?? 0}-${battle.opponent?.[0]?.crowns ?? 0}`,
-      battleTime: battle.battleTime ?? null
-    })),
+    recentBattles: recentBattles.map(normalizeBattle),
     twoVTwo: summarizeMode(battles, /2v2|2-vs-2|party/),
     challenges: summarizeMode(battles, /challenge|grand|classic/),
     pathOfLegends: summarizeMode(battles, /path|league|ranked/)
@@ -281,9 +351,32 @@ function latestOrFallback(history) {
   };
 }
 
-function buildPageData(history) {
+function buildPageData(history, battleHistory) {
   const latest = latestOrFallback(history);
   const battleWinRate = latest.recentWinRate ?? null;
+  const recentTrackedBattles = battleHistory.slice(0, 200);
+  const trophyRoadBattles = recentTrackedBattles
+    .filter(battle => battle.category === "trophy-road")
+    .slice(0, 30);
+  const otherBattles = recentTrackedBattles
+    .filter(battle => battle.category !== "trophy-road")
+    .slice(0, 20);
+  const summarizeTracked = battles => {
+    const decided = battles.filter(battle => battle.result !== "draw");
+    const wins = decided.filter(battle => battle.result === "win").length;
+    const losses = decided.filter(battle => battle.result === "loss").length;
+    const trophyChange = battles.reduce(
+      (total, battle) => total + (typeof battle.trophyChange === "number" ? battle.trophyChange : 0),
+      0
+    );
+    return {
+      wins,
+      losses,
+      games: battles.length,
+      winRate: decided.length ? Math.round((wins / decided.length) * 1000) / 10 : null,
+      trophyChange
+    };
+  };
   const overallWinRate = latest.wins + latest.losses
     ? Math.round((latest.wins / (latest.wins + latest.losses)) * 1000) / 10
     : null;
@@ -327,7 +420,12 @@ function buildPageData(history) {
         ? Math.round((point.wins / (point.wins + point.losses)) * 1000) / 10
         : null
     })).filter(point => typeof point.winRate === "number"),
-    recentBattles: latest.recentBattles || [],
+    battleHistory: recentTrackedBattles,
+    recentBattles: recentTrackedBattles.slice(0, 20),
+    trophyRoadBattles,
+    trophyRoadSummary: summarizeTracked(trophyRoadBattles),
+    otherBattles,
+    otherBattlesSummary: summarizeTracked(otherBattles),
     modes: [
       {
         label: "2v2",
@@ -374,9 +472,16 @@ const history = compactHistory([
   ...(await readJson(SNAPSHOT_PATH, [])),
   snapshot
 ]);
+const battleHistory = mergeBattleHistory(
+  await readJson(BATTLE_HISTORY_PATH, []),
+  history,
+  snapshot.recentBattles
+);
 
 await writeFile(SNAPSHOT_PATH, `${JSON.stringify(history, null, 2)}\n`);
-await writeFile(DATA_PATH, `window.ROYALE_DATA = ${JSON.stringify(buildPageData(history), null, 2)};\n`);
+await writeFile(BATTLE_HISTORY_PATH, `${JSON.stringify(battleHistory, null, 2)}\n`);
+await writeFile(DATA_PATH, `window.ROYALE_DATA = ${JSON.stringify(buildPageData(history, battleHistory), null, 2)};\n`);
 
 console.log(`Saved Clash Royale snapshot for ${snapshot.name} (${snapshot.tag}) · ${snapshot.trophies ?? "—"} trophies`);
-console.log("Updated royale-snapshots.json and royale-data.js.");
+console.log(`Tracked ${battleHistory.length} unique battles.`);
+console.log("Updated royale-snapshots.json, royale-battle-history.json, and royale-data.js.");

@@ -6,6 +6,8 @@ const DATA_PATH = new URL("../brawl-data.js", import.meta.url);
 const HIGHLIGHTS_DIR = new URL("../assets/brawl_highlights/", import.meta.url);
 const BRAWLER_IMAGE_DIR = new URL("../assets/brawlers/", import.meta.url);
 const REAL_RANKED_MODES = new Set(["brawlball", "gemgrab", "heist", "bounty", "hotzone", "knockout", "wipeout"]);
+const REAL_RANKED_TYPES = new Set(["soloranked", "teamranked", "powerleague"]);
+const TRACKING_SCHEMA_VERSION = 2;
 
 async function loadEnv() {
   const env = {};
@@ -141,19 +143,27 @@ function findSelf(item, playerTag) {
   return flattenPlayers(item.battle).find(player => player.tag === playerTag) || null;
 }
 
-function resultFor(item) {
+function resultFor(item, self = null) {
   const battle = item.battle || {};
   if (battle.result) return battle.result.toLowerCase();
-  if (typeof battle.trophyChange === "number") return battle.trophyChange >= 0 ? "win" : "loss";
-  if (typeof battle.rank === "number") return battle.rank <= 4 ? "win" : "loss";
+  if (typeof self?.trophyChange === "number") return self.trophyChange > 0 ? "win" : self.trophyChange < 0 ? "loss" : "draw";
+  if (typeof battle.trophyChange === "number") return battle.trophyChange > 0 ? "win" : battle.trophyChange < 0 ? "loss" : "draw";
+  if (typeof battle.rank === "number") {
+    const mode = normalizeMode(modeLabel(item));
+    if (mode === "soloshowdown") return battle.rank <= 4 ? "win" : "loss";
+    if (mode === "duoshowdown" || mode === "tripleshowdown") return battle.rank <= 2 ? "win" : "loss";
+  }
   return "";
 }
 
 function isRankedBattle(item) {
-  const typeText = `${item.battle?.type || ""}`.toLowerCase();
+  const battleType = normalizeMode(item.battle?.type);
   const mode = normalizeMode(modeLabel(item));
-  const rankedType = typeText.includes("ranked") || typeText.includes("power league");
-  return rankedType && REAL_RANKED_MODES.has(mode);
+  return REAL_RANKED_TYPES.has(battleType) && REAL_RANKED_MODES.has(mode);
+}
+
+function isTrophyBattle(item) {
+  return normalizeMode(item.battle?.type) === "ranked";
 }
 
 function addCount(map, key, amount = 1) {
@@ -251,30 +261,31 @@ function latestOrEmpty(history) {
 function snapshotFrom(player, battlelog, previous) {
   const date = todayKey();
   const brawlerImages = collectBrawlerImages(player, battlelog);
-  const seen = new Set(previous.seenBattleKeys || []);
+  const compatiblePrevious = previous.trackingSchemaVersion === TRACKING_SCHEMA_VERSION;
+  const seen = new Set(compatiblePrevious ? previous.seenBattleKeys || [] : []);
   const newBattles = [...battlelog].reverse().filter(item => {
     const key = battleKey(item);
     return key && !seen.has(key);
   });
 
-  const trophyModeCounts = { ...(previous.trophyModeCounts || {}) };
-  const trophyBrawlerCounts = { ...(previous.trophyBrawlerCounts || {}) };
-  const rankedModeCounts = { ...(previous.rankedModeCounts || {}) };
-  const rankedCurrentBrawlerCounts = { ...(previous.rankedCurrentBrawlerCounts || {}) };
-  const rankedAllTimeBrawlerCounts = { ...(previous.rankedAllTimeBrawlerCounts || {}) };
-  let trophyGamesTotal = previous.trophyGamesTotal || 0;
-  let trophyWinsTotal = previous.trophyWinsTotal || 0;
-  let trophyLossesTotal = previous.trophyLossesTotal || 0;
-  let rankedGamesTotal = previous.rankedGamesTotal || 0;
-  let rankedWinsTotal = previous.rankedWinsTotal || 0;
-  let rankedLossesTotal = previous.rankedLossesTotal || 0;
+  const trophyModeCounts = { ...(compatiblePrevious ? previous.trophyModeCounts || {} : {}) };
+  const trophyBrawlerCounts = { ...(compatiblePrevious ? previous.trophyBrawlerCounts || {} : {}) };
+  const rankedModeCounts = { ...(compatiblePrevious ? previous.rankedModeCounts || {} : {}) };
+  const rankedCurrentBrawlerCounts = { ...(compatiblePrevious ? previous.rankedCurrentBrawlerCounts || {} : {}) };
+  const rankedAllTimeBrawlerCounts = { ...(compatiblePrevious ? previous.rankedAllTimeBrawlerCounts || {} : {}) };
+  let trophyGamesTotal = compatiblePrevious ? previous.trophyGamesTotal || 0 : 0;
+  let trophyWinsTotal = compatiblePrevious ? previous.trophyWinsTotal || 0 : 0;
+  let trophyLossesTotal = compatiblePrevious ? previous.trophyLossesTotal || 0 : 0;
+  let rankedGamesTotal = compatiblePrevious ? previous.rankedGamesTotal || 0 : 0;
+  let rankedWinsTotal = compatiblePrevious ? previous.rankedWinsTotal || 0 : 0;
+  let rankedLossesTotal = compatiblePrevious ? previous.rankedLossesTotal || 0 : 0;
 
   for (const item of newBattles) {
     const key = battleKey(item);
     const self = findSelf(item, player.tag);
     const brawler = self?.brawler?.name;
     const mode = modeLabel(item);
-    const result = resultFor(item);
+    const result = resultFor(item, self);
     seen.add(key);
 
     if (isRankedBattle(item)) {
@@ -284,7 +295,7 @@ function snapshotFrom(player, battlelog, previous) {
       addCount(rankedModeCounts, mode);
       addCount(rankedAllTimeBrawlerCounts, brawler);
       addCount(rankedCurrentBrawlerCounts, brawler);
-    } else {
+    } else if (isTrophyBattle(item)) {
       trophyGamesTotal += 1;
       if (result === "victory" || result === "win") trophyWinsTotal += 1;
       else if (result === "defeat" || result === "loss") trophyLossesTotal += 1;
@@ -294,7 +305,7 @@ function snapshotFrom(player, battlelog, previous) {
   }
 
   const trophyRecentGames = battlelog
-    .filter(item => !isRankedBattle(item))
+    .filter(isTrophyBattle)
     .slice(0, 12)
     .map(item => {
       const self = findSelf(item, player.tag);
@@ -302,7 +313,7 @@ function snapshotFrom(player, battlelog, previous) {
         brawler: self?.brawler?.name || "Unknown",
         image: brawlerImages[self?.brawler?.name]?.image || null,
         mode: modeLabel(item),
-        result: resultFor(item),
+        result: resultFor(item, self),
         battleTime: item.battleTime || null
       };
     });
@@ -347,6 +358,7 @@ function snapshotFrom(player, battlelog, previous) {
     rankedAllTimeBrawlerCounts,
     brawlerImages,
     topBrawlers,
+    trackingSchemaVersion: TRACKING_SCHEMA_VERSION,
     seenBattleKeys: [...seen].slice(-600)
   };
 }
@@ -378,18 +390,18 @@ function buildPageData(history, highlightPaths) {
     trophy: {
       history: history.map(point => ({ date: point.date, label: point.label, trophies: point.trophies })).filter(point => typeof point.trophies === "number"),
       recentGames: latest.trophyRecentGames || [],
-      gamesHistory: history.map(point => ({ date: point.date, label: point.label, games: point.trophyGamesTotal })).filter(point => typeof point.games === "number"),
+      gamesHistory: history.filter(point => point.trackingSchemaVersion === TRACKING_SCHEMA_VERSION).map(point => ({ date: point.date, label: point.label, games: point.trophyGamesTotal })).filter(point => typeof point.games === "number"),
       lifetimeWinsHistory: history.map(point => ({ date: point.date, label: point.label, wins: point.lifetimeWinsTotal })).filter(point => typeof point.wins === "number"),
-      winsHistory: history.map(point => ({ date: point.date, label: point.label, wins: point.trophyWinsTotal })).filter(point => typeof point.wins === "number"),
-      lossesHistory: history.map(point => ({ date: point.date, label: point.label, losses: point.trophyLossesTotal })).filter(point => typeof point.losses === "number"),
+      winsHistory: history.filter(point => point.trackingSchemaVersion === TRACKING_SCHEMA_VERSION).map(point => ({ date: point.date, label: point.label, wins: point.trophyWinsTotal })).filter(point => typeof point.wins === "number"),
+      lossesHistory: history.filter(point => point.trackingSchemaVersion === TRACKING_SCHEMA_VERSION).map(point => ({ date: point.date, label: point.label, losses: point.trophyLossesTotal })).filter(point => typeof point.losses === "number"),
       modes: objectToRows(latest.trophyModeCounts, "mode"),
       topBrawlers: latest.topBrawlers || []
     },
     ranked: {
       pointsHistory: history.map(point => ({ date: point.date, label: point.label, points: point.rankedPoints })).filter(point => typeof point.points === "number"),
-      gamesHistory: history.map(point => ({ date: point.date, label: point.label, games: point.rankedGamesTotal })).filter(point => typeof point.games === "number"),
-      winsHistory: history.map(point => ({ date: point.date, label: point.label, wins: point.rankedWinsTotal })).filter(point => typeof point.wins === "number"),
-      lossesHistory: history.map(point => ({ date: point.date, label: point.label, losses: point.rankedLossesTotal })).filter(point => typeof point.losses === "number"),
+      gamesHistory: history.filter(point => point.trackingSchemaVersion === TRACKING_SCHEMA_VERSION).map(point => ({ date: point.date, label: point.label, games: point.rankedGamesTotal })).filter(point => typeof point.games === "number"),
+      winsHistory: history.filter(point => point.trackingSchemaVersion === TRACKING_SCHEMA_VERSION).map(point => ({ date: point.date, label: point.label, wins: point.rankedWinsTotal })).filter(point => typeof point.wins === "number"),
+      lossesHistory: history.filter(point => point.trackingSchemaVersion === TRACKING_SCHEMA_VERSION).map(point => ({ date: point.date, label: point.label, losses: point.rankedLossesTotal })).filter(point => typeof point.losses === "number"),
       modes: objectToRows(latest.rankedModeCounts, "mode"),
       currentSeasonBrawlers: objectToRows(latest.rankedCurrentBrawlerCounts, "name", latest.brawlerImages || {}),
       allTimeBrawlers: objectToRows(latest.rankedAllTimeBrawlerCounts, "name", latest.brawlerImages || {}),

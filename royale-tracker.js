@@ -7,6 +7,25 @@
     const number = (value) => new Intl.NumberFormat("en-US").format(value ?? 0);
     const percent = (value) => `${Math.round(value)}%`;
     const percentOneDecimal = (value) => `${Number(value ?? 0).toFixed(1).replace(/\.0$/, "")}%`;
+    const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, character => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "\"": "&quot;",
+      "'": "&#039;"
+    })[character]);
+    const battleDate = value => {
+      const match = String(value || "").match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/);
+      if (!match) return null;
+      return new Date(Date.UTC(
+        Number(match[1]),
+        Number(match[2]) - 1,
+        Number(match[3]),
+        Number(match[4]),
+        Number(match[5]),
+        Number(match[6])
+      ));
+    };
     const royalePalette = {
       blue: "#1f6fe5",
       gold: "#d99a20",
@@ -111,21 +130,57 @@
         </svg>`;
     };
 
+    const summarizeBattles = (battles = []) => {
+      const wins = battles.filter(battle => battle.result === "win").length;
+      const losses = battles.filter(battle => battle.result === "loss").length;
+      const decided = wins + losses;
+      return {
+        wins,
+        losses,
+        games: battles.length,
+        winRate: decided ? wins / decided * 100 : null,
+        trophyChange: battles.reduce(
+          (sum, battle) => sum + (typeof battle.trophyChange === "number" ? battle.trophyChange : 0),
+          0
+        ),
+        hasTrophyChanges: battles.some(battle => typeof battle.trophyChange === "number")
+      };
+    };
+    const trophyRoadBattles = data.trophyRoadBattles
+      || data.recentBattles.filter(battle => /ladder|trophy road/i.test(battle.mode));
+    const otherBattles = data.otherBattles
+      || data.recentBattles.filter(battle => !/ladder|trophy road/i.test(battle.mode));
+    const trophyRoadSummary = data.trophyRoadSummary || summarizeBattles(trophyRoadBattles);
+    const otherBattlesSummary = data.otherBattlesSummary || summarizeBattles(otherBattles);
     const wins = data.recentBattles.filter(battle => battle.result === "win").length;
     const losses = data.recentBattles.filter(battle => battle.result === "loss").length;
     const decidedBattles = wins + losses;
-    const winRate = data.recentWinRate ?? (decidedBattles ? wins / decidedBattles * 100 : 0);
+    const winRate = trophyRoadSummary.winRate
+      ?? (decidedBattles ? wins / decidedBattles * 100 : 0);
     const overallWinRate = data.overallWinRate ?? 0;
     const latestSnapshot = data.history?.at(-1) || {};
     const overallWinRateLabel = `${number(latestSnapshot.wins)} / ${number(latestSnapshot.losses)} = ${percentOneDecimal(overallWinRate)}`;
     const firstSnapshot = data.history?.[0] || latestSnapshot;
-    const weeklyGames = data.history?.length > 1
+    const latestDay = latestSnapshot.date
+      ? new Date(`${latestSnapshot.date}T23:59:59Z`)
+      : new Date();
+    const weeklyStart = new Date(latestDay.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const weeklyTrackedBattles = (data.battleHistory || [])
+      .filter(battle => {
+        const date = battleDate(battle.battleTime);
+        return date && date >= weeklyStart && date <= latestDay;
+      });
+    const weeklyGames = weeklyTrackedBattles.length || (data.history?.length > 1
       ? (latestSnapshot.battleCount ?? 0) - (firstSnapshot.battleCount ?? 0)
-      : latestSnapshot.battleCount ?? 0;
-    const weeklyWins = data.history?.length > 1
+      : latestSnapshot.battleCount ?? 0);
+    const weeklyWins = weeklyTrackedBattles.length
+      ? weeklyTrackedBattles.filter(battle => battle.result === "win").length
+      : data.history?.length > 1
       ? (latestSnapshot.wins ?? 0) - (firstSnapshot.wins ?? 0)
       : latestSnapshot.wins ?? 0;
-    const weeklyLosses = data.history?.length > 1
+    const weeklyLosses = weeklyTrackedBattles.length
+      ? weeklyTrackedBattles.filter(battle => battle.result === "loss").length
+      : data.history?.length > 1
       ? (latestSnapshot.losses ?? 0) - (firstSnapshot.losses ?? 0)
       : latestSnapshot.losses ?? 0;
     const weeklyTrophyChange = data.history?.length > 1
@@ -244,21 +299,60 @@
       </article>
     `).join("");
 
+    const battleTimeLabel = value => {
+      const date = battleDate(value);
+      if (!date) return "";
+      return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+    };
+    const renderBattleSection = (title, battles, summary, showTrophies = false) => {
+      const trophyLabel = showTrophies && (summary.hasTrophyChanges
+        || battles.some(battle => typeof battle.trophyChange === "number"))
+        ? `<span class="royale-trophy-total">${summary.trophyChange >= 0 ? "+" : ""}${number(summary.trophyChange)} trophies</span>`
+        : "";
+      return `
+        <section class="royale-battle-section">
+          <div class="royale-battle-section-head">
+            <h4>${title}</h4>
+            <div>
+              <strong>${summary.wins}-${summary.losses}</strong>
+              <span>${summary.winRate == null ? "—" : percentOneDecimal(summary.winRate)}</span>
+              ${trophyLabel}
+            </div>
+          </div>
+          ${battles.length ? `
+            <ol class="royale-battle-grid" aria-label="${battles.length} recent ${title} games">
+              ${battles.map((battle, index) => {
+                const change = typeof battle.trophyChange === "number"
+                  ? `${battle.trophyChange >= 0 ? "+" : ""}${battle.trophyChange}`
+                  : "";
+                const details = [
+                  battle.result,
+                  battle.mode,
+                  battle.crowns,
+                  battle.opponent ? `vs ${battle.opponent}` : "",
+                  change ? `${change} trophies` : "",
+                  battleTimeLabel(battle.battleTime)
+                ].filter(Boolean).join(" · ");
+                return `
+                  <li class="${battle.result}" title="${escapeHtml(details)}">
+                    <span class="royale-battle-index">${index + 1}</span>
+                    <strong>${battle.result === "win" ? "W" : battle.result === "loss" ? "L" : "D"}</strong>
+                    <small>${escapeHtml(battle.crowns)}</small>
+                    ${showTrophies && change ? `<em>${change}</em>` : ""}
+                  </li>
+                `;
+              }).join("")}
+            </ol>
+          ` : "<div class=\"tracker-empty tracker-empty-small\">No tracked games yet.</div>"}
+        </section>
+      `;
+    };
+
     document.querySelector("#royale-form").innerHTML = `
-      <div class="royale-winrate">
-        <strong>${wins}-${losses}</strong>
-        <span>${percent(winRate)} over last ${data.recentBattles.length || decidedBattles} games</span>
+      <div class="royale-battle-sections">
+        ${renderBattleSection("Trophy Road", trophyRoadBattles, trophyRoadSummary, true)}
+        ${renderBattleSection("Other games", otherBattles, otherBattlesSummary)}
       </div>
-      ${data.recentBattles.length ? `
-        <ol class="royale-battle-grid" aria-label="Past ${data.recentBattles.length} battles">
-          ${data.recentBattles.map((battle, index) => `
-            <li class="${battle.result}" title="${battle.result} · ${battle.mode} · ${battle.crowns}">
-              <span>${index + 1}</span>
-              <strong>${battle.result === "win" ? "W" : battle.result === "loss" ? "L" : "D"}</strong>
-            </li>
-          `).join("")}
-        </ol>
-      ` : "<div class=\"tracker-empty tracker-empty-small\">Add a CR_API_TOKEN to start the battle log.</div>"}
     `;
 
   }

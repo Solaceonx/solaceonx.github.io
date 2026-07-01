@@ -896,6 +896,46 @@ p strong {
   stroke-linejoin: round;
 }
 .royale-form { display: grid; gap: 22px; }
+.royale-battle-sections {
+  display: grid;
+  gap: 26px;
+}
+.royale-battle-section {
+  padding: clamp(16px, 2.4vw, 24px);
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.52);
+}
+.royale-battle-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+.royale-battle-section-head h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.royale-battle-section-head > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 10px;
+  text-align: right;
+}
+.royale-battle-section-head strong {
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+}
+.royale-battle-section-head span {
+  font-size: 12px;
+}
+.royale-battle-section-head .royale-trophy-total {
+  padding-left: 10px;
+  border-left: 1px solid rgba(0,0,0,.16);
+}
 .royale-winrate {
   display: flex;
   align-items: end;
@@ -926,9 +966,11 @@ p strong {
 }
 .royale-battle-grid li {
   display: flex;
-  min-height: 58px;
+  min-height: 72px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2px;
   position: relative;
   border: 1px solid rgba(0,0,0,.12);
   background: #e5e5e5;
@@ -948,7 +990,7 @@ p strong {
   background: #f1c84b;
   border-color: rgba(162,111,7,.45);
 }
-.royale-battle-grid span {
+.royale-battle-grid .royale-battle-index {
   position: absolute;
   left: 6px;
   top: 5px;
@@ -961,8 +1003,25 @@ p strong {
   font-weight: 500;
   color: #07110a;
 }
+.royale-battle-grid small {
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1;
+  color: #07110a;
+}
+.royale-battle-grid em {
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 500;
+  color: #07110a;
+}
 .royale-battle-grid li.loss strong,
-.royale-battle-grid li.loss span {
+.royale-battle-grid li.loss span,
+.royale-battle-grid li.loss small,
+.royale-battle-grid li.loss em {
   color: #fff;
 }
 .royale-mode-grid {
@@ -2063,6 +2122,16 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
   .royale-stats div:last-child { border-bottom: 0; }
   .royale-winrate { display: block; }
   .royale-winrate span { display: block; max-width: none; margin-top: 10px; text-align: left; }
+  .royale-battle-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .royale-battle-section-head > div {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: left;
+  }
   .royale-mode-grid { grid-template-columns: 1fr; }
   .royale-battle-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .royale-level-pie-inset {
@@ -2279,6 +2348,7 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .starfield-page:not([data-theme="light"]) .royale-stats div,
 .starfield-page:not([data-theme="light"]) .royale-chart-card,
 .starfield-page:not([data-theme="light"]) .royale-level-pie-inset,
+.starfield-page:not([data-theme="light"]) .royale-battle-section,
 .starfield-page:not([data-theme="light"]) .royale-battle-grid li,
 .starfield-page:not([data-theme="light"]) .brawl-intro-card,
 .starfield-page:not([data-theme="light"]) .brawl-dashboard,
@@ -2302,6 +2372,7 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .starfield-page:not([data-theme="light"]).royale-tracker-page .tracker-panel,
 .starfield-page:not([data-theme="light"]).royale-tracker-page .royale-chart-card,
 .starfield-page:not([data-theme="light"]).royale-tracker-page .mini-chart-card,
+.starfield-page:not([data-theme="light"]).royale-tracker-page .royale-battle-section,
 .starfield-page:not([data-theme="light"]).brawl-tracker-page .brawl-intro-card,
 .starfield-page:not([data-theme="light"]).brawl-tracker-page .weekly-summary-panel,
 .starfield-page:not([data-theme="light"]).brawl-tracker-page .brawl-dashboard,
@@ -2311,6 +2382,9 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
   background: var(--star-panel-bg);
   background-size: 220px 220px, 260px 260px, 300px 300px, 240px 240px, 280px 280px, auto, auto, auto, auto;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), 0 20px 70px rgba(0,0,0,.18);
+}
+.starfield-page:not([data-theme="light"]).royale-tracker-page .royale-battle-section-head .royale-trophy-total {
+  border-color: rgba(255,255,255,.2);
 }
 .starfield-page:not([data-theme="light"]).coc-tracker-page .tracker-profile {
   border-color: rgba(255,255,255,.16);

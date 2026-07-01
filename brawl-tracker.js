@@ -142,6 +142,7 @@
 
   const trophyGamesDelta = deltaSinceFirst(trophy.gamesHistory || [], "games");
   const rankedGamesDelta = deltaSinceFirst(ranked.gamesHistory || [], "games");
+  const lifetimeWinsDelta = deltaSinceFirst(trophy.lifetimeWinsHistory || [], "wins");
   const trophyWinsDelta = deltaSinceFirst(trophyWins, "wins");
   const trophyLossesDelta = deltaSinceFirst(trophyLosses, "losses");
   const rankedWinsDelta = deltaSinceFirst(rankedWins, "wins");
@@ -151,10 +152,10 @@
   const trackedWinRate = winRateFrom(trackedWins, trackedLosses);
 
   document.querySelector("#brawl-weekly-summary").innerHTML = [
-    { label: "Trophy wins", value: number(trophyWinsDelta), note: `${number(trophyGamesDelta)} trophy games tracked` },
-    { label: "Ranked wins", value: number(rankedWinsDelta), note: `${number(rankedGamesDelta)} ranked games tracked` },
+    { label: "Lifetime wins gained", value: number(lifetimeWinsDelta), note: "Official API total" },
+    { label: "Tracked trophy games", value: number(trophyGamesDelta), note: `${number(trophyWinsDelta)} tracked wins` },
+    { label: "Tracked ranked wins", value: number(rankedWinsDelta), note: `${number(rankedGamesDelta)} ranked games tracked` },
     { label: "Tracked win rate", value: trackedWinRate == null ? "—" : percentOneDecimal(trackedWinRate), note: `${number(trackedWins)}-${number(trackedLosses)} in tracked battles` },
-    { label: "Total tracked wins", value: number(trophyWinsDelta + rankedWinsDelta), note: "trophy + ranked" }
   ].map(item => `
     <article class="weekly-summary-card">
       <span>${item.label}</span>
