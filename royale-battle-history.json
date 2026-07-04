@@ -3,6 +3,24 @@
     "result": "loss",
     "mode": "Trophy Road",
     "category": "trophy-road",
+    "crowns": "0-3",
+    "trophyChange": -30,
+    "opponent": "Jingalala",
+    "battleTime": "20260701T190234.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-1",
+    "trophyChange": 30,
+    "opponent": "jadjuds",
+    "battleTime": "20260701T185945.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
     "crowns": "0-1",
     "trophyChange": -30,
     "opponent": "idefred13",
