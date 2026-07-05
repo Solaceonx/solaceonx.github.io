@@ -45,9 +45,63 @@ window.BRAWL_DATA = {
         "date": "2026-07-04",
         "label": "Jul 4",
         "trophies": 34849
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
+        "trophies": 34895
       }
     ],
     "recentGames": [
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20260704T183745.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20260704T183444.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20260704T183052.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260704T182756.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260704T182516.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260704T182211.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260704T181923.000Z"
+      },
       {
         "brawler": "LUMI",
         "image": "assets/brawlers/16000091.png",
@@ -61,20 +115,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball",
         "result": "draw",
         "battleTime": "20260701T010428.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260701T005905.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20260701T005747.000Z"
       }
     ],
     "gamesHistory": [
@@ -102,6 +142,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-04",
         "label": "Jul 4",
         "games": 5
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
+        "games": 12
       }
     ],
     "lifetimeWinsHistory": [
@@ -149,6 +194,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-04",
         "label": "Jul 4",
         "wins": 7496
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
+        "wins": 7500
       }
     ],
     "winsHistory": [
@@ -176,6 +226,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-04",
         "label": "Jul 4",
         "wins": 3
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
+        "wins": 7
       }
     ],
     "lossesHistory": [
@@ -203,12 +258,22 @@ window.BRAWL_DATA = {
         "date": "2026-07-04",
         "label": "Jul 4",
         "losses": 1
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
+        "losses": 4
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 4,
+        "count": 8,
+        "image": null
+      },
+      {
+        "mode": "Hot Zone",
+        "count": 3,
         "image": null
       },
       {
@@ -346,6 +411,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-04",
         "label": "Jul 4",
         "points": 4541
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
+        "points": 4541
       }
     ],
     "gamesHistory": [
@@ -372,6 +442,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-07-04",
         "label": "Jul 4",
+        "games": 31
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
         "games": 31
       }
     ],
@@ -400,6 +475,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-04",
         "label": "Jul 4",
         "wins": 22
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
+        "wins": 22
       }
     ],
     "lossesHistory": [
@@ -426,6 +506,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-07-04",
         "label": "Jul 4",
+        "losses": 9
+      },
+      {
+        "date": "2026-07-05",
+        "label": "Jul 5",
         "losses": 9
       }
     ],
