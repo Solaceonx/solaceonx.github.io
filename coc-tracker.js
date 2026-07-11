@@ -87,6 +87,14 @@ if (tabsRoot && cocAccounts.length) {
     const { plotted, path, area, ticks } = makePath(points, width, height, leftPad);
     const gradientId = `coc-area-${metric.key}`;
     const formatValue = options.formatter || number;
+    const maxLabels = options.maxLabels || 8;
+    const labelIndexes = new Set();
+    if (options.labels !== false && plotted.length) {
+      const visibleLabels = Math.min(maxLabels, plotted.length);
+      for (let index = 0; index < visibleLabels; index += 1) {
+        labelIndexes.add(Math.round(index * (plotted.length - 1) / Math.max(1, visibleLabels - 1)));
+      }
+    }
 
     return `
       <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${metric.label} history">
@@ -101,7 +109,7 @@ if (tabsRoot && cocAccounts.length) {
         <path class="chart-area" fill="url(#${gradientId})" d="${area}"/>
         <path class="chart-line" style="stroke:${metric.color}" d="${path}"/>
         ${plotted.map(point => `<circle style="stroke:${metric.color}" cx="${point.x}" cy="${point.y}" r="${options.dot || 4}"><title>${point.label}: ${formatValue(point.value)}</title></circle>`).join("")}
-        ${options.labels === false ? "" : plotted.map(point => `<text x="${point.x}" y="${height - 8}" text-anchor="middle">${point.label}</text>`).join("")}
+        ${options.labels === false ? "" : plotted.map((point, index) => labelIndexes.has(index) ? `<text x="${point.x}" y="${height - 8}" text-anchor="middle">${point.label}</text>` : "").join("")}
       </svg>`;
   };
 
@@ -186,11 +194,71 @@ if (tabsRoot && cocAccounts.length) {
       : "<div class=\"tracker-empty\">Add notable finishes for this account.</div>";
   };
 
-  const weeklyDelta = (account, key) => {
-    const points = account.history || [];
-    const latest = points.at(-1)?.[key] ?? 0;
-    if (points.length <= 1) return latest;
-    return latest - (points[0]?.[key] ?? latest);
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  const parseDate = (dateString) => dateString ? new Date(`${dateString}T00:00:00`) : null;
+
+  const latestSnapshotDate = () => cocAccounts
+    .flatMap(account => account.history || [])
+    .map(point => point.date)
+    .filter(Boolean)
+    .sort()
+    .at(-1);
+
+  const positiveDelta = (current, previous, key) => {
+    const currentValue = current?.[key];
+    const previousValue = previous?.[key];
+    if (typeof currentValue !== "number" || typeof previousValue !== "number") return 0;
+    const delta = currentValue - previousValue;
+    return delta > 0 ? delta : 0;
+  };
+
+  const dailyDeltas = (key) => {
+    const totals = new Map();
+    cocAccounts.forEach(account => {
+      const points = (account.history || []).slice().sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+      for (let index = 1; index < points.length; index += 1) {
+        const date = points[index].date;
+        if (!date) continue;
+        totals.set(date, (totals.get(date) || 0) + positiveDelta(points[index], points[index - 1], key));
+      }
+    });
+    return [...totals.entries()]
+      .map(([date, value]) => ({ date, label: formatDateLabel({ date }), value }))
+      .sort((a, b) => a.date.localeCompare(b.date));
+  };
+
+  const sevenDayDelta = (key) => {
+    const latestDateString = latestSnapshotDate();
+    if (!latestDateString) return 0;
+    const latestDate = parseDate(latestDateString);
+    const windowStart = new Date(latestDate.getTime() - 6 * DAY_MS);
+    return dailyDeltas(key)
+      .filter(point => {
+        const date = parseDate(point.date);
+        return date && date >= windowStart && date <= latestDate;
+      })
+      .reduce((sum, point) => sum + point.value, 0);
+  };
+
+  const bestDailyRecord = (key) => dailyDeltas(key)
+    .reduce((best, point) => point.value > best.value ? point : best, { label: "—", value: 0 });
+
+  const bestSevenDayRecord = (key) => {
+    const points = dailyDeltas(key);
+    return points.reduce((best, point, index) => {
+      const date = parseDate(point.date);
+      if (!date) return best;
+      const start = new Date(date.getTime() - 6 * DAY_MS);
+      const total = points
+        .slice(0, index + 1)
+        .filter(item => {
+          const itemDate = parseDate(item.date);
+          return itemDate && itemDate >= start && itemDate <= date;
+        })
+        .reduce((sum, item) => sum + item.value, 0);
+      return total > best.value ? { label: `${formatDateLabel({ date: start.toISOString().slice(0, 10) })}–${point.label}`, value: total } : best;
+    }, { label: "—", value: 0 });
   };
 
   const renderWeeklySummary = () => {
@@ -204,14 +272,31 @@ if (tabsRoot && cocAccounts.length) {
       { label: "Capital gold", key: "clanCapitalContributions" }
     ].map(item => ({
       ...item,
-      value: cocAccounts.reduce((sum, account) => sum + weeklyDelta(account, item.key), 0)
+      value: sevenDayDelta(item.key),
+      note: "all accounts, last 7 days"
     }));
+
+    const attackDayRecord = bestDailyRecord("attacksWon");
+    const attackWeekRecord = bestSevenDayRecord("attacksWon");
+
+    rows.push(
+      {
+        label: "Best attack day",
+        value: attackDayRecord.value,
+        note: attackDayRecord.label
+      },
+      {
+        label: "Best attack week",
+        value: attackWeekRecord.value,
+        note: attackWeekRecord.label
+      }
+    );
 
     root.innerHTML = rows.map(item => `
       <article class="weekly-summary-card">
         <span>${item.label}</span>
         <strong>${number(item.value)}</strong>
-        <small>all accounts since first snapshot</small>
+        <small>${item.note}</small>
       </article>
     `).join("");
   };
