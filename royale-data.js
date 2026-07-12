@@ -1,13 +1,13 @@
 window.ROYALE_DATA = {
-  "updatedAt": "Updated 2026-07-11",
+  "updatedAt": "Updated 2026-07-12",
   "tag": "#JL8UYPQC",
   "name": "Solaceonx",
   "currentTrophies": 12926,
   "bestTrophies": 12954,
   "recentWinRate": 55,
   "overallWinRate": 56.5,
-  "totalGames": 7802,
-  "favoriteCard": "Giant",
+  "totalGames": 7810,
+  "favoriteCard": "Freeze",
   "currentDeck": [
     {
       "name": "Lumberjack",
@@ -60,15 +60,15 @@ window.ROYALE_DATA = {
   ],
   "collectionProgress": {
     "cardLevels": {
-      "current": 1695,
-      "max": 1936,
-      "total": 121,
+      "current": 1704,
+      "max": 1952,
+      "total": 122,
       "maxed": 8,
-      "percent": 88
+      "percent": 87
     },
     "maxedCards": {
       "current": 8,
-      "total": 121,
+      "total": 122,
       "percent": 7,
       "levelDistribution": [
         {
@@ -79,40 +79,46 @@ window.ROYALE_DATA = {
         {
           "level": 15,
           "count": 19,
-          "percent": 15.7
+          "percent": 15.6
         },
         {
           "level": 14,
           "count": 69,
-          "percent": 57
+          "percent": 56.6
         },
         {
           "level": 13,
           "count": 16,
-          "percent": 13.2
+          "percent": 13.1
         },
         {
           "level": 12,
           "count": 9,
           "percent": 7.4
+        },
+        {
+          "level": 9,
+          "count": 1,
+          "percent": 0.8
         }
       ]
     },
     "evolutions": {
-      "current": 24,
+      "current": 26,
       "max": 69,
       "total": 52,
-      "unlocked": 18,
-      "percent": 35
+      "unlocked": 19,
+      "percent": 38
     },
     "heroes": {
-      "unlocked": 5,
+      "unlocked": 6,
       "total": 14,
-      "percent": 36,
+      "percent": 43,
       "names": [
         "Wizard",
         "Musketeer",
         "Giant",
+        "Magic Archer",
         "Knight",
         "Mini P.E.K.K.A"
       ]
@@ -215,6 +221,11 @@ window.ROYALE_DATA = {
       "label": "Jul 11",
       "date": "2026-07-11",
       "trophies": 12926
+    },
+    {
+      "label": "Jul 12",
+      "date": "2026-07-12",
+      "trophies": 12926
     }
   ],
   "winHistory": [
@@ -307,6 +318,11 @@ window.ROYALE_DATA = {
       "label": "Jul 11",
       "date": "2026-07-11",
       "wins": 4407
+    },
+    {
+      "label": "Jul 12",
+      "date": "2026-07-12",
+      "wins": 4412
     }
   ],
   "lossHistory": [
@@ -399,6 +415,11 @@ window.ROYALE_DATA = {
       "label": "Jul 11",
       "date": "2026-07-11",
       "losses": 3395
+    },
+    {
+      "label": "Jul 12",
+      "date": "2026-07-12",
+      "losses": 3398
     }
   ],
   "gameHistory": [
@@ -491,6 +512,11 @@ window.ROYALE_DATA = {
       "label": "Jul 11",
       "date": "2026-07-11",
       "games": 7802
+    },
+    {
+      "label": "Jul 12",
+      "date": "2026-07-12",
+      "games": 7810
     }
   ],
   "overallWinRateHistory": [
@@ -583,9 +609,86 @@ window.ROYALE_DATA = {
       "label": "Jul 11",
       "date": "2026-07-11",
       "winRate": 56.5
+    },
+    {
+      "label": "Jul 12",
+      "date": "2026-07-12",
+      "winRate": 56.5
     }
   ],
   "battleHistory": [
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Jacob",
+      "battleTime": "20260712T070950.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-2",
+      "trophyChange": null,
+      "opponent": "✌️HaCiVaT✌️",
+      "battleTime": "20260712T070553.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Cris:')",
+      "battleTime": "20260712T070048.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Brayancito B&N",
+      "battleTime": "20260712T065719.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "3-0",
+      "trophyChange": null,
+      "opponent": "Windragon",
+      "battleTime": "20260712T065254.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "0-1",
+      "trophyChange": null,
+      "opponent": "shahin.m.iran",
+      "battleTime": "20260712T065042.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "0-1",
+      "trophyChange": null,
+      "opponent": "léo3424",
+      "battleTime": "20260712T064539.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "2-0",
+      "trophyChange": null,
+      "opponent": "Karol♥️",
+      "battleTime": "20260712T064154.000Z"
+    },
     {
       "result": "loss",
       "mode": "Trophy Road",
@@ -1111,6 +1214,78 @@ window.ROYALE_DATA = {
   ],
   "recentBattles": [
     {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Jacob",
+      "battleTime": "20260712T070950.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-2",
+      "trophyChange": null,
+      "opponent": "✌️HaCiVaT✌️",
+      "battleTime": "20260712T070553.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Cris:')",
+      "battleTime": "20260712T070048.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Brayancito B&N",
+      "battleTime": "20260712T065719.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "3-0",
+      "trophyChange": null,
+      "opponent": "Windragon",
+      "battleTime": "20260712T065254.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "0-1",
+      "trophyChange": null,
+      "opponent": "shahin.m.iran",
+      "battleTime": "20260712T065042.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "0-1",
+      "trophyChange": null,
+      "opponent": "léo3424",
+      "battleTime": "20260712T064539.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "2-0",
+      "trophyChange": null,
+      "opponent": "Karol♥️",
+      "battleTime": "20260712T064154.000Z"
+    },
+    {
       "result": "loss",
       "mode": "Trophy Road",
       "category": "trophy-road",
@@ -1217,78 +1392,6 @@ window.ROYALE_DATA = {
       "trophyChange": null,
       "opponent": "Fizo",
       "battleTime": "20260704T175153.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Friendly Battle",
-      "category": "other",
-      "crowns": "2-3",
-      "trophyChange": null,
-      "opponent": "Xàn",
-      "battleTime": "20260704T174915.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "0-3",
-      "trophyChange": -30,
-      "opponent": "Jingalala",
-      "battleTime": "20260701T190234.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "2-1",
-      "trophyChange": 30,
-      "opponent": "jadjuds",
-      "battleTime": "20260701T185945.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "0-1",
-      "trophyChange": -30,
-      "opponent": "idefred13",
-      "battleTime": "20260630T173550.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 32,
-      "opponent": "Clark",
-      "battleTime": "20260630T173134.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 31,
-      "opponent": "willowkitty",
-      "battleTime": "20260629T165047.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "2-0",
-      "trophyChange": 28,
-      "opponent": "tmurr",
-      "battleTime": "20260629T164737.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 31,
-      "opponent": "jahij",
-      "battleTime": "20260629T164428.000Z"
     }
   ],
   "trophyRoadBattles": [
@@ -1572,6 +1675,78 @@ window.ROYALE_DATA = {
   },
   "otherBattles": [
     {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Jacob",
+      "battleTime": "20260712T070950.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-2",
+      "trophyChange": null,
+      "opponent": "✌️HaCiVaT✌️",
+      "battleTime": "20260712T070553.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Cris:')",
+      "battleTime": "20260712T070048.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "1-0",
+      "trophyChange": null,
+      "opponent": "Brayancito B&N",
+      "battleTime": "20260712T065719.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "3-0",
+      "trophyChange": null,
+      "opponent": "Windragon",
+      "battleTime": "20260712T065254.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "0-1",
+      "trophyChange": null,
+      "opponent": "shahin.m.iran",
+      "battleTime": "20260712T065042.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "0-1",
+      "trophyChange": null,
+      "opponent": "léo3424",
+      "battleTime": "20260712T064539.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "2v2",
+      "category": "other",
+      "crowns": "2-0",
+      "trophyChange": null,
+      "opponent": "Karol♥️",
+      "battleTime": "20260712T064154.000Z"
+    },
+    {
       "result": "loss",
       "mode": "Crazy Arena",
       "category": "other",
@@ -1678,49 +1853,13 @@ window.ROYALE_DATA = {
       "trophyChange": null,
       "opponent": "❄️✨Soda KK✨❄️",
       "battleTime": "20260628T060032.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-1",
-      "trophyChange": null,
-      "opponent": "Rey Esteban I",
-      "battleTime": "20260628T055643.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "gfhhdhd",
-      "battleTime": "20260628T055251.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Friendly Battle",
-      "category": "other",
-      "crowns": "3-1",
-      "trophyChange": null,
-      "opponent": "ᴮᴬᴰʙᴏʏツ",
-      "battleTime": "20260625T071525.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-3",
-      "trophyChange": null,
-      "opponent": null,
-      "battleTime": "20260612T232800.000Z"
     }
   ],
   "otherBattlesSummary": {
-    "wins": 6,
-    "losses": 10,
-    "games": 16,
-    "winRate": 37.5,
+    "wins": 9,
+    "losses": 11,
+    "games": 20,
+    "winRate": 45,
     "trophyChange": 0
   },
   "modes": [
@@ -1744,9 +1883,9 @@ window.ROYALE_DATA = {
     },
     {
       "label": "Lifetime",
-      "wins": 4407,
-      "losses": 3395,
-      "note": "2508 three-crown wins."
+      "wins": 4412,
+      "losses": 3398,
+      "note": "2509 three-crown wins."
     }
   ],
   "history": [
@@ -7531,6 +7670,351 @@ window.ROYALE_DATA = {
           "trophyChange": 31,
           "opponent": "jahij",
           "battleTime": "20260629T164428.000Z"
+        }
+      ],
+      "twoVTwo": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      },
+      "challenges": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      },
+      "pathOfLegends": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      }
+    },
+    {
+      "date": "2026-07-12",
+      "label": "Jul 12",
+      "fetchedAt": "2026-07-12T16:00:28.192Z",
+      "tag": "#JL8UYPQC",
+      "name": "Solaceonx",
+      "trophies": 12926,
+      "bestTrophies": 12954,
+      "expLevel": 65,
+      "wins": 4412,
+      "losses": 3398,
+      "battleCount": 7810,
+      "threeCrownWins": 2509,
+      "challengeCardsWon": 1087,
+      "challengeMaxWins": 9,
+      "tournamentCardsWon": 0,
+      "tournamentBattleCount": 669,
+      "favoriteCard": "Freeze",
+      "currentDeck": [
+        {
+          "name": "Lumberjack",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/E6RWrnCuk13xMX5OE1EQtLEKTZQV6B78d00y8PlXt6Q.png"
+        },
+        {
+          "name": "Giant",
+          "level": 14,
+          "maxLevel": 14,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/Axr4ox5_b7edmLsoHxBX3vmgijAIibuF6RImTbqLlXE.png"
+        },
+        {
+          "name": "Skeleton Army",
+          "level": 11,
+          "maxLevel": 11,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png"
+        },
+        {
+          "name": "Sparky",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/2GKMkBrArZXgQxf2ygFjDs4VvGYPbx8F6Lj_68iVhIM.png"
+        },
+        {
+          "name": "The Log",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png"
+        },
+        {
+          "name": "Minion Horde",
+          "level": 16,
+          "maxLevel": 16,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/Wyjq5l0IXHTkX9Rmpap6HaH08MvjbxFp1xBO9a47YSI.png"
+        },
+        {
+          "name": "Fireball",
+          "level": 14,
+          "maxLevel": 14,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png"
+        },
+        {
+          "name": "Fire Spirit",
+          "level": 16,
+          "maxLevel": 16,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/16-BqusVvynIgYI8_Jci3LDC-r8AI_xaIYLgXqtlmS8.png"
+        }
+      ],
+      "collectionProgress": {
+        "cardLevels": {
+          "current": 1704,
+          "max": 1952,
+          "total": 122,
+          "maxed": 8,
+          "percent": 87
+        },
+        "maxedCards": {
+          "current": 8,
+          "total": 122,
+          "percent": 7,
+          "levelDistribution": [
+            {
+              "level": 16,
+              "count": 8,
+              "percent": 6.6
+            },
+            {
+              "level": 15,
+              "count": 19,
+              "percent": 15.6
+            },
+            {
+              "level": 14,
+              "count": 69,
+              "percent": 56.6
+            },
+            {
+              "level": 13,
+              "count": 16,
+              "percent": 13.1
+            },
+            {
+              "level": 12,
+              "count": 9,
+              "percent": 7.4
+            },
+            {
+              "level": 9,
+              "count": 1,
+              "percent": 0.8
+            }
+          ]
+        },
+        "evolutions": {
+          "current": 26,
+          "max": 69,
+          "total": 52,
+          "unlocked": 19,
+          "percent": 38
+        },
+        "heroes": {
+          "unlocked": 6,
+          "total": 14,
+          "percent": 43,
+          "names": [
+            "Wizard",
+            "Musketeer",
+            "Giant",
+            "Magic Archer",
+            "Knight",
+            "Mini P.E.K.K.A"
+          ]
+        },
+        "towerTroops": {
+          "current": 56,
+          "max": 64,
+          "total": 4,
+          "maxed": 1,
+          "percent": 88
+        }
+      },
+      "recentWins": 11,
+      "recentLosses": 9,
+      "recentWinRate": 55,
+      "recentBattles": [
+        {
+          "result": "win",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "1-0",
+          "trophyChange": null,
+          "opponent": "Jacob",
+          "battleTime": "20260712T070950.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "1-2",
+          "trophyChange": null,
+          "opponent": "✌️HaCiVaT✌️",
+          "battleTime": "20260712T070553.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "1-0",
+          "trophyChange": null,
+          "opponent": "Cris:')",
+          "battleTime": "20260712T070048.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "1-0",
+          "trophyChange": null,
+          "opponent": "Brayancito B&N",
+          "battleTime": "20260712T065719.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "3-0",
+          "trophyChange": null,
+          "opponent": "Windragon",
+          "battleTime": "20260712T065254.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "0-1",
+          "trophyChange": null,
+          "opponent": "shahin.m.iran",
+          "battleTime": "20260712T065042.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "0-1",
+          "trophyChange": null,
+          "opponent": "léo3424",
+          "battleTime": "20260712T064539.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "2-0",
+          "trophyChange": null,
+          "opponent": "Karol♥️",
+          "battleTime": "20260712T064154.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "0-1",
+          "trophyChange": -28,
+          "opponent": "SoldadoBRntj",
+          "battleTime": "20260710T201423.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 28,
+          "opponent": "( k-joker )",
+          "battleTime": "20260710T201058.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "2-0",
+          "trophyChange": 28,
+          "opponent": "adrien le con",
+          "battleTime": "20260710T200716.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "0-3",
+          "trophyChange": -27,
+          "opponent": "Alan-(999)",
+          "battleTime": "20260710T200344.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "Crazy Arena",
+          "category": "other",
+          "crowns": "0-3",
+          "trophyChange": null,
+          "opponent": "casollo",
+          "battleTime": "20260709T211928.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "Crazy Arena",
+          "category": "other",
+          "crowns": "0-2",
+          "trophyChange": null,
+          "opponent": "EZEQUIEL XD",
+          "battleTime": "20260709T211438.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "Crazy Arena",
+          "category": "other",
+          "crowns": "0-1",
+          "trophyChange": null,
+          "opponent": "Marcio13",
+          "battleTime": "20260709T210935.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "2-0",
+          "trophyChange": 29,
+          "opponent": "RoyaleEmpire TT",
+          "battleTime": "20260709T210339.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 30,
+          "opponent": "jawad",
+          "battleTime": "20260709T210030.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "2-1",
+          "trophyChange": null,
+          "opponent": "giovar la furia",
+          "battleTime": "20260707T014357.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "2v2",
+          "category": "other",
+          "crowns": "1-0",
+          "trophyChange": null,
+          "opponent": "youngboy",
+          "battleTime": "20260707T013914.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "Friendly Battle",
+          "category": "other",
+          "crowns": "0-3",
+          "trophyChange": null,
+          "opponent": "Fizo",
+          "battleTime": "20260704T175153.000Z"
         }
       ],
       "twoVTwo": {
