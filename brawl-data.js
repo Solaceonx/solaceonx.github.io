@@ -90,9 +90,49 @@ window.BRAWL_DATA = {
         "date": "2026-07-13",
         "label": "Jul 13",
         "trophies": 35401
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
+        "trophies": 35403
       }
     ],
     "recentGames": [
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Knockout",
+        "result": "defeat",
+        "battleTime": "20260713T224906.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20260713T224634.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20260713T224323.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20260713T224121.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20260713T223731.000Z"
+      },
       {
         "brawler": "SURGE",
         "image": "assets/brawlers/16000038.png",
@@ -141,41 +181,6 @@ window.BRAWL_DATA = {
         "mode": "Solo Showdown",
         "result": "win",
         "battleTime": "20260713T054814.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Solo Showdown",
-        "result": "win",
-        "battleTime": "20260713T054656.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Solo Showdown",
-        "result": "win",
-        "battleTime": "20260713T054549.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Solo Showdown",
-        "result": "win",
-        "battleTime": "20260713T054531.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Solo Showdown",
-        "result": "win",
-        "battleTime": "20260713T054310.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Solo Showdown",
-        "result": "loss",
-        "battleTime": "20260713T054211.000Z"
       }
     ],
     "gamesHistory": [
@@ -248,6 +253,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-13",
         "label": "Jul 13",
         "games": 52
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
+        "games": 57
       }
     ],
     "lifetimeWinsHistory": [
@@ -340,6 +350,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-13",
         "label": "Jul 13",
         "wins": 7596
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
+        "wins": 7597
       }
     ],
     "winsHistory": [
@@ -412,6 +427,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-13",
         "label": "Jul 13",
         "wins": 35
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
+        "wins": 36
       }
     ],
     "lossesHistory": [
@@ -484,6 +504,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-13",
         "label": "Jul 13",
         "losses": 16
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
+        "losses": 20
       }
     ],
     "modes": [
@@ -498,6 +523,11 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
+        "mode": "Brawl Ball5V5",
+        "count": 4,
+        "image": null
+      },
+      {
         "mode": "Air Hockey",
         "count": 3,
         "image": null
@@ -509,7 +539,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Knockout",
-        "count": 1,
+        "count": 2,
         "image": null
       },
       {
@@ -692,6 +722,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-13",
         "label": "Jul 13",
         "points": 5556
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
+        "points": 5556
       }
     ],
     "gamesHistory": [
@@ -763,6 +798,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-07-13",
         "label": "Jul 13",
+        "games": 109
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
         "games": 109
       }
     ],
@@ -836,6 +876,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-13",
         "label": "Jul 13",
         "wins": 73
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
+        "wins": 73
       }
     ],
     "lossesHistory": [
@@ -907,6 +952,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-07-13",
         "label": "Jul 13",
+        "losses": 36
+      },
+      {
+        "date": "2026-07-14",
+        "label": "Jul 14",
         "losses": 36
       }
     ],
