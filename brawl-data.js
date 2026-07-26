@@ -145,9 +145,85 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "trophies": 35417
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "trophies": 35469
       }
     ],
-    "recentGames": [],
+    "recentGames": [
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Air Hockey",
+        "result": "victory",
+        "battleTime": "20260725T204615.000Z"
+      },
+      {
+        "brawler": "MICO",
+        "image": "assets/brawlers/16000075.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260725T204325.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260725T204121.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260725T203317.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260725T203113.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260725T202100.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260725T201759.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260725T201622.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260725T201510.000Z"
+      },
+      {
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260725T201401.000Z"
+      }
+    ],
     "gamesHistory": [
       {
         "date": "2026-06-30",
@@ -273,6 +349,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "games": 84
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "games": 94
       }
     ],
     "lifetimeWinsHistory": [
@@ -420,6 +501,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "wins": 7676
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "wins": 7682
       }
     ],
     "winsHistory": [
@@ -547,6 +633,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "wins": 53
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "wins": 59
       }
     ],
     "lossesHistory": [
@@ -674,12 +765,17 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "losses": 30
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "losses": 34
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 31,
+        "count": 39,
         "image": null
       },
       {
@@ -703,18 +799,18 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
+        "mode": "Air Hockey",
+        "count": 4,
+        "image": null
+      },
+      {
         "mode": "Brawl Ball5V5",
         "count": 4,
         "image": null
       },
       {
-        "mode": "Air Hockey",
-        "count": 3,
-        "image": null
-      },
-      {
         "mode": "Knockout",
-        "count": 2,
+        "count": 3,
         "image": null
       },
       {
@@ -789,19 +885,19 @@ window.BRAWL_DATA = {
         "games": 0
       },
       {
+        "name": "MICO",
+        "trophies": 1021,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000075.png",
+        "games": 1
+      },
+      {
         "name": "EMZ",
         "trophies": 1019,
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000030.png",
-        "games": 0
-      },
-      {
-        "name": "PAM",
-        "trophies": 1018,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000016.png",
         "games": 0
       }
     ]
@@ -952,6 +1048,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "points": 5336
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "points": 5247
       }
     ],
     "gamesHistory": [
@@ -1079,6 +1180,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "games": 208
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "games": 210
       }
     ],
     "winsHistory": [
@@ -1205,6 +1311,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-07-25",
         "label": "Jul 25",
+        "wins": 134
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
         "wins": 134
       }
     ],
@@ -1333,6 +1444,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-25",
         "label": "Jul 25",
         "losses": 74
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26",
+        "losses": 76
       }
     ],
     "modes": [
@@ -1358,7 +1474,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Knockout",
-        "count": 33,
+        "count": 35,
         "image": null
       },
       {
@@ -1370,7 +1486,7 @@ window.BRAWL_DATA = {
     "currentSeasonBrawlers": [
       {
         "name": "BYRON",
-        "count": 46,
+        "count": 48,
         "image": "assets/brawlers/16000042.png"
       },
       {
@@ -1492,7 +1608,7 @@ window.BRAWL_DATA = {
     "allTimeBrawlers": [
       {
         "name": "BYRON",
-        "count": 46,
+        "count": 48,
         "image": "assets/brawlers/16000042.png"
       },
       {
@@ -1627,6 +1743,10 @@ window.BRAWL_DATA = {
       {
         "date": "2026-07-24",
         "label": "Jul 24"
+      },
+      {
+        "date": "2026-07-26",
+        "label": "Jul 26"
       }
     ]
   },
