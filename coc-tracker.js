@@ -10,9 +10,9 @@ if (tabsRoot && cocAccounts.length) {
     dark: "#40513b"
   };
   const achievementMetrics = [
-    { key: "attacksWon", label: "Attacks won", color: cocPalette.green, note: "Lifetime multiplayer wins" },
-    { key: "donations", label: "Donations", color: cocPalette.gold, note: "Lifetime donations" },
-    { key: "warStars", label: "War stars", color: cocPalette.green, note: "Lifetime war stars" },
+    { key: "attacksWon", label: "Attacks won", color: cocPalette.green, note: "Lifetime multiplayer wins", showAvg: true },
+    { key: "donations", label: "Donations", color: cocPalette.gold, note: "Lifetime donations", showAvg: true },
+    { key: "warStars", label: "War stars", color: cocPalette.green, note: "Lifetime war stars", showAvg: true },
     { key: "clanCapitalContributions", label: "Capital gold", color: cocPalette.gold, note: "Lifetime contribution" }
   ];
   const progressMetrics = [
@@ -110,14 +110,16 @@ if (tabsRoot && cocAccounts.length) {
         <path class="chart-line" style="stroke:${metric.color}" d="${path}"/>
         ${plotted.map(point => `<circle style="stroke:${metric.color}" cx="${point.x}" cy="${point.y}" r="${options.dot || 4}"><title>${point.label}: ${formatValue(point.value)}</title></circle>`).join("")}
         ${options.labels === false ? "" : plotted.map((point, index) => labelIndexes.has(index) ? `<text x="${point.x}" y="${height - 8}" text-anchor="middle">${point.label}</text>` : "").join("")}
+        ${options.avgPerWeek != null ? `<text class="chart-avg-label" x="${leftPad + 6}" y="${pad + 12}" text-anchor="start">avg ${formatValue(options.avgPerWeek)}/wk</text>` : ""}
       </svg>`;
   };
 
   const renderRankedHistory = (account) => {
     const rows = account.rankedHistory || [];
     const chartPoints = rows
+      .filter(row => row.result !== "Tracking")
       .map(row => ({ label: row.label, value: row.endingTrophies }))
-      .filter(point => typeof point.value === "number" && Number.isFinite(point.value));
+      .filter(point => typeof point.value === "number" && Number.isFinite(point.value) && point.value > 0);
     const chart = renderSvgChart(
       chartPoints,
       { key: "rankedTrophies", label: "Ending trophies", color: cocPalette.gold },
@@ -172,6 +174,8 @@ if (tabsRoot && cocAccounts.length) {
       const first = points[0]?.value;
       const delta = latest != null && first != null && points.length > 1 ? latest - first : null;
       const deltaLabel = delta == null ? "First snapshot" : `${delta >= 0 ? "+" : ""}${formatter(delta)} since first snapshot`;
+      const weekCount = points.length > 1 ? (points.length - 1) : null;
+      const avgPerWeek = metric.showAvg && delta != null && weekCount ? Math.round(delta / weekCount) : null;
 
       return `
         <article class="mini-chart-card">
@@ -181,7 +185,7 @@ if (tabsRoot && cocAccounts.length) {
             </div>
             <strong>${formatter(latest)}</strong>
           </div>
-          <div class="mini-chart">${renderSvgChart(points, metric, { width: 320, height: 146, pad: 18, yLabelWidth: 48, dot: 3, labels: true, formatter })}</div>
+          <div class="mini-chart">${renderSvgChart(points, metric, { width: 320, height: 146, pad: 18, yLabelWidth: 48, dot: 3, labels: true, formatter, avgPerWeek })}</div>
         </article>`;
     }).join("");
   };

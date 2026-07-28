@@ -575,6 +575,7 @@ p strong {
 .line-chart circle { fill: #fff; stroke: #333; stroke-width: 3; }
 .line-chart text { fill: #000; font-size: 8px; }
 .chart-y-label { fill: #000; font-size: 8px; }
+.chart-avg-label { fill: rgba(0,0,0,.45); font-size: 7px; font-style: italic; }
 .mini-chart-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1186,12 +1187,17 @@ p strong {
 .brawl-tracker-page .chart-grid {
   stroke: rgba(18,120,216,.13);
 }
-.brawl-reset-line {
+.brawl-rank-line {
   fill: none;
-  stroke: rgba(0,0,0,.34);
-  stroke-dasharray: 5 5;
-  stroke-width: 1.5;
+  stroke: rgba(255,255,255,.18);
+  stroke-width: 1;
 }
+.brawl-rank-label {
+  fill: rgba(255,255,255,.38);
+  font-size: 7px;
+}
+.starfield-page[data-theme="light"] .brawl-rank-line { stroke: rgba(0,0,0,.18); }
+.starfield-page[data-theme="light"] .brawl-rank-label { fill: rgba(0,0,0,.38); }
 .brawl-game-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2517,6 +2523,9 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .starfield-page:not([data-theme="light"]) .mini-chart text,
 .starfield-page:not([data-theme="light"]) .chart-y-label {
   fill: #fff;
+}
+.starfield-page:not([data-theme="light"]) .chart-avg-label {
+  fill: rgba(255,255,255,.45);
 }
 .starfield-page:not([data-theme="light"]) .line-chart circle,
 .starfield-page:not([data-theme="light"]) .mini-chart circle {

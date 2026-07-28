@@ -35,12 +35,12 @@
       : coords.map((point, index) => `${index ? "L" : "M"} ${point.x} ${point.y}`).join(" ");
     const area = `${path} L ${coords.at(-1).x} ${height - pad} L ${coords[0].x} ${height - pad} Z`;
     const ticks = [max, min + range / 2, min].map(value => ({ value, y: yFor(value) }));
-    const resets = (options.resets || []).map(reset => {
-      const index = points.findIndex(point => point.date === reset.date);
-      if (index < 0) return "";
-      const x = coords[index].x;
-      return `<path class="brawl-reset-line" d="M ${x} ${pad} V ${height - pad}"><title>Season reset: ${reset.label || reset.date}</title></path>`;
-    }).join("");
+    const rankTierLines = (options.rankTiers || [])
+      .filter(tier => tier.points >= min && tier.points <= max)
+      .map(tier => {
+        const y = yFor(tier.points);
+        return `<line class="brawl-rank-line" x1="${leftPad}" y1="${y}" x2="${width - pad}" y2="${y}"/><text class="brawl-rank-label" x="${leftPad + 4}" y="${y - 3}">${tier.label}</text>`;
+      }).join("");
     const gradientId = `brawl-area-${metric.key}`;
     const formatValue = options.formatter || number;
     const tickValue = (value) => options.integerTicks === false ? value : Math.round(value);
@@ -55,7 +55,7 @@
         </defs>
         <path class="chart-grid" d="${ticks.map(tick => `M ${leftPad} ${tick.y} H ${width - pad}`).join(" ")}"/>
         ${ticks.map(tick => `<text class="chart-y-label" x="${leftPad - 8}" y="${tick.y + 3}" text-anchor="end">${formatValue(tickValue(tick.value))}</text>`).join("")}
-        ${resets}
+        ${rankTierLines}
         <path class="chart-area" fill="url(#${gradientId})" d="${area}"/>
         <path class="chart-line" style="stroke:${metric.color}" d="${path}"/>
         ${coords.map(point => `<circle cx="${point.x}" cy="${point.y}" r="${options.dot || 4}" style="stroke:${metric.color}"><title>${point.label}: ${formatValue(point.value)}</title></circle>`).join("")}
@@ -174,7 +174,19 @@
   document.querySelector("#brawl-top-brawlers").innerHTML = renderBrawlers(trophy.topBrawlers || [], { variant: "trophy-games" });
 
   document.querySelector("#brawl-ranked-latest").textContent = number(rankedPoints.at(-1)?.value);
-  document.querySelector("#brawl-ranked-chart").innerHTML = renderLineChart(rankedPoints, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", resets: ranked.seasonResets || [] });
+  const BRAWL_RANK_TIERS = [
+    { points: 3000, label: "Diamond I" },
+    { points: 3500, label: "Diamond II" },
+    { points: 4000, label: "Diamond III" },
+    { points: 4500, label: "Mythic I" },
+    { points: 5000, label: "Mythic II" },
+    { points: 5500, label: "Mythic III" },
+    { points: 6000, label: "Legendary I" },
+    { points: 6750, label: "Legendary II" },
+    { points: 7500, label: "Legendary III" },
+    { points: 8250, label: "Masters I" },
+  ];
+  document.querySelector("#brawl-ranked-chart").innerHTML = renderLineChart(rankedPoints, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS });
   document.querySelector("#brawl-ranked-games-latest").textContent = number(rankedGames.at(-1)?.value);
   document.querySelector("#brawl-ranked-games-chart").innerHTML = renderLineChart(rankedGames, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." });
   document.querySelector("#brawl-ranked-mode-total").textContent = number((ranked.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
