@@ -132,7 +132,7 @@ if (tabsRoot && cocAccounts.length) {
           <div class="ranked-row ranked-row-head" role="row">
             <span>Week</span>
             <span>League</span>
-            <span>Finish</span>
+
             <span>Ending trophies</span>
             <span>Result</span>
           </div>
@@ -140,7 +140,7 @@ if (tabsRoot && cocAccounts.length) {
             <div class="ranked-row" role="row">
               <span>${row.label}</span>
               <span>${row.league}</span>
-              <span>${row.finish ? `${number(row.finish)}${ordinalSuffix(row.finish)}` : "—"}</span>
+
               <span>${number(row.endingTrophies)}</span>
               <span>${row.result}</span>
             </div>`).join("")}
