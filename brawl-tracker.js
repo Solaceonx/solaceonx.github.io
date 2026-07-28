@@ -34,7 +34,15 @@
       ? `M ${leftPad} ${coords[0].y} L ${width - pad} ${coords[0].y}`
       : coords.map((point, index) => `${index ? "L" : "M"} ${point.x} ${point.y}`).join(" ");
     const area = `${path} L ${coords.at(-1).x} ${height - pad} L ${coords[0].x} ${height - pad} Z`;
-    const ticks = [max, min + range / 2, min].map(value => ({ value, y: yFor(value) }));
+    const tickStep = options.tickStep;
+    const ticks = tickStep
+      ? (() => {
+          const first = Math.ceil(min / tickStep) * tickStep;
+          const result = [];
+          for (let v = first; v <= max; v += tickStep) result.push({ value: v, y: yFor(v) });
+          return result;
+        })()
+      : [max, min + range / 2, min].map(value => ({ value, y: yFor(value) }));
     const rankTierLines = (options.rankTiers || [])
       .filter(tier => tier.points >= min && tier.points <= max)
       .map(tier => {
@@ -186,7 +194,7 @@
     { points: 7500, label: "Legendary III" },
     { points: 8250, label: "Masters I" },
   ];
-  document.querySelector("#brawl-ranked-chart").innerHTML = renderLineChart(rankedPoints, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS });
+  document.querySelector("#brawl-ranked-chart").innerHTML = renderLineChart(rankedPoints, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500 });
   document.querySelector("#brawl-ranked-games-latest").textContent = number(rankedGames.at(-1)?.value);
   document.querySelector("#brawl-ranked-games-chart").innerHTML = renderLineChart(rankedGames, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." });
   document.querySelector("#brawl-ranked-mode-total").textContent = number((ranked.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
