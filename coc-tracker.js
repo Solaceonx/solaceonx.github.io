@@ -335,7 +335,7 @@ if (tabsRoot && cocAccounts.length) {
   tabsRoot.innerHTML = cocAccounts.map((account, index) => `
     <button type="button" role="tab" data-account="${account.id}" aria-selected="${index === 0}">
       <strong>${account.name} <em>(TH${account.townHall})</em></strong>
-      <span>${account.tabDescriptor || account.descriptor}</span>
+      ${account.tabDescriptor ? `<span>${account.tabDescriptor}</span>` : ""}
     </button>`).join("");
 
   tabsRoot.addEventListener("click", (event) => {
