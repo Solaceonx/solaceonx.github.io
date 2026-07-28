@@ -126,7 +126,7 @@
           <path style="fill:url(#${gradientId})" d="${area}"/>
           <path class="chart-line" style="stroke:${metric.color}" d="${path}"/>
           ${coords.map(point => `<circle cx="${point.x}" cy="${point.y}" r="4" style="stroke:${metric.color}"/>`).join("")}
-          ${showLabels ? coords.map(point => `<text x="${point.x}" y="${height - 4}" text-anchor="middle">${point.label}</text>`).join("") : ""}
+          ${showLabels ? (() => { const maxLabels = 8; const labelIndexes = new Set(); const visibleLabels = Math.min(maxLabels, coords.length); for (let i = 0; i < visibleLabels; i++) labelIndexes.add(Math.round(i * (coords.length - 1) / Math.max(1, visibleLabels - 1))); return coords.map((point, index) => labelIndexes.has(index) ? `<text x="${point.x}" y="${height - 4}" text-anchor="middle">${point.label}</text>` : "").join(""); })() : ""}
         </svg>`;
     };
 
