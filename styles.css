@@ -37,9 +37,8 @@ button { color: inherit; }
   justify-content: space-between;
   min-height: 74px;
   padding: 0 4vw;
-  background: rgba(245, 242, 233, 0.9);
+  background: var(--paper);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(18px);
 }
 
 .brand {
@@ -267,7 +266,7 @@ h3 { margin-bottom: 12px; font-size: 22px; line-height: 1; }
 .game-bio-page .page { min-height: calc(100vh - 74px); }
 .game-bio-page .site-header {
   color: white;
-  background: rgba(9,10,14,.78);
+  background: var(--paper);
   border-bottom-color: rgba(255,255,255,.14);
 }
 .game-bio-page .brand-mark {
@@ -321,7 +320,7 @@ h3 { margin-bottom: 12px; font-size: 22px; line-height: 1; }
 }
 .coc-tracker-page .site-header {
   color: #000;
-  background: rgba(255,255,255,.82);
+  background: var(--paper);
   border-bottom-color: rgba(0,0,0,.18);
 }
 .coc-tracker-page .nav-links a { color: #000; }
@@ -764,9 +763,8 @@ p strong {
   width: min(980px, 86vw);
 }
 .royale-tracker-page .site-header {
-  background: rgba(248,247,242,.86);
+  background: var(--paper);
   border-bottom-color: rgba(0,0,0,.12);
-  backdrop-filter: blur(18px);
 }
 .royale-tracker-page .nav-links a { color: #000; }
 .royale-tracker-page .nav-links a:hover,
@@ -1105,9 +1103,8 @@ p strong {
   z-index: 1;
 }
 .brawl-tracker-page .site-header {
-  background: rgba(248,252,255,.82);
+  background: var(--paper);
   border-bottom-color: rgba(0,0,0,.12);
-  backdrop-filter: blur(18px);
 }
 .brawl-tracker-page .nav-links a { color: #000; }
 .brawl-tracker-page .nav-links a:hover,
@@ -1636,7 +1633,7 @@ p strong {
 .about-page[data-theme="light"] .page { background: var(--paper); }
 .about-page[data-theme="light"] .site-header {
   color: #000;
-  background: rgba(245,242,233,.92);
+  background: var(--paper);
   border-bottom-color: rgba(0,0,0,.1);
 }
 .about-page[data-theme="light"] .brand-mark { color: #fff; background: #000; }
@@ -1677,7 +1674,7 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 }
 .about-page .site-header {
   color: #fff;
-  background: rgba(2,4,11,.66);
+  background: var(--paper);
   border-bottom-color: rgba(255,255,255,.13);
 }
 .about-page .brand-mark {
@@ -2241,8 +2238,7 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 }
 .starfield-page:not([data-theme="light"]) .site-header {
   color: #fff;
-  background: var(--star-panel-bg);
-  background-size: 220px 220px, 260px 260px, 300px 300px, 240px 240px, 280px 280px, auto, auto, auto, auto;
+  background: var(--paper);
   border-bottom-color: rgba(255,255,255,.13);
 }
 .starfield-page:not([data-theme="light"]) .nav-links {
