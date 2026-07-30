@@ -1384,11 +1384,9 @@ p strong {
 }
 .research-block {
   padding-top: clamp(20px, 4vw, 42px);
-  border-top: 1px solid rgba(16,17,20,.16);
 }
 .research-block:first-child {
   padding-top: 0;
-  border-top: none;
 }
 .research-label {
   margin-bottom: 12px;
