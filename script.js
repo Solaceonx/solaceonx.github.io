@@ -142,6 +142,42 @@ const enableChartZoom = () => {
 enableChartZoom();
 new MutationObserver(enableChartZoom).observe(document.body, { childList: true, subtree: true });
 
+// Range picker — wraps a chart container with 7d / 30d / All buttons.
+// renderFn(filteredPoints) → HTML string for the chart.
+// points must have a .date field ("YYYY-MM-DD").
+window.attachRangePicker = (containerEl, allPoints, renderFn) => {
+  const ranges = [{ label: "7d", days: 7 }, { label: "30d", days: 30 }, { label: "All", days: null }];
+  let active = "All";
+
+  const filterPoints = (days) => {
+    if (!days) return allPoints;
+    const cutoff = new Date(Date.now() - days * 864e5);
+    return allPoints.filter(p => p.date && new Date(`${p.date}T00:00:00`) >= cutoff);
+  };
+
+  const render = (label) => {
+    active = label;
+    const days = ranges.find(r => r.label === label).days;
+    const filtered = filterPoints(days);
+    containerEl.querySelector(".range-chart-body").innerHTML = renderFn(filtered.length ? filtered : allPoints);
+    containerEl.querySelectorAll(".range-btn").forEach(btn => {
+      btn.classList.toggle("range-btn-active", btn.dataset.range === active);
+    });
+    enableChartZoom();
+  };
+
+  containerEl.innerHTML = `
+    <div class="range-picker">
+      ${ranges.map(r => `<button class="range-btn${r.label === active ? " range-btn-active" : ""}" data-range="${r.label}">${r.label}</button>`).join("")}
+    </div>
+    <div class="range-chart-body">${renderFn(allPoints)}</div>`;
+
+  containerEl.querySelector(".range-picker").addEventListener("click", e => {
+    const btn = e.target.closest(".range-btn");
+    if (btn) render(btn.dataset.range);
+  });
+};
+
 const starfield = document.querySelector('#starfield');
 if (starfield) {
   const ctx = starfield.getContext('2d');

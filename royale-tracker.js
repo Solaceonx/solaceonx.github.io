@@ -210,21 +210,21 @@
       {
         title: "Trophies",
         latest: number(data.currentTrophies),
-        points: (data.trophyHistory || []).map(point => ({ label: point.label, value: point.trophies })),
+        points: (data.trophyHistory || []).map(point => ({ label: point.label, date: point.date, value: point.trophies })),
         metric: { key: "trophies", label: "Trophies", color: royalePalette.blue },
         formatter: number
       },
       {
         title: "Games played",
         latest: number(data.totalGames),
-        points: (data.gameHistory || []).map(point => ({ label: point.label, value: point.games })),
+        points: (data.gameHistory || []).map(point => ({ label: point.label, date: point.date, value: point.games })),
         metric: { key: "games", label: "Games played", color: royalePalette.gold },
         formatter: number
       },
       {
         title: "Overall win rate",
         latest: overallWinRateLabel,
-        points: (data.overallWinRateHistory || []).map(point => ({ label: point.label, value: point.winRate })),
+        points: (data.overallWinRateHistory || []).map(point => ({ label: point.label, date: point.date, value: point.winRate })),
         metric: { key: "overall-winrate", label: "Overall win rate", color: royalePalette.blue },
         formatter: percentOneDecimal,
         minRange: 0.35,
@@ -238,9 +238,16 @@
           <h4>${chart.title}</h4>
           <strong>${chart.latest}</strong>
         </div>
-        <div class="line-chart">${renderSvgChart(chart.points, chart.metric, { width: 520, height: 180, formatter: chart.formatter, minRange: chart.minRange, integerTicks: chart.integerTicks })}</div>
+        <div class="line-chart" id="royale-range-${chart.metric.key}"></div>
       </article>
     `).join("");
+    chartCards.forEach(chart => {
+      window.attachRangePicker(
+        document.querySelector(`#royale-range-${chart.metric.key}`),
+        chart.points,
+        pts => renderSvgChart(pts, chart.metric, { width: 520, height: 180, formatter: chart.formatter, minRange: chart.minRange, integerTicks: chart.integerTicks })
+      );
+    });
 
     const collection = data.collectionProgress || {};
     const collectionPoint = (point, path) => path.reduce((value, key) => value?.[key], point.collectionProgress);
@@ -249,7 +256,7 @@
         title: "Card levels",
         latest: percent(collection.cardLevels?.percent || 0),
         points: (data.history || []).map(point => ({
-          label: point.label,
+          label: point.label, date: point.date,
           value: collectionPoint(point, ["cardLevels", "percent"])
         })).filter(point => typeof point.value === "number"),
         metric: { key: "royale-card-levels", label: "Card levels", color: royalePalette.blue },
@@ -259,7 +266,7 @@
         title: "Maxed cards",
         latest: `${number(collection.maxedCards?.current)} / ${number(collection.maxedCards?.total)}`,
         points: (data.history || []).map(point => ({
-          label: point.label,
+          label: point.label, date: point.date,
           value: collectionPoint(point, ["maxedCards", "current"])
         })).filter(point => typeof point.value === "number"),
         metric: { key: "royale-maxed-cards", label: "Maxed cards", color: royalePalette.gold },
@@ -270,7 +277,7 @@
         title: "Evolutions",
         latest: `${number(collection.evolutions?.unlocked)} / ${number(collection.evolutions?.total)}`,
         points: (data.history || []).map(point => ({
-          label: point.label,
+          label: point.label, date: point.date,
           value: collectionPoint(point, ["evolutions", "unlocked"])
         })).filter(point => typeof point.value === "number"),
         metric: { key: "royale-evolutions", label: "Evolutions", color: royalePalette.blue },
@@ -280,7 +287,7 @@
         title: "Unlocked heroes",
         latest: `${number(collection.heroes?.unlocked)} / ${number(collection.heroes?.total)}`,
         points: (data.history || []).map(point => ({
-          label: point.label,
+          label: point.label, date: point.date,
           value: collectionPoint(point, ["heroes", "unlocked"])
         })).filter(point => typeof point.value === "number"),
         metric: { key: "royale-heroes", label: "Unlocked heroes", color: royalePalette.gold },
@@ -295,9 +302,16 @@
           <strong>${card.latest}</strong>
         </div>
         ${card.levelDistribution ? renderLevelPie(card.levelDistribution) : ""}
-        <div class="mini-chart">${renderSvgChart(card.points, card.metric, { width: 320, height: 132, pad: 16, yLabelWidth: 48, labels: true, formatter: card.formatter })}</div>
+        <div class="mini-chart" id="royale-range-${card.metric.key}"></div>
       </article>
     `).join("");
+    progressCards.forEach(card => {
+      window.attachRangePicker(
+        document.querySelector(`#royale-range-${card.metric.key}`),
+        card.points,
+        pts => renderSvgChart(pts, card.metric, { width: 320, height: 132, pad: 16, yLabelWidth: 48, labels: true, formatter: card.formatter })
+      );
+    });
 
     const battleTimeLabel = value => {
       const date = battleDate(value);

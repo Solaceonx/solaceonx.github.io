@@ -172,11 +172,11 @@
   `).join("");
 
   document.querySelector("#brawl-trophy-latest").textContent = number(trophyHistory.at(-1)?.value);
-  document.querySelector("#brawl-trophy-chart").innerHTML = renderLineChart(trophyHistory, { key: "trophies", label: "Trophies", color: palette.blue }, { empty: "Add trophy snapshots to start this graph." });
+  window.attachRangePicker(document.querySelector("#brawl-trophy-chart"), trophyHistory, pts => renderLineChart(pts, { key: "trophies", label: "Trophies", color: palette.blue }, { empty: "Add trophy snapshots to start this graph." }));
   document.querySelector("#brawl-recent-count").textContent = number((trophy.recentGames || []).length);
   document.querySelector("#brawl-recent-games").innerHTML = renderRecentGames(trophy.recentGames || []);
   document.querySelector("#brawl-trophy-games-latest").textContent = number(lifetimeWinPoints.at(-1)?.value);
-  document.querySelector("#brawl-trophy-games-chart").innerHTML = renderLineChart(lifetimeWinPoints, { key: "lifetime-wins", label: "Lifetime wins", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 56, empty: "Add lifetime win snapshots to start this graph." });
+  window.attachRangePicker(document.querySelector("#brawl-trophy-games-chart"), lifetimeWinPoints, pts => renderLineChart(pts, { key: "lifetime-wins", label: "Lifetime wins", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 56, empty: "Add lifetime win snapshots to start this graph." }));
   document.querySelector("#brawl-mode-total").textContent = number((trophy.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
   document.querySelector("#brawl-mode-histogram").innerHTML = renderBars(trophy.modes || []);
   document.querySelector("#brawl-top-brawlers").innerHTML = renderBrawlers(trophy.topBrawlers || [], { variant: "trophy-games" });
@@ -194,9 +194,9 @@
     { points: 7500, label: "Legendary III" },
     { points: 8250, label: "Masters I" },
   ];
-  document.querySelector("#brawl-ranked-chart").innerHTML = renderLineChart(rankedPoints, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500 });
+  window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500 }));
   document.querySelector("#brawl-ranked-games-latest").textContent = number(rankedGames.at(-1)?.value);
-  document.querySelector("#brawl-ranked-games-chart").innerHTML = renderLineChart(rankedGames, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." });
+  window.attachRangePicker(document.querySelector("#brawl-ranked-games-chart"), rankedGames, pts => renderLineChart(pts, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." }));
   document.querySelector("#brawl-ranked-mode-total").textContent = number((ranked.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
   document.querySelector("#brawl-ranked-mode-histogram").innerHTML = renderBars(ranked.modes || [], { emptyText: "Waiting for ranked mode history." });
   document.querySelector("#brawl-current-ranked-total").textContent = number((ranked.currentSeasonBrawlers || []).length);

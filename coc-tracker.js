@@ -118,14 +118,8 @@ if (tabsRoot && cocAccounts.length) {
     const rows = account.rankedHistory || [];
     const chartPoints = rows
       .filter(row => row.result !== "Tracking")
-      .map(row => ({ label: row.label, value: row.endingTrophies }))
+      .map(row => ({ label: row.label, date: row.week, value: row.endingTrophies }))
       .filter(point => typeof point.value === "number" && Number.isFinite(point.value) && point.value > 0);
-    const chart = renderSvgChart(
-      chartPoints,
-      { key: "rankedTrophies", label: "Ending trophies", color: cocPalette.gold },
-      { width: 760, height: 220, pad: 34, yLabelWidth: 54, dot: 4, formatter: number }
-    );
-
     document.querySelector("#coc-league-season").innerHTML = rows.length
       ? `
         <div class="ranked-table" role="table" aria-label="Ranked battle weekly history">
@@ -150,9 +144,17 @@ if (tabsRoot && cocAccounts.length) {
             <div><h4>Ending trophies</h4></div>
             <strong>${number(rows.at(-1)?.endingTrophies)}</strong>
           </div>
-          <div class="line-chart">${chart}</div>
+          <div class="line-chart" id="coc-range-ranked-trophies"></div>
         </div>`
       : '<div class="tracker-empty">Run the updater to start ranked battle history.</div>';
+
+    if (rows.length) {
+      window.attachRangePicker(
+        document.querySelector("#coc-range-ranked-trophies"),
+        chartPoints,
+        pts => renderSvgChart(pts, { key: "rankedTrophies", label: "Ending trophies", color: cocPalette.gold }, { width: 760, height: 220, pad: 34, yLabelWidth: 54, dot: 4, formatter: number })
+      );
+    }
   };
 
   const ordinalSuffix = (value) => {
@@ -168,14 +170,14 @@ if (tabsRoot && cocAccounts.length) {
 
   const renderMiniCharts = (rootSelector, account, metrics, formatter = number) => {
     const root = document.querySelector(rootSelector);
-    root.innerHTML = metrics.map(metric => {
+    root.innerHTML = metrics.map((metric, idx) => {
       const points = metricPoints(account, metric);
       const latest = points.at(-1)?.value;
       const first = points[0]?.value;
       const delta = latest != null && first != null && points.length > 1 ? latest - first : null;
-      const deltaLabel = delta == null ? "First snapshot" : `${delta >= 0 ? "+" : ""}${formatter(delta)} since first snapshot`;
       const weekCount = points.length > 1 ? (points.length - 1) : null;
       const avgPerWeek = metric.showAvg && delta != null && weekCount ? Math.round(delta / weekCount) : null;
+      const pickerId = `coc-range-${rootSelector.replace(/[^a-z]/g, "")}-${idx}`;
 
       return `
         <article class="mini-chart-card">
@@ -185,9 +187,24 @@ if (tabsRoot && cocAccounts.length) {
             </div>
             <strong>${formatter(latest)}</strong>
           </div>
-          <div class="mini-chart">${renderSvgChart(points, metric, { width: 320, height: 146, pad: 18, yLabelWidth: 48, dot: 3, labels: true, formatter, avgPerWeek })}</div>
+          <div class="mini-chart" id="${pickerId}"></div>
         </article>`;
     }).join("");
+
+    metrics.forEach((metric, idx) => {
+      const points = metricPoints(account, metric);
+      const latest = points.at(-1)?.value;
+      const first = points[0]?.value;
+      const delta = latest != null && first != null && points.length > 1 ? latest - first : null;
+      const weekCount = points.length > 1 ? (points.length - 1) : null;
+      const avgPerWeek = metric.showAvg && delta != null && weekCount ? Math.round(delta / weekCount) : null;
+      const pickerId = `coc-range-${rootSelector.replace(/[^a-z]/g, "")}-${idx}`;
+      window.attachRangePicker(
+        document.querySelector(`#${pickerId}`),
+        points,
+        pts => renderSvgChart(pts, metric, { width: 320, height: 146, pad: 18, yLabelWidth: 48, dot: 3, labels: true, formatter, avgPerWeek })
+      );
+    });
   };
 
   const renderPlacements = (placements) => {

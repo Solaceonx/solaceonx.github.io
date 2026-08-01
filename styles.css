@@ -612,6 +612,25 @@ p strong {
   margin-bottom: 10px;
   overflow: hidden;
 }
+.range-picker {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+.range-btn {
+  padding: 2px 8px;
+  font-size: 11px;
+  font-family: var(--font-main);
+  border: 1px solid rgba(0,0,0,.18);
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity .15s, background .15s;
+}
+.range-btn:hover { opacity: 0.85; }
+.range-btn-active { opacity: 1; background: rgba(0,0,0,.08); }
 .mini-chart svg {
   display: block;
   width: 100%;
@@ -2323,6 +2342,10 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .starfield-page:not([data-theme="light"]) .tracker-th,
 .starfield-page:not([data-theme="light"]) .tracker-stat,
 .starfield-page:not([data-theme="light"]) .panel-heading h3,
+.starfield-page:not([data-theme="light"]) .range-btn {
+  border-color: rgba(255,255,255,.22);
+}
+.starfield-page:not([data-theme="light"]) .range-btn-active { background: rgba(255,255,255,.1); }
 .starfield-page:not([data-theme="light"]) .mini-chart-head h4,
 .starfield-page:not([data-theme="light"]) .mini-chart-head strong,
 .starfield-page:not([data-theme="light"]) .royale-intro,
