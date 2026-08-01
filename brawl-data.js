@@ -170,9 +170,99 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "trophies": 35520
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "trophies": 35676
       }
     ],
-    "recentGames": [],
+    "recentGames": [
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "defeat",
+        "battleTime": "20260801T103629.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260801T103327.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260801T103144.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260801T102959.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "defeat",
+        "battleTime": "20260801T102827.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "defeat",
+        "battleTime": "20260801T102617.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260801T102342.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "defeat",
+        "battleTime": "20260801T102225.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "defeat",
+        "battleTime": "20260801T102046.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260801T101745.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260801T011146.000Z"
+      },
+      {
+        "brawler": "GENE",
+        "image": "assets/brawlers/16000021.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20260801T011003.000Z"
+      }
+    ],
     "gamesHistory": [
       {
         "date": "2026-06-30",
@@ -323,6 +413,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "games": 104
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "games": 120
       }
     ],
     "lifetimeWinsHistory": [
@@ -495,6 +590,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "wins": 7746
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "wins": 7764
       }
     ],
     "winsHistory": [
@@ -647,6 +747,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "wins": 64
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "wins": 74
       }
     ],
     "lossesHistory": [
@@ -799,6 +904,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "losses": 39
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "losses": 45
       }
     ],
     "modes": [
@@ -810,6 +920,11 @@ window.BRAWL_DATA = {
       {
         "mode": "Solo Showdown",
         "count": 26,
+        "image": null
+      },
+      {
+        "mode": "Knockout",
+        "count": 19,
         "image": null
       },
       {
@@ -835,11 +950,6 @@ window.BRAWL_DATA = {
       {
         "mode": "Brawl Ball5V5",
         "count": 4,
-        "image": null
-      },
-      {
-        "mode": "Knockout",
-        "count": 3,
         "image": null
       },
       {
@@ -1102,6 +1212,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "points": 5665
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "points": 5741
       }
     ],
     "gamesHistory": [
@@ -1254,6 +1369,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "games": 268
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "games": 275
       }
     ],
     "winsHistory": [
@@ -1406,6 +1526,11 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "wins": 162
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "wins": 165
       }
     ],
     "lossesHistory": [
@@ -1558,17 +1683,22 @@ window.BRAWL_DATA = {
         "date": "2026-07-30",
         "label": "Jul 30",
         "losses": 106
+      },
+      {
+        "date": "2026-08-01",
+        "label": "Aug 1",
+        "losses": 110
       }
     ],
     "modes": [
       {
         "mode": "Gem Grab",
-        "count": 57,
+        "count": 59,
         "image": null
       },
       {
         "mode": "Bounty",
-        "count": 48,
+        "count": 53,
         "image": null
       },
       {
@@ -1614,6 +1744,11 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000003.png"
       },
       {
+        "name": "BO",
+        "count": 18,
+        "image": "assets/brawlers/16000014.png"
+      },
+      {
         "name": "TICK",
         "count": 18,
         "image": "assets/brawlers/16000022.png"
@@ -1622,11 +1757,6 @@ window.BRAWL_DATA = {
         "name": "BELLE",
         "count": 16,
         "image": "assets/brawlers/16000046.png"
-      },
-      {
-        "name": "BO",
-        "count": 16,
-        "image": "assets/brawlers/16000014.png"
       },
       {
         "name": "GENE",
@@ -1640,12 +1770,12 @@ window.BRAWL_DATA = {
       },
       {
         "name": "KIT",
-        "count": 10,
+        "count": 12,
         "image": "assets/brawlers/16000076.png"
       },
       {
         "name": "EDGAR",
-        "count": 7,
+        "count": 10,
         "image": "assets/brawlers/16000043.png"
       },
       {
@@ -1741,6 +1871,11 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000003.png"
       },
       {
+        "name": "BO",
+        "count": 18,
+        "image": "assets/brawlers/16000014.png"
+      },
+      {
         "name": "TICK",
         "count": 18,
         "image": "assets/brawlers/16000022.png"
@@ -1749,11 +1884,6 @@ window.BRAWL_DATA = {
         "name": "BELLE",
         "count": 16,
         "image": "assets/brawlers/16000046.png"
-      },
-      {
-        "name": "BO",
-        "count": 16,
-        "image": "assets/brawlers/16000014.png"
       },
       {
         "name": "GENE",
@@ -1767,12 +1897,12 @@ window.BRAWL_DATA = {
       },
       {
         "name": "KIT",
-        "count": 10,
+        "count": 12,
         "image": "assets/brawlers/16000076.png"
       },
       {
         "name": "EDGAR",
-        "count": 7,
+        "count": 10,
         "image": "assets/brawlers/16000043.png"
       },
       {
