@@ -1652,7 +1652,7 @@ p strong {
 .about-page[data-theme="light"] .page { background: var(--paper); }
 .about-page[data-theme="light"] .site-header {
   color: #000;
-  background: var(--paper);
+  background: transparent;
   border-bottom-color: rgba(0,0,0,.1);
 }
 .about-page[data-theme="light"] .brand-mark { color: #fff; background: #000; }
@@ -1693,7 +1693,7 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 }
 .about-page .site-header {
   color: #fff;
-  background: var(--paper);
+  background: transparent;
   border-bottom-color: rgba(255,255,255,.13);
 }
 .about-page .brand-mark {
