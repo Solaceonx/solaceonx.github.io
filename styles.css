@@ -334,6 +334,9 @@ h3 { margin-bottom: 12px; font-size: 22px; line-height: 1; }
 }
 .coc-intro .shell {
   padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(0,0,0,.16);
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(6px);
 }
 .coc-intro .bio-heading span { background: rgba(0,0,0,.16); }
 .coc-intro .bio-text { max-width: 850px; color: #000; }
@@ -773,6 +776,9 @@ p strong {
   gap: clamp(16px, 3vw, 34px);
   align-items: center;
   padding: clamp(18px, 3vw, 34px);
+  border: 1px solid rgba(0,0,0,.13);
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(6px);
 }
 .royale-intro h1 {
   flex: 0 0 auto;
