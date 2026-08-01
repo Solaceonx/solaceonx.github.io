@@ -646,6 +646,86 @@ if (themeToggle) {
   });
 }
 
+{
+  const fontClasses = ['font-lora', 'font-rubik', 'font-hieroglyphs', 'font-alien'];
+  const fontOptions = ['', 'lora', 'rubik', 'hieroglyphs', 'alien'];
+
+  const GLYPH_MAPS = {
+    hieroglyphs: { base: 0x13000, digitBase: 0x1301a },
+    alien: { base: 0x10600, digitBase: 0x1061a },
+  };
+  const originalText = new WeakMap();
+
+  const transliterate = (text, key) => {
+    const cfg = GLYPH_MAPS[key];
+    let out = '';
+    for (const ch of text) {
+      const lower = ch.toLowerCase();
+      if (lower >= 'a' && lower <= 'z') {
+        out += String.fromCodePoint(cfg.base + (lower.charCodeAt(0) - 97));
+      } else if (ch >= '0' && ch <= '9') {
+        out += String.fromCodePoint(cfg.digitBase + (ch.charCodeAt(0) - 48));
+      } else {
+        out += ch;
+      }
+    }
+    return out;
+  };
+
+  const collectTextNodes = () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parent = node.parentElement;
+        if (!parent || parent.closest('script, style')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
+    const nodes = [];
+    let n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    return nodes;
+  };
+
+  let currentGlyphKey = null;
+
+  const setGlyphMode = (key) => {
+    collectTextNodes().forEach((node) => {
+      const cached = originalText.get(node);
+      const expected = cached === undefined ? null : (key ? transliterate(cached, key) : cached);
+      if (cached === undefined || node.nodeValue !== expected) {
+        originalText.set(node, node.nodeValue);
+      }
+      const base = originalText.get(node);
+      node.nodeValue = key ? transliterate(base, key) : base;
+    });
+  };
+
+  const glyphObserver = new MutationObserver(() => {
+    if (!currentGlyphKey) return;
+    glyphObserver.disconnect();
+    setGlyphMode(currentGlyphKey);
+    glyphObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
+  });
+  glyphObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
+
+  const applyFont = (font) => {
+    document.body.classList.remove(...fontClasses);
+    if (font) document.body.classList.add(`font-${font}`);
+    currentGlyphKey = GLYPH_MAPS[font] ? font : null;
+    setGlyphMode(currentGlyphKey);
+  };
+
+  let initialFont;
+  if (isHardRefresh || sessionStorage.getItem('site-font') === null) {
+    initialFont = fontOptions[Math.floor(Math.random() * fontOptions.length)];
+    sessionStorage.setItem('site-font', initialFont);
+  } else {
+    initialFont = sessionStorage.getItem('site-font');
+  }
+  applyFont(initialFont);
+}
+
 
 const setupPanelStarfields = () => {
   const gamePage = document.body.matches('.starfield-page.coc-tracker-page, .starfield-page.royale-tracker-page, .starfield-page.brawl-tracker-page');
