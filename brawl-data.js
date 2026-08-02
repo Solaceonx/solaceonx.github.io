@@ -175,6 +175,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-01",
         "label": "Aug 1",
         "trophies": 35676
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
+        "trophies": 35676
       }
     ],
     "recentGames": [
@@ -418,6 +423,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-01",
         "label": "Aug 1",
         "games": 120
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
+        "games": 120
       }
     ],
     "lifetimeWinsHistory": [
@@ -595,6 +605,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-01",
         "label": "Aug 1",
         "wins": 7764
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
+        "wins": 7764
       }
     ],
     "winsHistory": [
@@ -752,6 +767,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-01",
         "label": "Aug 1",
         "wins": 74
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
+        "wins": 74
       }
     ],
     "lossesHistory": [
@@ -908,6 +928,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-01",
         "label": "Aug 1",
+        "losses": 45
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
         "losses": 45
       }
     ],
@@ -1217,6 +1242,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-01",
         "label": "Aug 1",
         "points": 5741
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
+        "points": 5741
       }
     ],
     "gamesHistory": [
@@ -1373,6 +1403,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-01",
         "label": "Aug 1",
+        "games": 275
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
         "games": 275
       }
     ],
@@ -1531,6 +1566,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-01",
         "label": "Aug 1",
         "wins": 165
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
+        "wins": 165
       }
     ],
     "lossesHistory": [
@@ -1687,6 +1727,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-01",
         "label": "Aug 1",
+        "losses": 110
+      },
+      {
+        "date": "2026-08-02",
+        "label": "Aug 2",
         "losses": 110
       }
     ],
