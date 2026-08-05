@@ -190,92 +190,97 @@ window.BRAWL_DATA = {
         "date": "2026-08-04",
         "label": "Aug 4",
         "trophies": 35804
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
+        "trophies": 35893
       }
     ],
     "recentGames": [
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20260804T055143.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20260804T054914.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260804T054649.000Z"
+        "battleTime": "20260805T020700.000Z"
       },
       {
-        "brawler": "DRACO",
-        "image": "assets/brawlers/16000080.png",
-        "mode": "Hot Zone",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260805T020406.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260805T020140.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260804T054447.000Z"
+        "battleTime": "20260805T015935.000Z"
       },
       {
-        "brawler": "DRACO",
-        "image": "assets/brawlers/16000080.png",
-        "mode": "Hot Zone",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20260804T054213.000Z"
+        "battleTime": "20260805T015842.000Z"
       },
       {
-        "brawler": "DRACO",
-        "image": "assets/brawlers/16000080.png",
-        "mode": "Hot Zone",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20260804T053959.000Z"
+        "battleTime": "20260805T015618.000Z"
       },
       {
-        "brawler": "GENE",
-        "image": "assets/brawlers/16000021.png",
-        "mode": "Knockout",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260804T053726.000Z"
+        "battleTime": "20260805T015231.000Z"
       },
       {
-        "brawler": "GENE",
-        "image": "assets/brawlers/16000021.png",
-        "mode": "Knockout",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20260804T053517.000Z"
+        "battleTime": "20260805T014938.000Z"
       },
       {
-        "brawler": "GENE",
-        "image": "assets/brawlers/16000021.png",
-        "mode": "Knockout",
-        "result": "victory",
-        "battleTime": "20260804T053319.000Z"
-      },
-      {
-        "brawler": "GENE",
-        "image": "assets/brawlers/16000021.png",
-        "mode": "Knockout",
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260804T053231.000Z"
+        "battleTime": "20260805T014542.000Z"
       },
       {
-        "brawler": "GENE",
-        "image": "assets/brawlers/16000021.png",
-        "mode": "Knockout",
-        "result": "defeat",
-        "battleTime": "20260804T053046.000Z"
-      },
-      {
-        "brawler": "GENE",
-        "image": "assets/brawlers/16000021.png",
-        "mode": "Knockout",
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20260804T052903.000Z"
+        "battleTime": "20260805T014405.000Z"
+      },
+      {
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260805T014123.000Z"
+      },
+      {
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260805T013827.000Z"
       }
     ],
     "gamesHistory": [
@@ -448,6 +453,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-04",
         "label": "Aug 4",
         "games": 135
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
+        "games": 160
       }
     ],
     "lifetimeWinsHistory": [
@@ -640,6 +650,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-04",
         "label": "Aug 4",
         "wins": 7783
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
+        "wins": 7806
       }
     ],
     "winsHistory": [
@@ -812,6 +827,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-04",
         "label": "Aug 4",
         "wins": 84
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
+        "wins": 97
       }
     ],
     "lossesHistory": [
@@ -984,12 +1004,17 @@ window.BRAWL_DATA = {
         "date": "2026-08-04",
         "label": "Aug 4",
         "losses": 50
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
+        "losses": 62
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 47,
+        "count": 72,
         "image": null
       },
       {
@@ -1051,6 +1076,14 @@ window.BRAWL_DATA = {
         "games": 1
       },
       {
+        "name": "EDGAR",
+        "trophies": 1068,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000043.png",
+        "games": 8
+      },
+      {
         "name": "KIT",
         "trophies": 1067,
         "power": 11,
@@ -1075,12 +1108,12 @@ window.BRAWL_DATA = {
         "games": 13
       },
       {
-        "name": "EDGAR",
-        "trophies": 1031,
+        "name": "POCO",
+        "trophies": 1022,
         "power": 11,
         "rank": 5,
-        "image": "assets/brawlers/16000043.png",
-        "games": 0
+        "image": "assets/brawlers/16000013.png",
+        "games": 7
       },
       {
         "name": "RICO",
@@ -1105,14 +1138,6 @@ window.BRAWL_DATA = {
         "rank": 5,
         "image": "assets/brawlers/16000075.png",
         "games": 1
-      },
-      {
-        "name": "EMZ",
-        "trophies": 1019,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000030.png",
-        "games": 0
       }
     ]
   },
@@ -1307,6 +1332,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-04",
         "label": "Aug 4",
         "points": 5816
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
+        "points": 5553
       }
     ],
     "gamesHistory": [
@@ -1478,6 +1508,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-04",
         "label": "Aug 4",
+        "games": 285
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
         "games": 285
       }
     ],
@@ -1651,6 +1686,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-04",
         "label": "Aug 4",
         "wins": 168
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
+        "wins": 168
       }
     ],
     "lossesHistory": [
@@ -1822,6 +1862,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-04",
         "label": "Aug 4",
+        "losses": 117
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5",
         "losses": 117
       }
     ],
@@ -2135,6 +2180,10 @@ window.BRAWL_DATA = {
       {
         "date": "2026-07-28",
         "label": "Jul 28"
+      },
+      {
+        "date": "2026-08-05",
+        "label": "Aug 5"
       }
     ]
   },
