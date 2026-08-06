@@ -195,92 +195,97 @@ window.BRAWL_DATA = {
         "date": "2026-08-05",
         "label": "Aug 5",
         "trophies": 35893
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
+        "trophies": 36159
       }
     ],
     "recentGames": [
       {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Gem Grab",
+        "result": "victory",
+        "battleTime": "20260806T061058.000Z"
+      },
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Gem Grab",
+        "result": "victory",
+        "battleTime": "20260806T060822.000Z"
+      },
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Gem Grab",
+        "result": "victory",
+        "battleTime": "20260806T060540.000Z"
+      },
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Gem Grab",
+        "result": "victory",
+        "battleTime": "20260806T060339.000Z"
+      },
+      {
+        "brawler": "DRACO",
+        "image": "assets/brawlers/16000080.png",
+        "mode": "Solo Showdown",
+        "result": "win",
+        "battleTime": "20260806T013753.000Z"
+      },
+      {
+        "brawler": "DRACO",
+        "image": "assets/brawlers/16000080.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260805T235710.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260805T235222.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
         "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260805T020700.000Z"
+        "battleTime": "20260805T234946.000Z"
       },
       {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
         "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20260805T020406.000Z"
+        "battleTime": "20260805T234755.000Z"
       },
       {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260805T020140.000Z"
-      },
-      {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
         "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260805T015935.000Z"
+        "battleTime": "20260805T234445.000Z"
       },
       {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260805T015842.000Z"
-      },
-      {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260805T015618.000Z"
-      },
-      {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
         "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260805T015231.000Z"
+        "battleTime": "20260805T234153.000Z"
       },
       {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260805T014938.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
         "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20260805T014542.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260805T014405.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20260805T014123.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260805T013827.000Z"
+        "battleTime": "20260805T233754.000Z"
       }
     ],
     "gamesHistory": [
@@ -458,6 +463,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-05",
         "label": "Aug 5",
         "games": 160
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
+        "games": 185
       }
     ],
     "lifetimeWinsHistory": [
@@ -655,6 +665,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-05",
         "label": "Aug 5",
         "wins": 7806
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
+        "wins": 7848
       }
     ],
     "winsHistory": [
@@ -832,6 +847,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-05",
         "label": "Aug 5",
         "wins": 97
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
+        "wins": 116
       }
     ],
     "lossesHistory": [
@@ -1009,12 +1029,17 @@ window.BRAWL_DATA = {
         "date": "2026-08-05",
         "label": "Aug 5",
         "losses": 62
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
+        "losses": 68
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 72,
+        "count": 82,
         "image": null
       },
       {
@@ -1024,7 +1049,12 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Solo Showdown",
-        "count": 26,
+        "count": 27,
+        "image": null
+      },
+      {
+        "mode": "Gem Grab",
+        "count": 11,
         "image": null
       },
       {
@@ -1033,8 +1063,8 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Gem Grab",
-        "count": 7,
+        "mode": "Basket Brawl",
+        "count": 10,
         "image": null
       },
       {
@@ -1337,6 +1367,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-05",
         "label": "Aug 5",
         "points": 5553
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
+        "points": 5694
       }
     ],
     "gamesHistory": [
@@ -1513,6 +1548,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-05",
         "label": "Aug 5",
+        "games": 285
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
         "games": 285
       }
     ],
@@ -1691,6 +1731,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-05",
         "label": "Aug 5",
         "wins": 168
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
+        "wins": 168
       }
     ],
     "lossesHistory": [
@@ -1867,6 +1912,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-05",
         "label": "Aug 5",
+        "losses": 117
+      },
+      {
+        "date": "2026-08-06",
+        "label": "Aug 6",
         "losses": 117
       }
     ],
