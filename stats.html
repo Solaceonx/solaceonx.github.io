@@ -326,9 +326,9 @@
 
     const delay = ms => new Promise(r => setTimeout(r, ms));
     try {
-      const hits     = await gc('/stats/hits');     await delay(300);
-      const locs     = await gc('/stats/locations'); await delay(300);
-      const refs     = await gc('/stats/referrers'); await delay(300);
+      const hits     = await gc('/stats/hits');       await delay(350);
+      const locs     = await gc('/stats/locations');  await delay(350);
+      const refs     = await gc('/stats/toprefs');    await delay(350);
       const browsers = await gc('/stats/browsers');
 
       // Totals
