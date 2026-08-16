@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Analytics</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #02040b;
+      --surface: rgba(255,255,255,.07);
+      --border: rgba(255,255,255,.1);
+      --text: #fff;
+      --muted: rgba(255,255,255,.5);
+      --accent: #f0b429;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #02040b;
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+    }
+
+    /* Milkyway background */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(to bottom, rgba(2,4,11,.72) 0%, rgba(2,4,11,.6) 100%),
+        url("assets/milkyway.jpg") center/cover no-repeat;
+      pointer-events: none;
+      animation: mwzoom 30s ease-in-out infinite;
+    }
+    @keyframes mwzoom {
+      0%   { transform: scale(1)    translate(0,0); }
+      50%  { transform: scale(1.1)  translate(1%,-1%); }
+      100% { transform: scale(1)    translate(0,0); }
+    }
+
+    /* Gate */
+    #gate {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 20px;
+    }
+    #gate h1 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; }
+    #gate p { color: var(--muted); font-size: 13px; }
+    #pw-form { display: flex; gap: 8px; }
+    #pw-input {
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+      padding: 9px 14px;
+      outline: none;
+      width: 220px;
+    }
+    #pw-input:focus { border-color: rgba(255,255,255,.35); }
+    #pw-submit {
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 9px 18px;
+    }
+    #pw-error { color: #ff6b6b; font-size: 13px; display: none; }
+
+    /* Dashboard */
+    #dashboard { display: none; position: relative; z-index: 10; padding: 28px clamp(16px,4vw,48px) 60px; max-width: 1100px; margin: 0 auto; }
+
+    .dash-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dash-header h1 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
+
+    .range-tabs { display: flex; gap: 4px; }
+    .range-tab {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      padding: 5px 12px;
+    }
+    .range-tab.active { background: #fff; color: #000; border-color: #fff; }
+
+    /* Stat cards */
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 14px; margin-bottom: 24px; }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat-card .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+    .stat-card .value { font-size: 32px; font-weight: 700; letter-spacing: -.03em; }
+
+    /* Panels */
+    .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 640px) { .panels { grid-template-columns: 1fr; } }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .panel h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 14px; }
+    .panel-list { display: flex; flex-direction: column; gap: 8px; }
+    .panel-row { display: flex; align-items: center; gap: 10px; }
+    .panel-row .name { flex: 1; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .panel-row .bar-wrap { width: 80px; height: 6px; background: rgba(255,255,255,.1); border-radius: 3px; flex-shrink: 0; }
+    .panel-row .bar { height: 100%; border-radius: 3px; background: var(--accent); }
+    .panel-row .count { font-size: 12px; color: var(--muted); width: 36px; text-align: right; flex-shrink: 0; }
+    .panel-empty { font-size: 13px; color: var(--muted); }
+
+    /* Visits chart */
+    .chart-panel { margin-bottom: 14px; }
+    #visits-chart { width: 100%; height: 120px; display: block; }
+
+    .loading { color: var(--muted); font-size: 13px; }
+    .refresh-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 12px;
+      padding: 5px 12px;
+    }
+    .refresh-btn:hover { color: #fff; border-color: rgba(255,255,255,.3); }
+  </style>
+</head>
+<body>
+
+<!-- Password gate -->
+<div id="gate">
+  <h1>Analytics</h1>
+  <p>solaceonx.github.io</p>
+  <form id="pw-form">
+    <input id="pw-input" type="password" placeholder="Password" autocomplete="current-password">
+    <button id="pw-submit" type="submit">Enter</button>
+  </form>
+  <span id="pw-error">Wrong password.</span>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard">
+  <div class="dash-header">
+    <h1>Analytics — solaceonx.github.io</h1>
+    <div style="display:flex;gap:8px;align-items:center">
+      <div class="range-tabs">
+        <button class="range-tab" data-days="7">7d</button>
+        <button class="range-tab active" data-days="30">30d</button>
+        <button class="range-tab" data-days="90">90d</button>
+        <button class="range-tab" data-days="365">1y</button>
+        <button class="range-tab" data-days="0">All</button>
+      </div>
+      <button class="refresh-btn" id="refresh-btn">↺ Refresh</button>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="label">Total Visits</div><div class="value" id="stat-visits">—</div></div>
+    <div class="stat-card"><div class="label">Unique Visitors</div><div class="value" id="stat-unique">—</div></div>
+    <div class="stat-card"><div class="label">Pages Tracked</div><div class="value" id="stat-pages">—</div></div>
+  </div>
+
+  <div class="panel chart-panel">
+    <h2>Visits over time</h2>
+    <svg id="visits-chart" viewBox="0 0 800 120" preserveAspectRatio="none"></svg>
+  </div>
+
+  <div class="panels">
+    <div class="panel">
+      <h2>Top Pages</h2>
+      <div class="panel-list" id="list-pages"><span class="loading">Loading…</span></div>
+    </div>
+    <div class="panel">
+      <h2>Locations</h2>
+      <div class="panel-list" id="list-locations"><span class="loading">Loading…</span></div>
+    </div>
+  </div>
+
+  <div class="panels">
+    <div class="panel">
+      <h2>Referrers</h2>
+      <div class="panel-list" id="list-refs"><span class="loading">Loading…</span></div>
+    </div>
+    <div class="panel">
+      <h2>Browsers</h2>
+      <div class="panel-list" id="list-browsers"><span class="loading">Loading…</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const PASSWORD = 'penislover67';
+  const TOKEN    = '9ra3zx4r1m91b564604j0pzv1fsniqnjo2sgb7s839sizo4pd';
+  const BASE     = 'https://solaceonx.goatcounter.com/api/v0';
+
+  // Password gate
+  document.getElementById('pw-form').addEventListener('submit', e => {
+    e.preventDefault();
+    if (document.getElementById('pw-input').value === PASSWORD) {
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      loadAll();
+    } else {
+      document.getElementById('pw-error').style.display = 'block';
+      document.getElementById('pw-input').value = '';
+    }
+  });
+
+  // Date helpers
+  let activeDays = 30;
+  function dateRange(days) {
+    const end = new Date();
+    const start = days === 0
+      ? new Date('2025-01-01')
+      : new Date(Date.now() - days * 864e5);
+    return {
+      start: start.toISOString().slice(0, 10),
+      end:   end.toISOString().slice(0, 10),
+    };
+  }
+
+  // Fetch wrapper
+  async function gc(path, params = {}) {
+    const { start, end } = dateRange(activeDays);
+    const q = new URLSearchParams({ start, end, limit: 20, ...params });
+    const res = await fetch(`${BASE}${path}?${q}`, {
+      headers: { Authorization: `Bearer ${TOKEN}` },
+    });
+    if (!res.ok) throw new Error(await res.text());
+    return res.json();
+  }
+
+  // Render a panel list
+  function renderList(elId, items, labelFn, countFn) {
+    const el = document.getElementById(elId);
+    if (!items || items.length === 0) {
+      el.innerHTML = '<span class="panel-empty">No data yet.</span>';
+      return;
+    }
+    const max = Math.max(...items.map(countFn), 1);
+    el.innerHTML = items.slice(0, 10).map(item => `
+      <div class="panel-row">
+        <span class="name" title="${labelFn(item)}">${labelFn(item)}</span>
+        <div class="bar-wrap"><div class="bar" style="width:${Math.round(countFn(item)/max*100)}%"></div></div>
+        <span class="count">${countFn(item)}</span>
+      </div>`).join('');
+  }
+
+  // Draw sparkline chart
+  function drawChart(stats) {
+    const svg = document.getElementById('visits-chart');
+    // Collect all days from all pages
+    const dayMap = {};
+    for (const page of stats) {
+      for (const s of (page.stats || [])) {
+        dayMap[s.day] = (dayMap[s.day] || 0) + (s.daily || 0);
+      }
+    }
+    const days = Object.keys(dayMap).sort();
+    if (days.length === 0) { svg.innerHTML = '<text x="400" y="60" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="13">No data yet.</text>'; return; }
+    const vals = days.map(d => dayMap[d]);
+    const maxV = Math.max(...vals, 1);
+    const W = 800, H = 110, pad = 4;
+    const x = (i) => pad + (i / (days.length - 1 || 1)) * (W - pad * 2);
+    const y = (v) => H - pad - (v / maxV) * (H - pad * 2 - 10);
+
+    const pts = days.map((_, i) => `${x(i)},${y(vals[i])}`).join(' ');
+    const area = `${x(0)},${H} ` + pts + ` ${x(days.length-1)},${H}`;
+
+    // X-axis labels (show ~5 evenly)
+    const labelStep = Math.max(1, Math.floor(days.length / 5));
+    const labels = days.filter((_, i) => i % labelStep === 0 || i === days.length - 1)
+      .map((d, _, arr) => {
+        const i = days.indexOf(d);
+        return `<text x="${x(i)}" y="${H + 14}" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="10">${d.slice(5)}</text>`;
+      }).join('');
+
+    svg.setAttribute('viewBox', `0 0 ${W} ${H + 18}`);
+    svg.innerHTML = `
+      <defs>
+        <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f0b429" stop-opacity=".35"/>
+          <stop offset="100%" stop-color="#f0b429" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <polygon points="${area}" fill="url(#ag)"/>
+      <polyline points="${pts}" fill="none" stroke="#f0b429" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      ${days.map((_, i) => vals[i] > 0 ? `<circle cx="${x(i)}" cy="${y(vals[i])}" r="3" fill="#f0b429"/>` : '').join('')}
+      ${labels}`;
+  }
+
+  async function loadAll() {
+    document.getElementById('stat-visits').textContent = '…';
+    document.getElementById('stat-unique').textContent = '…';
+    document.getElementById('stat-pages').textContent = '…';
+    ['list-pages','list-locations','list-refs','list-browsers'].forEach(id => {
+      document.getElementById(id).innerHTML = '<span class="loading">Loading…</span>';
+    });
+
+    try {
+      const [hits, locs, refs, browsers] = await Promise.all([
+        gc('/stats/hits'),
+        gc('/stats/locations'),
+        gc('/stats/referrers'),
+        gc('/stats/browsers'),
+      ]);
+
+      // Totals
+      const totalVisits  = (hits.hits || []).reduce((s, p) => s + (p.total || 0), 0);
+      const totalUnique  = (hits.hits || []).reduce((s, p) => s + (p.total_unique || 0), 0);
+      document.getElementById('stat-visits').textContent  = totalVisits.toLocaleString();
+      document.getElementById('stat-unique').textContent  = totalUnique.toLocaleString();
+      document.getElementById('stat-pages').textContent   = (hits.hits || []).length;
+
+      // Chart
+      drawChart(hits.hits || []);
+
+      // Pages
+      const pages = (hits.hits || []).sort((a,b) => (b.total||0)-(a.total||0));
+      renderList('list-pages', pages, p => p.path, p => p.total || 0);
+
+      // Locations
+      renderList('list-locations', locs.stats || [], l => l.name || l.id, l => l.count || 0);
+
+      // Referrers
+      renderList('list-refs', refs.stats || [], r => r.name || r.id || 'Direct', r => r.count || 0);
+
+      // Browsers
+      renderList('list-browsers', browsers.stats || [], b => b.name || b.id, b => b.count || 0);
+
+    } catch (err) {
+      console.error(err);
+      document.getElementById('stat-visits').textContent = 'Error';
+    }
+  }
+
+  // Range tabs
+  document.querySelectorAll('.range-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.range-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeDays = +btn.dataset.days;
+      loadAll();
+    });
+  });
+
+  document.getElementById('refresh-btn').addEventListener('click', loadAll);
+</script>
+</body>
+</html>
