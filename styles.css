@@ -1357,6 +1357,9 @@ p strong {
 }
 .research-block:first-child {
   padding-top: 0;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
 }
 .research-label {
   margin-bottom: 12px;
@@ -1545,14 +1548,6 @@ p strong {
 .theme-toggle:hover { border-color: rgba(255,255,255,.7); }
 
 
-.about-page {
-  color: #fff;
-  background: #02040b;
-}
-.about-page[data-theme="light"] {
-  color: #000;
-  background: var(--paper);
-}
 .about-page[data-theme="light"] .page { background: var(--paper); }
 .about-page[data-theme="light"] .site-header {
   color: #000;
@@ -2472,4 +2467,51 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 }
 .starfield-page[data-theme="light"] .panel-starfield {
   display: none;
+}
+
+/* Milkyway background for about + research pages — slow Ken Burns zoom */
+@keyframes milkyway-zoom {
+  0%   { transform: scale(1)    translate(0%, 0%); }
+  33%  { transform: scale(1.18) translate(2%, -1%); }
+  66%  { transform: scale(1.12) translate(-2%, 1%); }
+  100% { transform: scale(1)    translate(0%, 0%); }
+}
+.about-page::after,
+.research-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(to bottom, rgba(2,4,11,.65) 0%, rgba(2,4,11,.55) 100%),
+    url("assets/milkyway.jpg") center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  animation: milkyway-zoom 25s ease-in-out infinite;
+  transform-origin: center center;
+}
+/* Elevate real content above the milkyway ::after (z-index 0), keep cursor/canvas alone */
+.about-page > :not(.cosmic-cursor):not(canvas):not(.cursor-star),
+.research-page > :not(.cosmic-cursor):not(canvas):not(.cursor-star) { position: relative; z-index: 1; }
+.about-page:not([data-theme="light"])::after,
+.research-page:not([data-theme="light"])::after { opacity: 1; }
+.about-page:not([data-theme="light"]),
+.research-page:not([data-theme="light"]) { color: #fff; background: #02040b; }
+.about-page:not([data-theme="light"]) #starfield,
+.research-page:not([data-theme="light"]) #starfield { display: none; }
+
+/* Research content boxes — translucent in light mode, dark in dark mode */
+.research-block {
+  border-radius: 10px;
+  padding: clamp(18px, 3vw, 28px);
+  transition: background 0.5s ease, border-color 0.5s ease;
+}
+.research-page:not([data-theme="light"]) .research-block {
+  background: rgba(1,2,7,.38);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.research-page[data-theme="light"] .research-block {
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(0,0,0,.13);
 }

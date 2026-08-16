@@ -116,17 +116,37 @@ if (tabsRoot && cocAccounts.length) {
 
   const renderRankedHistory = (account) => {
     const rows = account.rankedHistory || [];
+
+    // Map tier IDs to short display names for the Y axis
+    const tierLabel = (tierId, league) => {
+      if (!tierId || tierId === 105000000) return "Unranked";
+      // Extract league family name (before the number)
+      const match = (league || "").match(/^([A-Za-z .]+\S)/);
+      return match ? match[1].replace(" League", "") : league || "—";
+    };
+
     const chartPoints = rows
-      .filter(row => row.result !== "Tracking")
-      .map(row => ({ label: row.label, date: row.week, value: row.endingTrophies }))
-      .filter(point => typeof point.value === "number" && Number.isFinite(point.value) && point.value > 0);
+      .filter(row => row.result !== "Tracking" && row.leagueTierId && row.leagueTierId !== 105000000)
+      .map(row => ({ label: row.label, date: row.week, value: row.leagueTierId, leagueName: row.league }));
+
+    // Build ordered tier list from data for Y axis labels
+    const tierMap = new Map();
+    chartPoints.forEach(p => tierMap.set(p.value, tierLabel(p.value, p.leagueName)));
+    const sortedTiers = [...tierMap.entries()].sort((a, b) => a[0] - b[0]);
+
+    const leagueFormatter = (val) => {
+      const rounded = Math.round(val);
+      // Find closest tier
+      const closest = sortedTiers.reduce((best, t) => Math.abs(t[0] - rounded) < Math.abs(best[0] - rounded) ? t : best, sortedTiers[0] || [0, "—"]);
+      return closest[1];
+    };
+
     document.querySelector("#coc-league-season").innerHTML = rows.length
       ? `
         <div class="ranked-table" role="table" aria-label="Ranked battle weekly history">
           <div class="ranked-row ranked-row-head" role="row">
             <span>Week</span>
             <span>League</span>
-
             <span>Ending trophies</span>
             <span>Result</span>
           </div>
@@ -134,25 +154,24 @@ if (tabsRoot && cocAccounts.length) {
             <div class="ranked-row" role="row">
               <span>${row.label}</span>
               <span>${row.league}</span>
-
               <span>${number(row.endingTrophies)}</span>
               <span>${row.result}</span>
             </div>`).join("")}
         </div>
         <div class="ranked-chart">
           <div class="mini-chart-head">
-            <div><h4>Ending trophies</h4></div>
-            <strong>${number(rows.at(-1)?.endingTrophies)}</strong>
+            <div><h4>League progression</h4></div>
+            <strong>${rows.at(-1)?.league || "—"}</strong>
           </div>
           <div class="line-chart" id="coc-range-ranked-trophies"></div>
         </div>`
       : '<div class="tracker-empty">Run the updater to start ranked battle history.</div>';
 
-    if (rows.length) {
+    if (chartPoints.length) {
       window.attachRangePicker(
         document.querySelector("#coc-range-ranked-trophies"),
         chartPoints,
-        pts => renderSvgChart(pts, { key: "rankedTrophies", label: "Ending trophies", color: cocPalette.gold }, { width: 760, height: 220, pad: 34, yLabelWidth: 54, dot: 4, formatter: number })
+        pts => renderSvgChart(pts, { key: "rankedLeague", label: "League", color: cocPalette.gold }, { width: 760, height: 220, pad: 34, yLabelWidth: 72, dot: 4, formatter: leagueFormatter })
       );
     }
   };

@@ -3,6 +3,780 @@
     "result": "loss",
     "mode": "Trophy Road",
     "category": "trophy-road",
+    "crowns": "0-1",
+    "trophyChange": -26,
+    "opponent": "Jonaa sdc",
+    "battleTime": "20260815T022453.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 33,
+    "opponent": "Eliu *-*7",
+    "battleTime": "20260807T222253.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 26,
+    "opponent": "♤ŇĘČŘØMĄŃÇËŘ♧",
+    "battleTime": "20260804T043202.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "3-1",
+    "trophyChange": 29,
+    "opponent": "bartolomeo",
+    "battleTime": "20260804T042607.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "3-0",
+    "trophyChange": 32,
+    "opponent": "MR9INCHES",
+    "battleTime": "20260804T042451.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "3-0",
+    "trophyChange": 33,
+    "opponent": "jrt",
+    "battleTime": "20260804T041949.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Gooner10",
+    "battleTime": "20260731T024808.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "mehrzad",
+    "battleTime": "20260728T072757.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "NPL Daku",
+    "battleTime": "20260728T072416.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "SRGOMITAS:)",
+    "battleTime": "20260728T071942.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "CR7 ™️",
+    "battleTime": "20260728T071551.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "RU$$O",
+    "battleTime": "20260728T071058.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "ULTRA 100K",
+    "battleTime": "20260728T070719.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 30,
+    "opponent": "damianDG",
+    "battleTime": "20260727T182402.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 32,
+    "opponent": "Майя",
+    "battleTime": "20260727T182024.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "P愛R",
+    "battleTime": "20260719T042412.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Lil A",
+    "battleTime": "20260718T081721.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "old man dan",
+    "battleTime": "20260718T081236.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "عبدالاله",
+    "battleTime": "20260718T080842.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "sh kingDoM",
+    "battleTime": "20260718T080349.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Carlos",
+    "battleTime": "20260718T075826.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "ཥ獅子王ཤ",
+    "battleTime": "20260718T075411.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Gouzou",
+    "battleTime": "20260718T075042.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "Hayfer Rm",
+    "battleTime": "20260718T074611.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Derek",
+    "battleTime": "20260718T074334.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Moritz 7",
+    "battleTime": "20260718T073953.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-2",
+    "trophyChange": null,
+    "opponent": "samai",
+    "battleTime": "20260718T073552.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-2",
+    "trophyChange": null,
+    "opponent": "Ratz",
+    "battleTime": "20260718T073053.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "0-3",
+    "trophyChange": -30,
+    "opponent": "なかつ",
+    "battleTime": "20260718T023203.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "izanagi",
+    "battleTime": "20260717T030542.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-0",
+    "trophyChange": 29,
+    "opponent": "ACE",
+    "battleTime": "20260717T030039.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Friendly",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "1stToEverDoIt",
+    "battleTime": "20260717T011906.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "3-0",
+    "trophyChange": 28,
+    "opponent": "chelewilber",
+    "battleTime": "20260717T011542.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 30,
+    "opponent": "DmnioSpectcular",
+    "battleTime": "20260717T011202.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 29,
+    "opponent": "wallaf_c",
+    "battleTime": "20260717T010853.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 29,
+    "opponent": "Óscar Aravena A",
+    "battleTime": "20260717T010543.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Evo Stun",
+    "battleTime": "20260716T082633.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "leonundsam",
+    "battleTime": "20260716T082201.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "lucas",
+    "battleTime": "20260716T081721.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-2",
+    "trophyChange": null,
+    "opponent": "lore",
+    "battleTime": "20260716T081328.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "⚡️KURUPT⚡️",
+    "battleTime": "20260716T080931.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Calles22_",
+    "battleTime": "20260716T080542.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "<<MâD*RõHi>>",
+    "battleTime": "20260716T080152.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "sultan",
+    "battleTime": "20260716T075752.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "3-0",
+    "trophyChange": null,
+    "opponent": "Faridik",
+    "battleTime": "20260716T075454.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Yaelaahfii",
+    "battleTime": "20260716T075131.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "SFX Angel",
+    "battleTime": "20260715T084146.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "0-2",
+    "trophyChange": null,
+    "opponent": "JanOlic",
+    "battleTime": "20260715T083729.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "3-0",
+    "trophyChange": null,
+    "opponent": "Karma",
+    "battleTime": "20260715T083313.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "NAGIBATOR",
+    "battleTime": "20260715T082752.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "2-0",
+    "trophyChange": null,
+    "opponent": "manu",
+    "battleTime": "20260715T082319.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 31,
+    "opponent": "robertmaggot",
+    "battleTime": "20260714T230638.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-1",
+    "trophyChange": 32,
+    "opponent": "callmesoo",
+    "battleTime": "20260714T230326.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "3-0",
+    "trophyChange": 28,
+    "opponent": "ミルクティー",
+    "battleTime": "20260714T225955.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Rage Ladder",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "valentino",
+    "battleTime": "20260714T203900.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Rage Ladder",
+    "category": "other",
+    "crowns": "3-1",
+    "trophyChange": null,
+    "opponent": "XD",
+    "battleTime": "20260714T203625.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 31,
+    "opponent": "KiManGi",
+    "battleTime": "20260714T203012.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-1",
+    "trophyChange": 28,
+    "opponent": "shuvodrago",
+    "battleTime": "20260714T202634.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-0",
+    "trophyChange": 31,
+    "opponent": "jedicvl",
+    "battleTime": "20260714T201354.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 29,
+    "opponent": "enzin",
+    "battleTime": "20260714T201043.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 29,
+    "opponent": "zzzVASEFU**zzz",
+    "battleTime": "20260714T200734.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "0-1",
+    "trophyChange": -30,
+    "opponent": "кабанчик",
+    "battleTime": "20260714T200416.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 28,
+    "opponent": "FuzZy",
+    "battleTime": "20260714T200106.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "hussain",
+    "battleTime": "20260714T000654.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "2-1",
+    "trophyChange": null,
+    "opponent": "menace at cms",
+    "battleTime": "20260714T000131.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Jacob",
+    "battleTime": "20260712T070950.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-2",
+    "trophyChange": null,
+    "opponent": "✌️HaCiVaT✌️",
+    "battleTime": "20260712T070553.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Cris:')",
+    "battleTime": "20260712T070048.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Brayancito B&N",
+    "battleTime": "20260712T065719.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "3-0",
+    "trophyChange": null,
+    "opponent": "Windragon",
+    "battleTime": "20260712T065254.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "shahin.m.iran",
+    "battleTime": "20260712T065042.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "léo3424",
+    "battleTime": "20260712T064539.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "2-0",
+    "trophyChange": null,
+    "opponent": "Karol♥️",
+    "battleTime": "20260712T064154.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "0-1",
+    "trophyChange": -28,
+    "opponent": "SoldadoBRntj",
+    "battleTime": "20260710T201423.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 28,
+    "opponent": "( k-joker )",
+    "battleTime": "20260710T201058.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-0",
+    "trophyChange": 28,
+    "opponent": "adrien le con",
+    "battleTime": "20260710T200716.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "0-3",
+    "trophyChange": -27,
+    "opponent": "Alan-(999)",
+    "battleTime": "20260710T200344.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "casollo",
+    "battleTime": "20260709T211928.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "0-2",
+    "trophyChange": null,
+    "opponent": "EZEQUIEL XD",
+    "battleTime": "20260709T211438.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Crazy Arena",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Marcio13",
+    "battleTime": "20260709T210935.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-0",
+    "trophyChange": 29,
+    "opponent": "RoyaleEmpire TT",
+    "battleTime": "20260709T210339.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "1-0",
+    "trophyChange": 30,
+    "opponent": "jawad",
+    "battleTime": "20260709T210030.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "2-1",
+    "trophyChange": null,
+    "opponent": "giovar la furia",
+    "battleTime": "20260707T014357.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "youngboy",
+    "battleTime": "20260707T013914.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Friendly Battle",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "Fizo",
+    "battleTime": "20260704T175153.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Friendly Battle",
+    "category": "other",
+    "crowns": "2-3",
+    "trophyChange": null,
+    "opponent": "Xàn",
+    "battleTime": "20260704T174915.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
     "crowns": "0-3",
     "trophyChange": -30,
     "opponent": "Jingalala",
