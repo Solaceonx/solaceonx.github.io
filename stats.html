@@ -324,13 +324,12 @@
       document.getElementById(id).innerHTML = '<span class="loading">Loading…</span>';
     });
 
+    const delay = ms => new Promise(r => setTimeout(r, ms));
     try {
-      const [hits, locs, refs, browsers] = await Promise.all([
-        gc('/stats/hits'),
-        gc('/stats/locations'),
-        gc('/stats/referrers'),
-        gc('/stats/browsers'),
-      ]);
+      const hits     = await gc('/stats/hits');     await delay(300);
+      const locs     = await gc('/stats/locations'); await delay(300);
+      const refs     = await gc('/stats/referrers'); await delay(300);
+      const browsers = await gc('/stats/browsers');
 
       // Totals
       const totalVisits  = (hits.hits || []).reduce((s, p) => s + (p.total || 0), 0);
