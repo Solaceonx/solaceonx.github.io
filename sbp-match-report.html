@@ -72,6 +72,7 @@
     </select>
   </label>
   <label style="margin-left:10px"><input type="checkbox" id="onlyphys"> physical only</label>
+  <label style="margin-left:10px"><input type="checkbox" id="clipy"> clip faint end</label>
   <span style="margin-left:12px;color:var(--muted)">plausible if ratio in</span>
   <label>M [<input id="mlo" type="number" step="0.1" value="0.33" style="width:52px">,<input
      id="mhi" type="number" step="0.5" value="3" style="width:52px">]</label>
@@ -273,7 +274,11 @@ function draw(){
       m.mu.forEach(y=>mus.push(y+sbpShift)); } });
   rs = rs.filter(x=>x>0);
   const rmin=Math.log10(Math.min(...rs)), rmax=Math.log10(Math.max(...rs));
-  const mumin=Math.min(...mus)-0.5, mumax=Math.max(...mus)+0.5;
+  const mumin=Math.min(...mus)-0.5;
+  // "clip faint end": cap the bottom (faint) at the faintest observed point so the
+  // model's near-empty outskirts don't stretch the axis
+  const mumax=document.getElementById("clipy").checked
+      ? Math.max(...cl.obs.mu)+0.3 : Math.max(...mus)+0.5;
   const W=900,H=460,L=60,R=20,T=20,B=45;
   const sx=v=>L+(Math.log10(v)-rmin)/(rmax-rmin)*(W-L-R);
   const sy=v=>T+(v-mumin)/(mumax-mumin)*(H-T-B);
@@ -474,6 +479,7 @@ function drawRun(){
 }
 
 document.getElementById("onlyphys").onchange=()=>{visible={}; setView(view);};
+document.getElementById("clipy").onchange=()=>{ if(view==="browse") draw(); };
 document.getElementById("rankby").onchange=()=>{visible={}; setView(view);};
 ["mlo","mhi","rlo","rhi"].forEach(id=>{
   document.getElementById(id).oninput=()=>{visible={}; setView(view);};
