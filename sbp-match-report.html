@@ -228,11 +228,16 @@ function renderList(){
   // order clusters by the selected fit's quality (best first; no-fit at bottom).
   // when "physical only" is ticked, in-band clusters group above out-of-band ones.
   const onlyp = document.getElementById("onlyphys").checked;
+  const byvdp = (key==="chi2_vdp" || key==="combined");
   const order = DATA.clusters.map((cl,i)=>({i, cl, b:bestMatch(cl)}));
   order.sort((A,B)=>{
     if(onlyp){
       const pa=A.cl.matches.some(physOk)?0:1, pb=B.cl.matches.some(physOk)?0:1;
       if(pa!==pb) return pa-pb;      // physically-plausible clusters first
+    }
+    if(byvdp){
+      const va=A.cl.obs_vdp?0:1, vb=B.cl.obs_vdp?0:1;
+      if(va!==vb) return va-vb;      // clusters with an observed VDP first
     }
     const a=A.b?metric(A.b,key):Infinity, b=B.b?metric(B.b,key):Infinity;
     return a-b;
