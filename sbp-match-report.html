@@ -225,8 +225,20 @@ function renderOverview(){
 function renderList(){
   const key = rankKey();
   const el = document.getElementById("list"); el.innerHTML="";
-  DATA.clusters.forEach((cl,i)=>{
-    const b = bestMatch(cl); const anyPhys = cl.matches.some(physOk);
+  // order clusters by the selected fit's quality (best first; no-fit at bottom).
+  // when "physical only" is ticked, in-band clusters group above out-of-band ones.
+  const onlyp = document.getElementById("onlyphys").checked;
+  const order = DATA.clusters.map((cl,i)=>({i, cl, b:bestMatch(cl)}));
+  order.sort((A,B)=>{
+    if(onlyp){
+      const pa=A.cl.matches.some(physOk)?0:1, pb=B.cl.matches.some(physOk)?0:1;
+      if(pa!==pb) return pa-pb;      // physically-plausible clusters first
+    }
+    const a=A.b?metric(A.b,key):Infinity, b=B.b?metric(B.b,key):Infinity;
+    return a-b;
+  });
+  order.forEach(({i, cl, b})=>{
+    const anyPhys = cl.matches.some(physOk);
     const div = document.createElement("div");
     div.className = "clu"+(i===selected?" sel":"");
     div.onclick = ()=>{ selected=i; visible={}; draw(); };
