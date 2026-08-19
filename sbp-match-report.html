@@ -258,6 +258,9 @@ function draw(){
   renderList();
   const cl = DATA.clusters[selected]; if(!cl) return;
   const key = rankKey(); const ms = ranked(cl);
+  // model curve is plotted at its true level; only extinction-corrected mode
+  // reddens it by A_V (no free-offset overlay)
+  const sbpShift = (key==="chi2_red_ext") ? (cl.A_V||0) : 0;
   document.getElementById("title").textContent = `#${cl.rank}  ${cl.display}`;
   document.getElementById("sub").innerHTML =
     `mass ${cl.mass_msun.toLocaleString()} M☉ · r<sub>hm</sub> ${cl.r_hm_pc} pc · `+
@@ -267,7 +270,7 @@ function draw(){
 
   let rs=[...cl.obs.r], mus=[...cl.obs.mu];
   ms.forEach(m=>{ if(visible[m.run+m.lineage+m.time_gyr]){ m.r.forEach(x=>rs.push(x));
-      m.mu.forEach(y=>mus.push(y+m.offset)); } });
+      m.mu.forEach(y=>mus.push(y+sbpShift)); } });
   rs = rs.filter(x=>x>0);
   const rmin=Math.log10(Math.min(...rs)), rmax=Math.log10(Math.max(...rs));
   const mumin=Math.min(...mus)-0.5, mumax=Math.max(...mus)+0.5;
@@ -287,7 +290,7 @@ function draw(){
   cl.obs.r.forEach((x,j)=>{ if(x<=0)return; g+=`<circle cx="${sx(x)}" cy="${sy(cl.obs.mu[j])}" r="2" fill="var(--muted)" opacity="0.5"/>`; });
   ms.forEach((m,idx)=>{ if(!visible[m.run+m.lineage+m.time_gyr]) return;
     const col=COLORS[idx%COLORS.length];
-    let pts=m.r.map((x,j)=> x>0?`${sx(x).toFixed(1)},${sy(m.mu[j]+m.offset).toFixed(1)}`:null).filter(Boolean).join(" ");
+    let pts=m.r.map((x,j)=> x>0?`${sx(x).toFixed(1)},${sy(m.mu[j]+sbpShift).toFixed(1)}`:null).filter(Boolean).join(" ");
     g+=`<polyline points="${pts}" fill="none" stroke="${col}" stroke-width="2" ${physOk(m)?"":'stroke-dasharray="5 3"'}/>`; });
   document.getElementById("plot").innerHTML=g;
 
@@ -337,7 +340,7 @@ function draw(){
         <td class="${inRhm(rr)?'good':'off'}">${rr.toFixed(2)}</td>
         <td><span class="pill ${physOk(m)?'ok':'bad'}">${physOk(m)?'ok':'off'}</span></td></tr>`; });
   tb+=`</table><p class="meta" style="color:var(--muted)">Solid = physically plausible
-     (mass &amp; r_hm within 3×); dashed = shape only. Curves shifted by best-fit Δμ.</p>`;
+     (mass &amp; r_hm within 3×); dashed = shape only. Model shown at true level (extinction-corr mode reddens by A_V).</p>`;
   document.getElementById("tbl").innerHTML=tb;
 }
 
