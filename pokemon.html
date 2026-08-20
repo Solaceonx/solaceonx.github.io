@@ -307,6 +307,8 @@
       state.prices ||= {};
       state.cardDetails ||= {};
       state.eraColors ||= {};
+      state.completeSets ||= {};
+      if (state.completeSets.sv4 === undefined) state.completeSets.sv4 = true;
       let sets = [];
       let activeSet = null;
       let activeCards = [];
@@ -498,7 +500,7 @@
           state.totals[id] = activeCards.length;
           activeCards.forEach(card => {
             state.prices[card.id] = marketPrice(card);
-            if (state.cards[card.id] === 'owned') rememberCard(card);
+            if (isCardOwned(card)) rememberCard(card);
           });
           saveState();
           renderContent();
@@ -510,7 +512,7 @@
       }
 
       function renderContent() {
-        const stats = { owned: activeCards.filter(card => state.cards[card.id] === 'owned').length };
+        const stats = { owned: activeCards.filter(isCardOwned).length };
         const percentage = activeCards.length ? Math.round(stats.owned / activeCards.length * 100) : 0;
         el('content').innerHTML = `
           <div class="set-hero">
@@ -539,8 +541,9 @@
 
       function fillActiveSet() {
         if (!editMode || !activeCards.length) return;
+        state.completeSets[activeSet.id] = true;
         activeCards.forEach(card => {
-          state.cards[card.id] = 'owned';
+          delete state.cards[card.id];
           state.prices[card.id] = marketPrice(card);
           rememberCard(card);
         });
@@ -552,14 +555,14 @@
 
       function renderCards() {
         const cards = activeCards.filter(card => {
-          const status = state.cards[card.id] === 'owned' ? 'owned' : 'need';
+          const status = isCardOwned(card) ? 'owned' : 'need';
           const matchesStatus = cardFilter === 'all' || status === cardFilter;
           const matchesText = `${card.name} ${card.number} ${card.rarity || ''}`.toLowerCase().includes(cardQuery.toLowerCase());
           return matchesStatus && matchesText;
         });
         const grid = el('cardGrid');
         grid.innerHTML = cards.map(card => {
-          const status = state.cards[card.id] === 'owned' ? 'owned' : 'need';
+          const status = isCardOwned(card) ? 'owned' : 'need';
           const price = marketPrice(card);
           return `<article class="card-item status-${status}" data-card-id="${escapeHtml(card.id)}" role="button" tabindex="${editMode ? '0' : '-1'}" aria-label="${escapeHtml(card.name)}: ${status === 'owned' ? 'owned' : 'not owned'}${editMode ? '; click to change' : ''}">
             <img class="card-image" src="${escapeHtml(card.images.small)}" alt="${escapeHtml(card.name)} card" loading="lazy" decoding="async" fetchpriority="low">
@@ -576,12 +579,14 @@
           const toggle = () => {
             if (!editMode) return;
             const card = activeCards.find(entry => entry.id === item.dataset.cardId);
-            if (state.cards[card.id] === 'owned') {
-              delete state.cards[card.id];
+            if (isCardOwned(card)) {
+              if (state.completeSets[activeSet.id]) state.cards[card.id] = 'missing';
+              else delete state.cards[card.id];
               delete state.cardDetails[card.id];
               showToast(`${card.name} removed`);
             } else {
-              state.cards[card.id] = 'owned';
+              if (state.completeSets[activeSet.id]) delete state.cards[card.id];
+              else state.cards[card.id] = 'owned';
               rememberCard(card);
               showToast(`${card.name} added`);
             }
@@ -603,14 +608,27 @@
       }
 
       function rememberCard(card) {
-        state.cardDetails[card.id] = { name: card.name, set: card.set.name, number: card.number, rarity: card.rarity || '', market: marketPrice(card) };
+        state.cardDetails[card.id] = { name: card.name, set: card.set?.name || activeSet?.name || '', number: card.number, rarity: card.rarity || '', market: marketPrice(card) };
+      }
+
+      function cardSetId(cardId) {
+        return cardId.slice(0, cardId.lastIndexOf('-'));
+      }
+
+      function isStoredCardOwned(cardId) {
+        if (state.cards[cardId] === 'missing') return false;
+        return state.cards[cardId] === 'owned' || Boolean(state.completeSets[cardSetId(cardId)]);
+      }
+
+      function isCardOwned(card) {
+        return isStoredCardOwned(card.id);
       }
 
       function statusesForSet(setId) {
-        return Object.entries(state.cards).reduce((counts, [cardId,status]) => {
-          if (cardId.startsWith(`${setId}-`)) counts[status] = (counts[status] || 0) + 1;
-          return counts;
-        }, { owned: 0, hunting: 0, skip: 0 });
+        const target = sets.find(set => set.id === setId)?.targetCards || 0;
+        const entries = Object.entries(state.cards).filter(([cardId]) => cardSetId(cardId) === setId);
+        if (state.completeSets[setId]) return { owned: Math.max(0, target - entries.filter(([,status]) => status === 'missing').length) };
+        return { owned: entries.filter(([,status]) => status === 'owned').length };
       }
 
       function eraColor(series) {
@@ -706,9 +724,8 @@
       }
 
       function updateDashboard() {
-        const counts = Object.values(state.cards).reduce((sum,status) => { sum[status] = (sum[status] || 0) + 1; return sum; }, {});
         const total = sets.reduce((sum,set) => sum + (set.targetCards || 0), 0);
-        const owned = counts.owned || 0;
+        const owned = sets.reduce((sum,set) => sum + statusesForSet(set.id).owned, 0);
         const percent = total ? Math.round(owned / total * 100) : 0;
         const started = sets.filter(set => {
           const s = statusesForSet(set.id);
@@ -720,14 +737,13 @@
         el('overallBar').style.width = `${percent}%`;
         el('setsStarted').textContent = started;
         el('setTotalLabel').textContent = `of ${sets.length || '—'}`;
-        const value = Object.entries(state.cards).reduce((sum, [cardId,status]) => status === 'owned' ? sum + (state.prices[cardId] || 0) : sum, 0);
+        const value = Object.keys(state.cardDetails).reduce((sum,cardId) => isStoredCardOwned(cardId) ? sum + (state.prices[cardId] || 0) : sum, 0);
         el('valueTotal').textContent = value.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
       }
 
       function exportCollection() {
         const rows = [['Card ID','Name','Set','Number','Rarity','Quantity','Market Price USD']];
-        Object.entries(state.cards).filter(([,status]) => status === 'owned').forEach(([cardId]) => {
-          const card = state.cardDetails[cardId] || { name:'',set:'',number:'',rarity:'',market:state.prices[cardId] || 0 };
+        Object.entries(state.cardDetails).filter(([cardId]) => isStoredCardOwned(cardId)).forEach(([cardId,card]) => {
           rows.push([cardId,card.name,card.set,card.number,card.rarity,1,card.market || 0]);
         });
         const csv = rows.map(row => row.map(value => `"${String(value).replaceAll('"','""')}"`).join(',')).join('\n');
