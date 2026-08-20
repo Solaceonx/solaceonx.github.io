@@ -559,9 +559,24 @@
       async function refreshActivePrices() {
         const setId = activeSet.id;
         const setName = activeSet.name;
+        const button = el('fillSetButton');
+        button.disabled = true;
+        button.textContent = '↻ Loading prices…';
         showToast(`Refreshing ${setName} prices…`);
-        const priced = await enrichPrices(setId, true);
+        const priced = await loadPricesWithRetry(setId);
+        if (activeSet?.id === setId && el('fillSetButton')) {
+          el('fillSetButton').disabled = false;
+          el('fillSetButton').textContent = '↻ Refresh prices';
+        }
         showToast(priced ? `${setName} prices updated` : `${setName} prices unavailable`);
+      }
+
+      async function loadPricesWithRetry(setId, attempts = 3) {
+        for (let attempt = 1; attempt <= attempts; attempt++) {
+          if (await enrichPrices(setId, true)) return true;
+          if (attempt < attempts) await new Promise(resolve => setTimeout(resolve, 1200 * attempt));
+        }
+        return false;
       }
 
       async function fillActiveSet() {
@@ -579,7 +594,7 @@
         renderContent();
         renderSetList();
         let priced = await enrichPrices(setId);
-        if (!priced) priced = await enrichPrices(setId, true);
+        if (!priced) priced = await loadPricesWithRetry(setId);
         showToast(priced ? `${setName} prices updated` : `${setName} saved · prices unavailable`);
       }
 
