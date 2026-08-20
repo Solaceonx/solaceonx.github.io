@@ -97,8 +97,9 @@
     .set-button {
       width: 100%; border: 0; background: transparent; border-radius: 13px; display: grid;
       grid-template-columns: 35px 1fr auto; align-items: center; gap: 10px; padding: 9px 10px; text-align: left; cursor: pointer;
+      border-left: 5px solid var(--era-color, var(--blue)); background: color-mix(in srgb, var(--era-color, var(--blue)) 11%, transparent);
     }
-    .set-button:hover { background: rgba(62,114,200,.07); }
+    .set-button:hover { background: color-mix(in srgb, var(--era-color, var(--blue)) 20%, transparent); }
     .set-button.active { background: var(--ink); color: white; }
     .set-symbol { width: 30px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,.12)); }
     .set-button span { min-width: 0; }
@@ -223,7 +224,7 @@
         <div>
           <div class="eyebrow">Collector's field guide</div>
           <h1>Pokédex Collection Vault</h1>
-          <p class="subtitle">Every English set from HeartGold &amp; SoulSilver onward.</p>
+          <p class="subtitle">Main English expansions from HeartGold &amp; SoulSilver onward.</p>
         </div>
       </div>
       <div class="header-actions">
@@ -287,6 +288,15 @@
       const PASSCODE_KEY = 'solaceonx-pokemon-passcode-v1';
       const BINDER_CAPACITY = 828;
       const SHEET_CAPACITY = 18;
+      const OMIT_SET_PATTERN = /Black Star Promos|McDonald'?s Collection|Trainer Gallery|Shiny Vault|Classic Collection|Galarian Gallery|Energies|Futsal Collection/i;
+      const COLLECTION_TARGETS = Object.fromEntries(`
+        hgss1:104 hgss2:83 hgss3:80 hgss4:90 col1:95
+        bw1:112 bw2:96 bw3:96 bw4:93 bw5:102 bw6:118 dv1:20 bw7:136 bw8:127 bw9:106 bw10:91 bw11:113
+        xy0:39 xy1:140 xy2:99 xy3:104 xy4:112 xy5:144 dc1:32 xy6:97 xy7:83 xy8:152 xy9:113 g1:83 xy10:115 xy11:106 xy12:90
+        sm1:137 sm2:130 sm3:128 sm35:70 sm4:100 sm5:138 sm6:118 sm7:151 sm75:64 sm8:194 sm9:157 det1:18 sm10:190 sm11:213 sm115:65 sm12:209
+        swsh1:186 swsh2:174 swsh3:176 swsh35:68 swsh4:165 swsh45:63 swsh5:141 swsh6:159 swsh7:165 cel25:23 swsh8:244 swsh9:151 swsh10:159 pgo:70 swsh11:171 swsh12:169 swsh12pt5:146
+        sv1:198 sv2:193 sv3:197 sv3pt5:165 sv4:182 sv4pt5:91 sv5:162 sv6:167 sv6pt5:64 sv7:142 sv8:191 sv8pt5:131 sv9:159 sv10:182
+      `.trim().split(/\s+/).map(entry => { const [id,count] = entry.split(':'); return [id,Number(count)]; }));
       const state = loadState();
       state.prices ||= {};
       state.cardDetails ||= {};
@@ -392,7 +402,9 @@
             catalog = await fetchJson(`${DATA}/sets/en.json`, 1);
             catalog.sort((a,b) => b.releaseDate.localeCompare(a.releaseDate));
           }
-          sets = catalog.filter(set => set.releaseDate >= START_DATE && set.releaseDate <= TODAY);
+          sets = catalog
+            .filter(set => set.releaseDate >= START_DATE && set.releaseDate <= TODAY && !OMIT_SET_PATTERN.test(set.name))
+            .map(set => ({ ...set, targetCards: COLLECTION_TARGETS[set.id] || set.printedTotal || set.total }));
           renderSetList();
           updateDashboard();
           if (sets.length) selectSet(sets[0].id);
@@ -414,10 +426,10 @@
           <div class="era-label">${escapeHtml(series)}</div>
           ${group.map(set => {
             const statuses = statusesForSet(set.id);
-            return `<button class="set-button ${activeSet?.id === set.id ? 'active' : ''}" data-set-id="${escapeHtml(set.id)}">
+            return `<button class="set-button ${activeSet?.id === set.id ? 'active' : ''}" data-set-id="${escapeHtml(set.id)}" style="--era-color:${eraColor(set.series)}">
               <img class="set-symbol" src="${escapeHtml(set.images.symbol)}" alt="" loading="lazy">
               <span><b>${escapeHtml(set.name)}</b><small>${escapeHtml(set.releaseDate.replaceAll('/',' · '))}</small></span>
-              <em class="set-count">${statuses.owned}/${set.total}</em>
+              <em class="set-count">${statuses.owned}/${set.targetCards}</em>
             </button>`;
           }).join('')}
         `).join('') || '<div class="empty">No matching expansions.</div>';
@@ -436,7 +448,11 @@
         renderSetList();
         el('content').innerHTML = '<div class="loading"><div class="loader"></div>Opening the card binder…</div>';
         try {
-          activeCards = await fetchAllCards(id);
+          const fetchedCards = await fetchAllCards(id);
+          activeCards = fetchedCards.filter(card => {
+            const number = Number.parseInt(card.number, 10);
+            return Number.isFinite(number) && number <= activeSet.targetCards;
+          });
           state.totals[id] = activeCards.length;
           activeCards.forEach(card => {
             state.prices[card.id] = marketPrice(card);
@@ -543,8 +559,8 @@
       function eraColor(series) {
         const defaults = {
           'Mega Evolution': '#6f52c8',
-          'Scarlet & Violet': '#c94e68',
-          'Sword & Shield': '#4c88bd',
+          'Scarlet & Violet': '#3278c5',
+          'Sword & Shield': '#3d9398',
           'Sun & Moon': '#e0a12f',
           'XY': '#3c70bd',
           'Black & White': '#414b59',
@@ -564,7 +580,8 @@
           eraSets.sort((a,b) => a.releaseDate.localeCompare(b.releaseDate));
           const binders = [{ used: 0, cards: 0, sets: [] }];
           eraSets.forEach(set => {
-            const reserved = Math.ceil(set.total / SHEET_CAPACITY) * SHEET_CAPACITY;
+            const plannedCards = set.targetCards;
+            const reserved = Math.ceil(plannedCards / SHEET_CAPACITY) * SHEET_CAPACITY;
             let binder = binders[binders.length - 1];
             if (binder.used && binder.used + reserved > BINDER_CAPACITY) {
               binder = { used: 0, cards: 0, sets: [] };
@@ -574,15 +591,16 @@
             const startSheet = Math.floor(binder.used / SHEET_CAPACITY) + 1;
             binder.sets.push({
               ...set,
+              plannedCards,
               startPocket,
-              endPocket: startPocket + set.total - 1,
+              endPocket: startPocket + plannedCards - 1,
               startSheet,
               endSheet: startSheet + reserved / SHEET_CAPACITY - 1,
               reserved,
-              blanks: reserved - set.total
+              blanks: reserved - plannedCards
             });
             binder.used += reserved;
-            binder.cards += set.total;
+            binder.cards += plannedCards;
           });
           return { series, binders };
         });
@@ -609,7 +627,7 @@
                   <div class="binder-head"><b>${escapeHtml(era.series)} · Binder ${index + 1}</b><span>${binder.cards} cards · ${BINDER_CAPACITY - binder.used} open</span></div>
                   <div class="binder-meter">${binder.sets.map(set => `<i style="width:${set.reserved / BINDER_CAPACITY * 100}%" title="${escapeHtml(set.name)}"></i>`).join('')}</div>
                   <div class="placement-list">${binder.sets.map(set => `<div class="placement">
-                    <div class="placement-title"><b>${escapeHtml(set.name)}</b><span>${set.total} cards</span></div>
+                    <div class="placement-title"><b>${escapeHtml(set.name)}</b><span>${set.plannedCards} cards</span></div>
                     <small><span class="front-start">Sheet ${set.startSheet}, front · top left</span> → sheet ${set.endSheet}<br>Pockets ${set.startPocket}–${set.endPocket}${set.blanks ? ` · leave ${set.blanks} blank after` : ''}</small>
                   </div>`).join('')}</div>
                 </article>`).join('')}</div>
@@ -626,7 +644,7 @@
 
       function updateDashboard() {
         const counts = Object.values(state.cards).reduce((sum,status) => { sum[status] = (sum[status] || 0) + 1; return sum; }, {});
-        const total = sets.reduce((sum,set) => sum + (state.totals[set.id] || set.total || 0), 0);
+        const total = sets.reduce((sum,set) => sum + (set.targetCards || 0), 0);
         const owned = counts.owned || 0;
         const percent = total ? Math.round(owned / total * 100) : 0;
         const started = sets.filter(set => {
