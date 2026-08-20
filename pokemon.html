@@ -127,6 +127,7 @@
     .bulk-button { border: 0; background: var(--green); color: white; padding: 9px 12px; border-radius: 10px; cursor: pointer; font-size: .73rem; font-weight: 800; white-space: nowrap; }
     .bulk-button:disabled { background: #98a2b3; cursor: default; }
     body:not(.edit-mode) .bulk-button { display: none; }
+    body:not(.edit-mode) .bulk-button.price-only { display: block; }
     .card-search { border: 1px solid var(--line); border-radius: 10px; padding: 8px 11px; width: min(220px, 100%); outline: none; }
 
     .card-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 14px; padding: 18px; }
@@ -318,7 +319,8 @@
       let editMode = sessionStorage.getItem('pokemon-edit-session') === 'unlocked';
       let setRequestId = 0;
       const cardCache = new Map();
-      const priceRequests = new Set();
+      const priceRequests = new Map();
+      const pricedSets = new Set();
 
       const el = id => document.getElementById(id);
       const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -386,13 +388,13 @@
         throw lastError;
       }
 
-      async function fetchCardsFromApi(setId, fields = 'id,name,supertype,subtypes,number,rarity,artist,images,set,tcgplayer') {
+      async function fetchCardsFromApi(setId, fields = 'id,name,supertype,subtypes,number,rarity,artist,images,set,tcgplayer', attempts = 1) {
         const base = `${API}/cards?q=set.id:${encodeURIComponent(setId)}&orderBy=number&pageSize=250&select=${encodeURIComponent(fields)}`;
-        const first = await fetchJson(`${base}&page=1`, 1);
+        const first = await fetchJson(`${base}&page=1`, attempts);
         const cards = [...first.data];
         const pages = Math.ceil(first.totalCount / 250);
         for (let page = 2; page <= pages; page++) {
-          const next = await fetchJson(`${base}&page=${page}`, 1);
+          const next = await fetchJson(`${base}&page=${page}`, attempts);
           cards.push(...next.data);
         }
         return cards;
@@ -418,19 +420,33 @@
         } catch { /* normal set selection will retry */ }
       }
 
-      async function enrichPrices(setId) {
-        if (priceRequests.has(setId)) return;
-        priceRequests.add(setId);
-        try {
-          const pricedCards = await fetchCardsFromApi(setId, 'id,tcgplayer');
-          const pricesById = new Map(pricedCards.map(card => [card.id, card.tcgplayer]));
-          const cachedCards = cardCache.get(setId) || [];
-          cachedCards.forEach(card => { if (pricesById.has(card.id)) card.tcgplayer = pricesById.get(card.id); });
-          if (activeSet?.id !== setId) return;
-          activeCards.forEach(card => { state.prices[card.id] = marketPrice(card); });
-          saveState();
-          renderCards();
-        } catch { /* images and collection editing still work without live pricing */ }
+      async function enrichPrices(setId, force = false) {
+        if (priceRequests.has(setId)) return priceRequests.get(setId);
+        if (pricedSets.has(setId) && !force) return true;
+        const request = (async () => {
+          try {
+            const pricedCards = await fetchCardsFromApi(setId, 'id,tcgplayer', force ? 2 : 1);
+            const pricesById = new Map(pricedCards.map(card => [card.id, card.tcgplayer]));
+            const cachedCards = cardCache.get(setId) || [];
+            cachedCards.forEach(card => {
+              if (pricesById.has(card.id)) card.tcgplayer = pricesById.get(card.id);
+              const price = marketPrice(card);
+              state.prices[card.id] = price;
+              if (state.cardDetails[card.id]) state.cardDetails[card.id].market = price;
+            });
+            pricedSets.add(setId);
+            saveState();
+            if (activeSet?.id === setId) renderCards();
+            return true;
+          } catch {
+            pricedSets.delete(setId);
+            return false;
+          } finally {
+            priceRequests.delete(setId);
+          }
+        })();
+        priceRequests.set(setId, request);
+        return request;
       }
 
       async function init() {
@@ -514,6 +530,7 @@
       function renderContent() {
         const stats = { owned: activeCards.filter(isCardOwned).length };
         const percentage = activeCards.length ? Math.round(stats.owned / activeCards.length * 100) : 0;
+        const setComplete = Boolean(state.completeSets[activeSet.id]) && stats.owned >= activeCards.length;
         el('content').innerHTML = `
           <div class="set-hero">
             <div class="set-meta">
@@ -526,7 +543,7 @@
             <div class="filters">
               ${[['all','All'],['need','Need'],['owned','Owned']].map(([value,label]) => `<button class="chip ${cardFilter === value ? 'active' : ''}" data-filter="${value}">${label}</button>`).join('')}
             </div>
-            <div class="toolbar-actions"><button class="bulk-button" id="fillSetButton" type="button" ${stats.owned >= activeCards.length ? 'disabled' : ''}>${stats.owned >= activeCards.length ? '✓ Set complete' : '✓ Mark all owned'}</button><input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards"></div>
+            <div class="toolbar-actions"><button class="bulk-button ${setComplete ? 'price-only' : ''}" id="fillSetButton" type="button" data-action="${setComplete ? 'prices' : 'fill'}">${setComplete ? '↻ Refresh prices' : '✓ Mark all owned'}</button><input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards"></div>
           </div>
           <div class="card-grid" id="cardGrid"></div>`;
 
@@ -535,12 +552,22 @@
           renderContent();
         }));
         el('cardSearch').addEventListener('input', event => { cardQuery = event.target.value; renderCards(); });
-        el('fillSetButton').addEventListener('click', fillActiveSet);
+        el('fillSetButton').addEventListener('click', event => event.currentTarget.dataset.action === 'prices' ? refreshActivePrices() : fillActiveSet());
         renderCards();
       }
 
-      function fillActiveSet() {
+      async function refreshActivePrices() {
+        const setId = activeSet.id;
+        const setName = activeSet.name;
+        showToast(`Refreshing ${setName} prices…`);
+        const priced = await enrichPrices(setId, true);
+        showToast(priced ? `${setName} prices updated` : `${setName} prices unavailable`);
+      }
+
+      async function fillActiveSet() {
         if (!editMode || !activeCards.length) return;
+        const setId = activeSet.id;
+        const setName = activeSet.name;
         state.completeSets[activeSet.id] = true;
         activeCards.forEach(card => {
           delete state.cards[card.id];
@@ -548,9 +575,12 @@
           rememberCard(card);
         });
         saveState();
-        showToast(`${activeSet.name} marked complete`);
+        showToast(`${setName} complete · updating prices…`);
         renderContent();
         renderSetList();
+        let priced = await enrichPrices(setId);
+        if (!priced) priced = await enrichPrices(setId, true);
+        showToast(priced ? `${setName} prices updated` : `${setName} saved · prices unavailable`);
       }
 
       function renderCards() {
@@ -563,7 +593,7 @@
         const grid = el('cardGrid');
         grid.innerHTML = cards.map(card => {
           const status = isCardOwned(card) ? 'owned' : 'need';
-          const price = marketPrice(card);
+          const price = state.prices[card.id] || marketPrice(card);
           return `<article class="card-item status-${status}" data-card-id="${escapeHtml(card.id)}" role="button" tabindex="${editMode ? '0' : '-1'}" aria-label="${escapeHtml(card.name)}: ${status === 'owned' ? 'owned' : 'not owned'}${editMode ? '; click to change' : ''}">
             <img class="card-image" src="${escapeHtml(card.images.small)}" alt="${escapeHtml(card.name)} card" loading="lazy" decoding="async" fetchpriority="low">
             ${status === 'owned' ? '<span class="owned-badge">✓ Owned</span>' : ''}
@@ -608,7 +638,7 @@
       }
 
       function rememberCard(card) {
-        state.cardDetails[card.id] = { name: card.name, set: card.set?.name || activeSet?.name || '', number: card.number, rarity: card.rarity || '', market: marketPrice(card) };
+        state.cardDetails[card.id] = { name: card.name, set: card.set?.name || activeSet?.name || '', number: card.number, rarity: card.rarity || '', market: state.prices[card.id] || marketPrice(card) };
       }
 
       function cardSetId(cardId) {
