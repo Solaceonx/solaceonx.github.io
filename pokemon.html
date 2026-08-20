@@ -60,8 +60,14 @@
     h1 { margin-bottom: 2px; font: 700 clamp(1.35rem, 3vw, 2rem)/1.05 "Space Grotesk"; letter-spacing: -.045em; }
     .eyebrow { color: var(--red-dark); text-transform: uppercase; letter-spacing: .14em; font-size: .7rem; font-weight: 700; margin-bottom: 7px; }
     .subtitle { color: var(--muted); margin: 0; font-size: .92rem; }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
     .save-state { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .8rem; }
-    .save-state::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(61,154,112,.12); }
+    .save-state::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #98a2b3; box-shadow: 0 0 0 4px rgba(152,162,179,.12); }
+    body.edit-mode .save-state::before { background: var(--green); box-shadow: 0 0 0 4px rgba(61,154,112,.12); }
+    .auth-button, .export-button { border: 0; border-radius: 11px; padding: 10px 14px; cursor: pointer; font-weight: 700; font-size: .78rem; }
+    .auth-button { background: var(--ink); color: white; }
+    body.edit-mode .auth-button { background: var(--red); }
+    .export-button { background: white; border: 1px solid var(--line); }
 
     .dashboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
     .metric { background: var(--card); border: 1px solid rgba(255,255,255,.9); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow); }
@@ -116,21 +122,37 @@
     .card-search { border: 1px solid var(--line); border-radius: 10px; padding: 8px 11px; width: min(220px, 100%); outline: none; }
 
     .card-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 14px; padding: 18px; }
-    .card-item { border: 1px solid var(--line); border-radius: 17px; padding: 10px; background: rgba(255,255,255,.76); transition: transform .18s, box-shadow .18s, opacity .18s; position: relative; }
+    .card-item { border: 1px solid var(--line); border-radius: 17px; padding: 10px; background: rgba(255,255,255,.76); transition: transform .18s, box-shadow .18s, opacity .18s; position: relative; user-select: none; }
     .card-item:hover { transform: translateY(-3px); box-shadow: 0 13px 25px rgba(38,34,30,.11); }
     .card-item.status-owned { border-color: rgba(61,154,112,.48); background: rgba(236,251,243,.88); }
-    .card-item.status-skip { opacity: .56; filter: grayscale(.35); }
-    .card-image { width: 100%; aspect-ratio: 245/342; border-radius: 11px; display: block; object-fit: cover; background: #e8e4dc; }
+    body.edit-mode .card-item { cursor: pointer; }
+    body.edit-mode .card-item:hover { box-shadow: 0 0 0 3px rgba(233,70,70,.16), 0 13px 25px rgba(38,34,30,.11); }
+    .card-image { width: 100%; aspect-ratio: 245/342; border-radius: 11px; display: block; object-fit: cover; background: #e8e4dc; filter: grayscale(1) saturate(.05) brightness(.82); opacity: .58; transition: filter .25s, opacity .25s; }
+    .status-owned .card-image { filter: none; opacity: 1; }
+    .owned-badge { position: absolute; top: 17px; right: 17px; background: var(--green); color: white; padding: 6px 9px; border-radius: 99px; font-size: .65rem; font-weight: 800; box-shadow: 0 5px 14px rgba(24,33,47,.25); }
     .card-info { padding: 10px 3px 5px; }
     .card-title { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
     .card-title b { font-size: .84rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .card-title span { color: var(--muted); font-size: .67rem; flex: none; }
-    .rarity { color: var(--muted); font-size: .68rem; height: 1rem; overflow: hidden; margin: 4px 0 9px; }
-    .status-control { display: grid; grid-template-columns: repeat(3,1fr); background: #eeeae2; border-radius: 9px; padding: 3px; gap: 2px; }
-    .status-control button { border: 0; background: transparent; border-radius: 7px; font-size: .65rem; padding: 6px 2px; cursor: pointer; font-weight: 700; color: var(--muted); }
-    .status-control button.selected[data-status="owned"] { background: var(--green); color: white; }
-    .status-control button.selected[data-status="hunting"] { background: var(--gold); color: #5b4110; }
-    .status-control button.selected[data-status="skip"] { background: #7d8796; color: white; }
+    .rarity { color: var(--muted); font-size: .68rem; height: 1rem; overflow: hidden; margin: 4px 0 7px; }
+    .price-line { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: .67rem; }
+    .price-line strong { color: var(--green); }
+
+    dialog { border: 0; border-radius: 22px; padding: 0; width: min(420px, calc(100% - 28px)); box-shadow: 0 28px 80px rgba(24,33,47,.3); background: white; color: var(--ink); }
+    dialog::backdrop { background: rgba(24,33,47,.58); backdrop-filter: blur(5px); }
+    .login-card { padding: 26px; }
+    .login-card h2 { font: 700 1.45rem "Space Grotesk"; margin-bottom: 8px; }
+    .login-card p { color: var(--muted); font-size: .85rem; line-height: 1.55; }
+    .login-card label { display: block; font-size: .75rem; font-weight: 700; margin: 18px 0 7px; }
+    .login-card input { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 11px; outline: none; }
+    .login-card input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(62,114,200,.12); }
+    .login-actions { display: flex; gap: 9px; justify-content: flex-end; margin-top: 18px; }
+    .login-actions button { border: 0; border-radius: 10px; padding: 10px 15px; cursor: pointer; font-weight: 700; }
+    .login-actions .cancel { background: #f0ede6; }
+    .login-actions .unlock { background: var(--red); color: white; }
+    .login-error { color: var(--red-dark) !important; min-height: 1.2em; margin: 10px 0 0 !important; }
+    .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 120px); background: var(--ink); color: white; border-radius: 12px; padding: 11px 16px; font-size: .78rem; font-weight: 700; z-index: 20; transition: transform .25s; }
+    .toast.show { transform: translate(-50%,0); }
 
     .empty, .loading { padding: 70px 25px; text-align: center; color: var(--muted); }
     .loader { width: 42px; height: 42px; border-radius: 50%; margin: 0 auto 16px; border: 4px solid #e5dfd3; border-top-color: var(--red); animation: spin .8s linear infinite; }
@@ -146,7 +168,7 @@
     }
     @media (max-width: 560px) {
       .shell { width: min(100% - 20px,1480px); }
-      .save-state { display: none; }
+      .save-state, .export-button { display: none; }
       .dashboard { gap: 8px; margin: 14px 0; }
       .metric { padding: 14px; border-radius: 14px; }
       .metric strong { font-size: 1.3rem; }
@@ -156,7 +178,6 @@
       .card-search { width: 100%; }
       .card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; padding: 10px; }
       .card-item { padding: 7px; border-radius: 13px; }
-      .status-control { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -171,7 +192,11 @@
           <p class="subtitle">Every English set from HeartGold &amp; SoulSilver onward.</p>
         </div>
       </div>
-      <div class="save-state">Saved on this device</div>
+      <div class="header-actions">
+        <div class="save-state" id="modeLabel">View mode</div>
+        <button class="export-button" id="exportButton" type="button">Export CSV</button>
+        <button class="auth-button" id="authButton" type="button">Owner login</button>
+      </div>
     </div>
   </header>
 
@@ -180,7 +205,7 @@
       <div class="metric"><small>Owned cards</small><strong id="ownedTotal">0</strong><span class="mini" id="cardTotalLabel">of —</span><div class="metric-progress"><i id="overallBar"></i></div></div>
       <div class="metric"><small>Overall completion</small><strong id="overallPercent">0%</strong></div>
       <div class="metric"><small>Sets started</small><strong id="setsStarted">0</strong><span class="mini" id="setTotalLabel">of —</span></div>
-      <div class="metric"><small>Cards hunting</small><strong id="huntingTotal">0</strong></div>
+      <div class="metric"><small>Estimated value</small><strong id="valueTotal">$0</strong><span class="mini">TCGplayer market</span></div>
     </section>
 
     <section class="workspace">
@@ -203,19 +228,37 @@
     Pokémon and its trademarks belong to Nintendo, Creatures, and GAME FREAK. This is a personal, unofficial tracker.
   </footer>
 
+  <dialog id="loginDialog">
+    <form class="login-card" id="loginForm" method="dialog">
+      <div class="eyebrow">Private editing</div>
+      <h2 id="loginTitle">Owner login</h2>
+      <p id="loginCopy">Enter your collection passcode to turn on editing.</p>
+      <label for="passcode">Passcode</label>
+      <input id="passcode" type="password" minlength="4" autocomplete="current-password" required placeholder="At least 4 characters">
+      <p class="login-error" id="loginError" role="alert"></p>
+      <div class="login-actions"><button class="cancel" id="cancelLogin" type="button">Cancel</button><button class="unlock" type="submit">Unlock editing</button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+
   <script>
     (() => {
       const API = 'https://api.pokemontcg.io/v2';
+      const DATA = 'https://raw.githubusercontent.com/PokemonTCG/pokemon-tcg-data/master';
       const START_DATE = '2010/02/10';
       const TODAY = new Intl.DateTimeFormat('en-CA', { year: 'numeric', month: '2-digit', day: '2-digit' })
         .format(new Date()).replaceAll('-', '/');
       const STORAGE_KEY = 'solaceonx-pokemon-collection-v1';
+      const PASSCODE_KEY = 'solaceonx-pokemon-passcode-v1';
       const state = loadState();
+      state.prices ||= {};
+      state.cardDetails ||= {};
       let sets = [];
       let activeSet = null;
       let activeCards = [];
       let cardFilter = 'all';
       let cardQuery = '';
+      let editMode = sessionStorage.getItem('pokemon-edit-session') === 'unlocked';
 
       const el = id => document.getElementById(id);
       const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -230,29 +273,87 @@
         updateDashboard();
       }
 
-      async function fetchJson(url) {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`The card archive returned ${response.status}. Please try again shortly.`);
-        return response.json();
+      async function hashPasscode(passcode) {
+        const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(passcode));
+        return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+      }
+
+      function renderAuthUI() {
+        document.body.classList.toggle('edit-mode', editMode);
+        el('authButton').textContent = editMode ? 'Lock editing' : 'Owner login';
+        el('modeLabel').textContent = editMode ? 'Edit mode unlocked' : 'View mode';
+      }
+
+      function openLogin() {
+        const isSetup = !localStorage.getItem(PASSCODE_KEY);
+        el('loginTitle').textContent = isSetup ? 'Create owner passcode' : 'Owner login';
+        el('loginCopy').textContent = isSetup
+          ? 'Create a device-local passcode. It protects editing from casual visitors on this browser, but it is not a cloud account.'
+          : 'Enter your collection passcode to turn on editing for this tab.';
+        el('loginError').textContent = '';
+        el('passcode').value = '';
+        el('loginDialog').showModal();
+        setTimeout(() => el('passcode').focus(), 0);
+      }
+
+      function lockEditing() {
+        editMode = false;
+        sessionStorage.removeItem('pokemon-edit-session');
+        renderAuthUI();
+        if (activeSet) renderCards();
+        showToast('Editing locked');
+      }
+
+      function showToast(message) {
+        el('toast').textContent = message;
+        el('toast').classList.add('show');
+        clearTimeout(showToast.timer);
+        showToast.timer = setTimeout(() => el('toast').classList.remove('show'), 1800);
+      }
+
+      async function fetchJson(url, attempts = 2) {
+        let lastError;
+        for (let attempt = 1; attempt <= attempts; attempt++) {
+          try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`The card archive returned ${response.status}.`);
+            return response.json();
+          } catch (error) {
+            lastError = error;
+            if (attempt < attempts) await new Promise(resolve => setTimeout(resolve, 500 * attempt));
+          }
+        }
+        throw lastError;
       }
 
       async function fetchAllCards(setId) {
-        const fields = 'id,name,supertype,subtypes,number,rarity,artist,images,set';
-        const base = `${API}/cards?q=set.id:${encodeURIComponent(setId)}&orderBy=number&pageSize=250&select=${encodeURIComponent(fields)}`;
-        const first = await fetchJson(`${base}&page=1`);
-        const cards = [...first.data];
-        const pages = Math.ceil(first.totalCount / 250);
-        for (let page = 2; page <= pages; page++) {
-          const next = await fetchJson(`${base}&page=${page}`);
-          cards.push(...next.data);
+        try {
+          const fields = 'id,name,supertype,subtypes,number,rarity,artist,images,set,tcgplayer';
+          const base = `${API}/cards?q=set.id:${encodeURIComponent(setId)}&orderBy=number&pageSize=250&select=${encodeURIComponent(fields)}`;
+          const first = await fetchJson(`${base}&page=1`);
+          const cards = [...first.data];
+          const pages = Math.ceil(first.totalCount / 250);
+          for (let page = 2; page <= pages; page++) {
+            const next = await fetchJson(`${base}&page=${page}`);
+            cards.push(...next.data);
+          }
+          return cards;
+        } catch {
+          return fetchJson(`${DATA}/cards/en/${encodeURIComponent(setId)}.json`, 1);
         }
-        return cards;
       }
 
       async function init() {
         try {
-          const result = await fetchJson(`${API}/sets?orderBy=-releaseDate&pageSize=250`);
-          sets = result.data.filter(set => set.releaseDate >= START_DATE && set.releaseDate <= TODAY);
+          let catalog;
+          try {
+            const result = await fetchJson(`${API}/sets?orderBy=-releaseDate&pageSize=250`);
+            catalog = result.data;
+          } catch {
+            catalog = await fetchJson(`${DATA}/sets/en.json`, 1);
+            catalog.sort((a,b) => b.releaseDate.localeCompare(a.releaseDate));
+          }
+          sets = catalog.filter(set => set.releaseDate >= START_DATE && set.releaseDate <= TODAY);
           renderSetList();
           updateDashboard();
           if (sets.length) selectSet(sets[0].id);
@@ -296,6 +397,10 @@
         try {
           activeCards = await fetchAllCards(id);
           state.totals[id] = activeCards.length;
+          activeCards.forEach(card => {
+            state.prices[card.id] = marketPrice(card);
+            if (state.cards[card.id] === 'owned') rememberCard(card);
+          });
           saveState();
           renderContent();
           renderSetList();
@@ -317,7 +422,7 @@
           </div>
           <div class="toolbar">
             <div class="filters">
-              ${[['all','All'],['need','Need'],['owned','Owned'],['hunting','Hunting'],['skip','Skipped']].map(([value,label]) => `<button class="chip ${cardFilter === value ? 'active' : ''}" data-filter="${value}">${label}</button>`).join('')}
+              ${[['all','All'],['need','Need'],['owned','Owned']].map(([value,label]) => `<button class="chip ${cardFilter === value ? 'active' : ''}" data-filter="${value}">${label}</button>`).join('')}
             </div>
             <input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards">
           </div>
@@ -333,34 +438,58 @@
 
       function renderCards() {
         const cards = activeCards.filter(card => {
-          const status = state.cards[card.id] || 'need';
+          const status = state.cards[card.id] === 'owned' ? 'owned' : 'need';
           const matchesStatus = cardFilter === 'all' || status === cardFilter;
           const matchesText = `${card.name} ${card.number} ${card.rarity || ''}`.toLowerCase().includes(cardQuery.toLowerCase());
           return matchesStatus && matchesText;
         });
         const grid = el('cardGrid');
         grid.innerHTML = cards.map(card => {
-          const status = state.cards[card.id] || 'need';
-          return `<article class="card-item status-${status}">
+          const status = state.cards[card.id] === 'owned' ? 'owned' : 'need';
+          const price = marketPrice(card);
+          return `<article class="card-item status-${status}" data-card-id="${escapeHtml(card.id)}" role="button" tabindex="${editMode ? '0' : '-1'}" aria-label="${escapeHtml(card.name)}: ${status === 'owned' ? 'owned' : 'not owned'}${editMode ? '; click to change' : ''}">
             <img class="card-image" src="${escapeHtml(card.images.small)}" alt="${escapeHtml(card.name)} card" loading="lazy">
+            ${status === 'owned' ? '<span class="owned-badge">✓ Owned</span>' : ''}
             <div class="card-info">
               <div class="card-title"><b title="${escapeHtml(card.name)}">${escapeHtml(card.name)}</b><span>#${escapeHtml(card.number)}</span></div>
               <div class="rarity">${escapeHtml(card.rarity || card.supertype || '—')}</div>
-              <div class="status-control" aria-label="Collection status for ${escapeHtml(card.name)}">
-                ${[['owned','Owned'],['hunting','Hunt'],['skip','Skip']].map(([value,label]) => `<button data-card-id="${escapeHtml(card.id)}" data-status="${value}" class="${status === value ? 'selected' : ''}" aria-pressed="${status === value}">${label}</button>`).join('')}
-              </div>
+              <div class="price-line"><span>${status === 'owned' ? 'In collection' : editMode ? 'Click to add' : 'Not collected'}</span><strong>${price ? `$${price.toFixed(2)}` : '—'}</strong></div>
             </div>
           </article>`;
         }).join('') || '<div class="empty">No cards match this view.</div>';
 
-        grid.querySelectorAll('[data-card-id]').forEach(button => button.addEventListener('click', () => {
-          const current = state.cards[button.dataset.cardId];
-          if (current === button.dataset.status) delete state.cards[button.dataset.cardId];
-          else state.cards[button.dataset.cardId] = button.dataset.status;
-          saveState();
-          renderContent();
-          renderSetList();
-        }));
+        grid.querySelectorAll('[data-card-id]').forEach(item => {
+          const toggle = () => {
+            if (!editMode) return;
+            const card = activeCards.find(entry => entry.id === item.dataset.cardId);
+            if (state.cards[card.id] === 'owned') {
+              delete state.cards[card.id];
+              delete state.cardDetails[card.id];
+              showToast(`${card.name} removed`);
+            } else {
+              state.cards[card.id] = 'owned';
+              rememberCard(card);
+              showToast(`${card.name} added`);
+            }
+            saveState();
+            renderContent();
+            renderSetList();
+          };
+          item.addEventListener('click', toggle);
+          item.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); } });
+        });
+      }
+
+      function marketPrice(card) {
+        const variants = card.tcgplayer?.prices ? Object.values(card.tcgplayer.prices) : [];
+        const preferred = ['normal', 'holofoil', 'reverseHolofoil']
+          .map(key => card.tcgplayer?.prices?.[key]?.market)
+          .find(value => Number.isFinite(value));
+        return preferred || variants.map(price => price.market).find(value => Number.isFinite(value)) || 0;
+      }
+
+      function rememberCard(card) {
+        state.cardDetails[card.id] = { name: card.name, set: card.set.name, number: card.number, rarity: card.rarity || '', market: marketPrice(card) };
       }
 
       function statusesForSet(setId) {
@@ -377,7 +506,7 @@
         const percent = total ? Math.round(owned / total * 100) : 0;
         const started = sets.filter(set => {
           const s = statusesForSet(set.id);
-          return s.owned + s.hunting + s.skip > 0;
+          return s.owned > 0;
         }).length;
         el('ownedTotal').textContent = owned.toLocaleString();
         el('cardTotalLabel').textContent = `of ${total ? total.toLocaleString() : '—'}`;
@@ -385,7 +514,22 @@
         el('overallBar').style.width = `${percent}%`;
         el('setsStarted').textContent = started;
         el('setTotalLabel').textContent = `of ${sets.length || '—'}`;
-        el('huntingTotal').textContent = (counts.hunting || 0).toLocaleString();
+        const value = Object.entries(state.cards).reduce((sum, [cardId,status]) => status === 'owned' ? sum + (state.prices[cardId] || 0) : sum, 0);
+        el('valueTotal').textContent = value.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+      }
+
+      function exportCollection() {
+        const rows = [['Card ID','Name','Set','Number','Rarity','Quantity','Market Price USD']];
+        Object.entries(state.cards).filter(([,status]) => status === 'owned').forEach(([cardId]) => {
+          const card = state.cardDetails[cardId] || { name:'',set:'',number:'',rarity:'',market:state.prices[cardId] || 0 };
+          rows.push([cardId,card.name,card.set,card.number,card.rarity,1,card.market || 0]);
+        });
+        const csv = rows.map(row => row.map(value => `"${String(value).replaceAll('"','""')}"`).join(',')).join('\n');
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+        link.download = `pokemon-collection-${new Date().toISOString().slice(0,10)}.csv`;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(link.href), 1000);
       }
 
       function formatDate(date) {
@@ -394,9 +538,27 @@
       }
 
       el('setSearch').addEventListener('input', renderSetList);
+      el('authButton').addEventListener('click', () => editMode ? lockEditing() : openLogin());
+      el('cancelLogin').addEventListener('click', () => el('loginDialog').close());
+      el('exportButton').addEventListener('click', exportCollection);
+      el('loginForm').addEventListener('submit', async event => {
+        event.preventDefault();
+        const passcode = el('passcode').value;
+        if (passcode.length < 4) { el('loginError').textContent = 'Use at least 4 characters.'; return; }
+        const submittedHash = await hashPasscode(passcode);
+        const savedHash = localStorage.getItem(PASSCODE_KEY);
+        if (savedHash && savedHash !== submittedHash) { el('loginError').textContent = 'That passcode does not match.'; return; }
+        if (!savedHash) localStorage.setItem(PASSCODE_KEY, submittedHash);
+        editMode = true;
+        sessionStorage.setItem('pokemon-edit-session','unlocked');
+        el('loginDialog').close();
+        renderAuthUI();
+        if (activeSet) renderCards();
+        showToast('Edit mode unlocked');
+      });
+      renderAuthUI();
       init();
     })();
   </script>
 </body>
 </html>
-
