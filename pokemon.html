@@ -314,6 +314,9 @@
       let cardFilter = 'all';
       let cardQuery = '';
       let editMode = sessionStorage.getItem('pokemon-edit-session') === 'unlocked';
+      let setRequestId = 0;
+      const cardCache = new Map();
+      const priceRequests = new Set();
 
       const el = id => document.getElementById(id);
       const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -381,32 +384,62 @@
         throw lastError;
       }
 
-      async function fetchAllCards(setId) {
-        try {
-          const fields = 'id,name,supertype,subtypes,number,rarity,artist,images,set,tcgplayer';
-          const base = `${API}/cards?q=set.id:${encodeURIComponent(setId)}&orderBy=number&pageSize=250&select=${encodeURIComponent(fields)}`;
-          const first = await fetchJson(`${base}&page=1`);
-          const cards = [...first.data];
-          const pages = Math.ceil(first.totalCount / 250);
-          for (let page = 2; page <= pages; page++) {
-            const next = await fetchJson(`${base}&page=${page}`);
-            cards.push(...next.data);
-          }
-          return cards;
-        } catch {
-          return fetchJson(`${DATA}/cards/en/${encodeURIComponent(setId)}.json`, 1);
+      async function fetchCardsFromApi(setId, fields = 'id,name,supertype,subtypes,number,rarity,artist,images,set,tcgplayer') {
+        const base = `${API}/cards?q=set.id:${encodeURIComponent(setId)}&orderBy=number&pageSize=250&select=${encodeURIComponent(fields)}`;
+        const first = await fetchJson(`${base}&page=1`, 1);
+        const cards = [...first.data];
+        const pages = Math.ceil(first.totalCount / 250);
+        for (let page = 2; page <= pages; page++) {
+          const next = await fetchJson(`${base}&page=${page}`, 1);
+          cards.push(...next.data);
         }
+        return cards;
+      }
+
+      async function fetchAllCards(setId) {
+        if (cardCache.has(setId)) return cardCache.get(setId);
+        let cards;
+        try {
+          cards = await fetchJson(`${DATA}/cards/en/${encodeURIComponent(setId)}.json`, 1);
+        } catch {
+          cards = await fetchCardsFromApi(setId);
+        }
+        cardCache.set(setId, cards);
+        return cards;
+      }
+
+      async function prefetchSet(setId) {
+        if (cardCache.has(setId)) return;
+        try {
+          const cards = await fetchJson(`${DATA}/cards/en/${encodeURIComponent(setId)}.json`, 1);
+          cardCache.set(setId, cards);
+        } catch { /* normal set selection will retry */ }
+      }
+
+      async function enrichPrices(setId) {
+        if (priceRequests.has(setId)) return;
+        priceRequests.add(setId);
+        try {
+          const pricedCards = await fetchCardsFromApi(setId, 'id,tcgplayer');
+          const pricesById = new Map(pricedCards.map(card => [card.id, card.tcgplayer]));
+          const cachedCards = cardCache.get(setId) || [];
+          cachedCards.forEach(card => { if (pricesById.has(card.id)) card.tcgplayer = pricesById.get(card.id); });
+          if (activeSet?.id !== setId) return;
+          activeCards.forEach(card => { state.prices[card.id] = marketPrice(card); });
+          saveState();
+          renderCards();
+        } catch { /* images and collection editing still work without live pricing */ }
       }
 
       async function init() {
         try {
           let catalog;
           try {
-            const result = await fetchJson(`${API}/sets?orderBy=-releaseDate&pageSize=250`);
-            catalog = result.data;
-          } catch {
             catalog = await fetchJson(`${DATA}/sets/en.json`, 1);
             catalog.sort((a,b) => b.releaseDate.localeCompare(a.releaseDate));
+          } catch {
+            const result = await fetchJson(`${API}/sets?orderBy=-releaseDate&pageSize=250`);
+            catalog = result.data;
           }
           sets = catalog
             .filter(set => set.releaseDate >= START_DATE && set.releaseDate <= TODAY && !OMIT_SET_PATTERN.test(set.name))
@@ -442,10 +475,12 @@
 
         el('setList').querySelectorAll('[data-set-id]').forEach(button => {
           button.addEventListener('click', () => selectSet(button.dataset.setId));
+          button.addEventListener('mouseenter', () => prefetchSet(button.dataset.setId), { once: true });
         });
       }
 
       async function selectSet(id) {
+        const requestId = ++setRequestId;
         activeView = 'cards';
         activeSet = sets.find(set => set.id === id);
         activeCards = [];
@@ -455,6 +490,7 @@
         el('content').innerHTML = '<div class="loading"><div class="loader"></div>Opening the card binder…</div>';
         try {
           const fetchedCards = await fetchAllCards(id);
+          if (requestId !== setRequestId) return;
           activeCards = fetchedCards.filter(card => {
             const number = Number.parseInt(card.number, 10);
             return Number.isFinite(number) && number <= activeSet.targetCards;
@@ -467,6 +503,7 @@
           saveState();
           renderContent();
           renderSetList();
+          enrichPrices(id);
         } catch (error) {
           el('content').innerHTML = `<div class="error-box"><b>Couldn’t open this binder.</b><br>${escapeHtml(error.message)}</div>`;
         }
@@ -525,7 +562,7 @@
           const status = state.cards[card.id] === 'owned' ? 'owned' : 'need';
           const price = marketPrice(card);
           return `<article class="card-item status-${status}" data-card-id="${escapeHtml(card.id)}" role="button" tabindex="${editMode ? '0' : '-1'}" aria-label="${escapeHtml(card.name)}: ${status === 'owned' ? 'owned' : 'not owned'}${editMode ? '; click to change' : ''}">
-            <img class="card-image" src="${escapeHtml(card.images.small)}" alt="${escapeHtml(card.name)} card" loading="lazy">
+            <img class="card-image" src="${escapeHtml(card.images.small)}" alt="${escapeHtml(card.name)} card" loading="lazy" decoding="async" fetchpriority="low">
             ${status === 'owned' ? '<span class="owned-badge">✓ Owned</span>' : ''}
             <div class="card-info">
               <div class="card-title"><b title="${escapeHtml(card.name)}">${escapeHtml(card.name)}</b><span>#${escapeHtml(card.number)}</span></div>
