@@ -123,6 +123,10 @@
     .filters { display: flex; gap: 6px; flex-wrap: wrap; }
     .chip { border: 1px solid var(--line); background: white; padding: 7px 11px; border-radius: 99px; font-size: .76rem; cursor: pointer; font-weight: 600; }
     .chip.active { background: var(--ink); border-color: var(--ink); color: white; }
+    .toolbar-actions { display: flex; gap: 8px; align-items: center; }
+    .bulk-button { border: 0; background: var(--green); color: white; padding: 9px 12px; border-radius: 10px; cursor: pointer; font-size: .73rem; font-weight: 800; white-space: nowrap; }
+    .bulk-button:disabled { background: #98a2b3; cursor: default; }
+    body:not(.edit-mode) .bulk-button { display: none; }
     .card-search { border: 1px solid var(--line); border-radius: 10px; padding: 8px 11px; width: min(220px, 100%); outline: none; }
 
     .card-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 14px; padding: 18px; }
@@ -207,6 +211,8 @@
       .set-hero { grid-template-columns: 1fr; padding: 18px; }
       .set-progress { text-align: left; }
       .toolbar { align-items: stretch; flex-direction: column; }
+      .toolbar-actions { width: 100%; }
+      .toolbar-actions .card-search { flex: 1; }
       .binder-plan { padding: 17px; }
       .plan-heading { display: block; }
       .plan-total { text-align: left; margin-top: 12px; }
@@ -467,7 +473,7 @@
       }
 
       function renderContent() {
-        const stats = statusesForSet(activeSet.id);
+        const stats = { owned: activeCards.filter(card => state.cards[card.id] === 'owned').length };
         const percentage = activeCards.length ? Math.round(stats.owned / activeCards.length * 100) : 0;
         el('content').innerHTML = `
           <div class="set-hero">
@@ -481,7 +487,7 @@
             <div class="filters">
               ${[['all','All'],['need','Need'],['owned','Owned']].map(([value,label]) => `<button class="chip ${cardFilter === value ? 'active' : ''}" data-filter="${value}">${label}</button>`).join('')}
             </div>
-            <input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards">
+            <div class="toolbar-actions"><button class="bulk-button" id="fillSetButton" type="button" ${stats.owned >= activeCards.length ? 'disabled' : ''}>${stats.owned >= activeCards.length ? '✓ Set complete' : '✓ Mark all owned'}</button><input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards"></div>
           </div>
           <div class="card-grid" id="cardGrid"></div>`;
 
@@ -490,7 +496,21 @@
           renderContent();
         }));
         el('cardSearch').addEventListener('input', event => { cardQuery = event.target.value; renderCards(); });
+        el('fillSetButton').addEventListener('click', fillActiveSet);
         renderCards();
+      }
+
+      function fillActiveSet() {
+        if (!editMode || !activeCards.length) return;
+        activeCards.forEach(card => {
+          state.cards[card.id] = 'owned';
+          state.prices[card.id] = marketPrice(card);
+          rememberCard(card);
+        });
+        saveState();
+        showToast(`${activeSet.name} marked complete`);
+        renderContent();
+        renderSetList();
       }
 
       function renderCards() {
