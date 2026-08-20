@@ -82,6 +82,9 @@
     .sidebar { align-self: start; position: sticky; top: 14px; max-height: calc(100vh - 28px); display: flex; flex-direction: column; }
     .sidebar-head { padding: 18px 18px 13px; border-bottom: 1px solid var(--line); }
     .sidebar-head h2 { font: 700 1.05rem "Space Grotesk"; margin-bottom: 12px; }
+    .plan-button { width: 100%; margin-bottom: 9px; border: 1px solid var(--line); background: white; border-radius: 12px; padding: 10px 12px; cursor: pointer; text-align: left; font-weight: 700; font-size: .78rem; }
+    .plan-button:hover { border-color: var(--blue); }
+    .plan-button.active { color: white; background: var(--blue); border-color: var(--blue); }
     .search { position: relative; }
     .search input {
       width: 100%; border: 1px solid var(--line); background: rgba(247,243,234,.7); border-radius: 12px;
@@ -138,6 +141,34 @@
     .price-line { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: .67rem; }
     .price-line strong { color: var(--green); }
 
+    .binder-plan { padding: 24px; }
+    .plan-heading { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 22px; }
+    .plan-heading h2 { font: 700 clamp(1.45rem,3vw,2.1rem) "Space Grotesk"; letter-spacing: -.04em; margin-bottom: 6px; }
+    .plan-heading p { color: var(--muted); margin: 0; max-width: 720px; line-height: 1.5; font-size: .86rem; }
+    .plan-total { flex: none; text-align: right; }
+    .plan-total strong { display: block; font: 700 1.6rem "Space Grotesk"; }
+    .plan-total span { color: var(--muted); font-size: .72rem; }
+    .era-plan { margin-top: 30px; }
+    .era-plan-head { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
+    .era-plan-head h3 { font: 700 1.15rem "Space Grotesk"; margin: 0; }
+    .era-plan-head span { color: var(--muted); font-size: .72rem; }
+    .color-picker { width: 34px; height: 34px; padding: 2px; border: 1px solid var(--line); background: white; border-radius: 9px; cursor: pointer; }
+    .binders-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 13px; }
+    .binder-card { --binder-color: var(--blue); overflow: hidden; border: 1px solid var(--line); border-top: 9px solid var(--binder-color); border-radius: 16px; background: rgba(255,255,255,.78); }
+    .binder-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 15px 11px; border-bottom: 1px solid var(--line); }
+    .binder-head b { font: 700 .94rem "Space Grotesk"; }
+    .binder-head span { color: var(--muted); font-size: .68rem; }
+    .binder-meter { display: flex; height: 8px; margin: 0 15px 12px; overflow: hidden; border-radius: 99px; background: #e9e5dc; }
+    .binder-meter i { height: 100%; border-right: 1px solid rgba(255,255,255,.8); background: var(--binder-color); min-width: 2px; }
+    .placement-list { padding: 0 15px 8px; }
+    .placement { padding: 10px 0; border-top: 1px dashed var(--line); }
+    .placement:first-child { border-top: 0; }
+    .placement-title { display: flex; justify-content: space-between; gap: 10px; font-size: .78rem; }
+    .placement-title b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .placement-title span { flex: none; color: var(--muted); }
+    .placement small { display: block; color: var(--muted); margin-top: 4px; font-size: .65rem; line-height: 1.4; }
+    .front-start { color: var(--green); font-weight: 700; }
+
     dialog { border: 0; border-radius: 22px; padding: 0; width: min(420px, calc(100% - 28px)); box-shadow: 0 28px 80px rgba(24,33,47,.3); background: white; color: var(--ink); }
     dialog::backdrop { background: rgba(24,33,47,.58); backdrop-filter: blur(5px); }
     .login-card { padding: 26px; }
@@ -175,6 +206,9 @@
       .set-hero { grid-template-columns: 1fr; padding: 18px; }
       .set-progress { text-align: left; }
       .toolbar { align-items: stretch; flex-direction: column; }
+      .binder-plan { padding: 17px; }
+      .plan-heading { display: block; }
+      .plan-total { text-align: left; margin-top: 12px; }
       .card-search { width: 100%; }
       .card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; padding: 10px; }
       .card-item { padding: 7px; border-radius: 13px; }
@@ -212,6 +246,7 @@
       <aside class="panel sidebar">
         <div class="sidebar-head">
           <h2>Expansion archive</h2>
+          <button class="plan-button" id="binderPlanButton" type="button">▦ View binder plan · 828 pockets each</button>
           <label class="search"><input id="setSearch" type="search" placeholder="Find a set or era…" aria-label="Search sets"></label>
         </div>
         <div class="set-list" id="setList"><div class="loading"><div class="loader"></div>Loading expansions…</div></div>
@@ -250,12 +285,16 @@
         .format(new Date()).replaceAll('-', '/');
       const STORAGE_KEY = 'solaceonx-pokemon-collection-v1';
       const PASSCODE_KEY = 'solaceonx-pokemon-passcode-v1';
+      const BINDER_CAPACITY = 828;
+      const SHEET_CAPACITY = 18;
       const state = loadState();
       state.prices ||= {};
       state.cardDetails ||= {};
+      state.eraColors ||= {};
       let sets = [];
       let activeSet = null;
       let activeCards = [];
+      let activeView = 'cards';
       let cardFilter = 'all';
       let cardQuery = '';
       let editMode = sessionStorage.getItem('pokemon-edit-session') === 'unlocked';
@@ -363,6 +402,7 @@
       }
 
       function renderSetList() {
+        el('binderPlanButton').classList.toggle('active', activeView === 'binders');
         const query = el('setSearch').value.trim().toLowerCase();
         const matching = sets.filter(s => `${s.name} ${s.series}`.toLowerCase().includes(query));
         const groups = matching.reduce((map, set) => {
@@ -388,6 +428,7 @@
       }
 
       async function selectSet(id) {
+        activeView = 'cards';
         activeSet = sets.find(set => set.id === id);
         activeCards = [];
         cardFilter = 'all';
@@ -499,6 +540,90 @@
         }, { owned: 0, hunting: 0, skip: 0 });
       }
 
+      function eraColor(series) {
+        const defaults = {
+          'Mega Evolution': '#6f52c8',
+          'Scarlet & Violet': '#c94e68',
+          'Sword & Shield': '#4c88bd',
+          'Sun & Moon': '#e0a12f',
+          'XY': '#3c70bd',
+          'Black & White': '#414b59',
+          'HeartGold & SoulSilver': '#c49a35',
+          'Other': '#768093'
+        };
+        return state.eraColors[series] || defaults[series] || '#667085';
+      }
+
+      function buildBinderPlan() {
+        const eras = new Map();
+        sets.forEach(set => {
+          if (!eras.has(set.series)) eras.set(set.series, []);
+          eras.get(set.series).push(set);
+        });
+        return [...eras.entries()].map(([series, eraSets]) => {
+          eraSets.sort((a,b) => a.releaseDate.localeCompare(b.releaseDate));
+          const binders = [{ used: 0, cards: 0, sets: [] }];
+          eraSets.forEach(set => {
+            const reserved = Math.ceil(set.total / SHEET_CAPACITY) * SHEET_CAPACITY;
+            let binder = binders[binders.length - 1];
+            if (binder.used && binder.used + reserved > BINDER_CAPACITY) {
+              binder = { used: 0, cards: 0, sets: [] };
+              binders.push(binder);
+            }
+            const startPocket = binder.used + 1;
+            const startSheet = Math.floor(binder.used / SHEET_CAPACITY) + 1;
+            binder.sets.push({
+              ...set,
+              startPocket,
+              endPocket: startPocket + set.total - 1,
+              startSheet,
+              endSheet: startSheet + reserved / SHEET_CAPACITY - 1,
+              reserved,
+              blanks: reserved - set.total
+            });
+            binder.used += reserved;
+            binder.cards += set.total;
+          });
+          return { series, binders };
+        });
+      }
+
+      function renderBinderPlan() {
+        activeView = 'binders';
+        activeSet = null;
+        renderSetList();
+        const plan = buildBinderPlan();
+        const binderTotal = plan.reduce((sum,era) => sum + era.binders.length, 0);
+        const blankTotal = plan.reduce((sum,era) => sum + era.binders.reduce((n,binder) => n + binder.sets.reduce((m,set) => m + set.blanks,0),0),0);
+        el('content').innerHTML = `<div class="binder-plan">
+          <div class="plan-heading">
+            <div><div class="eyebrow">Physical collection map</div><h2>Binder shelf plan</h2><p>Each binder holds 46 double-sided sheets: 9 front pockets + 9 back pockets per sheet, for 828 cards. Every expansion begins in the top-left pocket on the front of a fresh sheet. Reserved blank pockets keep the next set aligned.</p></div>
+            <div class="plan-total"><strong>${binderTotal}</strong><span>binders · ${blankTotal.toLocaleString()} alignment blanks</span></div>
+          </div>
+          ${plan.map(era => {
+            const color = eraColor(era.series);
+            return `<section class="era-plan">
+              <div class="era-plan-head"><input class="color-picker" type="color" value="${color}" data-era-color="${escapeHtml(era.series)}" aria-label="Binder color for ${escapeHtml(era.series)}"><div><h3>${escapeHtml(era.series)}</h3><span>${era.binders.length} binder${era.binders.length === 1 ? '' : 's'} · oldest sets first</span></div></div>
+              <div class="binders-grid">${era.binders.map((binder,index) => `
+                <article class="binder-card" style="--binder-color:${color}">
+                  <div class="binder-head"><b>${escapeHtml(era.series)} · Binder ${index + 1}</b><span>${binder.cards} cards · ${BINDER_CAPACITY - binder.used} open</span></div>
+                  <div class="binder-meter">${binder.sets.map(set => `<i style="width:${set.reserved / BINDER_CAPACITY * 100}%" title="${escapeHtml(set.name)}"></i>`).join('')}</div>
+                  <div class="placement-list">${binder.sets.map(set => `<div class="placement">
+                    <div class="placement-title"><b>${escapeHtml(set.name)}</b><span>${set.total} cards</span></div>
+                    <small><span class="front-start">Sheet ${set.startSheet}, front · top left</span> → sheet ${set.endSheet}<br>Pockets ${set.startPocket}–${set.endPocket}${set.blanks ? ` · leave ${set.blanks} blank after` : ''}</small>
+                  </div>`).join('')}</div>
+                </article>`).join('')}</div>
+            </section>`;
+          }).join('')}
+        </div>`;
+
+        el('content').querySelectorAll('[data-era-color]').forEach(input => input.addEventListener('input', event => {
+          state.eraColors[event.target.dataset.eraColor] = event.target.value;
+          saveState();
+          renderBinderPlan();
+        }));
+      }
+
       function updateDashboard() {
         const counts = Object.values(state.cards).reduce((sum,status) => { sum[status] = (sum[status] || 0) + 1; return sum; }, {});
         const total = sets.reduce((sum,set) => sum + (state.totals[set.id] || set.total || 0), 0);
@@ -538,6 +663,7 @@
       }
 
       el('setSearch').addEventListener('input', renderSetList);
+      el('binderPlanButton').addEventListener('click', renderBinderPlan);
       el('authButton').addEventListener('click', () => editMode ? lockEditing() : openLogin());
       el('cancelLogin').addEventListener('click', () => el('loginDialog').close());
       el('exportButton').addEventListener('click', exportCollection);
