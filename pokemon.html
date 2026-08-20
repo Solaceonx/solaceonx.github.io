@@ -93,14 +93,14 @@
     .search input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(62,114,200,.12); }
     .search::before { content: "⌕"; position: absolute; left: 12px; top: 7px; font-size: 1.25rem; color: var(--muted); }
     .set-list { overflow-y: auto; padding: 8px; }
-    .era-label { padding: 13px 10px 5px; color: var(--muted); font-weight: 700; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+    .era-label { margin: 9px 4px 6px; padding: 8px 10px; color: var(--era-ink, var(--ink)); background: var(--era-color, #eee); border-radius: 9px; font-weight: 800; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
     .set-button {
       width: 100%; border: 0; background: transparent; border-radius: 13px; display: grid;
       grid-template-columns: 35px 1fr auto; align-items: center; gap: 10px; padding: 9px 10px; text-align: left; cursor: pointer;
-      border-left: 5px solid var(--era-color, var(--blue)); background: color-mix(in srgb, var(--era-color, var(--blue)) 11%, transparent);
+      border-left: 6px solid var(--era-color, var(--blue)); background: color-mix(in srgb, var(--era-color, var(--blue)) 28%, white);
     }
-    .set-button:hover { background: color-mix(in srgb, var(--era-color, var(--blue)) 20%, transparent); }
-    .set-button.active { background: var(--ink); color: white; }
+    .set-button:hover { background: color-mix(in srgb, var(--era-color, var(--blue)) 42%, white); }
+    .set-button.active { background: var(--era-color, var(--ink)); color: var(--era-ink, white); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--era-ink, white) 28%, transparent); }
     .set-symbol { width: 30px; height: 24px; object-fit: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,.12)); }
     .set-button span { min-width: 0; }
     .set-button b { display: block; font-size: .82rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -423,10 +423,10 @@
         }, {});
 
         el('setList').innerHTML = Object.entries(groups).map(([series, group]) => `
-          <div class="era-label">${escapeHtml(series)}</div>
+          <div class="era-label" style="--era-color:${eraColor(series)};--era-ink:${contrastText(eraColor(series))}">${escapeHtml(series)}</div>
           ${group.map(set => {
             const statuses = statusesForSet(set.id);
-            return `<button class="set-button ${activeSet?.id === set.id ? 'active' : ''}" data-set-id="${escapeHtml(set.id)}" style="--era-color:${eraColor(set.series)}">
+            return `<button class="set-button ${activeSet?.id === set.id ? 'active' : ''}" data-set-id="${escapeHtml(set.id)}" style="--era-color:${eraColor(set.series)};--era-ink:${contrastText(eraColor(set.series))}">
               <img class="set-symbol" src="${escapeHtml(set.images.symbol)}" alt="" loading="lazy">
               <span><b>${escapeHtml(set.name)}</b><small>${escapeHtml(set.releaseDate.replaceAll('/',' · '))}</small></span>
               <em class="set-count">${statuses.owned}/${set.targetCards}</em>
@@ -568,6 +568,12 @@
           'Other': '#768093'
         };
         return state.eraColors[series] || defaults[series] || '#667085';
+      }
+
+      function contrastText(hex) {
+        const value = hex.replace('#','');
+        const [red,green,blue] = [0,2,4].map(index => Number.parseInt(value.slice(index,index + 2),16));
+        return (red * 299 + green * 587 + blue * 114) / 1000 > 150 ? '#18212f' : '#ffffff';
       }
 
       function buildBinderPlan() {
