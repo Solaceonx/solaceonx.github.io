@@ -118,6 +118,11 @@
     .set-progress span { color: var(--muted); font-size: .8rem; }
     .progress-track { height: 9px; background: #ece7dc; border-radius: 99px; overflow: hidden; margin-top: 9px; }
     .progress-track i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg,var(--red),var(--gold)); transition: width .3s; }
+    .set-values { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 13px; }
+    .set-value { padding: 9px 10px; border: 1px solid var(--line); border-radius: 11px; background: rgba(255,255,255,.62); }
+    .set-value small { display: block; color: var(--muted); font-size: .62rem; font-weight: 700; margin-bottom: 3px; }
+    .set-value b { display: block; font: 700 .95rem "Space Grotesk"; color: var(--green); }
+    .set-price-status { display: block; margin-top: 6px; color: var(--muted); font-size: .62rem; }
 
     .toolbar { padding: 14px 18px; display: flex; justify-content: space-between; gap: 12px; align-items: center; border-bottom: 1px solid var(--line); }
     .filters { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -295,6 +300,7 @@
       const PASSCODE_KEY = 'solaceonx-pokemon-passcode-v1';
       const BINDER_CAPACITY = 828;
       const SHEET_CAPACITY = 18;
+      const PRICE_CACHE_MS = 6 * 60 * 60 * 1000;
       const OMIT_SET_PATTERN = /Black Star Promos|McDonald'?s Collection|Trainer Gallery|Shiny Vault|Classic Collection|Galarian Gallery|Energies|Futsal Collection/i;
       const COLLECTION_TARGETS = Object.fromEntries(`
         hgss1:104 hgss2:83 hgss3:80 hgss4:90 col1:95
@@ -309,6 +315,8 @@
       state.cardDetails ||= {};
       state.eraColors ||= {};
       state.completeSets ||= {};
+      state.priceUpdatedAt ||= {};
+      state.setValues ||= {};
       if (state.completeSets.sv4 === undefined) state.completeSets.sv4 = true;
       let sets = [];
       let activeSet = null;
@@ -422,7 +430,11 @@
 
       async function enrichPrices(setId, force = false) {
         if (priceRequests.has(setId)) return priceRequests.get(setId);
-        if (pricedSets.has(setId) && !force) return true;
+        const cacheIsFresh = Date.now() - (state.priceUpdatedAt[setId] || 0) < PRICE_CACHE_MS;
+        if (!force && (pricedSets.has(setId) || cacheIsFresh)) {
+          pricedSets.add(setId);
+          return true;
+        }
         const request = (async () => {
           try {
             const pricedCards = await fetchCardsFromApi(setId, 'id,tcgplayer', force ? 2 : 1);
@@ -431,12 +443,17 @@
             cachedCards.forEach(card => {
               if (pricesById.has(card.id)) card.tcgplayer = pricesById.get(card.id);
               const price = marketPrice(card);
-              state.prices[card.id] = price;
-              if (state.cardDetails[card.id]) state.cardDetails[card.id].market = price;
+              if (price) state.prices[card.id] = price;
+              if (price && state.cardDetails[card.id]) state.cardDetails[card.id].market = price;
             });
             pricedSets.add(setId);
+            state.priceUpdatedAt[setId] = Date.now();
+            updateSetValueSummary(setId, cachedCards);
             saveState();
-            if (activeSet?.id === setId) renderCards();
+            if (activeSet?.id === setId) {
+              renderCards();
+              renderSetValues();
+            }
             return true;
           } catch {
             pricedSets.delete(setId);
@@ -515,13 +532,22 @@
           });
           state.totals[id] = activeCards.length;
           activeCards.forEach(card => {
-            state.prices[card.id] = marketPrice(card);
+            const price = marketPrice(card);
+            if (price) state.prices[card.id] = price;
             if (isCardOwned(card)) rememberCard(card);
           });
+          updateSetValueSummary(id, activeCards);
+          if (state.setValues[id]?.priced === activeCards.length) {
+            state.priceUpdatedAt[id] = Date.now();
+            pricedSets.add(id);
+          }
           saveState();
           renderContent();
           renderSetList();
-          enrichPrices(id);
+          enrichPrices(id).then(() => {
+            if (activeSet?.id === id) renderSetValues();
+          });
+          renderSetValues();
         } catch (error) {
           el('content').innerHTML = `<div class="error-box"><b>Couldn’t open this binder.</b><br>${escapeHtml(error.message)}</div>`;
         }
@@ -537,13 +563,13 @@
               <img src="${escapeHtml(activeSet.images.logo || activeSet.images.symbol)}" alt="${escapeHtml(activeSet.name)} logo">
               <div><div class="eyebrow">${escapeHtml(activeSet.series)}</div><h2>${escapeHtml(activeSet.name)}</h2><p>Released ${formatDate(activeSet.releaseDate)} · ${activeCards.length} cards in archive</p></div>
             </div>
-            <div class="set-progress"><strong>${stats.owned}</strong><span> / ${activeCards.length} owned · ${percentage}%</span><div class="progress-track"><i style="width:${percentage}%"></i></div></div>
+            <div class="set-progress"><strong>${stats.owned}</strong><span> / ${activeCards.length} owned · ${percentage}%</span><div class="progress-track"><i style="width:${percentage}%"></i></div><div class="set-values"><div class="set-value"><small>Your cards</small><b id="setOwnedValue">—</b></div><div class="set-value"><small>Full target set</small><b id="setFullValue">—</b></div></div><small class="set-price-status" id="setPriceStatus">Checking saved prices…</small></div>
           </div>
           <div class="toolbar">
             <div class="filters">
               ${[['all','All'],['need','Need'],['owned','Owned']].map(([value,label]) => `<button class="chip ${cardFilter === value ? 'active' : ''}" data-filter="${value}">${label}</button>`).join('')}
             </div>
-            <div class="toolbar-actions"><button class="bulk-button ${setComplete ? 'price-only' : ''}" id="fillSetButton" type="button" data-action="${setComplete ? 'prices' : 'fill'}">${setComplete ? '↻ Refresh prices' : '✓ Mark all owned'}</button><input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards"></div>
+            <div class="toolbar-actions"><button class="bulk-button price-only" id="priceRefreshButton" type="button">↻ Refresh prices</button>${setComplete ? '' : '<button class="bulk-button" id="fillSetButton" type="button">✓ Mark all owned</button>'}<input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards"></div>
           </div>
           <div class="card-grid" id="cardGrid"></div>`;
 
@@ -552,21 +578,24 @@
           renderContent();
         }));
         el('cardSearch').addEventListener('input', event => { cardQuery = event.target.value; renderCards(); });
-        el('fillSetButton').addEventListener('click', event => event.currentTarget.dataset.action === 'prices' ? refreshActivePrices() : fillActiveSet());
+        el('priceRefreshButton').addEventListener('click', refreshActivePrices);
+        el('fillSetButton')?.addEventListener('click', fillActiveSet);
         renderCards();
+        renderSetValues();
       }
 
       async function refreshActivePrices() {
         const setId = activeSet.id;
         const setName = activeSet.name;
-        const button = el('fillSetButton');
+        const button = el('priceRefreshButton');
         button.disabled = true;
         button.textContent = '↻ Loading prices…';
         showToast(`Refreshing ${setName} prices…`);
         const priced = await loadPricesWithRetry(setId);
-        if (activeSet?.id === setId && el('fillSetButton')) {
-          el('fillSetButton').disabled = false;
-          el('fillSetButton').textContent = '↻ Refresh prices';
+        if (activeSet?.id === setId && el('priceRefreshButton')) {
+          el('priceRefreshButton').disabled = false;
+          el('priceRefreshButton').textContent = '↻ Refresh prices';
+          renderSetValues();
         }
         showToast(priced ? `${setName} prices updated` : `${setName} prices unavailable`);
       }
@@ -586,9 +615,11 @@
         state.completeSets[activeSet.id] = true;
         activeCards.forEach(card => {
           delete state.cards[card.id];
-          state.prices[card.id] = marketPrice(card);
+          const price = marketPrice(card);
+          if (price) state.prices[card.id] = price;
           rememberCard(card);
         });
+        updateSetValueSummary(setId, activeCards);
         saveState();
         showToast(`${setName} complete · updating prices…`);
         renderContent();
@@ -635,6 +666,7 @@
               rememberCard(card);
               showToast(`${card.name} added`);
             }
+            updateSetValueSummary(activeSet.id, activeCards);
             saveState();
             renderContent();
             renderSetList();
@@ -650,6 +682,34 @@
           .map(key => card.tcgplayer?.prices?.[key]?.market)
           .find(value => Number.isFinite(value));
         return preferred || variants.map(price => price.market).find(value => Number.isFinite(value)) || 0;
+      }
+
+      function updateSetValueSummary(setId, cards) {
+        if (!cards?.length) return;
+        const summary = cards.reduce((totals, card) => {
+          const price = state.prices[card.id] || marketPrice(card);
+          if (price > 0) {
+            totals.priced++;
+            totals.full += price;
+            if (isCardOwned(card)) totals.owned += price;
+          }
+          return totals;
+        }, { owned: 0, full: 0, priced: 0, total: cards.length });
+        state.setValues[setId] = summary;
+      }
+
+      function renderSetValues() {
+        if (!activeSet || !el('setOwnedValue')) return;
+        updateSetValueSummary(activeSet.id, activeCards);
+        const summary = state.setValues[activeSet.id] || { owned: 0, full: 0, priced: 0, total: activeCards.length };
+        const money = value => value.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
+        el('setOwnedValue').textContent = summary.priced ? money(summary.owned) : '—';
+        el('setFullValue').textContent = summary.priced ? money(summary.full) : '—';
+        const updatedAt = state.priceUpdatedAt[activeSet.id];
+        const updatedLabel = updatedAt ? ` · updated ${new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(updatedAt)}` : '';
+        el('setPriceStatus').textContent = priceRequests.has(activeSet.id)
+          ? 'Loading current prices in the background…'
+          : `${summary.priced} of ${summary.total} cards priced${updatedLabel}`;
       }
 
       function rememberCard(card) {
