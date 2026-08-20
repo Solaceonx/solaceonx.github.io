@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A running KLAX daily-high forecast, market, and trading-position log.">
+  <title>KLAX Weather Market Tracker</title>
+  <link rel="stylesheet" href="weather.css?v=20260820a">
+</head>
+<body>
+  <header class="weather-header">
+    <a class="weather-brand" href="index.html"><span class="brand-dot"></span>KLAX / WX</a>
+    <div class="header-meta">
+      <span class="live-pill"><i></i>TRACKING</span>
+      <label for="snapshot-select">Snapshot</label>
+      <select id="snapshot-select" aria-label="Choose forecast snapshot"></select>
+    </div>
+  </header>
+
+  <main>
+    <section class="weather-hero">
+      <div class="hero-copy">
+        <p class="kicker">Los Angeles International Airport · Daily high</p>
+        <h1>Weather<br><em>market</em> log.</h1>
+        <p class="hero-lede">Model forecasts, live contract prices, positions, and eventual results—kept together so every call can be judged after the fact.</p>
+      </div>
+      <div class="hero-reading" aria-label="Current forecast summary">
+        <div class="sun-orbit" aria-hidden="true"><span></span></div>
+        <p>Predicted high</p>
+        <strong id="hero-predicted-high">—</strong>
+        <span id="hero-current-high">—</span>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Latest forecast and position metrics">
+      <article><span>Station</span><strong id="metric-station">—</strong><small>settlement source</small></article>
+      <article><span>Model P(&gt;77)</span><strong id="metric-probability">—</strong><small>rounded outcome distribution</small></article>
+      <article><span>Market midpoint</span><strong id="metric-market">—</strong><small>at the tracked snapshot</small></article>
+      <article><span>Position</span><strong id="metric-position">—</strong><small id="metric-position-note">—</small></article>
+    </section>
+
+    <section class="decision-panel">
+      <div class="decision-label">Current model call</div>
+      <div class="decision-main">
+        <div>
+          <h2 id="decision-action">—</h2>
+          <p id="decision-note">—</p>
+        </div>
+        <div class="decision-values">
+          <div><span>Hold value</span><strong id="hold-value">—</strong></div>
+          <div><span>Sell estimate</span><strong id="sell-value">—</strong></div>
+          <div><span>Hold break-even</span><strong id="break-even">—</strong></div>
+        </div>
+      </div>
+      <p class="decision-caveat">Experimental forecast—not financial advice. Quotes are manually transcribed and can move before an order fills.</p>
+    </section>
+
+    <section class="chart-grid">
+      <article class="chart-card chart-card-wide">
+        <header>
+          <div><span>01</span><h2>Final-high distribution</h2></div>
+          <p>Probability assigned to each rounded KLAX daily high.</p>
+        </header>
+        <div class="canvas-wrap"><canvas id="distribution-chart" role="img"></canvas></div>
+      </article>
+
+      <article class="chart-card">
+        <header>
+          <div><span>02</span><h2>Model vs market</h2></div>
+          <p>Chance the final high exceeds each listed strike.</p>
+        </header>
+        <div class="chart-legend" aria-hidden="true"><i class="model-key"></i>Model <i class="market-key"></i>Market</div>
+        <div class="canvas-wrap"><canvas id="threshold-chart" role="img"></canvas></div>
+      </article>
+
+      <article class="chart-card position-card">
+        <header>
+          <div><span>03</span><h2>Open position</h2></div>
+          <p>Five YES &gt;77°F contracts entered before the tracked forecast.</p>
+        </header>
+        <dl class="position-ledger">
+          <div><dt>Quantity</dt><dd id="position-quantity">—</dd></div>
+          <div><dt>Average fill</dt><dd id="position-entry">—</dd></div>
+          <div><dt>Fees paid</dt><dd id="position-fees">—</dd></div>
+          <div><dt>Total cost</dt><dd id="position-cost">—</dd></div>
+          <div><dt>Tracked sell bid</dt><dd id="position-bid">—</dd></div>
+          <div class="ledger-total"><dt>Estimated mark</dt><dd id="position-mark">—</dd></div>
+        </dl>
+        <div class="position-pnl"><span>Estimated change</span><strong id="position-pnl">—</strong></div>
+      </article>
+
+      <article class="chart-card chart-card-wide">
+        <header>
+          <div><span>04</span><h2>Tracked performance</h2></div>
+          <p>Realized and marked results will accumulate here as new event days are added.</p>
+        </header>
+        <div class="history-summary" id="history-summary"></div>
+        <div class="canvas-wrap history-canvas"><canvas id="history-chart" role="img"></canvas></div>
+      </article>
+    </section>
+
+    <section class="book-section">
+      <div class="book-heading">
+        <span>Contract book</span>
+        <h2>Every threshold, side by side.</h2>
+      </div>
+      <div class="book-table-wrap">
+        <table>
+          <thead><tr><th>Contract</th><th>Model</th><th>Market</th><th>Difference</th><th>Yes ask</th></tr></thead>
+          <tbody id="threshold-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="log-section">
+      <div class="book-heading">
+        <span>Audit trail</span>
+        <h2>Calls first. Outcomes later.</h2>
+      </div>
+      <div class="log-list" id="snapshot-log"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>KLAX Weather Market Tracker</span>
+    <span id="footer-updated">—</span>
+  </footer>
+
+  <script src="weather-data.js?v=20260820a"></script>
+  <script src="weather-tracker.js?v=20260820a"></script>
+  <script data-goatcounter="https://solaceonx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
