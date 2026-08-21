@@ -82,6 +82,10 @@
     .sidebar { align-self: start; position: sticky; top: 14px; max-height: calc(100vh - 28px); display: flex; flex-direction: column; }
     .sidebar-head { padding: 18px 18px 13px; border-bottom: 1px solid var(--line); }
     .sidebar-head h2 { font: 700 1.05rem "Space Grotesk"; margin-bottom: 12px; }
+    .collection-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 5px; margin-bottom: 9px; border-radius: 12px; background: #ece7dc; }
+    .collection-switch button { border: 0; border-radius: 9px; padding: 8px 6px; background: transparent; color: var(--muted); cursor: pointer; font-size: .7rem; font-weight: 800; }
+    .collection-switch button.active { color: white; background: var(--ink); box-shadow: 0 4px 10px rgba(24,33,47,.15); }
+    .collection-hint { margin: -1px 2px 10px; color: var(--muted); font-size: .65rem; line-height: 1.35; }
     .plan-button { width: 100%; margin-bottom: 9px; border: 1px solid var(--line); background: white; border-radius: 12px; padding: 10px 12px; cursor: pointer; text-align: left; font-weight: 700; font-size: .78rem; }
     .plan-button:hover { border-color: var(--blue); }
     .plan-button.active { color: white; background: var(--blue); border-color: var(--blue); }
@@ -259,6 +263,11 @@
       <aside class="panel sidebar">
         <div class="sidebar-head">
           <h2>Expansion archive</h2>
+          <div class="collection-switch" id="collectionSwitch" aria-label="Collection checklist">
+            <button type="button" data-collection="core">Affordable masters</button>
+            <button type="button" data-collection="hits">EX+ hits</button>
+          </div>
+          <p class="collection-hint" id="collectionHint"></p>
           <button class="plan-button" id="binderPlanButton" type="button">▦ View binder plan · 828 pockets each</button>
           <label class="search"><input id="setSearch" type="search" placeholder="Find a set or era…" aria-label="Search sets"></label>
         </div>
@@ -310,17 +319,44 @@
         swsh1:186 swsh2:174 swsh3:176 swsh35:68 swsh4:165 swsh45:63 swsh5:141 swsh6:159 swsh7:165 cel25:23 swsh8:244 swsh9:151 swsh10:159 pgo:70 swsh11:171 swsh12:169 swsh12pt5:146
         sv1:198 sv2:193 sv3:197 sv3pt5:165 sv4:182 sv4pt5:91 sv5:162 sv6:167 sv6pt5:64 sv7:142 sv8:191 sv8pt5:131 sv9:159 sv10:182
       `.trim().split(/\s+/).map(entry => { const [id,count] = entry.split(':'); return [id,Number(count)]; }));
+      const AFFORDABLE_TARGETS = Object.fromEntries(`
+        hgss1:104 hgss2:83 hgss3:80 hgss4:90 col1:95 bw1:112 bw2:96 bw3:96 bw4:87 bw5:96 bw6:112 dv1:20 bw7:130 bw8:119 bw9:100 bw10:85 bw11:101
+        xy0:39 xy1:132 xy2:91 xy3:97 xy4:104 xy5:132 dc1:30 xy6:86 xy7:72 xy8:138 xy9:97 g1:71 xy10:97 xy11:93 xy12:74
+        sm1:126 sm2:118 sm3:116 sm35:60 sm4:92 sm5:125 sm6:105 sm7:137 sm75:56 sm8:174 sm9:143 det1:14 sm10:176 sm11:196 sm115:56 sm12:193
+        swsh1:165 swsh2:151 swsh3:155 swsh35:54 swsh4:142 swsh45:46 swsh5:123 swsh6:136 swsh7:132 cel25:17 swsh8:217 swsh9:124 swsh10:128 pgo:58 swsh11:149 swsh12:144 swsh12pt5:113
+        sv1:186 sv2:176 sv3:176 sv3pt5:153 sv4:162 sv4pt5:81 sv5:140 sv6:147 sv6pt5:55 sv7:125 sv8:165 sv8pt5:100 sv9:143 sv10:165 zsv10pt5:80 rsv10pt5:80
+        me1:122 me2:84 me2pt5:178 me3:79 me4:76 me5:74
+      `.trim().split(/\s+/).map(entry => { const [id,count] = entry.split(':'); return [id,Number(count)]; }));
+      const HIT_TARGETS = Object.fromEntries(`
+        hgss1:11 hgss2:13 hgss3:11 hgss4:13 col1:0 bw1:3 bw2:2 bw3:6 bw4:16 bw5:15 bw6:16 dv1:0 bw7:23 bw8:19 bw9:22 bw10:20 bw11:19
+        xy0:0 xy1:14 xy2:19 xy3:17 xy4:20 xy5:32 dc1:2 xy6:25 xy7:29 xy8:26 xy9:27 g1:21 xy10:32 xy11:23 xy12:30
+        sm1:37 sm2:54 sm3:55 sm35:20 sm4:33 sm5:49 sm6:41 sm7:47 sm75:22 sm8:62 sm9:53 det1:4 sm10:59 sm11:63 sm115:13 sm12:79
+        swsh1:51 swsh2:58 swsh3:46 swsh35:26 swsh4:61 swsh45:27 swsh5:60 swsh6:97 swsh7:105 cel25:7 swsh8:67 swsh9:62 swsh10:88 pgo:30 swsh11:68 swsh12:71 swsh12pt5:47
+        sv1:72 sv2:103 sv3:54 sv3pt5:54 sv4:104 sv4pt5:164 sv5:78 sv6:79 sv6pt5:44 sv7:50 sv8:87 sv8pt5:80 sv9:47 sv10:79 zsv10pt5:91 rsv10pt5:91
+        me1:66 me2:46 me2pt5:117 me3:45 me4:46 me5:46
+      `.trim().split(/\s+/).map(entry => { const [id,count] = entry.split(':'); return [id,Number(count)]; }));
+      const HIT_RARITIES = new Set([
+        'Rare Holo EX','Rare Holo GX','Rare Holo V','Rare Holo VMAX','Rare Holo VSTAR','Double Rare','Ultra Rare','Rare Ultra',
+        'Illustration Rare','Special Illustration Rare','Hyper Rare','ACE SPEC Rare','Rare ACE','Rare BREAK','Rare Prism Star',
+        'Radiant Rare','Amazing Rare','Rare Shining','Shiny Rare','Shiny Ultra Rare','Rare Prime','LEGEND','Mega Hyper Rare',
+        'MEGA_ATTACK_RARE','Black White Rare','Rare Secret','Rare Rainbow'
+      ].map(rarity => rarity.toLowerCase()));
       const state = loadState();
       state.prices ||= {};
       state.cardDetails ||= {};
       state.eraColors ||= {};
       state.completeSets ||= {};
+      state.completeCollections ||= {};
       state.priceUpdatedAt ||= {};
       state.setValues ||= {};
+      state.cardRarities ||= {};
+      state.activeCollection ||= 'core';
       if (state.completeSets.sv4 === undefined) state.completeSets.sv4 = true;
       let sets = [];
       let activeSet = null;
+      let activeAllCards = [];
       let activeCards = [];
+      let activeCollection = state.activeCollection === 'hits' ? 'hits' : 'core';
       let activeView = 'cards';
       let cardFilter = 'all';
       let cardQuery = '';
@@ -328,7 +364,6 @@
       let setRequestId = 0;
       const cardCache = new Map();
       const priceRequests = new Map();
-      const pricedSets = new Set();
 
       const el = id => document.getElementById(id);
       const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -431,10 +466,8 @@
       async function enrichPrices(setId, force = false) {
         if (priceRequests.has(setId)) return priceRequests.get(setId);
         const cacheIsFresh = Date.now() - (state.priceUpdatedAt[setId] || 0) < PRICE_CACHE_MS;
-        if (!force && (pricedSets.has(setId) || cacheIsFresh)) {
-          pricedSets.add(setId);
-          return true;
-        }
+        const cachedSummary = state.setValues[collectionKey(setId)];
+        if (!force && cacheIsFresh && cachedSummary?.priced === cachedSummary?.total) return true;
         const request = (async () => {
           try {
             const pricedCards = await fetchCardsFromApi(setId, 'id,tcgplayer', force ? 2 : 1);
@@ -446,9 +479,8 @@
               if (price) state.prices[card.id] = price;
               if (price && state.cardDetails[card.id]) state.cardDetails[card.id].market = price;
             });
-            pricedSets.add(setId);
             state.priceUpdatedAt[setId] = Date.now();
-            updateSetValueSummary(setId, cachedCards);
+            updateSetValueSummaries(setId, cachedCards);
             saveState();
             if (activeSet?.id === setId) {
               renderCards();
@@ -456,7 +488,6 @@
             }
             return true;
           } catch {
-            pricedSets.delete(setId);
             return false;
           } finally {
             priceRequests.delete(setId);
@@ -489,8 +520,13 @@
 
       function renderSetList() {
         el('binderPlanButton').classList.toggle('active', activeView === 'binders');
+        el('binderPlanButton').textContent = `▦ View ${activeCollection === 'core' ? 'affordable' : 'hits'} binder plan · 828 pockets`;
+        el('collectionHint').textContent = activeCollection === 'core'
+          ? 'Regular cards and holo rares; EX-tier and rarer cards are moved out.'
+          : 'Optional showcase for EX, GX, V, Prime, Ultra, Illustration and Secret rarities.';
+        el('collectionSwitch').querySelectorAll('[data-collection]').forEach(button => button.classList.toggle('active', button.dataset.collection === activeCollection));
         const query = el('setSearch').value.trim().toLowerCase();
-        const matching = sets.filter(s => `${s.name} ${s.series}`.toLowerCase().includes(query));
+        const matching = sets.filter(set => collectionTargetForSet(set) > 0 && `${set.name} ${set.series}`.toLowerCase().includes(query));
         const groups = matching.reduce((map, set) => {
           (map[set.series] ||= []).push(set);
           return map;
@@ -503,7 +539,7 @@
             return `<button class="set-button ${activeSet?.id === set.id ? 'active' : ''}" data-set-id="${escapeHtml(set.id)}" style="--era-color:${eraColor(set.series)};--era-ink:${contrastText(eraColor(set.series))}">
               <img class="set-symbol" src="${escapeHtml(set.images.symbol)}" alt="" loading="lazy">
               <span><b>${escapeHtml(set.name)}</b><small>${escapeHtml(set.releaseDate.replaceAll('/',' · '))}</small></span>
-              <em class="set-count">${statuses.owned}/${set.targetCards}</em>
+              <em class="set-count">${statuses.owned}/${collectionTargetForSet(set)}</em>
             </button>`;
           }).join('')}
         `).join('') || '<div class="empty">No matching expansions.</div>';
@@ -518,6 +554,7 @@
         const requestId = ++setRequestId;
         activeView = 'cards';
         activeSet = sets.find(set => set.id === id);
+        activeAllCards = [];
         activeCards = [];
         cardFilter = 'all';
         cardQuery = '';
@@ -526,27 +563,26 @@
         try {
           const fetchedCards = await fetchAllCards(id);
           if (requestId !== setRequestId) return;
-          activeCards = fetchedCards.filter(card => {
-            const number = Number.parseInt(card.number, 10);
-            return Number.isFinite(number) && number <= activeSet.targetCards;
-          });
+          activeAllCards = fetchedCards;
+          activeCards = cardsForCollection(activeAllCards, activeSet, activeCollection);
           state.totals[id] = activeCards.length;
           activeCards.forEach(card => {
             const price = marketPrice(card);
             if (price) state.prices[card.id] = price;
             if (isCardOwned(card)) rememberCard(card);
           });
-          updateSetValueSummary(id, activeCards);
-          if (state.setValues[id]?.priced === activeCards.length) {
+          updateSetValueSummaries(id, activeAllCards);
+          if (state.setValues[collectionKey(id)]?.priced === activeCards.length) {
             state.priceUpdatedAt[id] = Date.now();
-            pricedSets.add(id);
           }
           saveState();
           renderContent();
           renderSetList();
-          enrichPrices(id).then(() => {
-            if (activeSet?.id === id) renderSetValues();
-          });
+          if (activeCards.length) {
+            enrichPrices(id).then(() => {
+              if (activeSet?.id === id) renderSetValues();
+            });
+          }
           renderSetValues();
         } catch (error) {
           el('content').innerHTML = `<div class="error-box"><b>Couldn’t open this binder.</b><br>${escapeHtml(error.message)}</div>`;
@@ -556,12 +592,13 @@
       function renderContent() {
         const stats = { owned: activeCards.filter(isCardOwned).length };
         const percentage = activeCards.length ? Math.round(stats.owned / activeCards.length * 100) : 0;
-        const setComplete = Boolean(state.completeSets[activeSet.id]) && stats.owned >= activeCards.length;
+        const setComplete = activeCards.length > 0 && Boolean(state.completeCollections[collectionKey(activeSet.id)]) && stats.owned >= activeCards.length;
+        const collectionName = activeCollection === 'core' ? 'Affordable master' : 'EX+ hits';
         el('content').innerHTML = `
           <div class="set-hero">
             <div class="set-meta">
               <img src="${escapeHtml(activeSet.images.logo || activeSet.images.symbol)}" alt="${escapeHtml(activeSet.name)} logo">
-              <div><div class="eyebrow">${escapeHtml(activeSet.series)}</div><h2>${escapeHtml(activeSet.name)}</h2><p>Released ${formatDate(activeSet.releaseDate)} · ${activeCards.length} cards in archive</p></div>
+              <div><div class="eyebrow">${escapeHtml(activeSet.series)} · ${collectionName}</div><h2>${escapeHtml(activeSet.name)}</h2><p>Released ${formatDate(activeSet.releaseDate)} · ${activeCards.length} cards in this checklist</p></div>
             </div>
             <div class="set-progress"><strong>${stats.owned}</strong><span> / ${activeCards.length} owned · ${percentage}%</span><div class="progress-track"><i style="width:${percentage}%"></i></div><div class="set-values"><div class="set-value"><small>Your cards</small><b id="setOwnedValue">—</b></div><div class="set-value"><small>Full target set</small><b id="setFullValue">—</b></div></div><small class="set-price-status" id="setPriceStatus">Checking saved prices…</small></div>
           </div>
@@ -569,7 +606,7 @@
             <div class="filters">
               ${[['all','All'],['need','Need'],['owned','Owned']].map(([value,label]) => `<button class="chip ${cardFilter === value ? 'active' : ''}" data-filter="${value}">${label}</button>`).join('')}
             </div>
-            <div class="toolbar-actions"><button class="bulk-button price-only" id="priceRefreshButton" type="button">↻ Refresh prices</button>${setComplete ? '' : '<button class="bulk-button" id="fillSetButton" type="button">✓ Mark all owned</button>'}<input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards"></div>
+            <div class="toolbar-actions"><button class="bulk-button price-only" id="priceRefreshButton" type="button" ${activeCards.length ? '' : 'disabled'}>↻ Refresh prices</button>${!setComplete && activeCards.length ? '<button class="bulk-button" id="fillSetButton" type="button">✓ Mark all owned</button>' : ''}<input class="card-search" id="cardSearch" type="search" value="${escapeHtml(cardQuery)}" placeholder="Find a card…" aria-label="Search cards"></div>
           </div>
           <div class="card-grid" id="cardGrid"></div>`;
 
@@ -612,14 +649,14 @@
         if (!editMode || !activeCards.length) return;
         const setId = activeSet.id;
         const setName = activeSet.name;
-        state.completeSets[activeSet.id] = true;
+        state.completeCollections[collectionKey(setId)] = true;
         activeCards.forEach(card => {
           delete state.cards[card.id];
           const price = marketPrice(card);
           if (price) state.prices[card.id] = price;
           rememberCard(card);
         });
-        updateSetValueSummary(setId, activeCards);
+        updateSetValueSummaries(setId, activeAllCards);
         saveState();
         showToast(`${setName} complete · updating prices…`);
         renderContent();
@@ -656,17 +693,18 @@
             if (!editMode) return;
             const card = activeCards.find(entry => entry.id === item.dataset.cardId);
             if (isCardOwned(card)) {
-              if (state.completeSets[activeSet.id]) state.cards[card.id] = 'missing';
+              if (state.completeCollections[collectionKey(activeSet.id)] || legacySetOwnsCard(card)) state.cards[card.id] = 'missing';
               else delete state.cards[card.id];
+              state.cardRarities[card.id] = card.rarity || '';
               delete state.cardDetails[card.id];
               showToast(`${card.name} removed`);
             } else {
-              if (state.completeSets[activeSet.id]) delete state.cards[card.id];
+              if (state.completeCollections[collectionKey(activeSet.id)] || legacySetOwnsCard(card)) delete state.cards[card.id];
               else state.cards[card.id] = 'owned';
               rememberCard(card);
               showToast(`${card.name} added`);
             }
-            updateSetValueSummary(activeSet.id, activeCards);
+            updateSetValueSummaries(activeSet.id, activeAllCards);
             saveState();
             renderContent();
             renderSetList();
@@ -684,24 +722,48 @@
         return preferred || variants.map(price => price.market).find(value => Number.isFinite(value)) || 0;
       }
 
-      function updateSetValueSummary(setId, cards) {
-        if (!cards?.length) return;
-        const summary = cards.reduce((totals, card) => {
-          const price = state.prices[card.id] || marketPrice(card);
-          if (price > 0) {
-            totals.priced++;
-            totals.full += price;
-            if (isCardOwned(card)) totals.owned += price;
-          }
-          return totals;
-        }, { owned: 0, full: 0, priced: 0, total: cards.length });
-        state.setValues[setId] = summary;
+      function collectionKey(setId, mode = activeCollection) {
+        return `${mode}:${setId}`;
+      }
+
+      function isHitCard(card) {
+        return HIT_RARITIES.has(String(card.rarity || '').toLowerCase());
+      }
+
+      function collectionTargetForSet(set, mode = activeCollection) {
+        return mode === 'hits' ? (HIT_TARGETS[set.id] || 0) : (AFFORDABLE_TARGETS[set.id] ?? set.targetCards);
+      }
+
+      function cardsForCollection(cards, set, mode = activeCollection) {
+        if (mode === 'hits') return cards.filter(isHitCard);
+        return cards.filter(card => {
+          const number = Number.parseInt(card.number, 10);
+          return Number.isFinite(number) && number <= set.targetCards && !isHitCard(card);
+        });
+      }
+
+      function updateSetValueSummaries(setId, cards) {
+        const set = sets.find(entry => entry.id === setId);
+        if (!set || !cards?.length) return;
+        ['core','hits'].forEach(mode => {
+          const collectionCards = cardsForCollection(cards, set, mode);
+          const summary = collectionCards.reduce((totals, card) => {
+            const price = state.prices[card.id] || marketPrice(card);
+            if (price > 0) {
+              totals.priced++;
+              totals.full += price;
+              if (isCardOwned(card)) totals.owned += price;
+            }
+            return totals;
+          }, { owned: 0, full: 0, priced: 0, total: collectionCards.length });
+          state.setValues[collectionKey(setId, mode)] = summary;
+        });
       }
 
       function renderSetValues() {
         if (!activeSet || !el('setOwnedValue')) return;
-        updateSetValueSummary(activeSet.id, activeCards);
-        const summary = state.setValues[activeSet.id] || { owned: 0, full: 0, priced: 0, total: activeCards.length };
+        updateSetValueSummaries(activeSet.id, activeAllCards);
+        const summary = state.setValues[collectionKey(activeSet.id)] || { owned: 0, full: 0, priced: 0, total: activeCards.length };
         const money = value => value.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
         el('setOwnedValue').textContent = summary.priced ? money(summary.owned) : '—';
         el('setFullValue').textContent = summary.priced ? money(summary.full) : '—';
@@ -714,6 +776,7 @@
 
       function rememberCard(card) {
         state.cardDetails[card.id] = { name: card.name, set: card.set?.name || activeSet?.name || '', number: card.number, rarity: card.rarity || '', market: state.prices[card.id] || marketPrice(card) };
+        state.cardRarities[card.id] = card.rarity || '';
       }
 
       function cardSetId(cardId) {
@@ -722,17 +785,58 @@
 
       function isStoredCardOwned(cardId) {
         if (state.cards[cardId] === 'missing') return false;
-        return state.cards[cardId] === 'owned' || Boolean(state.completeSets[cardSetId(cardId)]);
+        if (state.cards[cardId] === 'owned') return true;
+        const mode = storedCardIsHit(cardId) ? 'hits' : 'core';
+        if (state.completeCollections[collectionKey(cardSetId(cardId), mode)]) return true;
+        const set = sets.find(entry => entry.id === cardSetId(cardId));
+        const number = Number.parseInt(state.cardDetails[cardId]?.number ?? cardId.slice(cardId.lastIndexOf('-') + 1), 10);
+        return Boolean(state.completeSets[cardSetId(cardId)] && set && Number.isFinite(number) && number <= set.targetCards);
       }
 
       function isCardOwned(card) {
-        return isStoredCardOwned(card.id);
+        if (state.cards[card.id] === 'missing') return false;
+        if (state.cards[card.id] === 'owned') return true;
+        const mode = isHitCard(card) ? 'hits' : 'core';
+        return Boolean(state.completeCollections[collectionKey(cardSetId(card.id), mode)] || legacySetOwnsCard(card));
+      }
+
+      function legacySetOwnsCard(card) {
+        const setId = cardSetId(card.id);
+        const set = sets.find(entry => entry.id === setId);
+        const number = Number.parseInt(card.number, 10);
+        return Boolean(state.completeSets[setId] && set && Number.isFinite(number) && number <= set.targetCards);
+      }
+
+      function storedCardIsHit(cardId) {
+        const rarity = state.cardRarities[cardId] ?? state.cardDetails[cardId]?.rarity ?? '';
+        return HIT_RARITIES.has(String(rarity).toLowerCase());
+      }
+
+      function storedCardBelongsToCollection(cardId, mode = activeCollection) {
+        return storedCardIsHit(cardId) === (mode === 'hits');
       }
 
       function statusesForSet(setId) {
-        const target = sets.find(set => set.id === setId)?.targetCards || 0;
-        const entries = Object.entries(state.cards).filter(([cardId]) => cardSetId(cardId) === setId);
-        if (state.completeSets[setId]) return { owned: Math.max(0, target - entries.filter(([,status]) => status === 'missing').length) };
+        const set = sets.find(entry => entry.id === setId);
+        const target = set ? collectionTargetForSet(set) : 0;
+        const entries = Object.entries(state.cards)
+          .filter(([cardId]) => cardSetId(cardId) === setId && storedCardBelongsToCollection(cardId));
+        const missing = entries.filter(([,status]) => status === 'missing');
+        if (state.completeCollections[collectionKey(setId)]) return { owned: Math.max(0, target - missing.length) };
+        if (state.completeSets[setId] && activeCollection === 'core') return { owned: Math.max(0, target - missing.length) };
+        if (state.completeSets[setId] && activeCollection === 'hits') {
+          const originalTarget = set?.targetCards || 0;
+          const legacyHitTotal = Math.max(0, originalTarget - (AFFORDABLE_TARGETS[setId] ?? originalTarget));
+          const legacyMissing = missing.filter(([cardId]) => {
+            const number = Number.parseInt(state.cardDetails[cardId]?.number ?? cardId.slice(cardId.lastIndexOf('-') + 1), 10);
+            return Number.isFinite(number) && number <= originalTarget;
+          }).length;
+          const additionalOwned = entries.filter(([cardId,status]) => {
+            const number = Number.parseInt(state.cardDetails[cardId]?.number ?? cardId.slice(cardId.lastIndexOf('-') + 1), 10);
+            return status === 'owned' && (!Number.isFinite(number) || number > originalTarget);
+          }).length;
+          return { owned: Math.min(target, Math.max(0, legacyHitTotal - legacyMissing + additionalOwned)) };
+        }
         return { owned: entries.filter(([,status]) => status === 'owned').length };
       }
 
@@ -759,6 +863,7 @@
       function buildBinderPlan() {
         const eras = new Map();
         sets.forEach(set => {
+          if (!collectionTargetForSet(set)) return;
           if (!eras.has(set.series)) eras.set(set.series, []);
           eras.get(set.series).push(set);
         });
@@ -766,7 +871,8 @@
           eraSets.sort((a,b) => a.releaseDate.localeCompare(b.releaseDate));
           const binders = [{ used: 0, cards: 0, sets: [] }];
           eraSets.forEach(set => {
-            const plannedCards = set.targetCards;
+            const plannedCards = collectionTargetForSet(set);
+            if (!plannedCards) return;
             const reserved = Math.ceil(plannedCards / SHEET_CAPACITY) * SHEET_CAPACITY;
             let binder = binders[binders.length - 1];
             if (binder.used && binder.used + reserved > BINDER_CAPACITY) {
@@ -801,7 +907,7 @@
         const blankTotal = plan.reduce((sum,era) => sum + era.binders.reduce((n,binder) => n + binder.sets.reduce((m,set) => m + set.blanks,0),0),0);
         el('content').innerHTML = `<div class="binder-plan">
           <div class="plan-heading">
-            <div><div class="eyebrow">Physical collection map</div><h2>Binder shelf plan</h2><p>Each binder holds 46 double-sided sheets: 9 front pockets + 9 back pockets per sheet, for 828 cards. Every expansion begins in the top-left pocket on the front of a fresh sheet. Reserved blank pockets keep the next set aligned.</p></div>
+            <div><div class="eyebrow">${activeCollection === 'core' ? 'Affordable masters' : 'EX+ hits'} · physical collection map</div><h2>Binder shelf plan</h2><p>Each binder holds 46 double-sided sheets: 9 front pockets + 9 back pockets per sheet, for 828 cards. Every expansion begins in the top-left pocket on the front of a fresh sheet. Reserved blank pockets keep the next set aligned.</p></div>
             <div class="plan-total"><strong>${binderTotal}</strong><span>binders · ${blankTotal.toLocaleString()} alignment blanks</span></div>
           </div>
           ${plan.map(era => {
@@ -829,10 +935,11 @@
       }
 
       function updateDashboard() {
-        const total = sets.reduce((sum,set) => sum + (set.targetCards || 0), 0);
-        const owned = sets.reduce((sum,set) => sum + statusesForSet(set.id).owned, 0);
+        const collectionSets = sets.filter(set => collectionTargetForSet(set) > 0);
+        const total = collectionSets.reduce((sum,set) => sum + collectionTargetForSet(set), 0);
+        const owned = collectionSets.reduce((sum,set) => sum + statusesForSet(set.id).owned, 0);
         const percent = total ? Math.round(owned / total * 100) : 0;
-        const started = sets.filter(set => {
+        const started = collectionSets.filter(set => {
           const s = statusesForSet(set.id);
           return s.owned > 0;
         }).length;
@@ -841,9 +948,26 @@
         el('overallPercent').textContent = `${percent}%`;
         el('overallBar').style.width = `${percent}%`;
         el('setsStarted').textContent = started;
-        el('setTotalLabel').textContent = `of ${sets.length || '—'}`;
-        const value = Object.keys(state.cardDetails).reduce((sum,cardId) => isStoredCardOwned(cardId) ? sum + (state.prices[cardId] || 0) : sum, 0);
+        el('setTotalLabel').textContent = `of ${collectionSets.length || '—'}`;
+        const value = Object.keys(state.cardDetails).reduce((sum,cardId) => isStoredCardOwned(cardId) && storedCardBelongsToCollection(cardId) ? sum + (state.prices[cardId] || 0) : sum, 0);
         el('valueTotal').textContent = value.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+      }
+
+      function switchCollection(mode) {
+        if (!['core','hits'].includes(mode) || mode === activeCollection) return;
+        activeCollection = mode;
+        state.activeCollection = mode;
+        if (activeSet && activeAllCards.length) {
+          activeCards = cardsForCollection(activeAllCards, activeSet, activeCollection);
+          cardFilter = 'all';
+          cardQuery = '';
+          activeCards.forEach(card => { if (isCardOwned(card)) rememberCard(card); });
+          updateSetValueSummaries(activeSet.id, activeAllCards);
+        }
+        saveState();
+        renderSetList();
+        if (activeView === 'binders') renderBinderPlan();
+        else if (activeSet) renderContent();
       }
 
       function exportCollection() {
@@ -865,6 +989,7 @@
       }
 
       el('setSearch').addEventListener('input', renderSetList);
+      el('collectionSwitch').querySelectorAll('[data-collection]').forEach(button => button.addEventListener('click', () => switchCollection(button.dataset.collection)));
       el('binderPlanButton').addEventListener('click', renderBinderPlan);
       el('authButton').addEventListener('click', () => editMode ? lockEditing() : openLogin());
       el('cancelLogin').addEventListener('click', () => el('loginDialog').close());
