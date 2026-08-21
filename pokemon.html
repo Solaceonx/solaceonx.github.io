@@ -319,7 +319,7 @@
         swsh1:186 swsh2:174 swsh3:176 swsh35:68 swsh4:165 swsh45:63 swsh5:141 swsh6:159 swsh7:165 cel25:23 swsh8:244 swsh9:151 swsh10:159 pgo:70 swsh11:171 swsh12:169 swsh12pt5:146
         sv1:198 sv2:193 sv3:197 sv3pt5:165 sv4:182 sv4pt5:91 sv5:162 sv6:167 sv6pt5:64 sv7:142 sv8:191 sv8pt5:131 sv9:159 sv10:182
       `.trim().split(/\s+/).map(entry => { const [id,count] = entry.split(':'); return [id,Number(count)]; }));
-      const AFFORDABLE_TARGETS = Object.fromEntries(`
+      const NON_HIT_BASE_TARGETS = Object.fromEntries(`
         hgss1:104 hgss2:83 hgss3:80 hgss4:90 col1:95 bw1:112 bw2:96 bw3:96 bw4:87 bw5:96 bw6:112 dv1:20 bw7:130 bw8:119 bw9:100 bw10:85 bw11:101
         xy0:39 xy1:132 xy2:91 xy3:97 xy4:104 xy5:132 dc1:30 xy6:86 xy7:72 xy8:138 xy9:97 g1:71 xy10:97 xy11:93 xy12:74
         sm1:126 sm2:118 sm3:116 sm35:60 sm4:92 sm5:125 sm6:105 sm7:137 sm75:56 sm8:174 sm9:143 det1:14 sm10:176 sm11:196 sm115:56 sm12:193
@@ -522,7 +522,7 @@
         el('binderPlanButton').classList.toggle('active', activeView === 'binders');
         el('binderPlanButton').textContent = `▦ View ${activeCollection === 'core' ? 'affordable' : 'hits'} binder plan · 828 pockets`;
         el('collectionHint').textContent = activeCollection === 'core'
-          ? 'Regular cards and holo rares; EX-tier and rarer cards are moved out.'
+          ? 'The original master checklist, using your CSV cutoffs exactly as before.'
           : 'Optional showcase for EX, GX, V, Prime, Ultra, Illustration and Secret rarities.';
         el('collectionSwitch').querySelectorAll('[data-collection]').forEach(button => button.classList.toggle('active', button.dataset.collection === activeCollection));
         const query = el('setSearch').value.trim().toLowerCase();
@@ -731,14 +731,14 @@
       }
 
       function collectionTargetForSet(set, mode = activeCollection) {
-        return mode === 'hits' ? (HIT_TARGETS[set.id] || 0) : (AFFORDABLE_TARGETS[set.id] ?? set.targetCards);
+        return mode === 'hits' ? (HIT_TARGETS[set.id] || 0) : set.targetCards;
       }
 
       function cardsForCollection(cards, set, mode = activeCollection) {
         if (mode === 'hits') return cards.filter(isHitCard);
         return cards.filter(card => {
           const number = Number.parseInt(card.number, 10);
-          return Number.isFinite(number) && number <= set.targetCards && !isHitCard(card);
+          return Number.isFinite(number) && number <= set.targetCards;
         });
       }
 
@@ -826,7 +826,7 @@
         if (state.completeSets[setId] && activeCollection === 'core') return { owned: Math.max(0, target - missing.length) };
         if (state.completeSets[setId] && activeCollection === 'hits') {
           const originalTarget = set?.targetCards || 0;
-          const legacyHitTotal = Math.max(0, originalTarget - (AFFORDABLE_TARGETS[setId] ?? originalTarget));
+          const legacyHitTotal = Math.max(0, originalTarget - (NON_HIT_BASE_TARGETS[setId] ?? originalTarget));
           const legacyMissing = missing.filter(([cardId]) => {
             const number = Number.parseInt(state.cardDetails[cardId]?.number ?? cardId.slice(cardId.lastIndexOf('-') + 1), 10);
             return Number.isFinite(number) && number <= originalTarget;
