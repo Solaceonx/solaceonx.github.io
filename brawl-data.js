@@ -250,92 +250,97 @@ window.BRAWL_DATA = {
         "date": "2026-08-22",
         "label": "Aug 22",
         "trophies": 36833
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
+        "trophies": 36977
       }
     ],
     "recentGames": [
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
+        "brawler": "SURGE",
+        "image": "assets/brawlers/16000038.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260823T094853.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
         "mode": "Duo Showdown",
         "result": "win",
-        "battleTime": "20260821T223007.000Z"
+        "battleTime": "20260823T065942.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
         "mode": "Duo Showdown",
         "result": "win",
-        "battleTime": "20260821T222851.000Z"
+        "battleTime": "20260823T065643.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
         "mode": "Duo Showdown",
         "result": "win",
-        "battleTime": "20260821T222643.000Z"
+        "battleTime": "20260823T065431.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260821T222012.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260820T014049.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260820T013744.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20260820T013535.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260820T013243.000Z"
-      },
-      {
-        "brawler": "COLETTE",
-        "image": "assets/brawlers/16000039.png",
-        "mode": "Trio Showdown",
-        "result": "win",
-        "battleTime": "20260820T013108.000Z"
-      },
-      {
-        "brawler": "COLETTE",
-        "image": "assets/brawlers/16000039.png",
-        "mode": "Trio Showdown",
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Duo Showdown",
         "result": "loss",
-        "battleTime": "20260820T012909.000Z"
+        "battleTime": "20260823T065324.000Z"
       },
       {
-        "brawler": "COLETTE",
-        "image": "assets/brawlers/16000039.png",
-        "mode": "Trio Showdown",
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Duo Showdown",
         "result": "win",
-        "battleTime": "20260820T012716.000Z"
+        "battleTime": "20260823T065102.000Z"
       },
       {
-        "brawler": "COLETTE",
-        "image": "assets/brawlers/16000039.png",
-        "mode": "Trio Showdown",
+        "brawler": "SHELLY",
+        "image": "assets/brawlers/16000000.png",
+        "mode": "Duo Showdown",
+        "result": "loss",
+        "battleTime": "20260823T064919.000Z"
+      },
+      {
+        "brawler": "SHELLY",
+        "image": "assets/brawlers/16000000.png",
+        "mode": "Duo Showdown",
+        "result": "loss",
+        "battleTime": "20260823T064804.000Z"
+      },
+      {
+        "brawler": "SHELLY",
+        "image": "assets/brawlers/16000000.png",
+        "mode": "Duo Showdown",
+        "result": "loss",
+        "battleTime": "20260823T064601.000Z"
+      },
+      {
+        "brawler": "SHELLY",
+        "image": "assets/brawlers/16000000.png",
+        "mode": "Duo Showdown",
+        "result": "loss",
+        "battleTime": "20260823T064416.000Z"
+      },
+      {
+        "brawler": "SHELLY",
+        "image": "assets/brawlers/16000000.png",
+        "mode": "Duo Showdown",
+        "result": "loss",
+        "battleTime": "20260823T064157.000Z"
+      },
+      {
+        "brawler": "SHELLY",
+        "image": "assets/brawlers/16000000.png",
+        "mode": "Duo Showdown",
         "result": "win",
-        "battleTime": "20260820T012408.000Z"
+        "battleTime": "20260823T063858.000Z"
       }
     ],
     "gamesHistory": [
@@ -568,6 +573,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-22",
         "label": "Aug 22",
         "games": 240
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
+        "games": 264
       }
     ],
     "lifetimeWinsHistory": [
@@ -820,6 +830,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-22",
         "label": "Aug 22",
         "wins": 8028
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
+        "wins": 8055
       }
     ],
     "winsHistory": [
@@ -1052,6 +1067,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-22",
         "label": "Aug 22",
         "wins": 163
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
+        "wins": 178
       }
     ],
     "lossesHistory": [
@@ -1284,17 +1304,27 @@ window.BRAWL_DATA = {
         "date": "2026-08-22",
         "label": "Aug 22",
         "losses": 76
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
+        "losses": 85
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 90,
+        "count": 95,
         "image": null
       },
       {
         "mode": "Knockout",
-        "count": 29,
+        "count": 32,
+        "image": null
+      },
+      {
+        "mode": "Duo Showdown",
+        "count": 30,
         "image": null
       },
       {
@@ -1303,8 +1333,8 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Duo Showdown",
-        "count": 19,
+        "mode": "Gem Grab",
+        "count": 17,
         "image": null
       },
       {
@@ -1313,13 +1343,8 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Gem Grab",
-        "count": 16,
-        "image": null
-      },
-      {
         "mode": "Hot Zone",
-        "count": 14,
+        "count": 15,
         "image": null
       },
       {
@@ -1329,7 +1354,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Bounty",
-        "count": 7,
+        "count": 8,
         "image": null
       },
       {
@@ -1344,7 +1369,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Knockout5V5",
-        "count": 1,
+        "count": 3,
         "image": null
       }
     ],
@@ -1414,19 +1439,19 @@ window.BRAWL_DATA = {
         "games": 8
       },
       {
+        "name": "COLETTE",
+        "trophies": 1022,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000039.png",
+        "games": 72
+      },
+      {
         "name": "RICO",
         "trophies": 1021,
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000004.png",
-        "games": 0
-      },
-      {
-        "name": "NITA",
-        "trophies": 1021,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000008.png",
         "games": 0
       }
     ]
@@ -1682,6 +1707,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-22",
         "label": "Aug 22",
         "points": 3115
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
+        "points": 3115
       }
     ],
     "gamesHistory": [
@@ -1913,6 +1943,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-22",
         "label": "Aug 22",
+        "games": 376
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
         "games": 376
       }
     ],
@@ -2146,6 +2181,11 @@ window.BRAWL_DATA = {
         "date": "2026-08-22",
         "label": "Aug 22",
         "wins": 210
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
+        "wins": 210
       }
     ],
     "lossesHistory": [
@@ -2377,6 +2417,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-08-22",
         "label": "Aug 22",
+        "losses": 164
+      },
+      {
+        "date": "2026-08-23",
+        "label": "Aug 23",
         "losses": 164
       }
     ],
