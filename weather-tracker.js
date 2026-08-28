@@ -81,11 +81,12 @@
     const slot = chartWidth / snapshot.distribution.length;
     const barWidth = Math.max(8, slot * .62);
 
+    const focusStrike = snapshot.focusStrike ?? snapshot.thresholds[Math.floor(snapshot.thresholds.length / 2)]?.strike;
     snapshot.distribution.forEach((item, index) => {
       const x = pad.left + slot * index + (slot - barWidth) / 2;
       const barHeight = item.probability / maxProbability * chartHeight;
       const y = pad.top + chartHeight - barHeight;
-      context.fillStyle = item.temperatureF > 77 ? palette.lime : "rgba(80,223,204,.62)";
+      context.fillStyle = item.temperatureF > focusStrike ? palette.lime : "rgba(80,223,204,.62)";
       context.fillRect(x, y, barWidth, barHeight);
       context.fillStyle = palette.muted;
       context.font = "10px 'DM Mono', monospace";
@@ -99,7 +100,9 @@
       }
     });
 
-    const splitX = pad.left + slot * 3;
+    const firstWinningIndex = snapshot.distribution.findIndex(item => item.temperatureF > focusStrike);
+    const splitX = pad.left + slot * (firstWinningIndex < 0 ? snapshot.distribution.length : firstWinningIndex);
+    const focusProbability = snapshot.thresholds.find(item => item.strike === focusStrike)?.modelProbability;
     context.save();
     context.strokeStyle = palette.lime;
     context.setLineDash([4, 5]);
@@ -110,9 +113,9 @@
     context.fillStyle = palette.lime;
     context.font = "10px 'DM Mono', monospace";
     context.textAlign = "left";
-    context.fillText(`YES >77: ${percent(snapshot.thresholds.find(item => item.strike === 77)?.modelProbability)}`, splitX + 7, pad.top + 12);
+    context.fillText(`YES >${focusStrike}: ${percent(focusProbability)}`, Math.min(splitX + 7, width - pad.right - 112), pad.top + 12);
     context.restore();
-    canvas.setAttribute("aria-label", `Forecast distribution. Median ${snapshot.predictedMedianF} degrees Fahrenheit and ${percent(snapshot.thresholds.find(item => item.strike === 77)?.modelProbability)} chance of exceeding 77.`);
+    canvas.setAttribute("aria-label", `Forecast distribution. Median ${snapshot.predictedMedianF} degrees Fahrenheit and ${percent(focusProbability)} chance of exceeding ${focusStrike}.`);
   };
 
   const drawThresholds = snapshot => {
@@ -229,29 +232,44 @@
 
   const renderLog = () => {
     $("#snapshot-log").innerHTML = [...data.snapshots].reverse().map(snapshot => {
-      const model77 = snapshot.thresholds.find(item => item.strike === 77)?.modelProbability;
+      const focusStrike = snapshot.focusStrike ?? snapshot.thresholds[Math.floor(snapshot.thresholds.length / 2)]?.strike;
+      const focusProbability = snapshot.thresholds.find(item => item.strike === focusStrike)?.modelProbability;
       const status = snapshot.outcome ? `Settled ${snapshot.outcome.officialHighF}°F` : snapshot.position?.status || "forecast";
       return `<article class="log-entry">
         <time datetime="${escapeHtml(snapshot.observedAt)}">${dateLabel(snapshot.eventDate)}<br>${timeLabel(snapshot.observedAt)}</time>
-        <div><h3>${escapeHtml(snapshot.station)} median ${snapshot.predictedMedianF}°F · P(&gt;77) ${percent(model77)}</h3><p>${escapeHtml(snapshot.notes || "Forecast snapshot")}</p></div>
+        <div><h3>${escapeHtml(snapshot.station)} median ${snapshot.predictedMedianF}°F · P(&gt;${focusStrike}) ${percent(focusProbability)}</h3><p>${escapeHtml(snapshot.notes || "Forecast snapshot")}</p></div>
         <span class="log-entry-status">${escapeHtml(status)}</span>
       </article>`;
     }).join("");
   };
 
   const renderSnapshot = snapshot => {
-    const model77 = snapshot.thresholds.find(item => item.strike === 77);
+    const focusStrike = snapshot.focusStrike ?? snapshot.thresholds[Math.floor(snapshot.thresholds.length / 2)]?.strike;
+    const focusContract = snapshot.thresholds.find(item => item.strike === focusStrike);
     const position = snapshot.position;
-    const holdValue = position ? position.quantity * (model77?.modelProbability || 0) : null;
+    const positionStrike = position?.strike ?? focusStrike;
+    const positionProbability = snapshot.thresholds.find(item => item.strike === positionStrike)?.modelProbability;
+    const holdValue = position ? position.quantity * (positionProbability || 0) : null;
     const change = position ? markedPnl(snapshot) : null;
 
     $("#hero-predicted-high").textContent = `${snapshot.predictedMedianF}°`;
     $("#hero-current-high").textContent = `Current observed max ${snapshot.currentHighF}°F · mean ${snapshot.predictedMeanF.toFixed(1)}°F`;
     $("#metric-station").textContent = snapshot.station;
-    $("#metric-probability").textContent = percent(model77?.modelProbability);
-    $("#metric-market").textContent = percent(model77?.marketMidpoint);
+    $("#metric-probability-label").textContent = `Model P(>${focusStrike})`;
+    $("#metric-market-label").textContent = `Market P(>${focusStrike})`;
+    $("#metric-probability").textContent = percent(focusContract?.modelProbability);
+    $("#metric-market").textContent = percent(focusContract?.marketMidpoint);
     $("#metric-position").textContent = position ? `${position.quantity} × YES` : "None";
     $("#metric-position-note").textContent = position ? position.contract : "no live exposure";
+    $("#position-heading").textContent = position
+      ? position.status === "settled" ? "Settled position" : "Open position"
+      : "No position";
+    $("#position-description").textContent = position
+      ? `${position.quantity} ${position.contract} contract${position.quantity === 1 ? "" : "s"} recorded with this snapshot.`
+      : "No position was logged for this snapshot.";
+    $("#threshold-legend").innerHTML = snapshot.thresholds.some(item => item.marketMidpoint != null)
+      ? '<i class="model-key"></i>Model <i class="market-key"></i>Market'
+      : '<i class="model-key"></i>Model · market quotes not captured';
     $("#decision-action").textContent = snapshot.recommendation?.action || "No model call";
     $("#decision-note").textContent = snapshot.recommendation?.note || "No recommendation was logged for this snapshot.";
     $("#hold-value").textContent = money(holdValue);
@@ -265,7 +283,7 @@
     $("#position-bid").textContent = cents(position?.sellBid);
     $("#position-mark").textContent = money(position?.estimatedExitNet);
     $("#position-pnl").textContent = change == null ? "—" : `${change >= 0 ? "+" : ""}${money(change)}`;
-    $("#position-pnl").classList.toggle("positive", change >= 0);
+    $("#position-pnl").classList.toggle("positive", change != null && change >= 0);
     $("#footer-updated").textContent = `Updated ${dateLabel(snapshot.observedAt)} · ${timeLabel(snapshot.observedAt)}`;
 
     drawDistribution(snapshot);

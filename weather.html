@@ -34,8 +34,8 @@
 
     <section class="ticker" aria-label="Latest forecast and position metrics">
       <article><span>Station</span><strong id="metric-station">—</strong><small>settlement source</small></article>
-      <article><span>Model P(&gt;77)</span><strong id="metric-probability">—</strong><small>rounded outcome distribution</small></article>
-      <article><span>Market midpoint</span><strong id="metric-market">—</strong><small>at the tracked snapshot</small></article>
+      <article><span id="metric-probability-label">Model probability</span><strong id="metric-probability">—</strong><small>rounded outcome distribution</small></article>
+      <article><span id="metric-market-label">Market midpoint</span><strong id="metric-market">—</strong><small>at the tracked snapshot</small></article>
       <article><span>Position</span><strong id="metric-position">—</strong><small id="metric-position-note">—</small></article>
     </section>
 
@@ -69,14 +69,14 @@
           <div><span>02</span><h2>Model vs market</h2></div>
           <p>Chance the final high exceeds each listed strike.</p>
         </header>
-        <div class="chart-legend" aria-hidden="true"><i class="model-key"></i>Model <i class="market-key"></i>Market</div>
+        <div class="chart-legend" id="threshold-legend" aria-hidden="true"><i class="model-key"></i>Model <i class="market-key"></i>Market</div>
         <div class="canvas-wrap"><canvas id="threshold-chart" role="img"></canvas></div>
       </article>
 
       <article class="chart-card position-card">
         <header>
-          <div><span>03</span><h2>Open position</h2></div>
-          <p>Five YES &gt;77°F contracts entered before the tracked forecast.</p>
+          <div><span>03</span><h2 id="position-heading">Position</h2></div>
+          <p id="position-description">Position recorded with the selected snapshot.</p>
         </header>
         <dl class="position-ledger">
           <div><dt>Quantity</dt><dd id="position-quantity">—</dd></div>
