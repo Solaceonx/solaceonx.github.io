@@ -260,94 +260,14 @@ window.BRAWL_DATA = {
         "date": "2026-09-02",
         "label": "Sep 2",
         "trophies": 37400
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
+        "trophies": 37400
       }
     ],
-    "recentGames": [
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Solo Showdown",
-        "result": "loss",
-        "battleTime": "20260902T085935.000Z"
-      },
-      {
-        "brawler": "DRACO",
-        "image": "assets/brawlers/16000080.png",
-        "mode": "Solo Showdown",
-        "result": "win",
-        "battleTime": "20260902T085700.000Z"
-      },
-      {
-        "brawler": "GUS",
-        "image": "assets/brawlers/16000061.png",
-        "mode": "Knockout",
-        "result": "victory",
-        "battleTime": "20260831T074751.000Z"
-      },
-      {
-        "brawler": "BROCK",
-        "image": "assets/brawlers/16000003.png",
-        "mode": "Knockout",
-        "result": "defeat",
-        "battleTime": "20260831T074509.000Z"
-      },
-      {
-        "brawler": "RUFFS",
-        "image": "assets/brawlers/16000044.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20260831T074244.000Z"
-      },
-      {
-        "brawler": "MANDY",
-        "image": "assets/brawlers/16000065.png",
-        "mode": "Bounty",
-        "result": "victory",
-        "battleTime": "20260831T074025.000Z"
-      },
-      {
-        "brawler": "WENDY",
-        "image": "assets/brawlers/16000108.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260831T073745.000Z"
-      },
-      {
-        "brawler": "BELLE",
-        "image": "assets/brawlers/16000046.png",
-        "mode": "Gem Grab",
-        "result": "victory",
-        "battleTime": "20260831T073525.000Z"
-      },
-      {
-        "brawler": "SANDY",
-        "image": "assets/brawlers/16000028.png",
-        "mode": "Gem Grab",
-        "result": "defeat",
-        "battleTime": "20260831T073324.000Z"
-      },
-      {
-        "brawler": "GUS",
-        "image": "assets/brawlers/16000061.png",
-        "mode": "Duo Showdown",
-        "result": "win",
-        "battleTime": "20260831T072832.000Z"
-      },
-      {
-        "brawler": "GUS",
-        "image": "assets/brawlers/16000061.png",
-        "mode": "Duo Showdown",
-        "result": "win",
-        "battleTime": "20260831T072536.000Z"
-      },
-      {
-        "brawler": "GUS",
-        "image": "assets/brawlers/16000061.png",
-        "mode": "Duo Showdown",
-        "result": "loss",
-        "battleTime": "20260831T072455.000Z"
-      }
-    ],
+    "recentGames": [],
     "gamesHistory": [
       {
         "date": "2026-06-30",
@@ -587,6 +507,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-02",
         "label": "Sep 2",
+        "games": 285
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
         "games": 285
       }
     ],
@@ -850,6 +775,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-02",
         "label": "Sep 2",
         "wins": 8096
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
+        "wins": 8134
       }
     ],
     "winsHistory": [
@@ -1092,6 +1022,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-02",
         "label": "Sep 2",
         "wins": 194
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
+        "wins": 194
       }
     ],
     "lossesHistory": [
@@ -1333,6 +1268,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-02",
         "label": "Sep 2",
+        "losses": 90
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
         "losses": 90
       }
     ],
@@ -1742,6 +1682,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-02",
         "label": "Sep 2",
         "points": 4151
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
+        "points": 5562
       }
     ],
     "gamesHistory": [
@@ -1984,6 +1929,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-02",
         "label": "Sep 2",
         "games": 380
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
+        "games": 405
       }
     ],
     "winsHistory": [
@@ -2226,6 +2176,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-02",
         "label": "Sep 2",
         "wins": 214
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
+        "wins": 226
       }
     ],
     "lossesHistory": [
@@ -2468,36 +2423,41 @@ window.BRAWL_DATA = {
         "date": "2026-09-02",
         "label": "Sep 2",
         "losses": 164
+      },
+      {
+        "date": "2026-09-03",
+        "label": "Sep 3",
+        "losses": 177
       }
     ],
     "modes": [
       {
         "mode": "Gem Grab",
-        "count": 87,
+        "count": 91,
         "image": null
       },
       {
         "mode": "Brawl Ball",
-        "count": 68,
+        "count": 74,
         "image": null
       },
       {
         "mode": "Heist",
-        "count": 65,
+        "count": 67,
         "image": null
       },
       {
         "mode": "Bounty",
-        "count": 62,
-        "image": null
-      },
-      {
-        "mode": "Hot Zone",
-        "count": 49,
+        "count": 64,
         "image": null
       },
       {
         "mode": "Knockout",
+        "count": 60,
+        "image": null
+      },
+      {
+        "mode": "Hot Zone",
         "count": 49,
         "image": null
       }
@@ -2505,7 +2465,7 @@ window.BRAWL_DATA = {
     "currentSeasonBrawlers": [
       {
         "name": "BYRON",
-        "count": 63,
+        "count": 65,
         "image": "assets/brawlers/16000042.png"
       },
       {
@@ -2520,22 +2480,22 @@ window.BRAWL_DATA = {
       },
       {
         "name": "POCO",
-        "count": 36,
+        "count": 42,
         "image": "assets/brawlers/16000013.png"
       },
       {
         "name": "BROCK",
-        "count": 26,
+        "count": 30,
         "image": "assets/brawlers/16000003.png"
       },
       {
         "name": "TICK",
-        "count": 23,
+        "count": 28,
         "image": "assets/brawlers/16000022.png"
       },
       {
         "name": "BELLE",
-        "count": 20,
+        "count": 23,
         "image": "assets/brawlers/16000046.png"
       },
       {
@@ -2567,6 +2527,11 @@ window.BRAWL_DATA = {
         "name": "BUZZ",
         "count": 5,
         "image": "assets/brawlers/16000049.png"
+      },
+      {
+        "name": "CHESTER",
+        "count": 5,
+        "image": "assets/brawlers/16000063.png"
       },
       {
         "name": "BERRY",
@@ -2614,11 +2579,6 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000017.png"
       },
       {
-        "name": "CHESTER",
-        "count": 2,
-        "image": "assets/brawlers/16000063.png"
-      },
-      {
         "name": "COLT",
         "count": 2,
         "image": "assets/brawlers/16000001.png"
@@ -2637,6 +2597,11 @@ window.BRAWL_DATA = {
         "name": "MR. P",
         "count": 2,
         "image": "assets/brawlers/16000031.png"
+      },
+      {
+        "name": "WILLOW",
+        "count": 2,
+        "image": "assets/brawlers/16000067.png"
       },
       {
         "name": "GUS",
@@ -2657,7 +2622,7 @@ window.BRAWL_DATA = {
     "allTimeBrawlers": [
       {
         "name": "BYRON",
-        "count": 63,
+        "count": 65,
         "image": "assets/brawlers/16000042.png"
       },
       {
@@ -2672,22 +2637,22 @@ window.BRAWL_DATA = {
       },
       {
         "name": "POCO",
-        "count": 36,
+        "count": 42,
         "image": "assets/brawlers/16000013.png"
       },
       {
         "name": "BROCK",
-        "count": 26,
+        "count": 30,
         "image": "assets/brawlers/16000003.png"
       },
       {
         "name": "TICK",
-        "count": 23,
+        "count": 28,
         "image": "assets/brawlers/16000022.png"
       },
       {
         "name": "BELLE",
-        "count": 20,
+        "count": 23,
         "image": "assets/brawlers/16000046.png"
       },
       {
@@ -2719,6 +2684,11 @@ window.BRAWL_DATA = {
         "name": "BUZZ",
         "count": 5,
         "image": "assets/brawlers/16000049.png"
+      },
+      {
+        "name": "CHESTER",
+        "count": 5,
+        "image": "assets/brawlers/16000063.png"
       },
       {
         "name": "BERRY",
@@ -2766,11 +2736,6 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000017.png"
       },
       {
-        "name": "CHESTER",
-        "count": 2,
-        "image": "assets/brawlers/16000063.png"
-      },
-      {
         "name": "COLT",
         "count": 2,
         "image": "assets/brawlers/16000001.png"
@@ -2789,6 +2754,11 @@ window.BRAWL_DATA = {
         "name": "MR. P",
         "count": 2,
         "image": "assets/brawlers/16000031.png"
+      },
+      {
+        "name": "WILLOW",
+        "count": 2,
+        "image": "assets/brawlers/16000067.png"
       },
       {
         "name": "GUS",
