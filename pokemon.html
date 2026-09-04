@@ -155,6 +155,8 @@
     .rarity { color: var(--muted); font-size: .68rem; height: 1rem; overflow: hidden; margin: 4px 0 7px; }
     .price-line { display: flex; justify-content: space-between; gap: 8px; color: var(--muted); font-size: .67rem; }
     .price-line strong { color: var(--green); }
+    .price-link { color: var(--green); font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .price-link:hover, .price-link:focus-visible { color: #247954; text-decoration: underline; }
 
     .binder-plan { padding: 24px; }
     .plan-heading { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 22px; }
@@ -680,13 +682,17 @@
         grid.innerHTML = cards.map(card => {
           const status = isCardOwned(card) ? 'owned' : 'need';
           const price = state.prices[card.id] || marketPrice(card);
+          const tcgplayerUrl = card.tcgplayer?.url || `https://prices.pokemontcg.io/tcgplayer/${encodeURIComponent(card.id)}`;
+          const priceMarkup = price
+            ? `<a class="price-link" href="${escapeHtml(tcgplayerUrl)}" target="_blank" rel="noopener noreferrer" aria-label="View ${escapeHtml(card.name)} on TCGplayer">$${price.toFixed(2)} ↗</a>`
+            : '<strong>—</strong>';
           return `<article class="card-item status-${status}" data-card-id="${escapeHtml(card.id)}" role="button" tabindex="${editMode ? '0' : '-1'}" aria-label="${escapeHtml(card.name)}: ${status === 'owned' ? 'owned' : 'not owned'}${editMode ? '; click to change' : ''}">
             <img class="card-image" src="${escapeHtml(card.images.small)}" alt="${escapeHtml(card.name)} card" loading="lazy" decoding="async" fetchpriority="low">
             ${status === 'owned' ? '<span class="owned-badge">✓ Owned</span>' : ''}
             <div class="card-info">
               <div class="card-title"><b title="${escapeHtml(card.name)}">${escapeHtml(card.name)}</b><span>#${escapeHtml(card.number)}</span></div>
               <div class="rarity">${escapeHtml(card.rarity || card.supertype || '—')}</div>
-              <div class="price-line"><span>${status === 'owned' ? 'In collection' : editMode ? 'Click to add' : 'Not collected'}</span><strong>${price ? `$${price.toFixed(2)}` : '—'}</strong></div>
+              <div class="price-line"><span>${status === 'owned' ? 'In collection' : editMode ? 'Click to add' : 'Not collected'}</span>${priceMarkup}</div>
             </div>
           </article>`;
         }).join('') || '<div class="empty">No cards match this view.</div>';
@@ -713,7 +719,7 @@
             renderContent();
             renderSetList();
           };
-          item.addEventListener('click', toggle);
+          item.addEventListener('click', event => { if (!event.target.closest('.price-link')) toggle(); });
           item.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); } });
         });
       }
