@@ -8,9 +8,9 @@ window.COC_ACCOUNTS = [
     "descriptor": "This is my main account, which I've had since 2012. It is completely free to play, and as a result, I'm always 1-2 Town Hall levels behind the max. This leaves my no other option but to push trophies (and leagues now), with this account having hit #1 in the world many times. Now, the goal is to <strong>finish in the top 20 of Town Hall 16s in the world</strong>. I am alternating a RC charge Root Rider attack and a Backpack + Giant Arrow Dragon Riders attack.",
     "backgroundImage": "assets/clash-base.png",
     "townHall": 17,
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-05",
     "demo": false,
-    "trophies": 305,
+    "trophies": 398,
     "bestTrophies": 5419,
     "leagueTier": {
       "id": 105000031,
@@ -25,11 +25,11 @@ window.COC_ACCOUNTS = [
     "currentRank": null,
     "bestRank": null,
     "bestRankLabel": "Add placement history",
-    "attacksWon": 10227,
+    "attacksWon": 10229,
     "defenseWins": 0,
-    "warStars": 1494,
-    "donations": 230662,
-    "donationsReceived": 2378,
+    "warStars": 1497,
+    "donations": 230847,
+    "donationsReceived": 2554,
     "clanCapitalContributions": 3009071,
     "progress": {
       "Heroes": 89,
@@ -125,7 +125,7 @@ window.COC_ACCOUNTS = [
         "league": "Electro League 31",
         "leagueTierId": 105000031,
         "finish": null,
-        "endingTrophies": 305,
+        "endingTrophies": 398,
         "result": "Tracking"
       }
     ],
@@ -1839,12 +1839,42 @@ window.COC_ACCOUNTS = [
         "troopsProgress": 67,
         "spellsProgress": 86,
         "equipmentProgress": 79
+      },
+      {
+        "id": "solaceonx",
+        "date": "2026-09-05",
+        "label": "Sep 5",
+        "fetchedAt": "2026-09-05T16:00:06.187Z",
+        "townHall": 17,
+        "trophies": 398,
+        "bestTrophies": 5419,
+        "leagueTier": {
+          "id": 105000031,
+          "name": "Electro League 31",
+          "iconUrls": {
+            "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+            "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+          }
+        },
+        "currentLeagueSeasonId": 1788152400,
+        "currentLeagueGroupTag": "#8GJQ9VQ",
+        "attackWins": 0,
+        "defenseWins": 0,
+        "attacksWon": 10229,
+        "donations": 230847,
+        "donationsReceived": 2554,
+        "warStars": 1497,
+        "clanCapitalContributions": 3009071,
+        "heroesProgress": 89,
+        "troopsProgress": 67,
+        "spellsProgress": 86,
+        "equipmentProgress": 79
       }
     ],
     "activity": {
-      "Attacks won": 10227,
-      "Donations": 230662,
-      "War stars": 1494,
+      "Attacks won": 10229,
+      "Donations": 230847,
+      "War stars": 1497,
       "Capital gold": 3009071
     },
     "placements": [
@@ -1879,9 +1909,9 @@ window.COC_ACCOUNTS = [
     "descriptor": "This is my alt, but I got sick of being completely free to play so it has been fed Gold Passes for the past 7 months.",
     "backgroundImage": "assets/clash-solaceon.png",
     "townHall": 18,
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-05",
     "demo": false,
-    "trophies": 307,
+    "trophies": 413,
     "bestTrophies": 4585,
     "leagueTier": {
       "id": 105000033,
@@ -1896,11 +1926,11 @@ window.COC_ACCOUNTS = [
     "currentRank": null,
     "bestRank": null,
     "bestRankLabel": "Add placement history",
-    "attacksWon": 6117,
+    "attacksWon": 6120,
     "defenseWins": 0,
-    "warStars": 1208,
-    "donations": 170566,
-    "donationsReceived": 3496,
+    "warStars": 1211,
+    "donations": 170671,
+    "donationsReceived": 3852,
     "clanCapitalContributions": 2234192,
     "progress": {
       "Heroes": 97,
@@ -1996,7 +2026,7 @@ window.COC_ACCOUNTS = [
         "league": "Electro League 33",
         "leagueTierId": 105000033,
         "finish": null,
-        "endingTrophies": 307,
+        "endingTrophies": 413,
         "result": "Tracking"
       }
     ],
@@ -3710,12 +3740,42 @@ window.COC_ACCOUNTS = [
         "troopsProgress": 64,
         "spellsProgress": 91,
         "equipmentProgress": 72
+      },
+      {
+        "id": "solaceon",
+        "date": "2026-09-05",
+        "label": "Sep 5",
+        "fetchedAt": "2026-09-05T16:00:06.296Z",
+        "townHall": 18,
+        "trophies": 413,
+        "bestTrophies": 4585,
+        "leagueTier": {
+          "id": 105000033,
+          "name": "Electro League 33",
+          "iconUrls": {
+            "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+            "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+          }
+        },
+        "currentLeagueSeasonId": 1788152400,
+        "currentLeagueGroupTag": "#8GGC0P2",
+        "attackWins": 0,
+        "defenseWins": 0,
+        "attacksWon": 6120,
+        "donations": 170671,
+        "donationsReceived": 3852,
+        "warStars": 1211,
+        "clanCapitalContributions": 2234192,
+        "heroesProgress": 97,
+        "troopsProgress": 64,
+        "spellsProgress": 91,
+        "equipmentProgress": 72
       }
     ],
     "activity": {
-      "Attacks won": 6117,
-      "Donations": 170566,
-      "War stars": 1208,
+      "Attacks won": 6120,
+      "Donations": 170671,
+      "War stars": 1211,
       "Capital gold": 2234192
     },
     "placements": []
@@ -3729,9 +3789,9 @@ window.COC_ACCOUNTS = [
     "descriptor": "Adopted from one of my brothers",
     "backgroundImage": "assets/clash-opelucidian.png",
     "townHall": 15,
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-05",
     "demo": false,
-    "trophies": 12,
+    "trophies": 23,
     "bestTrophies": 5084,
     "leagueTier": {
       "id": 105000025,
@@ -3748,9 +3808,9 @@ window.COC_ACCOUNTS = [
     "bestRankLabel": "Add placement history",
     "attacksWon": 2569,
     "defenseWins": 0,
-    "warStars": 590,
+    "warStars": 593,
     "donations": 10544,
-    "donationsReceived": 664,
+    "donationsReceived": 716,
     "clanCapitalContributions": 1181705,
     "progress": {
       "Heroes": 69,
@@ -3846,7 +3906,7 @@ window.COC_ACCOUNTS = [
         "league": "Titan League 25",
         "leagueTierId": 105000025,
         "finish": null,
-        "endingTrophies": 12,
+        "endingTrophies": 23,
         "result": "Tracking"
       }
     ],
@@ -5560,12 +5620,42 @@ window.COC_ACCOUNTS = [
         "troopsProgress": 45,
         "spellsProgress": 67,
         "equipmentProgress": 60
+      },
+      {
+        "id": "opelucidian",
+        "date": "2026-09-05",
+        "label": "Sep 5",
+        "fetchedAt": "2026-09-05T16:00:06.403Z",
+        "townHall": 15,
+        "trophies": 23,
+        "bestTrophies": 5084,
+        "leagueTier": {
+          "id": 105000025,
+          "name": "Titan League 25",
+          "iconUrls": {
+            "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+            "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+          }
+        },
+        "currentLeagueSeasonId": 1788152400,
+        "currentLeagueGroupTag": "#8RQ0LUP",
+        "attackWins": 0,
+        "defenseWins": 0,
+        "attacksWon": 2569,
+        "donations": 10544,
+        "donationsReceived": 716,
+        "warStars": 593,
+        "clanCapitalContributions": 1181705,
+        "heroesProgress": 69,
+        "troopsProgress": 45,
+        "spellsProgress": 67,
+        "equipmentProgress": 60
       }
     ],
     "activity": {
       "Attacks won": 2569,
       "Donations": 10544,
-      "War stars": 590,
+      "War stars": 593,
       "Capital gold": 1181705
     },
     "placements": [
@@ -5585,7 +5675,7 @@ window.COC_ACCOUNTS = [
     "descriptor": "Adopted from one of my brothers",
     "backgroundImage": "assets/clash-fyr3st0rm3r.png",
     "townHall": 14,
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-05",
     "demo": false,
     "trophies": 0,
     "bestTrophies": 2888,
@@ -7416,6 +7506,36 @@ window.COC_ACCOUNTS = [
         "troopsProgress": 43,
         "spellsProgress": 67,
         "equipmentProgress": 49
+      },
+      {
+        "id": "fyr3st0rm3r",
+        "date": "2026-09-05",
+        "label": "Sep 5",
+        "fetchedAt": "2026-09-05T16:00:06.508Z",
+        "townHall": 14,
+        "trophies": 0,
+        "bestTrophies": 2888,
+        "leagueTier": {
+          "id": 105000020,
+          "name": "Golem League 20",
+          "iconUrls": {
+            "small": "https://api-assets.clashofclans.com/leaguetiers/125/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png",
+            "large": "https://api-assets.clashofclans.com/leaguetiers/326/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png"
+          }
+        },
+        "currentLeagueSeasonId": 0,
+        "currentLeagueGroupTag": null,
+        "attackWins": 0,
+        "defenseWins": 0,
+        "attacksWon": 1796,
+        "donations": 3740,
+        "donationsReceived": 390,
+        "warStars": 430,
+        "clanCapitalContributions": 829850,
+        "heroesProgress": 69,
+        "troopsProgress": 43,
+        "spellsProgress": 67,
+        "equipmentProgress": 49
       }
     ],
     "activity": {
@@ -7435,7 +7555,7 @@ window.COC_ACCOUNTS = [
     "descriptor": "Adopted from one of my brothers",
     "backgroundImage": "assets/clash-icirrus.PNG",
     "townHall": 15,
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-05",
     "demo": false,
     "trophies": 0,
     "bestTrophies": 2510,
@@ -7461,7 +7581,7 @@ window.COC_ACCOUNTS = [
     "progress": {
       "Heroes": 66,
       "Troops": 40,
-      "Spells": 54,
+      "Spells": 55,
       "Equipment": 52
     },
     "rankedHistory": [
@@ -9266,6 +9386,36 @@ window.COC_ACCOUNTS = [
         "troopsProgress": 40,
         "spellsProgress": 54,
         "equipmentProgress": 52
+      },
+      {
+        "id": "icirrus",
+        "date": "2026-09-05",
+        "label": "Sep 5",
+        "fetchedAt": "2026-09-05T16:00:06.615Z",
+        "townHall": 15,
+        "trophies": 0,
+        "bestTrophies": 2510,
+        "leagueTier": {
+          "id": 105000020,
+          "name": "Golem League 20",
+          "iconUrls": {
+            "small": "https://api-assets.clashofclans.com/leaguetiers/125/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png",
+            "large": "https://api-assets.clashofclans.com/leaguetiers/326/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png"
+          }
+        },
+        "currentLeagueSeasonId": 0,
+        "currentLeagueGroupTag": null,
+        "attackWins": 0,
+        "defenseWins": 0,
+        "attacksWon": 1355,
+        "donations": 10580,
+        "donationsReceived": 0,
+        "warStars": 275,
+        "clanCapitalContributions": 824429,
+        "heroesProgress": 66,
+        "troopsProgress": 40,
+        "spellsProgress": 55,
+        "equipmentProgress": 52
       }
     ],
     "activity": {
@@ -9285,7 +9435,7 @@ window.COC_ACCOUNTS = [
     "descriptor": "This was my brother's alt account. I decided to max it out at Town Hall 10 for now and not upgrade to Town Hall 11, in honor of the original max Town Hall 10. One day I will push leagues with this account.",
     "backgroundImage": "assets/clash-budgie.PNG",
     "townHall": 10,
-    "updatedAt": "2026-09-04",
+    "updatedAt": "2026-09-05",
     "demo": false,
     "trophies": 0,
     "bestTrophies": 2070,
@@ -11092,6 +11242,36 @@ window.COC_ACCOUNTS = [
         "date": "2026-09-04",
         "label": "Sep 4",
         "fetchedAt": "2026-09-04T16:00:13.767Z",
+        "townHall": 10,
+        "trophies": 0,
+        "bestTrophies": 2070,
+        "leagueTier": {
+          "id": 105000000,
+          "name": "Unranked",
+          "iconUrls": {
+            "small": "https://api-assets.clashofclans.com/leaguetiers/125/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png",
+            "large": "https://api-assets.clashofclans.com/leaguetiers/326/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png"
+          }
+        },
+        "currentLeagueSeasonId": 0,
+        "currentLeagueGroupTag": null,
+        "attackWins": 0,
+        "defenseWins": 0,
+        "attacksWon": 296,
+        "donations": 592,
+        "donationsReceived": 0,
+        "warStars": 145,
+        "clanCapitalContributions": 161620,
+        "heroesProgress": 32,
+        "troopsProgress": 29,
+        "spellsProgress": 49,
+        "equipmentProgress": 31
+      },
+      {
+        "id": "budgie",
+        "date": "2026-09-05",
+        "label": "Sep 5",
+        "fetchedAt": "2026-09-05T16:00:06.720Z",
         "townHall": 10,
         "trophies": 0,
         "bestTrophies": 2070,
