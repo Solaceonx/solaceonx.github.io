@@ -4,6 +4,60 @@
     "mode": "Trophy Road",
     "category": "trophy-road",
     "crowns": "0-1",
+    "trophyChange": -28,
+    "opponent": "乙ㄩ尺丨乇ㄥ",
+    "battleTime": "20260908T024609.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "elga¡¡o",
+    "battleTime": "20260822T082248.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "ma",
+    "battleTime": "20260822T081806.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "ابو حسن جمعة",
+    "battleTime": "20260822T081337.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "dilan",
+    "battleTime": "20260822T080859.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "BelekaLaZitoune",
+    "battleTime": "20260822T080421.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "0-1",
     "trophyChange": -26,
     "opponent": "Jonaa sdc",
     "battleTime": "20260815T022453.000Z"
