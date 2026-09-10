@@ -595,7 +595,8 @@
       "20260625T061945.000Z:15000886:heist:heist:soloRanked",
       "20260625T062240.000Z:15000548:knockout:knockout:soloRanked",
       "20260625T062501.000Z:15000025:brawlBall:brawlBall:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-06-27",
@@ -1213,7 +1214,8 @@
       "20260627T030007.000Z:15001023:hotZone:hotZone:ranked",
       "20260627T030156.000Z:15001023:hotZone:hotZone:ranked",
       "20260627T030431.000Z:15001023:hotZone:hotZone:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-06-28",
@@ -1826,7 +1828,8 @@
       "20260628T153357.000Z:15000053:heist:heist:ranked",
       "20260628T153618.000Z:15000053:heist:heist:ranked",
       "20260628T153739.000Z:15000053:heist:heist:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-06-29",
@@ -2445,7 +2448,8 @@
       "20260629T032552.000Z:15000024:brawlBall:brawlBall:ranked",
       "20260629T032859.000Z:15000024:brawlBall:brawlBall:ranked",
       "20260629T033230.000Z:15000367:knockout:knockout:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-06-30",
@@ -3040,7 +3044,8 @@
       "20260630T002049.000Z:15000250:hotZone:hotZone:challenge",
       "20260630T002337.000Z:15000250:hotZone:hotZone:challenge",
       "20260630T002653.000Z:15000250:hotZone:hotZone:challenge"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-01",
@@ -3680,7 +3685,8 @@
       "20260701T034420.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034602.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034738.000Z:15000007:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-02",
@@ -4320,7 +4326,8 @@
       "20260701T034420.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034602.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034738.000Z:15000007:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-03",
@@ -4960,7 +4967,8 @@
       "20260701T034420.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034602.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034738.000Z:15000007:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-04",
@@ -5600,7 +5608,8 @@
       "20260701T034420.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034602.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260701T034738.000Z:15000007:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-05",
@@ -6284,7 +6293,8 @@
       "20260704T183052.000Z:15001202:hotZone:hotZone:ranked",
       "20260704T183444.000Z:15001202:hotZone:hotZone:ranked",
       "20260704T183745.000Z:15001202:hotZone:hotZone:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-06",
@@ -6968,7 +6978,8 @@
       "20260704T183052.000Z:15001202:hotZone:hotZone:ranked",
       "20260704T183444.000Z:15001202:hotZone:hotZone:ranked",
       "20260704T183745.000Z:15001202:hotZone:hotZone:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-07",
@@ -7652,7 +7663,8 @@
       "20260704T183052.000Z:15001202:hotZone:hotZone:ranked",
       "20260704T183444.000Z:15001202:hotZone:hotZone:ranked",
       "20260704T183745.000Z:15001202:hotZone:hotZone:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-08",
@@ -8332,7 +8344,8 @@
       "20260708T013043.000Z:15000703:knockout:knockout:soloRanked",
       "20260708T013414.000Z:15000053:heist:heist:soloRanked",
       "20260708T013650.000Z:15000053:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-09",
@@ -9098,7 +9111,8 @@
       "20260709T030611.000Z:15000886:heist:heist:soloRanked",
       "20260709T031234.000Z:15000368:knockout:knockout:soloRanked",
       "20260709T031352.000Z:15000368:knockout:knockout:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-10",
@@ -9834,7 +9848,8 @@
       "20260710T051129.000Z:15000850:airHockey:brawlBall:ranked",
       "20260710T051428.000Z:15000850:airHockey:brawlBall:ranked",
       "20260710T051812.000Z:15000850:airHockey:brawlBall:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-11",
@@ -10566,7 +10581,8 @@
       "20260711T002559.000Z:15000132:brawlBall:brawlBall:soloRanked",
       "20260711T003122.000Z:15000018:heist:heist:soloRanked",
       "20260711T003336.000Z:15000018:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-12",
@@ -11300,7 +11316,8 @@
       "20260711T003336.000Z:15000018:heist:heist:soloRanked",
       "20260712T061936.000Z:15000007:gemGrab:gemGrab:soloRanked",
       "20260712T062128.000Z:15000007:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-13",
@@ -12149,7 +12166,8 @@
       "20260713T055631.000Z:15000192:soloShowdown:soloShowdown:ranked",
       "20260713T055717.000Z:15000192:soloShowdown:soloShowdown:ranked",
       "20260713T055935.000Z:15000192:soloShowdown:soloShowdown:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-14",
@@ -13005,7 +13023,8 @@
       "20260713T224323.000Z:15000919:brawlBall5V5:brawlBall:ranked",
       "20260713T224634.000Z:15000919:brawlBall5V5:brawlBall:ranked",
       "20260713T224906.000Z:15000367:knockout:knockout:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-15",
@@ -13828,7 +13847,8 @@
       "20260715T061858.000Z:15000022:bounty:bounty:soloRanked",
       "20260715T062053.000Z:15000022:bounty:bounty:soloRanked",
       "20260715T062248.000Z:15000022:bounty:bounty:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-06-18"
   },
   {
     "date": "2026-07-16",
@@ -13907,27 +13927,7 @@
       "Bounty": 27,
       "Gem Grab": 23
     },
-    "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 33,
-      "BARLEY": 3,
-      "BELLE": 13,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 4,
-      "POCO": 4,
-      "KIT": 8,
-      "JAE-YONG": 1,
-      "8-BIT": 17,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 8,
-      "COLETTE": 8,
-      "BROCK": 9,
-      "TICK": 8,
-      "RICO": 3
-    },
+    "rankedCurrentBrawlerCounts": {},
     "rankedAllTimeBrawlerCounts": {
       "MICO": 2,
       "BYRON": 33,
@@ -14651,7 +14651,8 @@
       "20260715T061858.000Z:15000022:bounty:bounty:soloRanked",
       "20260715T062053.000Z:15000022:bounty:bounty:soloRanked",
       "20260715T062248.000Z:15000022:bounty:bounty:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-17",
@@ -14702,25 +14703,10 @@
       "Gem Grab": 25
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 36,
-      "BARLEY": 3,
-      "BELLE": 13,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 4,
-      "POCO": 4,
-      "KIT": 8,
-      "JAE-YONG": 1,
-      "8-BIT": 18,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 8,
-      "COLETTE": 8,
-      "BROCK": 10,
-      "TICK": 10,
-      "RICO": 3
+      "BYRON": 3,
+      "8-BIT": 1,
+      "BROCK": 1,
+      "TICK": 2
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 2,
@@ -15448,7 +15434,8 @@
       "20260717T055919.000Z:15000010:gemGrab:gemGrab:soloRanked",
       "20260717T060218.000Z:15000703:knockout:knockout:soloRanked",
       "20260717T060634.000Z:15000886:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-18",
@@ -15588,25 +15575,13 @@
       "Gem Grab": 25
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 36,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 4,
-      "POCO": 5,
-      "KIT": 8,
-      "JAE-YONG": 1,
-      "8-BIT": 18,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 8,
-      "COLETTE": 9,
-      "BROCK": 10,
-      "TICK": 11,
-      "RICO": 3,
+      "BYRON": 3,
+      "8-BIT": 1,
+      "BROCK": 1,
+      "TICK": 3,
+      "BELLE": 1,
+      "POCO": 1,
+      "COLETTE": 1,
       "SURGE": 1,
       "LUMI": 1
     },
@@ -16366,7 +16341,8 @@
       "20260717T222134.000Z:15000019:heist:heist:soloRanked",
       "20260717T222415.000Z:15000306:hotZone:hotZone:soloRanked",
       "20260717T222818.000Z:15000703:knockout:knockout:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-20",
@@ -16499,27 +16475,16 @@
       "Gem Grab": 26
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 37,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 4,
-      "POCO": 6,
-      "KIT": 8,
-      "JAE-YONG": 1,
-      "8-BIT": 19,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 9,
-      "COLETTE": 9,
-      "BROCK": 11,
-      "TICK": 14,
-      "RICO": 3,
+      "BYRON": 4,
+      "8-BIT": 2,
+      "BROCK": 2,
+      "TICK": 6,
+      "BELLE": 1,
+      "POCO": 2,
+      "COLETTE": 1,
       "SURGE": 1,
-      "LUMI": 1
+      "LUMI": 1,
+      "BO": 1
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 2,
@@ -17294,7 +17259,8 @@
       "20260720T073452.000Z:15000947:soloShowdown:soloShowdown:ranked",
       "20260720T073640.000Z:15000947:soloShowdown:soloShowdown:ranked",
       "20260720T073717.000Z:15000947:soloShowdown:soloShowdown:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-21",
@@ -17349,27 +17315,17 @@
       "Gem Grab": 33
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 43,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 4,
-      "POCO": 7,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 30,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 9,
-      "COLETTE": 9,
-      "BROCK": 12,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 10,
+      "8-BIT": 13,
+      "BROCK": 3,
+      "TICK": 8,
+      "BELLE": 1,
+      "POCO": 3,
+      "COLETTE": 1,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 1,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 1
     },
@@ -18169,7 +18125,8 @@
       "20260720T204851.000Z:15000018:heist:heist:soloRanked",
       "20260720T205212.000Z:15000440:knockout:knockout:soloRanked",
       "20260720T205536.000Z:15000072:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-22",
@@ -18224,27 +18181,17 @@
       "Gem Grab": 33
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 43,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 4,
-      "POCO": 7,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 30,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 9,
-      "COLETTE": 9,
-      "BROCK": 12,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 10,
+      "8-BIT": 13,
+      "BROCK": 3,
+      "TICK": 8,
+      "BELLE": 1,
+      "POCO": 3,
+      "COLETTE": 1,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 1,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 1
     },
@@ -19044,7 +18991,8 @@
       "20260720T204851.000Z:15000018:heist:heist:soloRanked",
       "20260720T205212.000Z:15000440:knockout:knockout:soloRanked",
       "20260720T205536.000Z:15000072:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-23",
@@ -19099,27 +19047,17 @@
       "Gem Grab": 33
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 43,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 4,
-      "POCO": 7,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 30,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 9,
-      "COLETTE": 9,
-      "BROCK": 12,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 10,
+      "8-BIT": 13,
+      "BROCK": 3,
+      "TICK": 8,
+      "BELLE": 1,
+      "POCO": 3,
+      "COLETTE": 1,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 1,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 1
     },
@@ -19919,7 +19857,8 @@
       "20260720T204851.000Z:15000018:heist:heist:soloRanked",
       "20260720T205212.000Z:15000440:knockout:knockout:soloRanked",
       "20260720T205536.000Z:15000072:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-24",
@@ -19974,29 +19913,20 @@
       "Gem Grab": 35
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 2,
-      "BYRON": 43,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 7,
-      "POCO": 7,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 35,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 3,
-      "BO": 9,
-      "COLETTE": 9,
-      "BROCK": 15,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 10,
+      "8-BIT": 18,
+      "BROCK": 6,
+      "TICK": 8,
+      "BELLE": 1,
+      "POCO": 3,
+      "COLETTE": 1,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 1,
+      "KIT": 2,
       "BERRY": 1,
-      "JESSIE": 1
+      "JESSIE": 1,
+      "GENE": 3
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 2,
@@ -20805,7 +20735,8 @@
       "20260723T232130.000Z:15000082:bounty:bounty:soloRanked",
       "20260723T232339.000Z:15000082:bounty:bounty:soloRanked",
       "20260723T232554.000Z:15000082:bounty:bounty:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-25",
@@ -20860,29 +20791,22 @@
       "Gem Grab": 42
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 4,
-      "BYRON": 46,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 7,
-      "POCO": 12,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 40,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 5,
-      "BO": 9,
-      "COLETTE": 9,
-      "BROCK": 15,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 13,
+      "8-BIT": 23,
+      "BROCK": 6,
+      "TICK": 8,
+      "BELLE": 1,
+      "POCO": 8,
+      "COLETTE": 1,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 1,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 3,
+      "MICO": 2,
+      "EDGAR": 2,
       "COLT": 2
     },
     "rankedAllTimeBrawlerCounts": {
@@ -21714,7 +21638,8 @@
       "20260724T211809.000Z:15000019:heist:heist:soloRanked",
       "20260724T212135.000Z:15000050:brawlBall:brawlBall:soloRanked",
       "20260724T212228.000Z:15000050:brawlBall:brawlBall:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-26",
@@ -21841,29 +21766,22 @@
       "Gem Grab": 42
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 4,
-      "BYRON": 48,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 1,
-      "GENE": 7,
-      "POCO": 12,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 40,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 5,
-      "BO": 9,
-      "COLETTE": 9,
-      "BROCK": 15,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 15,
+      "8-BIT": 23,
+      "BROCK": 6,
+      "TICK": 8,
+      "BELLE": 1,
+      "POCO": 8,
+      "COLETTE": 1,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 1,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 3,
+      "MICO": 2,
+      "EDGAR": 2,
       "COLT": 2
     },
     "rankedAllTimeBrawlerCounts": {
@@ -22711,7 +22629,8 @@
       "20260725T204121.000Z:15000050:brawlBall:brawlBall:ranked",
       "20260725T204325.000Z:15000366:knockout:knockout:ranked",
       "20260725T204615.000Z:15001266:airHockey:brawlBall:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-27",
@@ -22824,30 +22743,24 @@
       "Gem Grab": 48
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 4,
-      "BYRON": 48,
-      "BARLEY": 3,
-      "BELLE": 14,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 7,
-      "POCO": 15,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 43,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 5,
-      "BO": 11,
-      "COLETTE": 12,
-      "BROCK": 17,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 15,
+      "8-BIT": 26,
+      "BROCK": 8,
+      "TICK": 8,
+      "BELLE": 1,
+      "POCO": 11,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 3,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 3,
-      "COLT": 2
+      "GENE": 3,
+      "MICO": 2,
+      "EDGAR": 2,
+      "COLT": 2,
+      "NITA": 2
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 4,
@@ -23719,7 +23632,8 @@
       "20260727T044607.000Z:15000009:gemGrab:gemGrab:soloRanked",
       "20260727T044823.000Z:15000009:gemGrab:gemGrab:soloRanked",
       "20260727T045047.000Z:15000009:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-28",
@@ -23790,30 +23704,24 @@
       "Gem Grab": 52
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 50,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 9,
-      "POCO": 20,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 47,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 5,
-      "BO": 11,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 16,
-      "RICO": 3,
+      "BYRON": 17,
+      "8-BIT": 30,
+      "BROCK": 10,
+      "TICK": 8,
+      "BELLE": 3,
+      "POCO": 16,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 3,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 3,
-      "COLT": 2
+      "GENE": 5,
+      "MICO": 4,
+      "EDGAR": 2,
+      "COLT": 2,
+      "NITA": 2
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 6,
@@ -24702,7 +24610,8 @@
       "20260727T200444.000Z:15000115:gemGrab:gemGrab:soloRanked",
       "20260727T200850.000Z:15000008:gemGrab:gemGrab:soloRanked",
       "20260727T201043.000Z:15000008:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-29",
@@ -24758,30 +24667,24 @@
       "Gem Grab": 57
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 50,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 26,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 7,
-      "BO": 16,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 17,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 22,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 8,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 4,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -25696,7 +25599,8 @@
       "20260728T205825.000Z:15000115:gemGrab:gemGrab:soloRanked",
       "20260728T210358.000Z:15000005:bounty:bounty:soloRanked",
       "20260728T210625.000Z:15000005:bounty:bounty:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-07-30",
@@ -25752,30 +25656,24 @@
       "Gem Grab": 57
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 50,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 26,
-      "KIT": 10,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 7,
-      "BO": 16,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 17,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 22,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 8,
+      "KIT": 2,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 4,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -26690,7 +26588,8 @@
       "20260728T205825.000Z:15000115:gemGrab:gemGrab:soloRanked",
       "20260728T210358.000Z:15000005:bounty:bounty:soloRanked",
       "20260728T210625.000Z:15000005:bounty:bounty:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-01",
@@ -26831,30 +26730,24 @@
       "Gem Grab": 59
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 50,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 26,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 10,
-      "BO": 18,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 17,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 22,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 10,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 7,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -27796,7 +27689,8 @@
       "20260801T103144.000Z:15000548:knockout:knockout:ranked",
       "20260801T103327.000Z:15000548:knockout:knockout:ranked",
       "20260801T103629.000Z:15000548:knockout:knockout:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-02",
@@ -27937,30 +27831,24 @@
       "Gem Grab": 59
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 50,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 26,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 10,
-      "BO": 18,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 17,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 22,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 10,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 7,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -28902,7 +28790,8 @@
       "20260801T103144.000Z:15000548:knockout:knockout:ranked",
       "20260801T103327.000Z:15000548:knockout:knockout:ranked",
       "20260801T103629.000Z:15000548:knockout:knockout:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-03",
@@ -29043,30 +28932,24 @@
       "Gem Grab": 59
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 50,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 26,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 1,
-      "EDGAR": 10,
-      "BO": 18,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 17,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 22,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 10,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 7,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -30008,7 +29891,8 @@
       "20260801T103144.000Z:15000548:knockout:knockout:ranked",
       "20260801T103327.000Z:15000548:knockout:knockout:ranked",
       "20260801T103629.000Z:15000548:knockout:knockout:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-04",
@@ -30150,31 +30034,26 @@
       "Gem Grab": 64
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 53,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 28,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 3,
-      "EDGAR": 10,
-      "BO": 21,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 20,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 24,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 13,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 7,
       "COLT": 2,
-      "SANDY": 3
+      "NITA": 2,
+      "SANDY": 3,
+      "BUZZ": 2
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 6,
@@ -31140,7 +31019,8 @@
       "20260804T054649.000Z:15001268:hotZone:hotZone:ranked",
       "20260804T054914.000Z:15001268:hotZone:hotZone:ranked",
       "20260804T055143.000Z:15001268:hotZone:hotZone:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-05",
@@ -31284,31 +31164,26 @@
       "Gem Grab": 64
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 53,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 28,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 3,
-      "EDGAR": 10,
-      "BO": 21,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 20,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 24,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 13,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 7,
       "COLT": 2,
-      "SANDY": 3
+      "NITA": 2,
+      "SANDY": 3,
+      "BUZZ": 2
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 6,
@@ -32299,7 +32174,8 @@
       "20260805T020140.000Z:15000144:brawlBall:brawlBall:ranked",
       "20260805T020406.000Z:15000144:brawlBall:brawlBall:ranked",
       "20260805T020700.000Z:15000144:brawlBall:brawlBall:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-06",
@@ -32445,31 +32321,26 @@
       "Gem Grab": 64
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 6,
-      "BYRON": 53,
-      "BARLEY": 3,
-      "BELLE": 16,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 28,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 3,
-      "EDGAR": 10,
-      "BO": 21,
-      "COLETTE": 12,
-      "BROCK": 19,
-      "TICK": 18,
-      "RICO": 3,
+      "BYRON": 20,
+      "8-BIT": 32,
+      "BROCK": 10,
+      "TICK": 10,
+      "BELLE": 3,
+      "POCO": 24,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 13,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 4,
+      "EDGAR": 7,
       "COLT": 2,
-      "SANDY": 3
+      "NITA": 2,
+      "SANDY": 3,
+      "BUZZ": 2
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 6,
@@ -33481,7 +33352,8 @@
       "20260806T060540.000Z:15001275:gemGrab:gemGrab:ranked",
       "20260806T060822.000Z:15001275:gemGrab:gemGrab:ranked",
       "20260806T061058.000Z:15001275:gemGrab:gemGrab:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-07",
@@ -33542,31 +33414,26 @@
       "Gem Grab": 70
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 8,
-      "BYRON": 53,
-      "BARLEY": 3,
-      "BELLE": 18,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 33,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 3,
-      "EDGAR": 13,
-      "BO": 25,
-      "COLETTE": 12,
-      "BROCK": 23,
-      "TICK": 20,
-      "RICO": 3,
+      "BYRON": 20,
+      "8-BIT": 32,
+      "BROCK": 14,
+      "TICK": 12,
+      "BELLE": 5,
+      "POCO": 29,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 17,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 6,
+      "EDGAR": 10,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3,
+      "BUZZ": 2,
       "TARA": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -34609,7 +34476,8 @@
       "20260807T003829.000Z:15000025:brawlBall:brawlBall:soloRanked",
       "20260807T004026.000Z:15000025:brawlBall:brawlBall:soloRanked",
       "20260807T004149.000Z:15000025:brawlBall:brawlBall:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-14",
@@ -34725,31 +34593,26 @@
       "Gem Grab": 72
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 8,
-      "BYRON": 58,
-      "BARLEY": 3,
-      "BELLE": 18,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 16,
-      "BO": 28,
-      "COLETTE": 12,
-      "BROCK": 23,
-      "TICK": 20,
-      "RICO": 3,
+      "BYRON": 25,
+      "8-BIT": 32,
+      "BROCK": 14,
+      "TICK": 12,
+      "BELLE": 5,
+      "POCO": 32,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 20,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 6,
+      "EDGAR": 13,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3,
+      "BUZZ": 4,
       "TARA": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -35815,7 +35678,8 @@
       "20260814T035337.000Z:15000306:hotZone:hotZone:ranked",
       "20260814T035637.000Z:15000306:hotZone:hotZone:ranked",
       "20260814T035950.000Z:15000502:knockout:knockout:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-15",
@@ -35931,31 +35795,26 @@
       "Gem Grab": 72
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 8,
-      "BYRON": 58,
-      "BARLEY": 3,
-      "BELLE": 18,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 16,
-      "BO": 28,
-      "COLETTE": 12,
-      "BROCK": 23,
-      "TICK": 20,
-      "RICO": 3,
+      "BYRON": 25,
+      "8-BIT": 32,
+      "BROCK": 14,
+      "TICK": 12,
+      "BELLE": 5,
+      "POCO": 32,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 20,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 6,
+      "EDGAR": 13,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3,
+      "BUZZ": 4,
       "TARA": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -37021,7 +36880,8 @@
       "20260814T035337.000Z:15000306:hotZone:hotZone:ranked",
       "20260814T035637.000Z:15000306:hotZone:hotZone:ranked",
       "20260814T035950.000Z:15000502:knockout:knockout:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-16",
@@ -37173,31 +37033,26 @@
       "Gem Grab": 78
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 8,
-      "BYRON": 60,
-      "BARLEY": 3,
-      "BELLE": 18,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 16,
-      "BO": 34,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 20,
-      "RICO": 3,
+      "BYRON": 27,
+      "8-BIT": 32,
+      "BROCK": 17,
+      "TICK": 12,
+      "BELLE": 5,
+      "POCO": 32,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 26,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 6,
+      "EDGAR": 13,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3,
+      "BUZZ": 4,
       "TARA": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -38292,7 +38147,8 @@
       "20260816T044249.000Z:15000018:heist:heist:soloRanked",
       "20260816T044438.000Z:15000018:heist:heist:soloRanked",
       "20260816T044726.000Z:15000018:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-17",
@@ -38444,31 +38300,26 @@
       "Gem Grab": 78
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 8,
-      "BYRON": 60,
-      "BARLEY": 3,
-      "BELLE": 18,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 16,
-      "BO": 34,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 20,
-      "RICO": 3,
+      "BYRON": 27,
+      "8-BIT": 32,
+      "BROCK": 17,
+      "TICK": 12,
+      "BELLE": 5,
+      "POCO": 32,
+      "COLETTE": 4,
       "SURGE": 1,
       "LUMI": 1,
+      "BO": 26,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 6,
+      "EDGAR": 13,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3,
+      "BUZZ": 4,
       "TARA": 3
     },
     "rankedAllTimeBrawlerCounts": {
@@ -39563,7 +39414,8 @@
       "20260816T044249.000Z:15000018:heist:heist:soloRanked",
       "20260816T044438.000Z:15000018:heist:heist:soloRanked",
       "20260816T044726.000Z:15000018:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-18",
@@ -39668,31 +39520,26 @@
       "Gem Grab": 80
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 8,
-      "BYRON": 60,
-      "BARLEY": 3,
-      "BELLE": 20,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 12,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 19,
-      "BO": 41,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 20,
-      "RICO": 3,
+      "BYRON": 27,
+      "8-BIT": 32,
+      "BROCK": 17,
+      "TICK": 12,
+      "BELLE": 7,
+      "POCO": 32,
+      "COLETTE": 4,
       "SURGE": 3,
       "LUMI": 1,
+      "BO": 33,
+      "KIT": 4,
       "BERRY": 1,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 6,
+      "EDGAR": 16,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3,
+      "BUZZ": 4,
       "TARA": 3,
       "CHESTER": 2,
       "MEG": 2
@@ -40814,7 +40661,8 @@
       "20260818T071147.000Z:15000022:bounty:bounty:soloRanked",
       "20260818T071405.000Z:15000022:bounty:bounty:soloRanked",
       "20260818T071623.000Z:15000022:bounty:bounty:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-19",
@@ -40883,31 +40731,26 @@
       "Gem Grab": 86
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 63,
-      "BARLEY": 3,
-      "BELLE": 20,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 19,
-      "BO": 41,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 20,
-      "RICO": 3,
+      "BYRON": 30,
+      "8-BIT": 32,
+      "BROCK": 17,
+      "TICK": 12,
+      "BELLE": 7,
+      "POCO": 32,
+      "COLETTE": 4,
       "SURGE": 3,
       "LUMI": 1,
+      "BO": 33,
+      "KIT": 7,
       "BERRY": 4,
       "JESSIE": 3,
+      "GENE": 9,
+      "MICO": 11,
+      "EDGAR": 16,
       "COLT": 2,
+      "NITA": 2,
       "SANDY": 3,
+      "BUZZ": 4,
       "TARA": 3,
       "CHESTER": 2,
       "MEG": 2,
@@ -42048,7 +41891,8 @@
       "20260819T075512.000Z:15000019:heist:heist:soloRanked",
       "20260819T075726.000Z:15000019:heist:heist:soloRanked",
       "20260819T075950.000Z:15000019:heist:heist:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-07-16"
   },
   {
     "date": "2026-08-20",
@@ -42202,38 +42046,7 @@
       "Bounty": 62,
       "Gem Grab": 86
     },
-    "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 63,
-      "BARLEY": 3,
-      "BELLE": 20,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 19,
-      "BO": 41,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 20,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 3,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 2,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2
-    },
+    "rankedCurrentBrawlerCounts": {},
     "rankedAllTimeBrawlerCounts": {
       "MICO": 13,
       "BYRON": 63,
@@ -43376,7 +43189,8 @@
       "20260820T013535.000Z:15000051:brawlBall:brawlBall:ranked",
       "20260820T013744.000Z:15000051:brawlBall:brawlBall:ranked",
       "20260820T014049.000Z:15000051:brawlBall:brawlBall:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-08-21",
@@ -43531,36 +43345,9 @@
       "Gem Grab": 87
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 63,
-      "BARLEY": 3,
-      "BELLE": 20,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 20,
-      "BO": 41,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 21,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 2,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2
+      "EDGAR": 1,
+      "TICK": 1,
+      "JESSIE": 1
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 13,
@@ -44704,7 +44491,8 @@
       "20260820T230817.000Z:15000018:heist:heist:soloRanked",
       "20260820T231140.000Z:15000703:knockout:knockout:soloRanked",
       "20260820T231442.000Z:15000011:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-08-22",
@@ -44859,36 +44647,9 @@
       "Gem Grab": 87
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 63,
-      "BARLEY": 3,
-      "BELLE": 20,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 20,
-      "BO": 41,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 21,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 2,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2
+      "EDGAR": 1,
+      "TICK": 1,
+      "JESSIE": 1
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 13,
@@ -46032,7 +45793,8 @@
       "20260821T222643.000Z:15001285:duoShowdown:duoShowdown:ranked",
       "20260821T222851.000Z:15001285:duoShowdown:duoShowdown:ranked",
       "20260821T223007.000Z:15001285:duoShowdown:duoShowdown:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-08-23",
@@ -46193,36 +45955,9 @@
       "Gem Grab": 87
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 63,
-      "BARLEY": 3,
-      "BELLE": 20,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 20,
-      "BO": 41,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 21,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 2,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2
+      "EDGAR": 1,
+      "TICK": 1,
+      "JESSIE": 1
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 13,
@@ -47366,7 +47101,8 @@
       "20260823T065942.000Z:15001214:duoShowdown:duoShowdown:ranked",
       "20260823T094853.000Z:15000024:brawlBall:brawlBall:ranked",
       "20260823T095142.000Z:15001263:megaBoss:lastStand"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-09-02",
@@ -47529,36 +47265,10 @@
       "Gem Grab": 87
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 63,
-      "BARLEY": 3,
-      "BELLE": 20,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 36,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 20,
-      "BO": 43,
-      "COLETTE": 12,
-      "BROCK": 26,
-      "TICK": 23,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 2,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2
+      "EDGAR": 1,
+      "TICK": 3,
+      "JESSIE": 1,
+      "BO": 2
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 13,
@@ -48702,7 +48412,8 @@
       "20260831T080222.000Z:15000132:brawlBall:brawlBall:soloRanked",
       "20260902T085700.000Z:15001281:soloShowdown:soloShowdown:ranked",
       "20260902T085935.000Z:15001281:soloShowdown:soloShowdown:ranked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-09-03",
@@ -48780,36 +48491,15 @@
       "Gem Grab": 91
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 65,
-      "BARLEY": 3,
-      "BELLE": 23,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 42,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 20,
-      "BO": 43,
-      "COLETTE": 12,
-      "BROCK": 30,
-      "TICK": 28,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 5,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2,
+      "EDGAR": 1,
+      "TICK": 8,
+      "JESSIE": 1,
+      "BO": 2,
+      "BYRON": 2,
+      "BELLE": 3,
+      "POCO": 6,
+      "BROCK": 4,
+      "CHESTER": 3,
       "WILLOW": 2
     },
     "rankedAllTimeBrawlerCounts": {
@@ -49955,7 +49645,8 @@
       "20260903T081541.000Z:15000368:knockout:knockout:soloRanked",
       "20260903T082006.000Z:15000010:gemGrab:gemGrab:soloRanked",
       "20260903T082254.000Z:15000010:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-09-04",
@@ -50033,36 +49724,15 @@
       "Gem Grab": 91
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 65,
-      "BARLEY": 3,
-      "BELLE": 23,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 42,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 20,
-      "BO": 43,
-      "COLETTE": 12,
-      "BROCK": 30,
-      "TICK": 28,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 5,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2,
+      "EDGAR": 1,
+      "TICK": 8,
+      "JESSIE": 1,
+      "BO": 2,
+      "BYRON": 2,
+      "BELLE": 3,
+      "POCO": 6,
+      "BROCK": 4,
+      "CHESTER": 3,
       "WILLOW": 2
     },
     "rankedAllTimeBrawlerCounts": {
@@ -51208,7 +50878,8 @@
       "20260903T081541.000Z:15000368:knockout:knockout:soloRanked",
       "20260903T082006.000Z:15000010:gemGrab:gemGrab:soloRanked",
       "20260903T082254.000Z:15000010:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-09-05",
@@ -51286,36 +50957,15 @@
       "Gem Grab": 91
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 65,
-      "BARLEY": 3,
-      "BELLE": 23,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 42,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 49,
-      "MANDY": 3,
-      "BUZZ": 5,
-      "EDGAR": 20,
-      "BO": 43,
-      "COLETTE": 12,
-      "BROCK": 30,
-      "TICK": 28,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 5,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 2,
+      "EDGAR": 1,
+      "TICK": 8,
+      "JESSIE": 1,
+      "BO": 2,
+      "BYRON": 2,
+      "BELLE": 3,
+      "POCO": 6,
+      "BROCK": 4,
+      "CHESTER": 3,
       "WILLOW": 2
     },
     "rankedAllTimeBrawlerCounts": {
@@ -52461,7 +52111,8 @@
       "20260903T081541.000Z:15000368:knockout:knockout:soloRanked",
       "20260903T082006.000Z:15000010:gemGrab:gemGrab:soloRanked",
       "20260903T082254.000Z:15000010:gemGrab:gemGrab:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   },
   {
     "date": "2026-09-09",
@@ -52554,37 +52205,20 @@
       "Gem Grab": 97
     },
     "rankedCurrentBrawlerCounts": {
-      "MICO": 13,
-      "BYRON": 70,
-      "BARLEY": 3,
-      "BELLE": 23,
-      "GUS": 1,
-      "NITA": 3,
-      "GENE": 13,
-      "POCO": 42,
-      "KIT": 15,
-      "JAE-YONG": 1,
-      "8-BIT": 51,
-      "MANDY": 3,
-      "BUZZ": 7,
-      "EDGAR": 23,
-      "BO": 43,
-      "COLETTE": 14,
-      "BROCK": 33,
-      "TICK": 28,
-      "RICO": 3,
-      "SURGE": 3,
-      "LUMI": 1,
-      "BERRY": 4,
-      "JESSIE": 4,
-      "COLT": 2,
-      "SANDY": 3,
-      "TARA": 3,
-      "CHESTER": 5,
-      "MEG": 2,
-      "LARRY & LAWRIE": 2,
-      "MR. P": 5,
+      "EDGAR": 4,
+      "TICK": 8,
+      "JESSIE": 1,
+      "BO": 2,
+      "BYRON": 7,
+      "BELLE": 3,
+      "POCO": 6,
+      "BROCK": 7,
+      "CHESTER": 3,
       "WILLOW": 2,
+      "8-BIT": 2,
+      "BUZZ": 2,
+      "COLETTE": 2,
+      "MR. P": 3,
       "NORI": 2
     },
     "rankedAllTimeBrawlerCounts": {
@@ -53731,6 +53365,7 @@
       "20260910T070807.000Z:15001021:brawlBall:brawlBall:soloRanked",
       "20260910T070936.000Z:15001021:brawlBall:brawlBall:soloRanked",
       "20260910T071122.000Z:15001021:brawlBall:brawlBall:soloRanked"
-    ]
+    ],
+    "rankedSeasonStart": "2026-08-20"
   }
 ]

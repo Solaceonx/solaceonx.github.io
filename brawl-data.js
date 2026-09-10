@@ -2614,139 +2614,64 @@ window.BRAWL_DATA = {
     ],
     "currentSeasonBrawlers": [
       {
-        "name": "BYRON",
-        "count": 70,
-        "image": "assets/brawlers/16000042.png"
-      },
-      {
-        "name": "8-BIT",
-        "count": 51,
-        "image": "assets/brawlers/16000027.png"
-      },
-      {
-        "name": "BO",
-        "count": 43,
-        "image": "assets/brawlers/16000014.png"
-      },
-      {
-        "name": "POCO",
-        "count": 42,
-        "image": "assets/brawlers/16000013.png"
-      },
-      {
-        "name": "BROCK",
-        "count": 33,
-        "image": "assets/brawlers/16000003.png"
-      },
-      {
         "name": "TICK",
-        "count": 28,
+        "count": 8,
         "image": "assets/brawlers/16000022.png"
       },
       {
-        "name": "BELLE",
-        "count": 23,
-        "image": "assets/brawlers/16000046.png"
+        "name": "BROCK",
+        "count": 7,
+        "image": "assets/brawlers/16000003.png"
+      },
+      {
+        "name": "BYRON",
+        "count": 7,
+        "image": "assets/brawlers/16000042.png"
+      },
+      {
+        "name": "POCO",
+        "count": 6,
+        "image": "assets/brawlers/16000013.png"
       },
       {
         "name": "EDGAR",
-        "count": 23,
+        "count": 4,
         "image": "assets/brawlers/16000043.png"
       },
       {
-        "name": "KIT",
-        "count": 15,
-        "image": "assets/brawlers/16000076.png"
-      },
-      {
-        "name": "COLETTE",
-        "count": 14,
-        "image": "assets/brawlers/16000039.png"
-      },
-      {
-        "name": "GENE",
-        "count": 13,
-        "image": "assets/brawlers/16000021.png"
-      },
-      {
-        "name": "MICO",
-        "count": 13,
-        "image": "assets/brawlers/16000075.png"
-      },
-      {
-        "name": "BUZZ",
-        "count": 7,
-        "image": "assets/brawlers/16000049.png"
+        "name": "BELLE",
+        "count": 3,
+        "image": "assets/brawlers/16000046.png"
       },
       {
         "name": "CHESTER",
-        "count": 5,
+        "count": 3,
         "image": "assets/brawlers/16000063.png"
       },
       {
         "name": "MR. P",
-        "count": 5,
+        "count": 3,
         "image": "assets/brawlers/16000031.png"
       },
       {
-        "name": "BERRY",
-        "count": 4,
-        "image": "assets/brawlers/16000082.png"
-      },
-      {
-        "name": "JESSIE",
-        "count": 4,
-        "image": "assets/brawlers/16000007.png"
-      },
-      {
-        "name": "BARLEY",
-        "count": 3,
-        "image": "assets/brawlers/16000006.png"
-      },
-      {
-        "name": "MANDY",
-        "count": 3,
-        "image": "assets/brawlers/16000065.png"
-      },
-      {
-        "name": "NITA",
-        "count": 3,
-        "image": "assets/brawlers/16000008.png"
-      },
-      {
-        "name": "RICO",
-        "count": 3,
-        "image": "assets/brawlers/16000004.png"
-      },
-      {
-        "name": "SANDY",
-        "count": 3,
-        "image": "assets/brawlers/16000028.png"
-      },
-      {
-        "name": "SURGE",
-        "count": 3,
-        "image": "assets/brawlers/16000038.png"
-      },
-      {
-        "name": "TARA",
-        "count": 3,
-        "image": "assets/brawlers/16000017.png"
-      },
-      {
-        "name": "COLT",
+        "name": "8-BIT",
         "count": 2,
-        "image": "assets/brawlers/16000001.png"
+        "image": "assets/brawlers/16000027.png"
       },
       {
-        "name": "LARRY & LAWRIE",
+        "name": "BO",
         "count": 2,
-        "image": "assets/brawlers/16000077.png"
+        "image": "assets/brawlers/16000014.png"
       },
       {
-        "name": "MEG",
+        "name": "BUZZ",
         "count": 2,
-        "image": "assets/brawlers/16000052.png"
+        "image": "assets/brawlers/16000049.png"
+      },
+      {
+        "name": "COLETTE",
+        "count": 2,
+        "image": "assets/brawlers/16000039.png"
       },
       {
         "name": "NORI",
@@ -2759,19 +2684,9 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000067.png"
       },
       {
-        "name": "GUS",
+        "name": "JESSIE",
         "count": 1,
-        "image": "assets/brawlers/16000061.png"
-      },
-      {
-        "name": "JAE-YONG",
-        "count": 1,
-        "image": "assets/brawlers/16000093.png"
-      },
-      {
-        "name": "LUMI",
-        "count": 1,
-        "image": "assets/brawlers/16000091.png"
+        "image": "assets/brawlers/16000007.png"
       }
     ],
     "allTimeBrawlers": [
@@ -2938,40 +2853,8 @@ window.BRAWL_DATA = {
     ],
     "seasonResets": [
       {
-        "date": "2026-07-13",
-        "label": "Jul 13"
-      },
-      {
         "date": "2026-07-16",
         "label": "Jul 16"
-      },
-      {
-        "date": "2026-07-20",
-        "label": "Jul 20"
-      },
-      {
-        "date": "2026-07-24",
-        "label": "Jul 24"
-      },
-      {
-        "date": "2026-07-26",
-        "label": "Jul 26"
-      },
-      {
-        "date": "2026-07-28",
-        "label": "Jul 28"
-      },
-      {
-        "date": "2026-08-05",
-        "label": "Aug 5"
-      },
-      {
-        "date": "2026-08-14",
-        "label": "Aug 14"
-      },
-      {
-        "date": "2026-08-18",
-        "label": "Aug 18"
       },
       {
         "date": "2026-08-20",

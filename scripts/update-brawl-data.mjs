@@ -1,5 +1,7 @@
 import { access, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 
+import { rankedSeasonStart, migrateRankedSeasons } from "./brawl-seasons.mjs";
+
 const API_BASE = "https://api.brawlstars.com/v1";
 const SNAPSHOT_PATH = new URL("../brawl-snapshots.json", import.meta.url);
 const DATA_PATH = new URL("../brawl-data.js", import.meta.url);
@@ -271,7 +273,8 @@ function snapshotFrom(player, battlelog, previous) {
   const trophyModeCounts = { ...(compatiblePrevious ? previous.trophyModeCounts || {} : {}) };
   const trophyBrawlerCounts = { ...(compatiblePrevious ? previous.trophyBrawlerCounts || {} : {}) };
   const rankedModeCounts = { ...(compatiblePrevious ? previous.rankedModeCounts || {} : {}) };
-  const rankedCurrentBrawlerCounts = { ...(compatiblePrevious ? previous.rankedCurrentBrawlerCounts || {} : {}) };
+  const seasonStart = rankedSeasonStart(date);
+  const rankedCurrentBrawlerCounts = { ...(compatiblePrevious && previous.rankedSeasonStart === seasonStart ? previous.rankedCurrentBrawlerCounts || {} : {}) };
   const rankedAllTimeBrawlerCounts = { ...(compatiblePrevious ? previous.rankedAllTimeBrawlerCounts || {} : {}) };
   let trophyGamesTotal = compatiblePrevious ? previous.trophyGamesTotal || 0 : 0;
   let trophyWinsTotal = compatiblePrevious ? previous.trophyWinsTotal || 0 : 0;
@@ -294,7 +297,10 @@ function snapshotFrom(player, battlelog, previous) {
       else if (result === "defeat" || result === "loss") rankedLossesTotal += 1;
       addCount(rankedModeCounts, mode);
       addCount(rankedAllTimeBrawlerCounts, brawler);
-      addCount(rankedCurrentBrawlerCounts, brawler);
+      const battleDate = item.battleTime?.slice(0, 8);
+      if (battleDate && battleDate >= seasonStart.replaceAll("-", "")) {
+        addCount(rankedCurrentBrawlerCounts, brawler);
+      }
     } else if (isTrophyBattle(item)) {
       trophyGamesTotal += 1;
       if (result === "victory" || result === "win") trophyWinsTotal += 1;
@@ -354,6 +360,7 @@ function snapshotFrom(player, battlelog, previous) {
     trophyModeCounts,
     trophyBrawlerCounts,
     rankedModeCounts,
+    rankedSeasonStart: seasonStart,
     rankedCurrentBrawlerCounts,
     rankedAllTimeBrawlerCounts,
     brawlerImages,
@@ -381,7 +388,7 @@ function buildPageData(history, highlightPaths) {
   for (let index = 1; index < history.length; index++) {
     const prev = history[index - 1];
     const point = history[index];
-    if (typeof prev.rankedPoints === "number" && typeof point.rankedPoints === "number" && point.rankedPoints < prev.rankedPoints) {
+    if (prev.rankedSeasonStart && point.rankedSeasonStart !== prev.rankedSeasonStart) {
       seasonResets.push({ date: point.date, label: point.label });
     }
   }
@@ -411,6 +418,11 @@ function buildPageData(history, highlightPaths) {
   };
 }
 
+if (process.argv.includes("--rebuild")) {
+  const history = migrateRankedSeasons(await readJson(SNAPSHOT_PATH, []));
+  await writeFile(SNAPSHOT_PATH, `${JSON.stringify(history, null, 2)}\n`);
+  await writeFile(DATA_PATH, `window.BRAWL_DATA = ${JSON.stringify(buildPageData(history, await highlights()), null, 2)};\n`);
+} else {
 const { token, playerTag } = await loadEnv();
 const normalizedTag = normalizeTag(playerTag);
 
@@ -423,7 +435,7 @@ const [player, battlelog] = await Promise.all([
   fetchJson(`/players/${encodedTag}/battlelog`, token)
 ]);
 
-const existingHistory = await readJson(SNAPSHOT_PATH, []);
+const existingHistory = migrateRankedSeasons(await readJson(SNAPSHOT_PATH, []));
 const previous = latestOrEmpty(existingHistory);
 const snapshot = snapshotFrom(player, Array.isArray(battlelog.items) ? battlelog.items : [], previous);
 await downloadBrawlerImages(snapshot.brawlerImages || {});
@@ -435,3 +447,5 @@ await writeFile(DATA_PATH, `window.BRAWL_DATA = ${JSON.stringify(buildPageData(h
 
 console.log(`Saved Brawl Stars snapshot for ${snapshot.name} (${snapshot.tag}) · ${snapshot.trophies ?? "—"} trophies`);
 console.log("Updated brawl-snapshots.json and brawl-data.js.");
+
+}
