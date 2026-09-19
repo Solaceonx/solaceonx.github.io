@@ -68,7 +68,7 @@ window.ROYALE_DATA = {
     },
     "maxedCards": {
       "current": 9,
-      "total": 122,
+      "total": 123,
       "percent": 7,
       "levelDistribution": [
         {
@@ -24703,7 +24703,7 @@ window.ROYALE_DATA = {
     {
       "date": "2026-09-19",
       "label": "Sep 19",
-      "fetchedAt": "2026-09-19T16:00:11.495Z",
+      "fetchedAt": "2026-09-19T18:03:49.383Z",
       "tag": "#JL8UYPQC",
       "name": "Solaceonx",
       "trophies": 13439,
@@ -24778,7 +24778,7 @@ window.ROYALE_DATA = {
         },
         "maxedCards": {
           "current": 9,
-          "total": 122,
+          "total": 123,
           "percent": 7,
           "levelDistribution": [
             {

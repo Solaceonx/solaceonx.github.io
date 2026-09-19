@@ -1867,7 +1867,8 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 }
 .resource-help-layout {
   display: grid;
-  grid-template-columns: minmax(0, .8fr) minmax(360px, 1.2fr);
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 900px;
   gap: clamp(42px, 8vw, 110px);
   align-items: start;
 }
@@ -2477,7 +2478,8 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
   100% { transform: scale(1)    translate(0%, 0%); }
 }
 .about-page::after,
-.research-page::after {
+.research-page::after,
+.simple-resource-page::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -2493,13 +2495,16 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 }
 /* Elevate real content above the milkyway ::after (z-index 0), keep cursor/canvas alone */
 .about-page > :not(.cosmic-cursor):not(canvas):not(.cursor-star),
-.research-page > :not(.cosmic-cursor):not(canvas):not(.cursor-star) { position: relative; z-index: 1; }
+.research-page > :not(.cosmic-cursor):not(canvas):not(.cursor-star),
+.simple-resource-page > :not(.cosmic-cursor):not(canvas):not(.cursor-star) { position: relative; z-index: 1; }
 .about-page:not([data-theme="light"])::after,
-.research-page:not([data-theme="light"])::after { opacity: 1; }
+.research-page:not([data-theme="light"])::after,
+.simple-resource-page:not([data-theme="light"])::after { opacity: 1; }
 .about-page:not([data-theme="light"]),
 .research-page:not([data-theme="light"]) { color: #fff; background: #02040b; }
 .about-page:not([data-theme="light"]) #starfield,
-.research-page:not([data-theme="light"]) #starfield { display: none; }
+.research-page:not([data-theme="light"]) #starfield,
+.simple-resource-page:not([data-theme="light"]) #starfield { display: none; }
 
 /* Research content boxes — translucent in light mode, dark in dark mode */
 .research-block {
@@ -2514,4 +2519,12 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .research-page[data-theme="light"] .research-block {
   background: rgba(255,255,255,.86);
   border: 1px solid rgba(0,0,0,.13);
+}
+
+/* Center the game summaries and keep the Royale introduction dark. */
+:is(.coc-tracker-page, .royale-tracker-page) .weekly-summary-panel { text-align: center; }
+:is(.coc-tracker-page, .royale-tracker-page) .weekly-summary-panel .panel-heading { justify-content: center; }
+.starfield-page:not([data-theme="light"]).royale-tracker-page .royale-intro {
+  background: rgba(2, 4, 11, .88);
+  border-color: rgba(255, 255, 255, .16);
 }

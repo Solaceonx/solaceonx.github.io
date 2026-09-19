@@ -268,18 +268,19 @@ function levelDistribution(cards = []) {
     }));
 }
 
-function collectionProgress(player) {
+function collectionProgress(player, catalog) {
   const cards = player.cards || [];
   const heroCards = cards.filter(card => HERO_CARD_NAMES.includes(card.name));
   const unlockedHeroes = heroCards.filter(card => Boolean(card.evolutionLevel));
-  const maxedCards = cards.filter(card => displayLevel(card) >= displayMaxLevel(card)).length;
+  const maxedCards = cards.filter(card => typeof card.level === "number" && typeof card.maxLevel === "number" && card.level >= card.maxLevel).length;
+  const totalCards = new Set([...catalog, ...cards].map(card => card.id)).size;
 
   return {
     cardLevels: levelProgress(cards),
     maxedCards: {
       current: maxedCards,
-      total: cards.length,
-      percent: percentFrom(maxedCards, cards.length),
+      total: totalCards,
+      percent: percentFrom(maxedCards, totalCards),
       levelDistribution: levelDistribution(cards)
     },
     evolutions: evolutionProgress(cards),
@@ -293,7 +294,7 @@ function collectionProgress(player) {
   };
 }
 
-function snapshotFrom(player, battles) {
+function snapshotFrom(player, battles, catalog) {
   const date = todayKey();
   const battleSummary = summarizeBattles(battles);
 
@@ -321,7 +322,7 @@ function snapshotFrom(player, battles) {
       maxLevel: card.maxLevel ?? null,
       iconUrl: card.iconUrls?.medium || card.iconUrls?.large || null
     })),
-    collectionProgress: collectionProgress(player),
+    collectionProgress: collectionProgress(player, catalog),
     ...battleSummary
   };
 }
@@ -462,12 +463,14 @@ if (!token) {
 }
 
 const encodedTag = encodeURIComponent(PLAYER_TAG);
-const [player, battlelog] = await Promise.all([
+const [player, battlelog, catalog] = await Promise.all([
   fetchJson(`/players/${encodedTag}`, token),
-  fetchJson(`/players/${encodedTag}/battlelog`, token)
+  fetchJson(`/players/${encodedTag}/battlelog`, token),
+  fetchJson("/cards", token)
 ]);
 
-const snapshot = snapshotFrom(player, Array.isArray(battlelog) ? battlelog : []);
+if (!Array.isArray(catalog.items) || !catalog.items.length) throw new Error("Card catalog is empty or invalid.");
+const snapshot = snapshotFrom(player, Array.isArray(battlelog) ? battlelog : [], catalog.items);
 const history = compactHistory([
   ...(await readJson(SNAPSHOT_PATH, [])),
   snapshot

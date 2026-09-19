@@ -45,7 +45,7 @@ if (tabsRoot && cocAccounts.length) {
     });
   };
 
-  const makePath = (points, width, height, pad) => {
+  const makePath = (points, width, height, pad, leftPad = pad) => {
     const values = points.map(point => point.value);
     const rawMin = Math.min(...values);
     const rawMax = Math.max(...values);
@@ -53,16 +53,16 @@ if (tabsRoot && cocAccounts.length) {
     const min = rawMin === rawMax ? rawMin - 1 : rawMin - buffer;
     const max = rawMin === rawMax ? rawMax + 1 : rawMax + buffer;
     const plotted = points.map((point, index) => {
-      const x = points.length === 1 ? width / 2 : pad + index * ((width - pad * 2) / (points.length - 1));
+      const x = points.length === 1 ? width / 2 : leftPad + index * ((width - leftPad - pad) / (points.length - 1));
       const y = height - pad - ((point.value - min) / (max - min)) * (height - pad * 2);
       return { ...point, x, y };
     });
 
     const path = plotted.length === 1
-      ? `M ${pad} ${plotted[0].y} L ${width - pad} ${plotted[0].y}`
+      ? `M ${leftPad} ${plotted[0].y} L ${width - pad} ${plotted[0].y}`
       : plotted.map((point, index) => `${index ? "L" : "M"} ${point.x} ${point.y}`).join(" ");
     const area = plotted.length === 1
-      ? `M ${pad} ${height - pad} L ${pad} ${plotted[0].y} L ${width - pad} ${plotted[0].y} L ${width - pad} ${height - pad} Z`
+      ? `M ${leftPad} ${height - pad} L ${leftPad} ${plotted[0].y} L ${width - pad} ${plotted[0].y} L ${width - pad} ${height - pad} Z`
       : `${path} L ${plotted.at(-1).x} ${height - pad} L ${plotted[0].x} ${height - pad} Z`;
 
     const ticks = [
@@ -84,7 +84,7 @@ if (tabsRoot && cocAccounts.length) {
     const pad = options.pad || 34;
     const yLabelWidth = options.yLabelWidth ?? 44;
     const leftPad = Math.max(pad, yLabelWidth);
-    const { plotted, path, area, ticks } = makePath(points, width, height, leftPad);
+    const { plotted, path, area, ticks } = makePath(points, width, height, pad, leftPad);
     const gradientId = `coc-area-${metric.key}`;
     const formatValue = options.formatter || number;
     const maxLabels = options.maxLabels || 8;
@@ -120,9 +120,7 @@ if (tabsRoot && cocAccounts.length) {
     // Map tier IDs to short display names for the Y axis
     const tierLabel = (tierId, league) => {
       if (!tierId || tierId === 105000000) return "Unranked";
-      // Extract league family name (before the number)
-      const match = (league || "").match(/^([A-Za-z .]+\S)/);
-      return match ? match[1].replace(" League", "") : league || "—";
+      return (league || "—").replace(" League", "");
     };
 
     const chartPoints = rows
@@ -171,7 +169,7 @@ if (tabsRoot && cocAccounts.length) {
       window.attachRangePicker(
         document.querySelector("#coc-range-ranked-trophies"),
         chartPoints,
-        pts => renderSvgChart(pts, { key: "rankedLeague", label: "League", color: cocPalette.gold }, { width: 760, height: 220, pad: 34, yLabelWidth: 72, dot: 4, formatter: leagueFormatter })
+        pts => renderSvgChart(pts, { key: "rankedLeague", label: "League", color: cocPalette.gold }, { width: 760, height: 220, pad: 34, yLabelWidth: 140, dot: 4, formatter: leagueFormatter })
       );
     }
   };
@@ -312,8 +310,7 @@ if (tabsRoot && cocAccounts.length) {
       { label: "Capital gold", key: "clanCapitalContributions" }
     ].map(item => ({
       ...item,
-      value: sevenDayDelta(item.key),
-      note: "all accounts, last 7 days"
+      value: sevenDayDelta(item.key)
     }));
 
     const attackDayRecord = bestDailyRecord("attacksWon");
@@ -336,7 +333,7 @@ if (tabsRoot && cocAccounts.length) {
       <article class="weekly-summary-card">
         <span>${item.label}</span>
         <strong>${number(item.value)}</strong>
-        <small>${item.note}</small>
+        ${item.note ? `<small>${item.note}</small>` : ""}
       </article>
     `).join("");
   };
@@ -375,7 +372,6 @@ if (tabsRoot && cocAccounts.length) {
   tabsRoot.innerHTML = cocAccounts.map((account, index) => `
     <button type="button" role="tab" data-account="${account.id}" aria-selected="${index === 0}">
       <strong>${account.name} <em>(TH${account.townHall})</em></strong>
-      ${account.tabDescriptor ? `<span>${account.tabDescriptor}</span>` : ""}
     </button>`).join("");
 
   tabsRoot.addEventListener("click", (event) => {
