@@ -131,11 +131,18 @@
 
   const trophy = data.trophy || {};
   const ranked = data.ranked || {};
-  const latestValue = (items, key) => items?.at(-1)?.[key] ?? 0;
-  const firstValue = (items, key) => items?.[0]?.[key] ?? latestValue(items, key);
-  const deltaSinceFirst = (items, key) => (items?.length || 0) <= 1
-    ? latestValue(items, key)
-    : latestValue(items, key) - firstValue(items, key);
+  const summaryEnd = [...(trophy.history || []), ...(ranked.gamesHistory || [])]
+    .map(point => point.date).filter(Boolean).sort().at(-1);
+  const summaryCutoff = new Date(`${summaryEnd}T00:00:00Z`).getTime() - 7 * 86400000;
+  const weeklyDelta = (items, key) => {
+    const points = (items || []).filter(point =>
+      typeof point[key] === "number" &&
+      new Date(`${point.date}T00:00:00Z`).getTime() >= summaryCutoff &&
+      point.date <= summaryEnd
+    ).sort((a, b) => a.date.localeCompare(b.date));
+    // A lone cumulative snapshot cannot establish any weekly activity.
+    return points.length < 2 ? 0 : Math.max(0, points.at(-1)[key] - points[0][key]);
+  };
   const winRateFrom = (wins, losses) => wins + losses ? wins / (wins + losses) * 100 : null;
 
   const trophyHistory = (trophy.history || []).map(point => ({ label: point.label, date: point.date, value: point.trophies }));
@@ -148,15 +155,15 @@
   const rankedWins = ranked.winsHistory || [];
   const rankedLosses = ranked.lossesHistory || [];
 
-  const trophyGamesDelta = deltaSinceFirst(trophy.gamesHistory || [], "games");
-  const rankedGamesDelta = deltaSinceFirst(ranked.gamesHistory || [], "games");
-  const lifetimeWinsDelta = deltaSinceFirst(trophy.lifetimeWinsHistory || [], "wins");
-  const trophyWinsDelta = deltaSinceFirst(trophyWins, "wins");
-  const trophyLossesDelta = deltaSinceFirst(trophyLosses, "losses");
-  const rankedWinsDelta = deltaSinceFirst(rankedWins, "wins");
-  const rankedLossesDelta = deltaSinceFirst(rankedLosses, "losses");
-  const trackedWins = latestValue(trophyWins, "wins") + latestValue(rankedWins, "wins");
-  const trackedLosses = latestValue(trophyLosses, "losses") + latestValue(rankedLosses, "losses");
+  const trophyGamesDelta = weeklyDelta(trophy.gamesHistory || [], "games");
+  const rankedGamesDelta = weeklyDelta(ranked.gamesHistory || [], "games");
+  const lifetimeWinsDelta = weeklyDelta(trophy.lifetimeWinsHistory || [], "wins");
+  const trophyWinsDelta = weeklyDelta(trophyWins, "wins");
+  const trophyLossesDelta = weeklyDelta(trophyLosses, "losses");
+  const rankedWinsDelta = weeklyDelta(rankedWins, "wins");
+  const rankedLossesDelta = weeklyDelta(rankedLosses, "losses");
+  const trackedWins = trophyWinsDelta + rankedWinsDelta;
+  const trackedLosses = trophyLossesDelta + rankedLossesDelta;
   const trackedWinRate = winRateFrom(trackedWins, trackedLosses);
 
   document.querySelector("#brawl-weekly-summary").innerHTML = [
