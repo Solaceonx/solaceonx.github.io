@@ -315,6 +315,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-24",
         "label": "Sep 24",
         "trophies": 38098
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
+        "trophies": 38098
       }
     ],
     "recentGames": [
@@ -627,6 +632,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-24",
         "label": "Sep 24",
+        "games": 319
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
         "games": 319
       }
     ],
@@ -945,6 +955,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-24",
         "label": "Sep 24",
         "wins": 8391
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
+        "wins": 8391
       }
     ],
     "winsHistory": [
@@ -1242,6 +1257,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-24",
         "label": "Sep 24",
         "wins": 213
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
+        "wins": 213
       }
     ],
     "lossesHistory": [
@@ -1538,6 +1558,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-24",
         "label": "Sep 24",
+        "losses": 104
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
         "losses": 104
       }
     ],
@@ -2002,6 +2027,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-24",
         "label": "Sep 24",
         "points": 5642
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
+        "points": 5642
       }
     ],
     "gamesHistory": [
@@ -2298,6 +2328,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-24",
         "label": "Sep 24",
+        "games": 516
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
         "games": 516
       }
     ],
@@ -2596,6 +2631,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-24",
         "label": "Sep 24",
         "wins": 293
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
+        "wins": 293
       }
     ],
     "lossesHistory": [
@@ -2893,6 +2933,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-24",
         "label": "Sep 24",
         "losses": 221
+      },
+      {
+        "date": "2026-09-25",
+        "label": "Sep 25",
+        "losses": 221
       }
     ],
     "modes": [
@@ -3179,7 +3224,8 @@ window.BRAWL_DATA = {
         "date": "2026-09-19",
         "label": "Sep 19"
       }
-    ]
+    ],
+    "rankedGamesLog": []
   },
   "highlights": [
     "assets/brawl_highlights/IMG_0565.PNG",
