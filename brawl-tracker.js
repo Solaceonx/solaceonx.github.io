@@ -69,7 +69,7 @@
           </linearGradient>
         </defs>
         <path class="chart-grid" d="${ticks.map(tick => `M ${leftPad} ${tick.y} H ${width - pad}`).join(" ")}"/>
-        ${ticks.map(tick => `<text class="chart-y-label" x="${leftPad - 8}" y="${tick.y + 3}" text-anchor="end">${formatValue(tickValue(tick.value))}</text>`).join("")}
+        ${options.rankTiers?.length ? "" : ticks.map(tick => `<text class="chart-y-label" x="${leftPad - 8}" y="${tick.y + 3}" text-anchor="end">${formatValue(tickValue(tick.value))}</text>`).join("")}
         ${seasonResetLines}
         ${rankTierLines}
         <path class="chart-area" fill="url(#${gradientId})" d="${area}"/>
