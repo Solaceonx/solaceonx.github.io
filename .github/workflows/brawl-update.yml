@@ -23,10 +23,10 @@ jobs:
         if: env.HAS_TOKEN != 'true'
         run: echo "::notice::Add a BRAWL_API_TOKEN repository secret to enable Brawl Stars updates."
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         if: env.HAS_TOKEN == 'true'
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: env.HAS_TOKEN == 'true'
         with:
           node-version: 22
