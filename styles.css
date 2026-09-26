@@ -1357,9 +1357,6 @@ p strong {
 }
 .research-block:first-child {
   padding-top: 0;
-  display: flex;
-  align-items: center;
-  min-height: 60px;
 }
 .research-label {
   margin-bottom: 12px;
@@ -1374,7 +1371,7 @@ p strong {
   letter-spacing: -.02em;
 }
 .research-block > p:not(.research-label) {
-  max-width: 780px;
+  max-width: 960px;
   margin: 0;
   color: var(--ink);
   font-size: 15px;
