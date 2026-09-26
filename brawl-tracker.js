@@ -228,23 +228,26 @@
       return { label, rangeLabel, modes };
     });
     const seasons = allSeasons.filter(s => s.modes.length > 0);
-    if (!seasons.length) { seasonContainer.innerHTML = `<div class="brawl-bar-chart">${renderBars([], { emptyText: "No ranked game data yet." })}</div>`; return; }
-    let activeSeason = seasons.length - 1;
-    const render = () => {
-      const tabs = seasons.map((s, i) => `
-        <button class="brawl-season-tab${i === activeSeason ? " active" : ""}" data-idx="${i}">${s.rangeLabel}</button>
-      `).join("");
-      const s = seasons[activeSeason];
-      const bars = renderBars(s.modes, { emptyText: "No data for this season yet." });
-      seasonContainer.innerHTML = `
-        <div class="brawl-season-tabs">${tabs}</div>
-        <div class="brawl-bar-chart brawl-season-chart">${bars}</div>
-      `;
-      seasonContainer.querySelectorAll(".brawl-season-tab").forEach(btn => {
-        btn.addEventListener("click", () => { activeSeason = +btn.dataset.idx; render(); });
-      });
-    };
-    render();
+    if (!seasons.length) {
+      seasonContainer.innerHTML = `<div class="brawl-bar-chart">${renderBars([], { emptyText: "No ranked game data yet." })}</div>`;
+    } else {
+      let activeSeason = seasons.length - 1;
+      const render = () => {
+        const tabs = seasons.map((s, i) => `
+          <button class="brawl-season-tab${i === activeSeason ? " active" : ""}" data-idx="${i}">${s.rangeLabel}</button>
+        `).join("");
+        const s = seasons[activeSeason];
+        const bars = renderBars(s.modes, { emptyText: "No data for this season yet." });
+        seasonContainer.innerHTML = `
+          <div class="brawl-season-tabs">${tabs}</div>
+          <div class="brawl-bar-chart brawl-season-chart">${bars}</div>
+        `;
+        seasonContainer.querySelectorAll(".brawl-season-tab").forEach(btn => {
+          btn.addEventListener("click", () => { activeSeason = +btn.dataset.idx; render(); });
+        });
+      };
+      render();
+    }
   }
 
   document.querySelector("#brawl-current-ranked-total").textContent = number((ranked.currentSeasonBrawlers || []).length);
