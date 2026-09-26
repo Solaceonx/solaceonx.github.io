@@ -41142,23 +41142,51 @@
   {
     "date": "2026-09-26",
     "label": "Sep 26",
-    "fetchedAt": "2026-09-26T07:13:44.139Z",
+    "fetchedAt": "2026-09-26T17:45:40.597Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 38452,
-    "highestTrophies": 38452,
-    "lifetimeWinsTotal": 8420,
-    "threeVsThreeVictories": 7197,
+    "trophies": 38458,
+    "highestTrophies": 38462,
+    "lifetimeWinsTotal": 8421,
+    "threeVsThreeVictories": 7198,
     "soloVictories": 225,
     "duoVictories": 998,
     "rankedPoints": 5642,
-    "trophyGamesTotal": 339,
-    "trophyWinsTotal": 231,
-    "trophyLossesTotal": 106,
+    "trophyGamesTotal": 343,
+    "trophyWinsTotal": 232,
+    "trophyLossesTotal": 109,
     "rankedGamesTotal": 516,
     "rankedWinsTotal": 293,
     "rankedLossesTotal": 221,
     "trophyRecentGames": [
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260926T171215.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260926T170915.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260926T170655.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260926T170402.000Z"
+      },
       {
         "brawler": "SURGE",
         "image": "assets/brawlers/16000038.png",
@@ -41214,39 +41242,11 @@
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20260925T232914.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260925T232718.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20260925T232547.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260925T232437.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260925T232315.000Z"
       }
     ],
     "trophyModeCounts": {
       "Knockout": 34,
-      "Brawl Ball": 141,
+      "Brawl Ball": 145,
       "Hot Zone": 16,
       "Knockout5V5": 3,
       "Air Hockey": 6,
@@ -41267,7 +41267,7 @@
       "RUFFS": 2,
       "8-BIT": 3,
       "SURGE": 73,
-      "KAZE": 15,
+      "KAZE": 19,
       "BYRON": 14,
       "BO": 3,
       "MICO": 1,
@@ -41866,10 +41866,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260723T232339.000Z:15000082:bounty:bounty:soloRanked",
-      "20260723T232554.000Z:15000082:bounty:bounty:soloRanked",
-      "20260724T202458.000Z:15000011:gemGrab:gemGrab:soloRanked",
-      "20260724T202651.000Z:15000011:gemGrab:gemGrab:soloRanked",
       "20260724T203058.000Z:15000293:hotZone:hotZone:soloRanked",
       "20260724T203240.000Z:15000293:hotZone:hotZone:soloRanked",
       "20260724T203639.000Z:15000072:heist:heist:soloRanked",
@@ -42465,7 +42461,11 @@
       "20260925T234512.000Z:15001300:megaBoss20P:lastStand",
       "20260925T234705.000Z:15001300:megaBoss20P:lastStand",
       "20260925T234912.000Z:15001300:megaBoss20P:lastStand",
-      "20260925T235430.000Z:15001300:megaBoss20P:lastStand"
+      "20260925T235430.000Z:15001300:megaBoss20P:lastStand",
+      "20260926T170402.000Z:15001330:brawlBall:brawlBall:ranked",
+      "20260926T170655.000Z:15001330:brawlBall:brawlBall:ranked",
+      "20260926T170915.000Z:15001330:brawlBall:brawlBall:ranked",
+      "20260926T171215.000Z:15001330:brawlBall:brawlBall:ranked"
     ],
     "rankedGamesLog": []
   }
