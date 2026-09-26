@@ -1,7 +1,6 @@
 {
   const data = window.BRAWL_DATA || {};
   const number = (value) => value == null ? "—" : new Intl.NumberFormat("en-US").format(value);
-  const percentOneDecimal = (value) => `${Number(value ?? 0).toFixed(1).replace(/\.0$/, "")}%`;
   const palette = { blue: "#1278d8", yellow: "#f4bd28", dark: "#111827" };
 
   const empty = (text) => `<div class="tracker-empty tracker-empty-small">${text}</div>`;
@@ -166,32 +165,57 @@
     // A lone cumulative snapshot cannot establish any weekly activity.
     return points.length < 2 ? 0 : Math.max(0, points.at(-1)[key] - points[0][key]);
   };
-  const winRateFrom = (wins, losses) => wins + losses ? wins / (wins + losses) * 100 : null;
 
   const trophyHistory = (trophy.history || []).map(point => ({ label: point.label, date: point.date, value: point.trophies }));
   const lifetimeWinPoints = (trophy.lifetimeWinsHistory || []).map(point => ({ label: point.label, date: point.date, value: point.wins }));
   const rankedPoints = (ranked.pointsHistory || []).map(point => ({ label: point.label, date: point.date, value: point.points }));
   const rankedGames = (ranked.gamesHistory || []).map(point => ({ label: point.label, date: point.date, value: point.games }));
   const rankedWins = ranked.winsHistory || [];
-  const rankedLosses = ranked.lossesHistory || [];
 
+  const BRAWL_RANK_TIERS = [
+    { points: 3000, label: "Diamond I" },
+    { points: 3500, label: "Diamond II" },
+    { points: 4000, label: "Diamond III" },
+    { points: 4500, label: "Mythic I" },
+    { points: 5000, label: "Mythic II" },
+    { points: 5500, label: "Mythic III" },
+    { points: 6000, label: "Legendary I" },
+    { points: 6750, label: "Legendary II" },
+    { points: 7500, label: "Legendary III" },
+    { points: 8250, label: "Masters I" },
+  ];
+  const brawlSeasonResets = (ranked.seasonResets || []).map(r => r.date);
+  const rankTierFor = (points) => typeof points === "number"
+    ? ([...BRAWL_RANK_TIERS].reverse().find(tier => points >= tier.points)?.label || "Below Diamond")
+    : "—";
+
+  const summaryStart = new Date(summaryCutoff).toISOString().slice(0, 10);
+  const valueChange = (items, key, since = summaryStart) => {
+    const start = since > summaryStart ? since : summaryStart;
+    const pts = (items || [])
+      .filter(p => typeof p[key] === "number" && p.date >= start && p.date <= summaryEnd)
+      .sort((a, b) => a.date.localeCompare(b.date));
+    return pts.length < 2 ? null : pts.at(-1)[key] - pts[0][key];
+  };
+  const signed = (value) => value == null ? "—" : (value >= 0 ? "+" : "") + number(value);
+  const winRecord = (wins, games) => games ? `${number(wins)}/${number(games)} · ${Math.round(wins / games * 100)}%` : "—";
+
+  const trophyGamesDelta = weeklyDelta(trophy.gamesHistory || [], "games");
+  const trophyWinsDelta = weeklyDelta(trophy.winsHistory || [], "wins");
   const rankedGamesDelta = weeklyDelta(ranked.gamesHistory || [], "games");
-  const lifetimeWinsDelta = weeklyDelta(trophy.lifetimeWinsHistory || [], "wins");
   const rankedWinsDelta = weeklyDelta(rankedWins, "wins");
-  const rankedLossesDelta = weeklyDelta(rankedLosses, "losses");
-  const rankedWinRate = winRateFrom(rankedWinsDelta, rankedLossesDelta);
-  const trophyDelta = (() => {
-    const pts = (trophy.history || []).filter(p => typeof p.trophies === "number" && new Date(`${p.date}T00:00:00Z`).getTime() >= summaryCutoff && p.date <= summaryEnd).sort((a, b) => a.date.localeCompare(b.date));
-    return pts.length < 2 ? null : pts.at(-1).trophies - pts[0].trophies;
-  })();
+  const trophyDelta = valueChange(trophy.history, "trophies");
+  // A reset inside the window would count the reset drop as lost points, so measure from the season start.
+  const seasonStartInWindow = brawlSeasonResets.filter(date => date >= summaryStart && date <= summaryEnd).at(-1);
+  const rankedPointsDelta = valueChange(ranked.pointsHistory, "points", seasonStartInWindow);
 
   document.querySelector("#brawl-weekly-summary").innerHTML = [
-    { label: "Lifetime wins gained", value: number(lifetimeWinsDelta) },
-    { label: "Trophy change", value: trophyDelta == null ? "—" : (trophyDelta >= 0 ? "+" : "") + number(trophyDelta) },
-    { label: "Trophy games won", value: number(Math.max(0, lifetimeWinsDelta - rankedWinsDelta)) },
-    { label: "Ranked games played", value: number(rankedGamesDelta) },
-    { label: "Ranked games won", value: number(rankedWinsDelta) },
-    { label: "Ranked win rate", value: rankedWinRate == null ? "—" : percentOneDecimal(rankedWinRate) },
+    { label: "Total games played", value: number(trophyGamesDelta + rankedGamesDelta) },
+    { label: "Trophy change", value: signed(trophyDelta) },
+    { label: "Trophy games won", value: winRecord(trophyWinsDelta, trophyGamesDelta) },
+    { label: "Ranked points change", value: signed(rankedPointsDelta) },
+    { label: "Ranked games won", value: winRecord(rankedWinsDelta, rankedGamesDelta) },
+    { label: "Current rank", value: rankTierFor(rankedPoints.at(-1)?.value) },
   ].map(item => `
     <article class="weekly-summary-card">
       <span>${item.label}</span>
@@ -210,19 +234,6 @@
   document.querySelector("#brawl-top-brawlers").innerHTML = renderBrawlers(trophy.topBrawlers || [], { variant: "trophy-games" });
 
   document.querySelector("#brawl-ranked-latest").textContent = number(rankedPoints.at(-1)?.value);
-  const BRAWL_RANK_TIERS = [
-    { points: 3000, label: "Diamond I" },
-    { points: 3500, label: "Diamond II" },
-    { points: 4000, label: "Diamond III" },
-    { points: 4500, label: "Mythic I" },
-    { points: 5000, label: "Mythic II" },
-    { points: 5500, label: "Mythic III" },
-    { points: 6000, label: "Legendary I" },
-    { points: 6750, label: "Legendary II" },
-    { points: 7500, label: "Legendary III" },
-    { points: 8250, label: "Masters I" },
-  ];
-  const brawlSeasonResets = (ranked.seasonResets || []).map(r => r.date);
   window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500, yLabelWidth: 120, seasonResets: brawlSeasonResets }), {
     extraRanges: brawlSeasonResets.length ? [{ label: "Season", since: brawlSeasonResets.at(-1) }] : [],
     defaultRange: "Season"
