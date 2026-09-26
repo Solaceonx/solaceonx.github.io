@@ -48,7 +48,7 @@
       .filter(tier => tier.points >= min && tier.points <= max)
       .map(tier => {
         const y = yFor(tier.points);
-        return `<line class="brawl-rank-line" x1="${leftPad}" y1="${y}" x2="${width - pad}" y2="${y}"/><text class="brawl-rank-label" x="${leftPad - 6}" y="${y + 4}" text-anchor="end">${tier.label}</text>`;
+        return `<line class="brawl-rank-line" x1="${leftPad}" y1="${y}" x2="${width - pad}" y2="${y}"/><text class="brawl-rank-label" x="${leftPad - 58}" y="${y + 3}" text-anchor="end">${tier.label}</text>`;
       }).join("");
     const seasonResetLines = (options.seasonResets || [])
       .map(resetDate => {
@@ -70,7 +70,7 @@
           </linearGradient>
         </defs>
         <path class="chart-grid" d="${ticks.map(tick => `M ${leftPad} ${tick.y} H ${width - pad}`).join(" ")}"/>
-        ${options.rankTiers?.length ? "" : ticks.map(tick => `<text class="chart-y-label" x="${leftPad - 8}" y="${tick.y + 3}" text-anchor="end">${formatValue(tickValue(tick.value))}</text>`).join("")}
+        ${ticks.map(tick => `<text class="chart-y-label" x="${leftPad - 8}" y="${tick.y + 3}" text-anchor="end">${formatValue(tickValue(tick.value))}</text>`).join("")}
         ${seasonResetLines}
         ${rankTierLines}
         <path class="chart-area" fill="url(#${gradientId})" d="${area}"/>
