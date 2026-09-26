@@ -106,6 +106,7 @@ if (tabsRoot && cocAccounts.length) {
         </defs>
         <path class="chart-grid" d="${ticks.map(tick => `M ${leftPad} ${tick.y} H ${width - pad}`).join(" ")}"/>
         ${ticks.map(tick => `<text class="chart-y-label" x="${leftPad - 8}" y="${tick.y + 3}" text-anchor="end">${formatValue(Math.round(tick.value))}</text>`).join("")}
+        ${(options.verticalLines || []).map(vl => `<line class="chart-vline-reset" x1="${vl.x}" y1="${pad}" x2="${vl.x}" y2="${height - pad}"/>`).join("")}
         <path class="chart-area" fill="url(#${gradientId})" d="${area}"/>
         <path class="chart-line" style="stroke:${metric.color}" d="${path}"/>
         ${plotted.map(point => `<circle style="stroke:${metric.color}" cx="${point.x}" cy="${point.y}" r="${options.dot || 4}"><title>${point.label}: ${formatValue(point.value)}</title></circle>`).join("")}
@@ -169,7 +170,22 @@ if (tabsRoot && cocAccounts.length) {
       window.attachRangePicker(
         document.querySelector("#coc-range-ranked-trophies"),
         chartPoints,
-        pts => renderSvgChart(pts, { key: "rankedLeague", label: "League", color: cocPalette.gold }, { width: 760, height: 220, pad: 34, yLabelWidth: 140, dot: 4, formatter: leagueFormatter })
+        pts => {
+          // Detect season resets: gaps > 7 days between consecutive points
+          const width = 760, height = 220, pad = 34, yLabelWidth = 140;
+          const leftPad = Math.max(pad, yLabelWidth);
+          const xStep = pts.length > 1 ? (width - leftPad - pad) / (pts.length - 1) : 0;
+          const verticalLines = pts.reduce((acc, pt, i) => {
+            if (i === 0) return acc;
+            const prev = new Date(pts[i - 1].date);
+            const curr = new Date(pt.date);
+            if ((curr - prev) > 7 * 24 * 60 * 60 * 1000) {
+              acc.push({ x: leftPad + (i - 0.5) * xStep });
+            }
+            return acc;
+          }, []);
+          return renderSvgChart(pts, { key: "rankedLeague", label: "League", color: cocPalette.gold }, { width, height, pad, yLabelWidth, dot: 4, formatter: leagueFormatter, verticalLines });
+        }
       );
     }
   };

@@ -566,6 +566,7 @@ p strong {
   transition: transform .18s ease;
 }
 .chart-grid { fill: none; stroke: rgba(0,0,0,.09); stroke-width: 1; }
+.chart-vline-reset { stroke: rgba(220,50,50,.55); stroke-width: 1.5; stroke-dasharray: 4 3; }
 .chart-line { fill: none; stroke: #333; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
 .line-chart circle { fill: #fff; stroke: #333; stroke-width: 3; }
 .line-chart text { fill: #000; font-size: 8px; }
@@ -1187,8 +1188,8 @@ p strong {
 .brawl-rank-row i,
 .brawl-rank-row img {
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 53px;
+  height: 53px;
   place-items: center;
   background: #1278d8;
   color: #fff;
@@ -1256,7 +1257,7 @@ p strong {
 }
 .brawl-rank-row {
   display: grid;
-  grid-template-columns: 24px 38px minmax(90px, .8fr) minmax(80px, 1fr) 58px;
+  grid-template-columns: 24px 53px minmax(90px, .8fr) minmax(80px, 1fr) 58px;
   gap: 10px;
   align-items: center;
   font-size: 11px;
@@ -1273,7 +1274,7 @@ p strong {
   font-weight: 500;
 }
 .brawl-rank-row-stats {
-  grid-template-columns: 24px 42px minmax(120px, 1fr) auto auto;
+  grid-template-columns: 24px 59px minmax(120px, 1fr) auto auto;
   padding: 8px 0;
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
@@ -1282,8 +1283,8 @@ p strong {
 }
 .brawl-rank-row-stats img,
 .brawl-rank-row-stats i {
-  width: 42px;
-  height: 42px;
+  width: 59px;
+  height: 59px;
 }
 .brawl-rank-row-stats strong {
   color: #000;
@@ -2094,16 +2095,16 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
   .brawl-intro-section { padding-top: 78px; }
   .brawl-game-list { grid-template-columns: 1fr; }
   .brawl-bar-row { grid-template-columns: 92px 1fr 44px; }
-  .brawl-rank-row { grid-template-columns: 22px 34px minmax(74px, .9fr) 1fr 46px; gap: 7px; }
-  .brawl-rank-row-stats { grid-template-columns: 22px 34px minmax(86px, 1fr); }
+  .brawl-rank-row { grid-template-columns: 22px 48px minmax(74px, .9fr) 1fr 46px; gap: 7px; }
+  .brawl-rank-row-stats { grid-template-columns: 22px 48px minmax(86px, 1fr); }
   .brawl-rank-row-stats strong,
   .brawl-rank-row-stats small {
     grid-column: 3;
     text-align: left;
   }
-  .brawl-rank-row i { width: 34px; height: 34px; }
+  .brawl-rank-row i { width: 48px; height: 48px; }
   .brawl-rank-row-stats img,
-  .brawl-rank-row-stats i { width: 34px; height: 34px; }
+  .brawl-rank-row-stats i { width: 48px; height: 48px; }
   .brawl-hall { min-height: 300px; }
   .ranked-table { display: block; }
   .ranked-row {
