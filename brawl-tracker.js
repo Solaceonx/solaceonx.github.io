@@ -21,7 +21,8 @@
     const rawRange = rawMax - rawMin;
     const minRange = options.minRange || 1;
     const center = (rawMin + rawMax) / 2;
-    const min = rawRange < minRange ? center - minRange / 2 : rawMin - rawRange * .14;
+    const paddedMin = rawRange < minRange ? center - minRange / 2 : rawMin - rawRange * .14;
+    const min = rawMin >= 0 ? Math.max(0, paddedMin) : paddedMin;
     const max = rawRange < minRange ? center + minRange / 2 : rawMax + rawRange * .14;
     const range = max - min || 1;
     const xStep = points.length > 1 ? (width - leftPad - pad) / (points.length - 1) : 0;
@@ -169,24 +170,16 @@
 
   const trophyHistory = (trophy.history || []).map(point => ({ label: point.label, date: point.date, value: point.trophies }));
   const lifetimeWinPoints = (trophy.lifetimeWinsHistory || []).map(point => ({ label: point.label, date: point.date, value: point.wins }));
-  const trophyWins = trophy.winsHistory || [];
-  const trophyLosses = trophy.lossesHistory || [];
-  const trophyWinPoints = trophyWins.map(point => ({ label: point.label, date: point.date, value: point.wins }));
   const rankedPoints = (ranked.pointsHistory || []).map(point => ({ label: point.label, date: point.date, value: point.points }));
   const rankedGames = (ranked.gamesHistory || []).map(point => ({ label: point.label, date: point.date, value: point.games }));
   const rankedWins = ranked.winsHistory || [];
   const rankedLosses = ranked.lossesHistory || [];
 
-  const trophyGamesDelta = weeklyDelta(trophy.gamesHistory || [], "games");
   const rankedGamesDelta = weeklyDelta(ranked.gamesHistory || [], "games");
   const lifetimeWinsDelta = weeklyDelta(trophy.lifetimeWinsHistory || [], "wins");
-  const trophyWinsDelta = weeklyDelta(trophyWins, "wins");
-  const trophyLossesDelta = weeklyDelta(trophyLosses, "losses");
   const rankedWinsDelta = weeklyDelta(rankedWins, "wins");
   const rankedLossesDelta = weeklyDelta(rankedLosses, "losses");
-  const trackedWins = trophyWinsDelta + rankedWinsDelta;
-  const trackedLosses = trophyLossesDelta + rankedLossesDelta;
-  const trackedWinRate = winRateFrom(trackedWins, trackedLosses);
+  const rankedWinRate = winRateFrom(rankedWinsDelta, rankedLossesDelta);
   const trophyDelta = (() => {
     const pts = (trophy.history || []).filter(p => typeof p.trophies === "number" && new Date(`${p.date}T00:00:00Z`).getTime() >= summaryCutoff && p.date <= summaryEnd).sort((a, b) => a.date.localeCompare(b.date));
     return pts.length < 2 ? null : pts.at(-1).trophies - pts[0].trophies;
@@ -195,10 +188,10 @@
   document.querySelector("#brawl-weekly-summary").innerHTML = [
     { label: "Lifetime wins gained", value: number(lifetimeWinsDelta) },
     { label: "Trophy change", value: trophyDelta == null ? "—" : (trophyDelta >= 0 ? "+" : "") + number(trophyDelta) },
-    { label: "Trophy games played", value: number(trophyGamesDelta) },
+    { label: "Trophy games won", value: number(Math.max(0, lifetimeWinsDelta - rankedWinsDelta)) },
     { label: "Ranked games played", value: number(rankedGamesDelta) },
     { label: "Ranked games won", value: number(rankedWinsDelta) },
-    { label: "Win rate", value: trackedWinRate == null ? "—" : percentOneDecimal(trackedWinRate) },
+    { label: "Ranked win rate", value: rankedWinRate == null ? "—" : percentOneDecimal(rankedWinRate) },
   ].map(item => `
     <article class="weekly-summary-card">
       <span>${item.label}</span>

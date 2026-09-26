@@ -2574,7 +2574,8 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
   display: flex;
   align-items: stretch;
   gap: 10px;
-  height: 240px;
+  margin-top: 38px;
+  aspect-ratio: 340 / 150;
 }
 .brawl-column {
   flex: 1 1 0;
