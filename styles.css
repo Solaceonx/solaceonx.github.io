@@ -1160,15 +1160,16 @@ p strong {
 }
 .brawl-rank-line {
   fill: none;
-  stroke: rgba(255,255,255,.18);
+  stroke: rgba(244,189,40,.35);
   stroke-width: 1;
+  stroke-dasharray: 3 3;
 }
 .brawl-rank-label {
-  fill: rgba(255,255,255,.38);
-  font-size: 7px;
+  fill: rgba(244,189,40,.7);
+  font-size: 9px;
 }
-.starfield-page[data-theme="light"] .brawl-rank-line { stroke: rgba(0,0,0,.18); }
-.starfield-page[data-theme="light"] .brawl-rank-label { fill: rgba(0,0,0,.38); }
+.starfield-page[data-theme="light"] .brawl-rank-line { stroke: rgba(180,130,0,.35); }
+.starfield-page[data-theme="light"] .brawl-rank-label { fill: rgba(140,100,0,.7); }
 .brawl-game-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2560,6 +2561,7 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .brawl-tracker-page .brawl-bar-row { font-size: 13px; }
 .brawl-tracker-page .brawl-bar-row strong { font-size: 13px; }
 .brawl-tracker-page .brawl-rank-row { font-size: 16px; }
+.brawl-tracker-page .brawl-rank-row b { font-size: 18px; font-weight: 600; }
 .brawl-tracker-page .brawl-game-card strong { font-size: 18px; }
 .brawl-tracker-page .brawl-game-card span { font-size: 14px; }
 .brawl-tracker-page .brawl-game-card b { font-size: 14px; }

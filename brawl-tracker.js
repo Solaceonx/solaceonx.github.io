@@ -5,6 +5,7 @@
   const palette = { blue: "#1278d8", yellow: "#f4bd28", dark: "#111827" };
 
   const empty = (text) => `<div class="tracker-empty tracker-empty-small">${text}</div>`;
+  const titleCase = (str) => (str || "").toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
 
   const renderLineChart = (points = [], metric, options = {}) => {
     if (!points.length) return empty(options.empty || "Waiting for Brawl Stars snapshots.");
@@ -64,7 +65,7 @@
       <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${metric.label}">
         <defs>
           <linearGradient id="${gradientId}" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="${metric.color}" stop-opacity=".25"/>
+            <stop offset="0%" stop-color="${metric.color}" stop-opacity=".45"/>
             <stop offset="100%" stop-color="${metric.color}" stop-opacity="0"/>
           </linearGradient>
         </defs>
@@ -97,9 +98,10 @@
     const max = Math.max(...items.map(item => item.count || item.trophies || 0), 1);
     return items.slice(0, 10).map((item, index) => {
       const value = item.count ?? item.trophies ?? 0;
+      const displayName = titleCase(item.name);
       const initials = (item.name || "?").split(/\s+/).map(part => part[0]).join("").slice(0, 2);
       const portrait = item.image
-        ? `<img src="${item.image}" alt="${item.name} portrait">`
+        ? `<img src="${item.image}" alt="${displayName} portrait">`
         : `<i>${initials}</i>`;
 
       if (variant === "trophy-games") {
@@ -107,7 +109,7 @@
           <div class="brawl-rank-row brawl-rank-row-stats">
             <span>${index + 1}</span>
             ${portrait}
-            <b>${item.name}</b>
+            <b>${displayName}</b>
             <strong>${number(item.trophies || 0)} trophies</strong>
             <small>${number(item.games || 0)} games tracked</small>
           </div>
@@ -118,7 +120,7 @@
         <div class="brawl-rank-row">
           <span>${index + 1}</span>
           ${portrait}
-          <b>${item.name}</b>
+          <b>${displayName}</b>
           <div><em style="width:${Math.round((value / max) * 100)}%"></em></div>
           <strong>${number(value)}</strong>
         </div>
@@ -210,7 +212,7 @@
     { points: 8250, label: "Masters I" },
   ];
   const brawlSeasonResets = (ranked.seasonResets || []).map(r => r.date);
-  window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500, yLabelWidth: 90, seasonResets: brawlSeasonResets }));
+  window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500, yLabelWidth: 120, seasonResets: brawlSeasonResets }));
   document.querySelector("#brawl-ranked-games-latest").textContent = number(rankedGames.at(-1)?.value);
   window.attachRangePicker(document.querySelector("#brawl-ranked-games-chart"), rankedGames, pts => renderLineChart(pts, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." }));
   document.querySelector("#brawl-ranked-mode-total").textContent = number((ranked.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
