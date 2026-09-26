@@ -256,7 +256,8 @@ function latestOrEmpty(history) {
     trophyBrawlerCounts: {},
     rankedModeCounts: {},
     rankedCurrentBrawlerCounts: {},
-    rankedAllTimeBrawlerCounts: {}
+    rankedAllTimeBrawlerCounts: {},
+    rankedGamesLog: []
   };
 }
 
@@ -366,7 +367,16 @@ function snapshotFrom(player, battlelog, previous) {
     brawlerImages,
     topBrawlers,
     trackingSchemaVersion: TRACKING_SCHEMA_VERSION,
-    seenBattleKeys: [...seen].slice(-600)
+    seenBattleKeys: [...seen].slice(-600),
+    rankedGamesLog: [
+      ...(compatiblePrevious ? previous.rankedGamesLog || [] : []),
+      ...newBattles
+        .filter(isRankedBattle)
+        .map(item => ({
+          date: item.battleTime ? `${item.battleTime.slice(0,4)}-${item.battleTime.slice(4,6)}-${item.battleTime.slice(6,8)}` : todayKey(),
+          mode: modeLabel(item)
+        }))
+    ]
   };
 }
 
@@ -412,7 +422,8 @@ function buildPageData(history, highlightPaths) {
       modes: objectToRows(latest.rankedModeCounts, "mode"),
       currentSeasonBrawlers: objectToRows(latest.rankedCurrentBrawlerCounts, "name", latest.brawlerImages || {}),
       allTimeBrawlers: objectToRows(latest.rankedAllTimeBrawlerCounts, "name", latest.brawlerImages || {}),
-      seasonResets
+      seasonResets,
+      rankedGamesLog: latest.rankedGamesLog || []
     },
     highlights: highlightPaths
   };

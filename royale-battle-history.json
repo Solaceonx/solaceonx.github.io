@@ -3,6 +3,114 @@
     "result": "loss",
     "mode": "Trophy Road",
     "category": "trophy-road",
+    "crowns": "0-3",
+    "trophyChange": -28,
+    "opponent": "Lucas rei",
+    "battleTime": "20260920T025646.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
+    "crowns": "2-0",
+    "trophyChange": 29,
+    "opponent": "Chilli_Pepper",
+    "battleTime": "20260920T025344.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "Bloodbath24",
+    "battleTime": "20260918T004348.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "arnold",
+    "battleTime": "20260918T004145.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Leon4do89",
+    "battleTime": "20260918T003832.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "_Snevison_",
+    "battleTime": "20260912T065928.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "2-1",
+    "trophyChange": null,
+    "opponent": "Godess of RNG",
+    "battleTime": "20260912T065615.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "CAPITAN AMERICA",
+    "battleTime": "20260912T065205.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "BOLIVIA",
+    "battleTime": "20260912T064645.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "Papotik_Campeon",
+    "battleTime": "20260912T064234.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "lordhell",
+    "battleTime": "20260912T063027.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "NAKANO MIKU",
+    "battleTime": "20260912T062607.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Trophy Road",
+    "category": "trophy-road",
     "crowns": "0-1",
     "trophyChange": -28,
     "opponent": "乙ㄩ尺丨乇ㄥ",

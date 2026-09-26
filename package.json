@@ -4,6 +4,7 @@
     "update:royale": "node scripts/update-royale-data.mjs",
     "update:brawl": "node scripts/update-brawl-data.mjs",
     "update:weather": "node scripts/update-weather-data.mjs",
-    "update:games": "npm run update:coc && npm run update:royale && npm run update:brawl"
+    "update:games": "npm run update:coc && npm run update:royale && npm run update:brawl",
+    "update:flights": "node scripts/update-flight-data.mjs"
   }
 }

@@ -206,6 +206,47 @@
   window.attachRangePicker(document.querySelector("#brawl-ranked-games-chart"), rankedGames, pts => renderLineChart(pts, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." }));
   document.querySelector("#brawl-ranked-mode-total").textContent = number((ranked.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
   document.querySelector("#brawl-ranked-mode-histogram").innerHTML = renderBars(ranked.modes || [], { emptyText: "Waiting for ranked mode history." });
+
+  // Per-season mode breakdown — derived from rankedGamesLog + seasonResets
+  const seasonContainer = document.querySelector("#brawl-ranked-season-modes");
+  if (seasonContainer) {
+    const resets = (ranked.seasonResets || []).map(r => r.date).sort();
+    const log = ranked.rankedGamesLog || [];
+    // Build seasons: [start, end) boundaries
+    const boundaries = [null, ...resets, null]; // null = open-ended
+    const allSeasons = boundaries.slice(0, -1).map((start, i) => {
+      const end = boundaries[i + 1];
+      const entries = log.filter(e => (!start || e.date >= start) && (!end || e.date < end));
+      const counts = {};
+      entries.forEach(e => { counts[e.mode] = (counts[e.mode] || 0) + 1; });
+      const modes = Object.entries(counts)
+        .sort((a, b) => b[1] - a[1])
+        .map(([mode, count]) => ({ mode, count }));
+      const label = `S${i + 1}`;
+      const rangeLabel = start && end ? `${start.slice(5)} – ${end.slice(5)}`
+        : start ? `${start.slice(5)} —` : end ? `— ${end.slice(5)}` : "All";
+      return { label, rangeLabel, modes };
+    });
+    const seasons = allSeasons.filter(s => s.modes.length > 0);
+    if (!seasons.length) { seasonContainer.innerHTML = `<div class="brawl-bar-chart">${renderBars([], { emptyText: "No ranked game data yet." })}</div>`; return; }
+    let activeSeason = seasons.length - 1;
+    const render = () => {
+      const tabs = seasons.map((s, i) => `
+        <button class="brawl-season-tab${i === activeSeason ? " active" : ""}" data-idx="${i}">${s.rangeLabel}</button>
+      `).join("");
+      const s = seasons[activeSeason];
+      const bars = renderBars(s.modes, { emptyText: "No data for this season yet." });
+      seasonContainer.innerHTML = `
+        <div class="brawl-season-tabs">${tabs}</div>
+        <div class="brawl-bar-chart brawl-season-chart">${bars}</div>
+      `;
+      seasonContainer.querySelectorAll(".brawl-season-tab").forEach(btn => {
+        btn.addEventListener("click", () => { activeSeason = +btn.dataset.idx; render(); });
+      });
+    };
+    render();
+  }
+
   document.querySelector("#brawl-current-ranked-total").textContent = number((ranked.currentSeasonBrawlers || []).length);
   document.querySelector("#brawl-current-ranked-brawlers").innerHTML = renderBrawlers(ranked.currentSeasonBrawlers || [], { emptyText: "Waiting for current season ranked brawler stats." });
   document.querySelector("#brawl-all-ranked-total").textContent = number((ranked.allTimeBrawlers || []).length);

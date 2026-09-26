@@ -1392,6 +1392,7 @@ p strong {
 }
 .research-project {
   border: 1px solid rgba(16,17,20,.16);
+  border-radius: 0;
   background: rgba(255,255,255,.64);
   transition: background .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
@@ -2527,4 +2528,28 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .starfield-page:not([data-theme="light"]).royale-tracker-page .royale-intro {
   background: rgba(2, 4, 11, .88);
   border-color: rgba(255, 255, 255, .16);
+}
+
+/* Brawl Stars per-season mode tabs */
+.brawl-season-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.brawl-season-tab {
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-radius: 5px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: .55;
+  padding: 3px 10px;
+}
+.brawl-season-tab.active {
+  background: var(--ink);
+  color: var(--paper);
+  opacity: 1;
 }
