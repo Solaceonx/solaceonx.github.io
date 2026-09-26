@@ -2551,3 +2551,18 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
   color: var(--paper);
   opacity: 1;
 }
+
+/* Brawl Stars page — larger text */
+.brawl-tracker-page .mini-chart-head h4 { font-size: 17px; }
+.brawl-tracker-page .mini-chart-head strong { font-size: 21px; }
+.brawl-tracker-page .weekly-summary-card span { font-size: 13px; }
+.brawl-tracker-page .weekly-summary-card small { font-size: 12px; }
+.brawl-tracker-page .brawl-bar-row { font-size: 13px; }
+.brawl-tracker-page .brawl-bar-row strong { font-size: 13px; }
+.brawl-tracker-page .brawl-rank-row { font-size: 13px; }
+.brawl-tracker-page .brawl-game-card strong { font-size: 15px; }
+.brawl-tracker-page .brawl-game-card span { font-size: 12px; }
+.brawl-tracker-page .brawl-game-card b { font-size: 12px; }
+.brawl-tracker-page .brawl-rank-row-stats strong { font-size: 14px; }
+.brawl-tracker-page .brawl-rank-row-stats small { font-size: 13px; }
+.brawl-tracker-page p.muted { font-size: 13px; }

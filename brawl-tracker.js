@@ -47,7 +47,14 @@
       .filter(tier => tier.points >= min && tier.points <= max)
       .map(tier => {
         const y = yFor(tier.points);
-        return `<line class="brawl-rank-line" x1="${leftPad}" y1="${y}" x2="${width - pad}" y2="${y}"/><text class="brawl-rank-label" x="${leftPad + 4}" y="${y - 3}">${tier.label}</text>`;
+        return `<line class="brawl-rank-line" x1="${leftPad}" y1="${y}" x2="${width - pad}" y2="${y}"/><text class="brawl-rank-label" x="${leftPad - 6}" y="${y + 4}" text-anchor="end">${tier.label}</text>`;
+      }).join("");
+    const seasonResetLines = (options.seasonResets || [])
+      .map(resetDate => {
+        const idx = points.findIndex((p, i) => i > 0 && p.date >= resetDate && points[i - 1].date < resetDate);
+        if (idx < 0) return "";
+        const x = leftPad + (idx - 0.5) * xStep;
+        return `<line class="chart-vline-reset" x1="${x}" y1="${pad}" x2="${x}" y2="${height - pad}"/>`;
       }).join("");
     const gradientId = `brawl-area-${metric.key}`;
     const formatValue = options.formatter || number;
@@ -63,6 +70,7 @@
         </defs>
         <path class="chart-grid" d="${ticks.map(tick => `M ${leftPad} ${tick.y} H ${width - pad}`).join(" ")}"/>
         ${ticks.map(tick => `<text class="chart-y-label" x="${leftPad - 8}" y="${tick.y + 3}" text-anchor="end">${formatValue(tickValue(tick.value))}</text>`).join("")}
+        ${seasonResetLines}
         ${rankTierLines}
         <path class="chart-area" fill="url(#${gradientId})" d="${area}"/>
         <path class="chart-line" style="stroke:${metric.color}" d="${path}"/>
@@ -201,7 +209,8 @@
     { points: 7500, label: "Legendary III" },
     { points: 8250, label: "Masters I" },
   ];
-  window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500 }));
+  const brawlSeasonResets = (ranked.seasonResets || []).map(r => r.date);
+  window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500, yLabelWidth: 90, seasonResets: brawlSeasonResets }));
   document.querySelector("#brawl-ranked-games-latest").textContent = number(rankedGames.at(-1)?.value);
   window.attachRangePicker(document.querySelector("#brawl-ranked-games-chart"), rankedGames, pts => renderLineChart(pts, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." }));
   document.querySelector("#brawl-ranked-mode-total").textContent = number((ranked.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
