@@ -2522,8 +2522,8 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 }
 
 /* Center the game summaries and keep the Royale introduction dark. */
-:is(.coc-tracker-page, .royale-tracker-page) .weekly-summary-panel { text-align: center; }
-:is(.coc-tracker-page, .royale-tracker-page) .weekly-summary-panel .panel-heading { justify-content: center; }
+:is(.coc-tracker-page, .royale-tracker-page, .brawl-tracker-page) .weekly-summary-panel { text-align: center; }
+:is(.coc-tracker-page, .royale-tracker-page, .brawl-tracker-page) .weekly-summary-panel .panel-heading { justify-content: center; }
 .starfield-page:not([data-theme="light"]).royale-tracker-page .royale-intro {
   background: rgba(2, 4, 11, .88);
   border-color: rgba(255, 255, 255, .16);
@@ -2568,3 +2568,33 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 .brawl-tracker-page .brawl-rank-row-stats strong { font-size: 17px; }
 .brawl-tracker-page .brawl-rank-row-stats small { font-size: 15px; }
 .brawl-tracker-page p.muted { font-size: 13px; }
+
+/* Brawl Stars vertical mode histogram */
+.brawl-column-chart {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  height: 240px;
+}
+.brawl-column {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.brawl-column strong { font-size: 15px; font-weight: 500; }
+.brawl-column span { font-size: 12px; line-height: 1.2; min-height: 2.4em; }
+.brawl-column-track {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.brawl-column-track i {
+  display: block;
+  width: 100%;
+  background: #f4bd28;
+}

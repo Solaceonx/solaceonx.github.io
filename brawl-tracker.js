@@ -81,6 +81,18 @@
     `;
   };
 
+  const renderColumns = (items = [], { emptyText = "Waiting for game history." } = {}) => {
+    if (!items.length) return empty(emptyText);
+    const max = Math.max(...items.map(item => item.count || 0), 1);
+    return items.map(item => `
+      <div class="brawl-column">
+        <strong>${number(item.count || 0)}</strong>
+        <div class="brawl-column-track"><i style="height:${Math.round(((item.count || 0) / max) * 100)}%"></i></div>
+        <span>${item.mode || item.name}</span>
+      </div>
+    `).join("");
+  };
+
   const renderBars = (items = [], { emptyText = "Waiting for game history." } = {}) => {
     if (!items.length) return empty(emptyText);
     const max = Math.max(...items.map(item => item.count || 0), 1);
@@ -181,15 +193,16 @@
   })();
 
   document.querySelector("#brawl-weekly-summary").innerHTML = [
-    { label: "Lifetime wins gained", value: number(lifetimeWinsDelta), note: "Official API total" },
-    { label: "Trophy change", value: trophyDelta == null ? "—" : (trophyDelta >= 0 ? "+" : "") + number(trophyDelta), note: `${number(trophyGamesDelta)} trophy games, ${number(trophyWinsDelta)} wins` },
-    { label: "Ranked games", value: number(rankedGamesDelta), note: `${number(rankedWinsDelta)} wins · ${number(rankedLossesDelta)} losses` },
-    { label: "Tracked win rate", value: trackedWinRate == null ? "—" : percentOneDecimal(trackedWinRate), note: `${number(trackedWins)}-${number(trackedLosses)} tracked battles` },
+    { label: "Lifetime wins gained", value: number(lifetimeWinsDelta) },
+    { label: "Trophy change", value: trophyDelta == null ? "—" : (trophyDelta >= 0 ? "+" : "") + number(trophyDelta) },
+    { label: "Trophy games played", value: number(trophyGamesDelta) },
+    { label: "Ranked games played", value: number(rankedGamesDelta) },
+    { label: "Ranked games won", value: number(rankedWinsDelta) },
+    { label: "Win rate", value: trackedWinRate == null ? "—" : percentOneDecimal(trackedWinRate) },
   ].map(item => `
     <article class="weekly-summary-card">
       <span>${item.label}</span>
       <strong>${item.value}</strong>
-      <small>${item.note}</small>
     </article>
   `).join("");
 
@@ -217,11 +230,14 @@
     { points: 8250, label: "Masters I" },
   ];
   const brawlSeasonResets = (ranked.seasonResets || []).map(r => r.date);
-  window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500, yLabelWidth: 120, seasonResets: brawlSeasonResets }));
+  window.attachRangePicker(document.querySelector("#brawl-ranked-chart"), rankedPoints, pts => renderLineChart(pts, { key: "ranked-points", label: "Ranked points", color: palette.blue }, { empty: "Add ranked snapshots to start this graph.", rankTiers: BRAWL_RANK_TIERS, tickStep: 500, yLabelWidth: 120, seasonResets: brawlSeasonResets }), {
+    extraRanges: brawlSeasonResets.length ? [{ label: "Season", since: brawlSeasonResets.at(-1) }] : [],
+    defaultRange: "Season"
+  });
   document.querySelector("#brawl-ranked-games-latest").textContent = number(rankedGames.at(-1)?.value);
   window.attachRangePicker(document.querySelector("#brawl-ranked-games-chart"), rankedGames, pts => renderLineChart(pts, { key: "ranked-games", label: "Ranked games", color: palette.yellow }, { width: 340, height: 150, pad: 18, yLabelWidth: 48, empty: "Add ranked game counts to start this graph." }));
   document.querySelector("#brawl-ranked-mode-total").textContent = number((ranked.modes || []).reduce((sum, item) => sum + (item.count || 0), 0));
-  document.querySelector("#brawl-ranked-mode-histogram").innerHTML = renderBars(ranked.modes || [], { emptyText: "Waiting for ranked mode history." });
+  document.querySelector("#brawl-ranked-mode-histogram").innerHTML = renderColumns(ranked.modes || [], { emptyText: "Waiting for ranked mode history." });
 
   // Per-season mode breakdown — derived from rankedGamesLog + seasonResets
   const seasonContainer = document.querySelector("#brawl-ranked-season-modes");

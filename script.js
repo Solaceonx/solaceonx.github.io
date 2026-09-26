@@ -145,20 +145,25 @@ new MutationObserver(enableChartZoom).observe(document.body, { childList: true, 
 // Range picker — wraps a chart container with 7d / 30d / All buttons.
 // renderFn(filteredPoints) → HTML string for the chart.
 // points must have a .date field ("YYYY-MM-DD").
-window.attachRangePicker = (containerEl, allPoints, renderFn) => {
-  const ranges = [{ label: "7d", days: 7 }, { label: "30d", days: 30 }, { label: "All", days: null }];
-  let active = "All";
+window.attachRangePicker = (containerEl, allPoints, renderFn, options = {}) => {
+  const ranges = [
+    ...(options.extraRanges || []),
+    { label: "7d", days: 7 },
+    { label: "30d", days: 30 },
+    { label: "All", days: null }
+  ];
+  let active = options.defaultRange && ranges.some(r => r.label === options.defaultRange) ? options.defaultRange : "All";
 
-  const filterPoints = (days) => {
-    if (!days) return allPoints;
-    const cutoff = new Date(Date.now() - days * 864e5);
+  const filterPoints = (range) => {
+    if (range.since) return allPoints.filter(p => p.date && p.date >= range.since);
+    if (!range.days) return allPoints;
+    const cutoff = new Date(Date.now() - range.days * 864e5);
     return allPoints.filter(p => p.date && new Date(`${p.date}T00:00:00`) >= cutoff);
   };
 
   const render = (label) => {
     active = label;
-    const days = ranges.find(r => r.label === label).days;
-    const filtered = filterPoints(days);
+    const filtered = filterPoints(ranges.find(r => r.label === label));
     containerEl.querySelector(".range-chart-body").innerHTML = renderFn(filtered.length ? filtered : allPoints);
     containerEl.querySelectorAll(".range-btn").forEach(btn => {
       btn.classList.toggle("range-btn-active", btn.dataset.range === active);
@@ -168,9 +173,10 @@ window.attachRangePicker = (containerEl, allPoints, renderFn) => {
 
   containerEl.innerHTML = `
     <div class="range-picker">
-      ${ranges.map(r => `<button class="range-btn${r.label === active ? " range-btn-active" : ""}" data-range="${r.label}">${r.label}</button>`).join("")}
+      ${ranges.map(r => `<button class="range-btn" data-range="${r.label}">${r.label}</button>`).join("")}
     </div>
-    <div class="range-chart-body">${renderFn(allPoints)}</div>`;
+    <div class="range-chart-body"></div>`;
+  render(active);
 
   containerEl.querySelector(".range-picker").addEventListener("click", e => {
     const btn = e.target.closest(".range-btn");
