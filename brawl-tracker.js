@@ -175,16 +175,21 @@
   const trackedWins = trophyWinsDelta + rankedWinsDelta;
   const trackedLosses = trophyLossesDelta + rankedLossesDelta;
   const trackedWinRate = winRateFrom(trackedWins, trackedLosses);
+  const trophyDelta = (() => {
+    const pts = (trophy.history || []).filter(p => typeof p.trophies === "number" && new Date(`${p.date}T00:00:00Z`).getTime() >= summaryCutoff && p.date <= summaryEnd).sort((a, b) => a.date.localeCompare(b.date));
+    return pts.length < 2 ? null : pts.at(-1).trophies - pts[0].trophies;
+  })();
 
   document.querySelector("#brawl-weekly-summary").innerHTML = [
     { label: "Lifetime wins gained", value: number(lifetimeWinsDelta), note: "Official API total" },
-    { label: "Tracked trophy games", value: number(trophyGamesDelta), note: `${number(trophyWinsDelta)} tracked wins` },
-    { label: "Tracked ranked wins", value: number(rankedWinsDelta), note: `${number(rankedGamesDelta)} ranked games tracked` },
-    { label: "Tracked win rate", value: trackedWinRate == null ? "—" : percentOneDecimal(trackedWinRate), note: `${number(trackedWins)}-${number(trackedLosses)} in tracked battles` },
+    { label: "Trophy change", value: trophyDelta == null ? "—" : (trophyDelta >= 0 ? "+" : "") + number(trophyDelta), note: `${number(trophyGamesDelta)} trophy games, ${number(trophyWinsDelta)} wins` },
+    { label: "Ranked games", value: number(rankedGamesDelta), note: `${number(rankedWinsDelta)} wins · ${number(rankedLossesDelta)} losses` },
+    { label: "Tracked win rate", value: trackedWinRate == null ? "—" : percentOneDecimal(trackedWinRate), note: `${number(trackedWins)}-${number(trackedLosses)} tracked battles` },
   ].map(item => `
     <article class="weekly-summary-card">
       <span>${item.label}</span>
       <strong>${item.value}</strong>
+      <small>${item.note}</small>
     </article>
   `).join("");
 
