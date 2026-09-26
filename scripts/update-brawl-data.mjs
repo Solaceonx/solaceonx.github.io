@@ -2,7 +2,7 @@ import { access, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 
 import { rankedSeasonStart, migrateRankedSeasons } from "./brawl-seasons.mjs";
 
-const API_BASE = "https://api.brawlstars.com/v1";
+const API_BASE = process.env.BRAWL_API_BASE || "https://api.brawlstars.com/v1";
 const SNAPSHOT_PATH = new URL("../brawl-snapshots.json", import.meta.url);
 const DATA_PATH = new URL("../brawl-data.js", import.meta.url);
 const HIGHLIGHTS_DIR = new URL("../assets/brawl_highlights/", import.meta.url);
@@ -429,8 +429,17 @@ function buildPageData(history, highlightPaths) {
   };
 }
 
+// Only the latest snapshot is read back for dedup and the ranked log, so older copies are dead weight.
+function trimOlderSnapshots(history) {
+  for (const point of history.slice(0, -1)) {
+    delete point.seenBattleKeys;
+    delete point.rankedGamesLog;
+  }
+  return history;
+}
+
 if (process.argv.includes("--rebuild")) {
-  const history = migrateRankedSeasons(await readJson(SNAPSHOT_PATH, []));
+  const history = trimOlderSnapshots(migrateRankedSeasons(await readJson(SNAPSHOT_PATH, [])));
   await writeFile(SNAPSHOT_PATH, `${JSON.stringify(history, null, 2)}\n`);
   await writeFile(DATA_PATH, `window.BRAWL_DATA = ${JSON.stringify(buildPageData(history, await highlights()), null, 2)};\n`);
 } else {
@@ -449,8 +458,16 @@ const [player, battlelog] = await Promise.all([
 const existingHistory = migrateRankedSeasons(await readJson(SNAPSHOT_PATH, []));
 const previous = latestOrEmpty(existingHistory);
 const snapshot = snapshotFrom(player, Array.isArray(battlelog.items) ? battlelog.items : [], previous);
+
+const withoutFetchTime = ({ fetchedAt, ...rest }) => JSON.stringify(rest);
+const sameDay = existingHistory.find(point => point.date === snapshot.date);
+if (sameDay && withoutFetchTime(sameDay) === withoutFetchTime(snapshot)) {
+  console.log(`No Brawl Stars changes since the last update today (${snapshot.trophies ?? "—"} trophies).`);
+  process.exit(0);
+}
+
 await downloadBrawlerImages(snapshot.brawlerImages || {});
-const history = compactHistory([...existingHistory, snapshot]);
+const history = trimOlderSnapshots(compactHistory([...existingHistory, snapshot]));
 const highlightPaths = await highlights();
 
 await writeFile(SNAPSHOT_PATH, `${JSON.stringify(history, null, 2)}\n`);

@@ -13,21 +13,18 @@ else
   echo "Skipping Clash Royale update: add CR_API_TOKEN to .env to enable it."
 fi
 
-if [ -f ".env" ] && grep -q '^BRAWL_API_TOKEN=' ".env" && grep -q '^BRAWL_PLAYER_TAG=.' ".env"; then
-  "/opt/homebrew/bin/npm" run update:brawl
-else
-  echo "Skipping Brawl Stars update: add BRAWL_API_TOKEN and BRAWL_PLAYER_TAG to .env to enable it."
-fi
+# Brawl Stars updates run every 2 hours in GitHub Actions (.github/workflows/brawl-update.yml).
 
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  if git diff --quiet -- coc-data.js coc-snapshots.json royale-data.js royale-snapshots.json brawl-data.js brawl-snapshots.json; then
+  if git diff --quiet -- coc-data.js coc-snapshots.json royale-data.js royale-snapshots.json royale-battle-history.json; then
     exit 0
   fi
 
-  git add coc-data.js coc-snapshots.json royale-data.js royale-snapshots.json brawl-data.js brawl-snapshots.json
+  git add coc-data.js coc-snapshots.json royale-data.js royale-snapshots.json royale-battle-history.json
   git commit -m "Update game snapshots"
 
   if git remote get-url origin >/dev/null 2>&1; then
+    git pull --rebase --autostash origin main
     git push origin HEAD
   fi
 fi

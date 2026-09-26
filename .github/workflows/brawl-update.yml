@@ -1,0 +1,45 @@
+name: Update Brawl Stars
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: brawl-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch Brawl Stars data
+        env:
+          BRAWL_API_TOKEN: ${{ secrets.BRAWL_API_TOKEN }}
+          BRAWL_PLAYER_TAG: "#QVCQGUC99"
+          # Supercell keys are IP-locked; RoyaleAPI's proxy gives the runner a fixed IP (45.79.218.79).
+          BRAWL_API_BASE: https://bsproxy.royaleapi.dev/v1
+        run: node scripts/update-brawl-data.mjs
+
+      - name: Commit and push
+        run: |
+          git add brawl-data.js brawl-snapshots.json assets/brawlers
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Brawl Stars snapshot"
+          git pull --rebase
+          git push
