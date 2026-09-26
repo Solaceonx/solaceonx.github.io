@@ -1455,7 +1455,7 @@ p strong {
 .research-project-authors {
   max-width: 900px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.55;
 }
 .research-project-authors strong {
