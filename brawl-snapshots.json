@@ -43323,23 +43323,30 @@
   {
     "date": "2026-09-29",
     "label": "Sep 29",
-    "fetchedAt": "2026-09-29T01:57:53.658Z",
+    "fetchedAt": "2026-09-29T08:31:20.512Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 38458,
-    "highestTrophies": 38462,
-    "lifetimeWinsTotal": 8421,
-    "threeVsThreeVictories": 7198,
+    "trophies": 38468,
+    "highestTrophies": 38468,
+    "lifetimeWinsTotal": 8422,
+    "threeVsThreeVictories": 7199,
     "soloVictories": 225,
     "duoVictories": 998,
     "rankedPoints": 5642,
-    "trophyGamesTotal": 343,
-    "trophyWinsTotal": 232,
+    "trophyGamesTotal": 344,
+    "trophyWinsTotal": 233,
     "trophyLossesTotal": 109,
     "rankedGamesTotal": 516,
     "rankedWinsTotal": 293,
     "rankedLossesTotal": 221,
     "trophyRecentGames": [
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T034354.000Z"
+      },
       {
         "brawler": "KAZE",
         "image": "assets/brawlers/16000094.png",
@@ -43416,18 +43423,11 @@
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20260925T233045.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260925T232914.000Z"
       }
     ],
     "trophyModeCounts": {
       "Knockout": 34,
-      "Brawl Ball": 145,
+      "Brawl Ball": 146,
       "Hot Zone": 16,
       "Knockout5V5": 3,
       "Air Hockey": 6,
@@ -43448,7 +43448,7 @@
       "RUFFS": 2,
       "8-BIT": 3,
       "SURGE": 73,
-      "KAZE": 19,
+      "KAZE": 20,
       "BYRON": 14,
       "BO": 3,
       "MICO": 1,
@@ -44047,7 +44047,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260724T203058.000Z:15000293:hotZone:hotZone:soloRanked",
       "20260724T203240.000Z:15000293:hotZone:hotZone:soloRanked",
       "20260724T203639.000Z:15000072:heist:heist:soloRanked",
       "20260724T203826.000Z:15000072:heist:heist:soloRanked",
@@ -44646,7 +44645,8 @@
       "20260926T170402.000Z:15001330:brawlBall:brawlBall:ranked",
       "20260926T170655.000Z:15001330:brawlBall:brawlBall:ranked",
       "20260926T170915.000Z:15001330:brawlBall:brawlBall:ranked",
-      "20260926T171215.000Z:15001330:brawlBall:brawlBall:ranked"
+      "20260926T171215.000Z:15001330:brawlBall:brawlBall:ranked",
+      "20260929T034354.000Z:15001054:brawlBall:brawlBall:ranked"
     ],
     "rankedGamesLog": []
   }

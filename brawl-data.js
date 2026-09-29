@@ -339,10 +339,17 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-29",
         "label": "Sep 29",
-        "trophies": 38458
+        "trophies": 38468
       }
     ],
     "recentGames": [
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T034354.000Z"
+      },
       {
         "brawler": "KAZE",
         "image": "assets/brawlers/16000094.png",
@@ -419,13 +426,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20260925T233045.000Z"
-      },
-      {
-        "brawler": "SURGE",
-        "image": "assets/brawlers/16000038.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260925T232914.000Z"
       }
     ],
     "gamesHistory": [
@@ -747,7 +747,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-29",
         "label": "Sep 29",
-        "games": 343
+        "games": 344
       }
     ],
     "lifetimeWinsHistory": [
@@ -1089,7 +1089,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-29",
         "label": "Sep 29",
-        "wins": 8421
+        "wins": 8422
       }
     ],
     "winsHistory": [
@@ -1411,7 +1411,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-29",
         "label": "Sep 29",
-        "wins": 232
+        "wins": 233
       }
     ],
     "lossesHistory": [
@@ -1739,7 +1739,7 @@ window.BRAWL_DATA = {
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 145,
+        "count": 146,
         "image": null
       },
       {
