@@ -340,9 +340,77 @@ window.BRAWL_DATA = {
         "date": "2026-09-29",
         "label": "Sep 29",
         "trophies": 38580
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
+        "trophies": 38635
       }
     ],
     "recentGames": [
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T225119.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T224923.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260929T224637.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T224246.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T224022.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260929T223908.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20260929T223646.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T223518.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20260929T223416.000Z"
+      },
       {
         "brawler": "ASH",
         "image": "assets/brawlers/16000051.png",
@@ -363,55 +431,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20260929T220845.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T220738.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T220629.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T220535.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20260929T220400.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T220217.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T215827.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T215627.000Z"
       }
     ],
     "gamesHistory": [
@@ -734,6 +753,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-29",
         "label": "Sep 29",
         "games": 354
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
+        "games": 363
       }
     ],
     "lifetimeWinsHistory": [
@@ -1076,6 +1100,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-29",
         "label": "Sep 29",
         "wins": 8444
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
+        "wins": 8452
       }
     ],
     "winsHistory": [
@@ -1398,6 +1427,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-29",
         "label": "Sep 29",
         "wins": 241
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
+        "wins": 247
       }
     ],
     "lossesHistory": [
@@ -1720,12 +1754,17 @@ window.BRAWL_DATA = {
         "date": "2026-09-29",
         "label": "Sep 29",
         "losses": 111
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
+        "losses": 114
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 156,
+        "count": 165,
         "image": null
       },
       {
@@ -2208,6 +2247,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-29",
         "label": "Sep 29",
         "points": 5893
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
+        "points": 5893
       }
     ],
     "gamesHistory": [
@@ -2529,6 +2573,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-29",
         "label": "Sep 29",
+        "games": 530
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
         "games": 530
       }
     ],
@@ -2852,6 +2901,11 @@ window.BRAWL_DATA = {
         "date": "2026-09-29",
         "label": "Sep 29",
         "wins": 301
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
+        "wins": 301
       }
     ],
     "lossesHistory": [
@@ -3173,6 +3227,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-09-29",
         "label": "Sep 29",
+        "losses": 227
+      },
+      {
+        "date": "2026-09-30",
+        "label": "Sep 30",
         "losses": 227
       }
     ],
