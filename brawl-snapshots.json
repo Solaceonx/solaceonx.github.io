@@ -44038,22 +44038,22 @@
   {
     "date": "2026-09-30",
     "label": "Sep 30",
-    "fetchedAt": "2026-09-30T01:19:53.911Z",
+    "fetchedAt": "2026-09-30T22:16:40.502Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
     "trophies": 38635,
     "highestTrophies": 38635,
-    "lifetimeWinsTotal": 8452,
-    "threeVsThreeVictories": 7229,
+    "lifetimeWinsTotal": 8456,
+    "threeVsThreeVictories": 7233,
     "soloVictories": 225,
     "duoVictories": 998,
-    "rankedPoints": 5893,
+    "rankedPoints": 5782,
     "trophyGamesTotal": 363,
     "trophyWinsTotal": 247,
     "trophyLossesTotal": 114,
-    "rankedGamesTotal": 530,
-    "rankedWinsTotal": 301,
-    "rankedLossesTotal": 227,
+    "rankedGamesTotal": 538,
+    "rankedWinsTotal": 305,
+    "rankedLossesTotal": 231,
     "trophyRecentGames": [
       {
         "brawler": "LUMI",
@@ -44189,12 +44189,12 @@
       "MAISIE": 1
     },
     "rankedModeCounts": {
-      "Knockout": 79,
+      "Knockout": 82,
       "Heist": 87,
       "Brawl Ball": 89,
       "Hot Zone": 79,
-      "Bounty": 71,
-      "Gem Grab": 125
+      "Bounty": 73,
+      "Gem Grab": 128
     },
     "rankedSeasonStart": "2026-09-17",
     "rankedCurrentBrawlerCounts": {
@@ -44202,7 +44202,7 @@
       "COLETTE": 4,
       "GUS": 8,
       "MICO": 12,
-      "BELLE": 4,
+      "BELLE": 7,
       "GENE": 3,
       "EDGAR": 5,
       "BYRON": 5,
@@ -44211,13 +44211,14 @@
       "FRANK": 2,
       "MAISIE": 2,
       "CHESTER": 3,
-      "BROCK": 3
+      "BROCK": 5,
+      "ASH": 3
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 28,
       "BYRON": 75,
       "BARLEY": 3,
-      "BELLE": 27,
+      "BELLE": 30,
       "GUS": 16,
       "NITA": 3,
       "GENE": 16,
@@ -44230,7 +44231,7 @@
       "EDGAR": 30,
       "BO": 57,
       "COLETTE": 18,
-      "BROCK": 38,
+      "BROCK": 40,
       "TICK": 37,
       "RICO": 3,
       "SURGE": 3,
@@ -44246,7 +44247,7 @@
       "MR. P": 7,
       "WILLOW": 2,
       "NORI": 2,
-      "ASH": 2,
+      "ASH": 5,
       "FRANK": 2,
       "MAISIE": 2
     },
@@ -44764,14 +44765,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260727T034810.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260727T035137.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260727T035509.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260727T035642.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260727T035749.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260727T040716.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260727T041012.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260727T041440.000Z:15000009:gemGrab:gemGrab:soloRanked",
       "20260727T041712.000Z:15000009:gemGrab:gemGrab:soloRanked",
       "20260727T041908.000Z:15000009:gemGrab:gemGrab:soloRanked",
       "20260727T042501.000Z:15000025:brawlBall:brawlBall:soloRanked",
@@ -45363,7 +45356,15 @@
       "20260929T224923.000Z:15000144:brawlBall:brawlBall:ranked",
       "20260929T225119.000Z:15000144:brawlBall:brawlBall:ranked",
       "20260929T225442.000Z:15001300:megaBoss20P:lastStand",
-      "20260929T225744.000Z:15001300:megaBoss20P:lastStand"
+      "20260929T225744.000Z:15001300:megaBoss20P:lastStand",
+      "20260930T180545.000Z:15000007:gemGrab:gemGrab:soloRanked",
+      "20260930T180840.000Z:15000007:gemGrab:gemGrab:soloRanked",
+      "20260930T181035.000Z:15000007:gemGrab:gemGrab:soloRanked",
+      "20260930T181601.000Z:15000083:bounty:bounty:soloRanked",
+      "20260930T181751.000Z:15000083:bounty:bounty:soloRanked",
+      "20260930T182931.000Z:15000703:knockout:knockout:soloRanked",
+      "20260930T183114.000Z:15000703:knockout:knockout:soloRanked",
+      "20260930T183338.000Z:15000703:knockout:knockout:soloRanked"
     ],
     "rankedGamesLog": [
       {
@@ -45421,6 +45422,38 @@
       {
         "date": "2026-09-29",
         "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-09-30",
+        "mode": "Knockout"
       }
     ]
   }
