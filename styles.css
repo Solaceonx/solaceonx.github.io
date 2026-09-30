@@ -2508,7 +2508,7 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
 
 /* Research content boxes — translucent in light mode, dark in dark mode */
 .research-block {
-  border-radius: 10px;
+  border-radius: 0;
   padding: clamp(18px, 3vw, 28px);
   transition: background 0.5s ease, border-color 0.5s ease;
 }
@@ -2598,4 +2598,26 @@ body[data-theme="light"] .cursor-star { background: #444; box-shadow: none; }
   display: block;
   width: 100%;
   background: #f4bd28;
+}
+
+/* Research page: plain intro text and lifted project cards on hover */
+body.research-page.starfield-page .research-block.research-intro {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.research-page .research-project {
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+body.research-page.starfield-page .research-project:hover {
+  transform: translateY(-4px) scale(1.012);
+  border-color: rgba(255,255,255,.45);
+  box-shadow: 0 22px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12);
+}
+body.research-page.starfield-page[data-theme="light"] .research-project:hover {
+  border-color: rgba(16,17,20,.45);
+  box-shadow: 0 22px 55px rgba(16,17,20,.18);
+}
+@media (prefers-reduced-motion: reduce) {
+  body.research-page.starfield-page .research-project:hover { transform: none; }
 }
