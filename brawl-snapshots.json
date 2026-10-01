@@ -44768,23 +44768,37 @@
   {
     "date": "2026-10-01",
     "label": "Oct 1",
-    "fetchedAt": "2026-10-01T01:19:46.121Z",
+    "fetchedAt": "2026-10-01T17:02:15.038Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 38635,
-    "highestTrophies": 38635,
-    "lifetimeWinsTotal": 8456,
+    "trophies": 38653,
+    "highestTrophies": 38653,
+    "lifetimeWinsTotal": 8457,
     "threeVsThreeVictories": 7233,
-    "soloVictories": 225,
+    "soloVictories": 226,
     "duoVictories": 998,
     "rankedPoints": 5782,
-    "trophyGamesTotal": 363,
-    "trophyWinsTotal": 247,
-    "trophyLossesTotal": 114,
+    "trophyGamesTotal": 365,
+    "trophyWinsTotal": 248,
+    "trophyLossesTotal": 115,
     "rankedGamesTotal": 538,
     "rankedWinsTotal": 305,
     "rankedLossesTotal": 231,
     "trophyRecentGames": [
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "win",
+        "battleTime": "20261001T163145.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "loss",
+        "battleTime": "20261001T163059.000Z"
+      },
       {
         "brawler": "LUMI",
         "image": "assets/brawlers/16000091.png",
@@ -44854,20 +44868,6 @@
         "mode": "Brawl Ball",
         "result": "defeat",
         "battleTime": "20260929T221202.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T221006.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T220845.000Z"
       }
     ],
     "trophyModeCounts": {
@@ -44876,7 +44876,7 @@
       "Hot Zone": 16,
       "Knockout5V5": 3,
       "Air Hockey": 6,
-      "Solo Showdown": 31,
+      "Solo Showdown": 33,
       "Brawl Ball5V5": 4,
       "Gem Grab": 21,
       "Bounty": 11,
@@ -44893,7 +44893,7 @@
       "RUFFS": 2,
       "8-BIT": 3,
       "SURGE": 73,
-      "KAZE": 24,
+      "KAZE": 26,
       "BYRON": 14,
       "BO": 3,
       "MICO": 1,
@@ -45495,8 +45495,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260727T041712.000Z:15000009:gemGrab:gemGrab:soloRanked",
-      "20260727T041908.000Z:15000009:gemGrab:gemGrab:soloRanked",
       "20260727T042501.000Z:15000025:brawlBall:brawlBall:soloRanked",
       "20260727T042643.000Z:15000025:brawlBall:brawlBall:soloRanked",
       "20260727T043202.000Z:15000018:heist:heist:soloRanked",
@@ -46094,7 +46092,9 @@
       "20260930T181751.000Z:15000083:bounty:bounty:soloRanked",
       "20260930T182931.000Z:15000703:knockout:knockout:soloRanked",
       "20260930T183114.000Z:15000703:knockout:knockout:soloRanked",
-      "20260930T183338.000Z:15000703:knockout:knockout:soloRanked"
+      "20260930T183338.000Z:15000703:knockout:knockout:soloRanked",
+      "20261001T163059.000Z:15000014:soloShowdown:soloShowdown:ranked",
+      "20261001T163145.000Z:15000014:soloShowdown:soloShowdown:ranked"
     ],
     "rankedGamesLog": [
       {

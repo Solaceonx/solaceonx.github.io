@@ -349,10 +349,24 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-01",
         "label": "Oct 1",
-        "trophies": 38635
+        "trophies": 38653
       }
     ],
     "recentGames": [
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "win",
+        "battleTime": "20261001T163145.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "loss",
+        "battleTime": "20261001T163059.000Z"
+      },
       {
         "brawler": "LUMI",
         "image": "assets/brawlers/16000091.png",
@@ -422,20 +436,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball",
         "result": "defeat",
         "battleTime": "20260929T221202.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T221006.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T220845.000Z"
       }
     ],
     "gamesHistory": [
@@ -767,7 +767,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-01",
         "label": "Oct 1",
-        "games": 363
+        "games": 365
       }
     ],
     "lifetimeWinsHistory": [
@@ -1119,7 +1119,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-01",
         "label": "Oct 1",
-        "wins": 8456
+        "wins": 8457
       }
     ],
     "winsHistory": [
@@ -1451,7 +1451,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-01",
         "label": "Oct 1",
-        "wins": 247
+        "wins": 248
       }
     ],
     "lossesHistory": [
@@ -1783,7 +1783,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-01",
         "label": "Oct 1",
-        "losses": 114
+        "losses": 115
       }
     ],
     "modes": [
@@ -1804,7 +1804,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Solo Showdown",
-        "count": 31,
+        "count": 33,
         "image": null
       },
       {
