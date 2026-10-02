@@ -45498,23 +45498,51 @@
   {
     "date": "2026-10-02",
     "label": "Oct 2",
-    "fetchedAt": "2026-10-02T05:37:51.651Z",
+    "fetchedAt": "2026-10-02T19:18:52.348Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 38653,
-    "highestTrophies": 38653,
-    "lifetimeWinsTotal": 8460,
+    "trophies": 38659,
+    "highestTrophies": 38661,
+    "lifetimeWinsTotal": 8461,
     "threeVsThreeVictories": 7236,
-    "soloVictories": 226,
+    "soloVictories": 227,
     "duoVictories": 998,
     "rankedPoints": 5662,
-    "trophyGamesTotal": 365,
-    "trophyWinsTotal": 248,
-    "trophyLossesTotal": 115,
+    "trophyGamesTotal": 369,
+    "trophyWinsTotal": 249,
+    "trophyLossesTotal": 118,
     "rankedGamesTotal": 545,
     "rankedWinsTotal": 308,
     "rankedLossesTotal": 235,
     "trophyRecentGames": [
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "loss",
+        "battleTime": "20261002T191821.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "loss",
+        "battleTime": "20261002T191734.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "win",
+        "battleTime": "20261002T191641.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Solo Showdown",
+        "result": "loss",
+        "battleTime": "20261002T191513.000Z"
+      },
       {
         "brawler": "KAZE",
         "image": "assets/brawlers/16000094.png",
@@ -45542,34 +45570,6 @@
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20260929T224923.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20260929T224637.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T224246.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20260929T224022.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20260929T223908.000Z"
       }
     ],
     "trophyModeCounts": {
@@ -45578,7 +45578,7 @@
       "Hot Zone": 16,
       "Knockout5V5": 3,
       "Air Hockey": 6,
-      "Solo Showdown": 33,
+      "Solo Showdown": 37,
       "Brawl Ball5V5": 4,
       "Gem Grab": 21,
       "Bounty": 11,
@@ -45595,7 +45595,7 @@
       "RUFFS": 2,
       "8-BIT": 3,
       "SURGE": 73,
-      "KAZE": 26,
+      "KAZE": 30,
       "BYRON": 14,
       "BO": 3,
       "MICO": 1,
@@ -46197,10 +46197,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260727T044607.000Z:15000009:gemGrab:gemGrab:soloRanked",
-      "20260727T044823.000Z:15000009:gemGrab:gemGrab:soloRanked",
-      "20260727T045047.000Z:15000009:gemGrab:gemGrab:soloRanked",
-      "20260727T184818.000Z:15000850:airHockey:brawlBall:ranked",
       "20260727T185123.000Z:15000850:airHockey:brawlBall:ranked",
       "20260727T191505.000Z:15000005:bounty:bounty:soloRanked",
       "20260727T191717.000Z:15000005:bounty:bounty:soloRanked",
@@ -46796,7 +46792,11 @@
       "20261001T232616.000Z:15000019:heist:heist:soloRanked",
       "20261001T233116.000Z:15000306:hotZone:hotZone:soloRanked",
       "20261001T233345.000Z:15000306:hotZone:hotZone:soloRanked",
-      "20261001T233610.000Z:15000306:hotZone:hotZone:soloRanked"
+      "20261001T233610.000Z:15000306:hotZone:hotZone:soloRanked",
+      "20261002T191513.000Z:15000953:soloShowdown:soloShowdown:ranked",
+      "20261002T191641.000Z:15000953:soloShowdown:soloShowdown:ranked",
+      "20261002T191734.000Z:15000953:soloShowdown:soloShowdown:ranked",
+      "20261002T191821.000Z:15000953:soloShowdown:soloShowdown:ranked"
     ],
     "rankedGamesLog": [
       {
