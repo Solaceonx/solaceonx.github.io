@@ -46875,23 +46875,37 @@
   {
     "date": "2026-10-04",
     "label": "Oct 4",
-    "fetchedAt": "2026-10-04T08:27:19.343Z",
+    "fetchedAt": "2026-10-04T19:38:02.462Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 38804,
+    "trophies": 38798,
     "highestTrophies": 38804,
-    "lifetimeWinsTotal": 8494,
-    "threeVsThreeVictories": 7269,
+    "lifetimeWinsTotal": 8497,
+    "threeVsThreeVictories": 7272,
     "soloVictories": 227,
     "duoVictories": 998,
-    "rankedPoints": 5461,
-    "trophyGamesTotal": 389,
+    "rankedPoints": 5320,
+    "trophyGamesTotal": 391,
     "trophyWinsTotal": 262,
-    "trophyLossesTotal": 124,
-    "rankedGamesTotal": 575,
-    "rankedWinsTotal": 320,
-    "rankedLossesTotal": 253,
+    "trophyLossesTotal": 126,
+    "rankedGamesTotal": 584,
+    "rankedWinsTotal": 323,
+    "rankedLossesTotal": 259,
     "trophyRecentGames": [
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261004T165059.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261004T164751.000Z"
+      },
       {
         "brawler": "ASH",
         "image": "assets/brawlers/16000051.png",
@@ -46937,7 +46951,7 @@
     ],
     "trophyModeCounts": {
       "Knockout": 34,
-      "Brawl Ball": 182,
+      "Brawl Ball": 184,
       "Hot Zone": 19,
       "Knockout5V5": 3,
       "Air Hockey": 6,
@@ -46951,7 +46965,7 @@
     },
     "trophyBrawlerCounts": {
       "GENE": 42,
-      "LUMI": 43,
+      "LUMI": 44,
       "COLETTE": 72,
       "GUS": 12,
       "TICK": 3,
@@ -46965,7 +46979,7 @@
       "DRACO": 6,
       "POCO": 11,
       "EDGAR": 14,
-      "JANET": 12,
+      "JANET": 13,
       "JAE-YONG": 1,
       "FINX": 1,
       "BUSTER": 1,
@@ -46984,24 +46998,24 @@
       "MAISIE": 1
     },
     "rankedModeCounts": {
-      "Knockout": 85,
+      "Knockout": 87,
       "Heist": 99,
-      "Brawl Ball": 95,
-      "Hot Zone": 84,
+      "Brawl Ball": 99,
+      "Hot Zone": 87,
       "Bounty": 79,
       "Gem Grab": 133
     },
     "rankedSeasonStart": "2026-09-17",
     "rankedCurrentBrawlerCounts": {
       "TICK": 6,
-      "COLETTE": 8,
+      "COLETTE": 10,
       "GUS": 11,
       "MICO": 15,
-      "BELLE": 12,
+      "BELLE": 14,
       "GENE": 3,
       "EDGAR": 7,
       "BYRON": 8,
-      "BO": 11,
+      "BO": 13,
       "MANDY": 5,
       "FRANK": 2,
       "MAISIE": 2,
@@ -47010,13 +47024,14 @@
       "ASH": 5,
       "BUZZ": 2,
       "POCO": 2,
-      "AMBER": 2
+      "AMBER": 2,
+      "SURGE": 3
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 31,
       "BYRON": 78,
       "BARLEY": 3,
-      "BELLE": 35,
+      "BELLE": 37,
       "GUS": 19,
       "NITA": 3,
       "GENE": 16,
@@ -47027,12 +47042,12 @@
       "MANDY": 8,
       "BUZZ": 11,
       "EDGAR": 32,
-      "BO": 59,
-      "COLETTE": 22,
+      "BO": 61,
+      "COLETTE": 24,
       "BROCK": 43,
       "TICK": 39,
       "RICO": 3,
-      "SURGE": 3,
+      "SURGE": 6,
       "LUMI": 1,
       "BERRY": 4,
       "JESSIE": 4,
@@ -47564,17 +47579,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260801T005842.000Z:15000083:bounty:bounty:soloRanked",
-      "20260801T010122.000Z:15001210:knockout:knockout:ranked",
-      "20260801T010356.000Z:15001210:knockout:knockout:ranked",
-      "20260801T010606.000Z:15001210:knockout:knockout:ranked",
-      "20260801T010833.000Z:15001210:knockout:knockout:ranked",
-      "20260801T011003.000Z:15001210:knockout:knockout:ranked",
-      "20260801T011146.000Z:15001210:knockout:knockout:ranked",
-      "20260801T101745.000Z:15000548:knockout:knockout:ranked",
-      "20260801T102046.000Z:15000548:knockout:knockout:ranked",
-      "20260801T102225.000Z:15000548:knockout:knockout:ranked",
-      "20260801T102342.000Z:15000548:knockout:knockout:ranked",
       "20260801T102617.000Z:15000548:knockout:knockout:ranked",
       "20260801T102827.000Z:15000548:knockout:knockout:ranked",
       "20260801T102959.000Z:15000548:knockout:knockout:ranked",
@@ -48163,7 +48167,18 @@
       "20261004T001949.000Z:15000050:brawlBall:brawlBall:ranked",
       "20261004T002140.000Z:15000050:brawlBall:brawlBall:ranked",
       "20261004T002538.000Z:15000050:brawlBall:brawlBall:ranked",
-      "20261004T002741.000Z:15000050:brawlBall:brawlBall:ranked"
+      "20261004T002741.000Z:15000050:brawlBall:brawlBall:ranked",
+      "20261004T164751.000Z:15000024:brawlBall:brawlBall:ranked",
+      "20261004T165059.000Z:15000024:brawlBall:brawlBall:ranked",
+      "20261004T181735.000Z:15000293:hotZone:hotZone:soloRanked",
+      "20261004T181905.000Z:15000293:hotZone:hotZone:soloRanked",
+      "20261004T182021.000Z:15000293:hotZone:hotZone:soloRanked",
+      "20261004T182611.000Z:15000132:brawlBall:brawlBall:soloRanked",
+      "20261004T182901.000Z:15000132:brawlBall:brawlBall:soloRanked",
+      "20261004T183344.000Z:15000440:knockout:knockout:soloRanked",
+      "20261004T183553.000Z:15000440:knockout:knockout:soloRanked",
+      "20261004T183949.000Z:15000050:brawlBall:brawlBall:soloRanked",
+      "20261004T184208.000Z:15000050:brawlBall:brawlBall:soloRanked"
     ],
     "rankedGamesLog": [
       {
@@ -48401,6 +48416,42 @@
       {
         "date": "2026-10-04",
         "mode": "Heist"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Brawl Ball"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Brawl Ball"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Brawl Ball"
+      },
+      {
+        "date": "2026-10-04",
+        "mode": "Brawl Ball"
       }
     ]
   }
