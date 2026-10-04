@@ -2611,13 +2611,23 @@ body.research-page.starfield-page .research-block.research-intro {
 }
 body.research-page.starfield-page .research-project:hover {
   transform: translateY(-4px) scale(1.012);
-  border-color: rgba(255,255,255,.45);
-  box-shadow: 0 22px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12);
+  border-color: #fff;
+  box-shadow: 0 22px 60px rgba(0,0,0,.45);
 }
 body.research-page.starfield-page[data-theme="light"] .research-project:hover {
-  border-color: rgba(16,17,20,.45);
+  border-color: #000;
   box-shadow: 0 22px 55px rgba(16,17,20,.18);
 }
 @media (prefers-reduced-motion: reduce) {
   body.research-page.starfield-page .research-project:hover { transform: none; }
 }
+
+/* Research page: solid lines instead of faint gray ones */
+body.research-page.starfield-page :is(.site-header, .nav-links, .theme-toggle, .research-block, .research-project, .research-project-thumb, .footer-bottom) {
+  border-color: #fff;
+}
+body.research-page.starfield-page .bio-heading span { background: #fff; }
+body.research-page.starfield-page[data-theme="light"] :is(.site-header, .nav-links, .theme-toggle, .research-block, .research-project, .research-project-thumb, .footer-bottom) {
+  border-color: #000;
+}
+body.research-page.starfield-page[data-theme="light"] .bio-heading span { background: #000; }
