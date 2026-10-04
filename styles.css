@@ -2631,3 +2631,15 @@ body.research-page.starfield-page[data-theme="light"] :is(.site-header, .nav-lin
   border-color: #000;
 }
 body.research-page.starfield-page[data-theme="light"] .bio-heading span { background: #000; }
+
+/* Site-wide: solid lines instead of faint gray ones (white on dark, black on light) */
+body:not([data-theme="light"]) :is(.site-header, .site-header *, main *, .footer, .footer *) {
+  border-color: #fff !important;
+}
+body[data-theme="light"] :is(.site-header, .site-header *, main *, .footer, .footer *):not(.win):not(.loss) {
+  border-color: #000 !important;
+}
+body:not([data-theme="light"]) .chart-grid { stroke: #fff !important; }
+body[data-theme="light"] .chart-grid { stroke: #000 !important; }
+/* These stay light-colored in dark mode, so their lines stay black. */
+body:not([data-theme="light"]) :is(.brawl-intro-card, .brawl-hall-button) { border-color: #000 !important; }
