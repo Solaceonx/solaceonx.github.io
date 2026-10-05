@@ -47577,6 +47577,713 @@
         "games": 11
       }
     ],
+    "trackingSchemaVersion": 2
+  },
+  {
+    "date": "2026-10-05",
+    "label": "Oct 5",
+    "fetchedAt": "2026-10-05T05:41:04.199Z",
+    "tag": "#QVCQGUC99",
+    "name": "Solaceonx",
+    "trophies": 38798,
+    "highestTrophies": 38804,
+    "lifetimeWinsTotal": 8497,
+    "threeVsThreeVictories": 7272,
+    "soloVictories": 227,
+    "duoVictories": 998,
+    "rankedPoints": 5320,
+    "trophyGamesTotal": 391,
+    "trophyWinsTotal": 262,
+    "trophyLossesTotal": 126,
+    "rankedGamesTotal": 584,
+    "rankedWinsTotal": 323,
+    "rankedLossesTotal": 259,
+    "trophyRecentGames": [
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261004T165059.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261004T164751.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261004T002741.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "draw",
+        "battleTime": "20261004T002538.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261004T002140.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261004T001949.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261004T001649.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261004T001532.000Z"
+      }
+    ],
+    "trophyModeCounts": {
+      "Knockout": 34,
+      "Brawl Ball": 184,
+      "Hot Zone": 19,
+      "Knockout5V5": 3,
+      "Air Hockey": 6,
+      "Solo Showdown": 37,
+      "Brawl Ball5V5": 4,
+      "Gem Grab": 21,
+      "Bounty": 11,
+      "Basket Brawl": 10,
+      "Duo Showdown": 45,
+      "Trio Showdown": 17
+    },
+    "trophyBrawlerCounts": {
+      "GENE": 42,
+      "LUMI": 44,
+      "COLETTE": 72,
+      "GUS": 12,
+      "TICK": 3,
+      "RUFFS": 2,
+      "8-BIT": 3,
+      "SURGE": 73,
+      "KAZE": 30,
+      "BYRON": 14,
+      "BO": 3,
+      "MICO": 1,
+      "DRACO": 6,
+      "POCO": 11,
+      "EDGAR": 14,
+      "JANET": 13,
+      "JAE-YONG": 1,
+      "FINX": 1,
+      "BUSTER": 1,
+      "LEON": 2,
+      "SANDY": 2,
+      "ASH": 21,
+      "WENDY": 4,
+      "NITA": 1,
+      "MR. P": 2,
+      "MANDY": 2,
+      "GRAY": 1,
+      "BARLEY": 1,
+      "SHELLY": 6,
+      "BELLE": 1,
+      "BROCK": 1,
+      "MAISIE": 1
+    },
+    "rankedModeCounts": {
+      "Knockout": 87,
+      "Heist": 99,
+      "Brawl Ball": 99,
+      "Hot Zone": 87,
+      "Bounty": 79,
+      "Gem Grab": 133
+    },
+    "rankedSeasonStart": "2026-09-17",
+    "rankedCurrentBrawlerCounts": {
+      "TICK": 6,
+      "COLETTE": 10,
+      "GUS": 11,
+      "MICO": 15,
+      "BELLE": 14,
+      "GENE": 3,
+      "EDGAR": 7,
+      "BYRON": 8,
+      "BO": 13,
+      "MANDY": 5,
+      "FRANK": 2,
+      "MAISIE": 2,
+      "CHESTER": 3,
+      "BROCK": 8,
+      "ASH": 5,
+      "BUZZ": 2,
+      "POCO": 2,
+      "AMBER": 2,
+      "SURGE": 3
+    },
+    "rankedAllTimeBrawlerCounts": {
+      "MICO": 31,
+      "BYRON": 78,
+      "BARLEY": 3,
+      "BELLE": 37,
+      "GUS": 19,
+      "NITA": 3,
+      "GENE": 16,
+      "POCO": 44,
+      "KIT": 15,
+      "JAE-YONG": 1,
+      "8-BIT": 54,
+      "MANDY": 8,
+      "BUZZ": 11,
+      "EDGAR": 32,
+      "BO": 61,
+      "COLETTE": 24,
+      "BROCK": 43,
+      "TICK": 39,
+      "RICO": 3,
+      "SURGE": 6,
+      "LUMI": 1,
+      "BERRY": 4,
+      "JESSIE": 4,
+      "COLT": 2,
+      "SANDY": 3,
+      "TARA": 3,
+      "CHESTER": 11,
+      "MEG": 2,
+      "LARRY & LAWRIE": 2,
+      "MR. P": 7,
+      "WILLOW": 2,
+      "NORI": 2,
+      "ASH": 7,
+      "FRANK": 2,
+      "MAISIE": 2,
+      "AMBER": 2
+    },
+    "brawlerImages": {
+      "SHELLY": {
+        "id": 16000000,
+        "image": "assets/brawlers/16000000.png"
+      },
+      "COLT": {
+        "id": 16000001,
+        "image": "assets/brawlers/16000001.png"
+      },
+      "BULL": {
+        "id": 16000002,
+        "image": "assets/brawlers/16000002.png"
+      },
+      "BROCK": {
+        "id": 16000003,
+        "image": "assets/brawlers/16000003.png"
+      },
+      "RICO": {
+        "id": 16000004,
+        "image": "assets/brawlers/16000004.png"
+      },
+      "SPIKE": {
+        "id": 16000005,
+        "image": "assets/brawlers/16000005.png"
+      },
+      "BARLEY": {
+        "id": 16000006,
+        "image": "assets/brawlers/16000006.png"
+      },
+      "JESSIE": {
+        "id": 16000007,
+        "image": "assets/brawlers/16000007.png"
+      },
+      "NITA": {
+        "id": 16000008,
+        "image": "assets/brawlers/16000008.png"
+      },
+      "DYNAMIKE": {
+        "id": 16000009,
+        "image": "assets/brawlers/16000009.png"
+      },
+      "EL PRIMO": {
+        "id": 16000010,
+        "image": "assets/brawlers/16000010.png"
+      },
+      "MORTIS": {
+        "id": 16000011,
+        "image": "assets/brawlers/16000011.png"
+      },
+      "CROW": {
+        "id": 16000012,
+        "image": "assets/brawlers/16000012.png"
+      },
+      "POCO": {
+        "id": 16000013,
+        "image": "assets/brawlers/16000013.png"
+      },
+      "BO": {
+        "id": 16000014,
+        "image": "assets/brawlers/16000014.png"
+      },
+      "PIPER": {
+        "id": 16000015,
+        "image": "assets/brawlers/16000015.png"
+      },
+      "PAM": {
+        "id": 16000016,
+        "image": "assets/brawlers/16000016.png"
+      },
+      "TARA": {
+        "id": 16000017,
+        "image": "assets/brawlers/16000017.png"
+      },
+      "DARRYL": {
+        "id": 16000018,
+        "image": "assets/brawlers/16000018.png"
+      },
+      "PENNY": {
+        "id": 16000019,
+        "image": "assets/brawlers/16000019.png"
+      },
+      "FRANK": {
+        "id": 16000020,
+        "image": "assets/brawlers/16000020.png"
+      },
+      "GENE": {
+        "id": 16000021,
+        "image": "assets/brawlers/16000021.png"
+      },
+      "TICK": {
+        "id": 16000022,
+        "image": "assets/brawlers/16000022.png"
+      },
+      "LEON": {
+        "id": 16000023,
+        "image": "assets/brawlers/16000023.png"
+      },
+      "ROSA": {
+        "id": 16000024,
+        "image": "assets/brawlers/16000024.png"
+      },
+      "CARL": {
+        "id": 16000025,
+        "image": "assets/brawlers/16000025.png"
+      },
+      "BIBI": {
+        "id": 16000026,
+        "image": "assets/brawlers/16000026.png"
+      },
+      "8-BIT": {
+        "id": 16000027,
+        "image": "assets/brawlers/16000027.png"
+      },
+      "SANDY": {
+        "id": 16000028,
+        "image": "assets/brawlers/16000028.png"
+      },
+      "BEA": {
+        "id": 16000029,
+        "image": "assets/brawlers/16000029.png"
+      },
+      "EMZ": {
+        "id": 16000030,
+        "image": "assets/brawlers/16000030.png"
+      },
+      "MR. P": {
+        "id": 16000031,
+        "image": "assets/brawlers/16000031.png"
+      },
+      "MAX": {
+        "id": 16000032,
+        "image": "assets/brawlers/16000032.png"
+      },
+      "JACKY": {
+        "id": 16000034,
+        "image": "assets/brawlers/16000034.png"
+      },
+      "GALE": {
+        "id": 16000035,
+        "image": "assets/brawlers/16000035.png"
+      },
+      "NANI": {
+        "id": 16000036,
+        "image": "assets/brawlers/16000036.png"
+      },
+      "SPROUT": {
+        "id": 16000037,
+        "image": "assets/brawlers/16000037.png"
+      },
+      "SURGE": {
+        "id": 16000038,
+        "image": "assets/brawlers/16000038.png"
+      },
+      "COLETTE": {
+        "id": 16000039,
+        "image": "assets/brawlers/16000039.png"
+      },
+      "AMBER": {
+        "id": 16000040,
+        "image": "assets/brawlers/16000040.png"
+      },
+      "LOU": {
+        "id": 16000041,
+        "image": "assets/brawlers/16000041.png"
+      },
+      "BYRON": {
+        "id": 16000042,
+        "image": "assets/brawlers/16000042.png"
+      },
+      "EDGAR": {
+        "id": 16000043,
+        "image": "assets/brawlers/16000043.png"
+      },
+      "RUFFS": {
+        "id": 16000044,
+        "image": "assets/brawlers/16000044.png"
+      },
+      "STU": {
+        "id": 16000045,
+        "image": "assets/brawlers/16000045.png"
+      },
+      "BELLE": {
+        "id": 16000046,
+        "image": "assets/brawlers/16000046.png"
+      },
+      "SQUEAK": {
+        "id": 16000047,
+        "image": "assets/brawlers/16000047.png"
+      },
+      "GROM": {
+        "id": 16000048,
+        "image": "assets/brawlers/16000048.png"
+      },
+      "BUZZ": {
+        "id": 16000049,
+        "image": "assets/brawlers/16000049.png"
+      },
+      "GRIFF": {
+        "id": 16000050,
+        "image": "assets/brawlers/16000050.png"
+      },
+      "ASH": {
+        "id": 16000051,
+        "image": "assets/brawlers/16000051.png"
+      },
+      "MEG": {
+        "id": 16000052,
+        "image": "assets/brawlers/16000052.png"
+      },
+      "LOLA": {
+        "id": 16000053,
+        "image": "assets/brawlers/16000053.png"
+      },
+      "FANG": {
+        "id": 16000054,
+        "image": "assets/brawlers/16000054.png"
+      },
+      "EVE": {
+        "id": 16000056,
+        "image": "assets/brawlers/16000056.png"
+      },
+      "JANET": {
+        "id": 16000057,
+        "image": "assets/brawlers/16000057.png"
+      },
+      "BONNIE": {
+        "id": 16000058,
+        "image": "assets/brawlers/16000058.png"
+      },
+      "OTIS": {
+        "id": 16000059,
+        "image": "assets/brawlers/16000059.png"
+      },
+      "SAM": {
+        "id": 16000060,
+        "image": "assets/brawlers/16000060.png"
+      },
+      "GUS": {
+        "id": 16000061,
+        "image": "assets/brawlers/16000061.png"
+      },
+      "BUSTER": {
+        "id": 16000062,
+        "image": "assets/brawlers/16000062.png"
+      },
+      "CHESTER": {
+        "id": 16000063,
+        "image": "assets/brawlers/16000063.png"
+      },
+      "GRAY": {
+        "id": 16000064,
+        "image": "assets/brawlers/16000064.png"
+      },
+      "MANDY": {
+        "id": 16000065,
+        "image": "assets/brawlers/16000065.png"
+      },
+      "R-T": {
+        "id": 16000066,
+        "image": "assets/brawlers/16000066.png"
+      },
+      "WILLOW": {
+        "id": 16000067,
+        "image": "assets/brawlers/16000067.png"
+      },
+      "MAISIE": {
+        "id": 16000068,
+        "image": "assets/brawlers/16000068.png"
+      },
+      "HANK": {
+        "id": 16000069,
+        "image": "assets/brawlers/16000069.png"
+      },
+      "CORDELIUS": {
+        "id": 16000070,
+        "image": "assets/brawlers/16000070.png"
+      },
+      "DOUG": {
+        "id": 16000071,
+        "image": "assets/brawlers/16000071.png"
+      },
+      "PEARL": {
+        "id": 16000072,
+        "image": "assets/brawlers/16000072.png"
+      },
+      "CHUCK": {
+        "id": 16000073,
+        "image": "assets/brawlers/16000073.png"
+      },
+      "CHARLIE": {
+        "id": 16000074,
+        "image": "assets/brawlers/16000074.png"
+      },
+      "MICO": {
+        "id": 16000075,
+        "image": "assets/brawlers/16000075.png"
+      },
+      "KIT": {
+        "id": 16000076,
+        "image": "assets/brawlers/16000076.png"
+      },
+      "LARRY & LAWRIE": {
+        "id": 16000077,
+        "image": "assets/brawlers/16000077.png"
+      },
+      "MELODIE": {
+        "id": 16000078,
+        "image": "assets/brawlers/16000078.png"
+      },
+      "ANGELO": {
+        "id": 16000079,
+        "image": "assets/brawlers/16000079.png"
+      },
+      "DRACO": {
+        "id": 16000080,
+        "image": "assets/brawlers/16000080.png"
+      },
+      "LILY": {
+        "id": 16000081,
+        "image": "assets/brawlers/16000081.png"
+      },
+      "BERRY": {
+        "id": 16000082,
+        "image": "assets/brawlers/16000082.png"
+      },
+      "CLANCY": {
+        "id": 16000083,
+        "image": "assets/brawlers/16000083.png"
+      },
+      "MOE": {
+        "id": 16000084,
+        "image": "assets/brawlers/16000084.png"
+      },
+      "KENJI": {
+        "id": 16000085,
+        "image": "assets/brawlers/16000085.png"
+      },
+      "SHADE": {
+        "id": 16000086,
+        "image": "assets/brawlers/16000086.png"
+      },
+      "JUJU": {
+        "id": 16000087,
+        "image": "assets/brawlers/16000087.png"
+      },
+      "MEEPLE": {
+        "id": 16000089,
+        "image": "assets/brawlers/16000089.png"
+      },
+      "OLLIE": {
+        "id": 16000090,
+        "image": "assets/brawlers/16000090.png"
+      },
+      "LUMI": {
+        "id": 16000091,
+        "image": "assets/brawlers/16000091.png"
+      },
+      "FINX": {
+        "id": 16000092,
+        "image": "assets/brawlers/16000092.png"
+      },
+      "JAE-YONG": {
+        "id": 16000093,
+        "image": "assets/brawlers/16000093.png"
+      },
+      "KAZE": {
+        "id": 16000094,
+        "image": "assets/brawlers/16000094.png"
+      },
+      "ALLI": {
+        "id": 16000095,
+        "image": "assets/brawlers/16000095.png"
+      },
+      "TRUNK": {
+        "id": 16000096,
+        "image": "assets/brawlers/16000096.png"
+      },
+      "MINA": {
+        "id": 16000097,
+        "image": "assets/brawlers/16000097.png"
+      },
+      "ZIGGY": {
+        "id": 16000098,
+        "image": "assets/brawlers/16000098.png"
+      },
+      "PIERCE": {
+        "id": 16000099,
+        "image": "assets/brawlers/16000099.png"
+      },
+      "GIGI": {
+        "id": 16000100,
+        "image": "assets/brawlers/16000100.png"
+      },
+      "GLOWY": {
+        "id": 16000101,
+        "image": "assets/brawlers/16000101.png"
+      },
+      "SIRIUS": {
+        "id": 16000102,
+        "image": "assets/brawlers/16000102.png"
+      },
+      "NAJIA": {
+        "id": 16000103,
+        "image": "assets/brawlers/16000103.png"
+      },
+      "DAMIAN": {
+        "id": 16000104,
+        "image": "assets/brawlers/16000104.png"
+      },
+      "STARR NOVA": {
+        "id": 16000105,
+        "image": "assets/brawlers/16000105.png"
+      },
+      "BOLT": {
+        "id": 16000106,
+        "image": "assets/brawlers/16000106.png"
+      },
+      "NORI": {
+        "id": 16000107,
+        "image": "assets/brawlers/16000107.png"
+      },
+      "WENDY": {
+        "id": 16000108,
+        "image": "assets/brawlers/16000108.png"
+      },
+      "COSMO": {
+        "id": 16000109,
+        "image": "assets/brawlers/16000109.png"
+      }
+    },
+    "topBrawlers": [
+      {
+        "name": "GUS",
+        "trophies": 1096,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000061.png",
+        "games": 12
+      },
+      {
+        "name": "EDGAR",
+        "trophies": 1091,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000043.png",
+        "games": 14
+      },
+      {
+        "name": "JAE-YONG",
+        "trophies": 1083,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000093.png",
+        "games": 1
+      },
+      {
+        "name": "BO",
+        "trophies": 1069,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000014.png",
+        "games": 3
+      },
+      {
+        "name": "KIT",
+        "trophies": 1067,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000076.png",
+        "games": 0
+      },
+      {
+        "name": "TICK",
+        "trophies": 1060,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000022.png",
+        "games": 3
+      },
+      {
+        "name": "BYRON",
+        "trophies": 1048,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000042.png",
+        "games": 14
+      },
+      {
+        "name": "BELLE",
+        "trophies": 1037,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000046.png",
+        "games": 1
+      },
+      {
+        "name": "COLETTE",
+        "trophies": 1027,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000039.png",
+        "games": 72
+      },
+      {
+        "name": "POCO",
+        "trophies": 1022,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000013.png",
+        "games": 11
+      }
+    ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
       "20260801T102617.000Z:15000548:knockout:knockout:ranked",
