@@ -389,10 +389,45 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-09",
         "label": "Oct 9",
-        "trophies": 38798
+        "trophies": 38815
       }
     ],
     "recentGames": [
+      {
+        "brawler": "TICK",
+        "image": "assets/brawlers/16000022.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261009T034650.000Z"
+      },
+      {
+        "brawler": "TICK",
+        "image": "assets/brawlers/16000022.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261009T034421.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261009T034106.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261009T033821.000Z"
+      },
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261009T033635.000Z"
+      },
       {
         "brawler": "JANET",
         "image": "assets/brawlers/16000057.png",
@@ -441,13 +476,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20261004T001649.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261004T001532.000Z"
       }
     ],
     "gamesHistory": [
@@ -819,7 +847,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-09",
         "label": "Oct 9",
-        "games": 391
+        "games": 396
       }
     ],
     "lifetimeWinsHistory": [
@@ -1211,7 +1239,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-09",
         "label": "Oct 9",
-        "wins": 8497
+        "wins": 8499
       }
     ],
     "winsHistory": [
@@ -1583,7 +1611,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-09",
         "label": "Oct 9",
-        "wins": 262
+        "wins": 264
       }
     ],
     "lossesHistory": [
@@ -1955,13 +1983,13 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-09",
         "label": "Oct 9",
-        "losses": 126
+        "losses": 129
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 184,
+        "count": 187,
         "image": null
       },
       {
@@ -1986,7 +2014,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Hot Zone",
-        "count": 19,
+        "count": 21,
         "image": null
       },
       {
@@ -2063,11 +2091,11 @@ window.BRAWL_DATA = {
       },
       {
         "name": "TICK",
-        "trophies": 1060,
+        "trophies": 1066,
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000022.png",
-        "games": 3
+        "games": 5
       },
       {
         "name": "BYRON",

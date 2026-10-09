@@ -50410,23 +50410,58 @@
   {
     "date": "2026-10-09",
     "label": "Oct 9",
-    "fetchedAt": "2026-10-09T00:23:28.247Z",
+    "fetchedAt": "2026-10-09T09:04:52.902Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 38798,
-    "highestTrophies": 38804,
-    "lifetimeWinsTotal": 8497,
-    "threeVsThreeVictories": 7272,
+    "trophies": 38815,
+    "highestTrophies": 38820,
+    "lifetimeWinsTotal": 8499,
+    "threeVsThreeVictories": 7274,
     "soloVictories": 227,
     "duoVictories": 998,
     "rankedPoints": 5320,
-    "trophyGamesTotal": 391,
-    "trophyWinsTotal": 262,
-    "trophyLossesTotal": 126,
+    "trophyGamesTotal": 396,
+    "trophyWinsTotal": 264,
+    "trophyLossesTotal": 129,
     "rankedGamesTotal": 584,
     "rankedWinsTotal": 323,
     "rankedLossesTotal": 259,
     "trophyRecentGames": [
+      {
+        "brawler": "TICK",
+        "image": "assets/brawlers/16000022.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261009T034650.000Z"
+      },
+      {
+        "brawler": "TICK",
+        "image": "assets/brawlers/16000022.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261009T034421.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261009T034106.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261009T033821.000Z"
+      },
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261009T033635.000Z"
+      },
       {
         "brawler": "JANET",
         "image": "assets/brawlers/16000057.png",
@@ -50475,19 +50510,12 @@
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20261004T001649.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261004T001532.000Z"
       }
     ],
     "trophyModeCounts": {
       "Knockout": 34,
-      "Brawl Ball": 184,
-      "Hot Zone": 19,
+      "Brawl Ball": 187,
+      "Hot Zone": 21,
       "Knockout5V5": 3,
       "Air Hockey": 6,
       "Solo Showdown": 37,
@@ -50503,7 +50531,7 @@
       "LUMI": 44,
       "COLETTE": 72,
       "GUS": 12,
-      "TICK": 3,
+      "TICK": 5,
       "RUFFS": 2,
       "8-BIT": 3,
       "SURGE": 73,
@@ -50514,13 +50542,13 @@
       "DRACO": 6,
       "POCO": 11,
       "EDGAR": 14,
-      "JANET": 13,
+      "JANET": 14,
       "JAE-YONG": 1,
       "FINX": 1,
       "BUSTER": 1,
       "LEON": 2,
       "SANDY": 2,
-      "ASH": 21,
+      "ASH": 23,
       "WENDY": 4,
       "NITA": 1,
       "MR. P": 2,
@@ -51073,11 +51101,11 @@
       },
       {
         "name": "TICK",
-        "trophies": 1060,
+        "trophies": 1066,
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000022.png",
-        "games": 3
+        "games": 5
       },
       {
         "name": "BYRON",
@@ -51114,11 +51142,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260801T102617.000Z:15000548:knockout:knockout:ranked",
-      "20260801T102827.000Z:15000548:knockout:knockout:ranked",
-      "20260801T102959.000Z:15000548:knockout:knockout:ranked",
-      "20260801T103144.000Z:15000548:knockout:knockout:ranked",
-      "20260801T103327.000Z:15000548:knockout:knockout:ranked",
       "20260801T103629.000Z:15000548:knockout:knockout:ranked",
       "20260803T232643.000Z:15000082:bounty:bounty:soloRanked",
       "20260803T232846.000Z:15000082:bounty:bounty:soloRanked",
@@ -51713,7 +51736,12 @@
       "20261004T183344.000Z:15000440:knockout:knockout:soloRanked",
       "20261004T183553.000Z:15000440:knockout:knockout:soloRanked",
       "20261004T183949.000Z:15000050:brawlBall:brawlBall:soloRanked",
-      "20261004T184208.000Z:15000050:brawlBall:brawlBall:soloRanked"
+      "20261004T184208.000Z:15000050:brawlBall:brawlBall:soloRanked",
+      "20261009T033635.000Z:15000026:brawlBall:brawlBall:ranked",
+      "20261009T033821.000Z:15000026:brawlBall:brawlBall:ranked",
+      "20261009T034106.000Z:15000026:brawlBall:brawlBall:ranked",
+      "20261009T034421.000Z:15001202:hotZone:hotZone:ranked",
+      "20261009T034650.000Z:15001202:hotZone:hotZone:ranked"
     ],
     "rankedGamesLog": [
       {
