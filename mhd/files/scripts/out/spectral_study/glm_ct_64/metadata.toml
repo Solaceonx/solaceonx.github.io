@@ -1,0 +1,31 @@
+wall_seconds_excluding_compile = 0.9209630489349365
+steps = 464
+glm_final_center_div_rms = 0.11708433389418292
+ct_face_format = "every saved frame: ct_bxface_###.bin and ct_byface_###.bin; lower faces, Float32 (N,N) column-major"
+ct_final_center_div_rms = 0.16730244852834333
+final_density_relative_l1_difference = 0.013863728728500757
+flux = "shared existing HLL routines"
+timing_scope = "step includes fluxes, RK updates and stage positivity checks; excludes CFL, output, diagnostics, compilation"
+precision = "Float32"
+reconstruction = "MonCen PLM"
+binary_format = "little-endian Float32 (N,N,9) column-major: rho,mx,my,mz,E,Bx,By,Bz,psi"
+threads = 4
+ct_emf = "Balsara-Spicer arithmetic average of magnetic face fluxes"
+N = 64
+t_end = 0.5000000000118234
+cfl = 0.3499999940395355
+ct_step_seconds = 0.34624025500000016
+glm_step_seconds = 0.3766350899999999
+glm_damping_coefficient = 0.18000000715255737
+dimensions = 2
+time_integrator = "SSP-RK2, shared dt; Strang split GLM damping"
+glm_cleaning_speed = "max directional signal over both methods, recomputed each step"
+frames = 21
+gamma = 1.6666666269302368
+ct_final_face_div_max = 0.0001068115234375
+
+[max_saved_relative_conservation_errors]
+ct_energy = 1.3093347628334584e-8
+ct_mass = 1.8334020635002446e-8
+glm_mass = 1.6272677649808998e-8
+glm_energy = 1.9503306858403846e-8

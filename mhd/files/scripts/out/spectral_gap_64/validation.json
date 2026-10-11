@@ -1,0 +1,8 @@
+{
+  "gap_residual_power_fraction": 1.797325170050535e-17,
+  "relative_change_outside_gap_nonzero_modes": 2.5498629648888293e-08,
+  "maximum_change_in_mean_momentum": 5.80271719563541e-10,
+  "fraction_nonzero_velocity_variance_removed": 0.13686596687801605,
+  "density_unchanged": true,
+  "parseval_and_diagnostic_checks_passed": true
+}

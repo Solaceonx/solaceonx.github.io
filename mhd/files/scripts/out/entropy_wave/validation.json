@@ -1,0 +1,53 @@
+{
+  "convergence": [
+    {
+      "method": "glm",
+      "N": [
+        16,
+        32,
+        64,
+        128
+      ],
+      "L1": [
+        0.018966020683884546,
+        0.0038940787367459733,
+        0.001189467218990071,
+        0.000329212392929853
+      ],
+      "orders": [
+        2.2840630542513694,
+        1.7109665425888085,
+        1.8532249615296097
+      ]
+    },
+    {
+      "method": "ct",
+      "N": [
+        16,
+        32,
+        64,
+        128
+      ],
+      "L1": [
+        0.018965908925175592,
+        0.003894147654616495,
+        0.0011893293832490278,
+        0.0003293870159125934
+      ],
+      "orders": [
+        2.284029020273677,
+        1.7111592648797513,
+        1.8522927311781079
+      ]
+    }
+  ],
+  "positive_and_conservation_checks": "passed in runner",
+  "saved_norm_rows": 328,
+  "max_mass_drift": 3.073364502892417e-07,
+  "max_energy_drift": 1.6573948324882792e-07,
+  "max_pressure_error": 1.1920928955078125e-06,
+  "max_B_error": 4.4703484e-08,
+  "all_norms_finite": true,
+  "reference": "Exact nonlinear cell-average solution, evaluated in Float64",
+  "limitation": "Constant magnetic field; not a test of magnetic wave propagation"
+}

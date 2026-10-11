@@ -1,0 +1,175 @@
+{
+  "frames": 21,
+  "times": [
+    0.0,
+    0.025,
+    0.05,
+    0.07500000000000001,
+    0.1,
+    0.125,
+    0.15000000000000002,
+    0.17500000000000002,
+    0.2,
+    0.225,
+    0.25,
+    0.275,
+    0.30000000000000004,
+    0.325,
+    0.35000000000000003,
+    0.375,
+    0.4,
+    0.42500000000000004,
+    0.45,
+    0.47500000000000003,
+    0.5
+  ],
+  "N": 512,
+  "display_N": 64,
+  "all_states_finite_positive": true,
+  "conservation": [
+    {
+      "time": 0.0,
+      "relative_mass_drift": 0.0,
+      "relative_energy_drift": 0.0
+    },
+    {
+      "time": 0.025,
+      "relative_mass_drift": 8.335889978283717e-09,
+      "relative_energy_drift": 1.829377760387274e-10
+    },
+    {
+      "time": 0.05,
+      "relative_mass_drift": 8.382691984998303e-09,
+      "relative_energy_drift": 1.3280887500854988e-10
+    },
+    {
+      "time": 0.07500000000000001,
+      "relative_mass_drift": 8.425379505183628e-09,
+      "relative_energy_drift": 1.7089385462298878e-10
+    },
+    {
+      "time": 0.1,
+      "relative_mass_drift": 8.395035333563783e-09,
+      "relative_energy_drift": 1.489217638095397e-10
+    },
+    {
+      "time": 0.125,
+      "relative_mass_drift": 8.369834270105514e-09,
+      "relative_energy_drift": 1.3362266848560012e-10
+    },
+    {
+      "time": 0.15000000000000002,
+      "relative_mass_drift": 8.327403988594995e-09,
+      "relative_energy_drift": 1.5738510494855973e-10
+    },
+    {
+      "time": 0.17500000000000002,
+      "relative_mass_drift": 8.414836161207973e-09,
+      "relative_energy_drift": 2.5666624381415204e-10
+    },
+    {
+      "time": 0.2,
+      "relative_mass_drift": 8.34360458501493e-09,
+      "relative_energy_drift": 2.668384402326751e-10
+    },
+    {
+      "time": 0.225,
+      "relative_mass_drift": 8.457266442718492e-09,
+      "relative_energy_drift": 7.66581242928055e-11
+    },
+    {
+      "time": 0.25,
+      "relative_mass_drift": 8.210399027319681e-09,
+      "relative_energy_drift": 6.424794030124303e-11
+    },
+    {
+      "time": 0.275,
+      "relative_mass_drift": 8.354147928990585e-09,
+      "relative_energy_drift": 1.243862790545336e-10
+    },
+    {
+      "time": 0.30000000000000004,
+      "relative_mass_drift": 8.365848347402505e-09,
+      "relative_energy_drift": 1.8432122494971281e-10
+    },
+    {
+      "time": 0.325,
+      "relative_mass_drift": 8.281373475860221e-09,
+      "relative_energy_drift": 2.684253930240743e-10
+    },
+    {
+      "time": 0.35000000000000003,
+      "relative_mass_drift": 8.29500257371052e-09,
+      "relative_energy_drift": 1.7113799266610386e-10
+    },
+    {
+      "time": 0.375,
+      "relative_mass_drift": 8.363662651333925e-09,
+      "relative_energy_drift": 1.4436463136036082e-10
+    },
+    {
+      "time": 0.4,
+      "relative_mass_drift": 8.175426224887872e-09,
+      "relative_energy_drift": 1.4176049223380005e-10
+    },
+    {
+      "time": 0.42500000000000004,
+      "relative_mass_drift": 8.24100032659203e-09,
+      "relative_energy_drift": 1.6047740913904818e-10
+    },
+    {
+      "time": 0.45,
+      "relative_mass_drift": 8.336404344611026e-09,
+      "relative_energy_drift": 1.4941003989576984e-10
+    },
+    {
+      "time": 0.47500000000000003,
+      "relative_mass_drift": 8.51718329197837e-09,
+      "relative_energy_drift": 2.0604906669774437e-10
+    },
+    {
+      "time": 0.5,
+      "relative_mass_drift": 8.241514692919338e-09,
+      "relative_energy_drift": 1.9367962789118565e-10
+    }
+  ],
+  "original_reference_differences_on_64": [
+    {
+      "time": 0.1,
+      "field": "density",
+      "relative_L1": 4.293950289221875e-09,
+      "relative_L2": 8.624571328127681e-09
+    },
+    {
+      "time": 0.1,
+      "field": "magnetic",
+      "relative_L1": 6.554490187462498e-09,
+      "relative_L2": 1.7682601970808448e-08
+    },
+    {
+      "time": 0.25,
+      "field": "density",
+      "relative_L1": 5.1642811664567945e-05,
+      "relative_L2": 0.00013168135678788467
+    },
+    {
+      "time": 0.25,
+      "field": "magnetic",
+      "relative_L1": 7.009093302282693e-05,
+      "relative_L2": 0.00015271454885214388
+    },
+    {
+      "time": 0.5,
+      "field": "density",
+      "relative_L1": 0.00026789574085279955,
+      "relative_L2": 0.00037495039556101757
+    },
+    {
+      "time": 0.5,
+      "field": "magnetic",
+      "relative_L1": 0.0003467239985817804,
+      "relative_L2": 0.00040495895061289935
+    }
+  ],
+  "note": "Dense-output rerun with the same physics. Extra endpoint clipping changes timesteps slightly; original quantitative reference is retained."
+}

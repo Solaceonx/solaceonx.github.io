@@ -1,0 +1,14 @@
+precision = "Float32"
+limitations = "Uniform B: tests entropy transport and multidimensional convergence, not Alfven propagation or shock capture. Not a timing benchmark."
+threads = 4
+solver_sha256 = "89f3312c0079b45996878907fc47934a5be25fe30fc0684cdb85ba8d5db9e07b"
+N = [16, 32, 64, 128]
+t_end = 1.0
+cfl = 0.3499999940395355
+pressure = 1
+velocity = [0.5, 0.5, 0.0]
+frames = 41
+problem = "finite-amplitude magnetized entropy advection"
+density = "1 + 0.2 sin(2pi(x+y-t)); exact cell average includes sinc(1/N)^2"
+magnetic_field = [0.3, 0.2, 0.0]
+gamma = 1.6666666269302368

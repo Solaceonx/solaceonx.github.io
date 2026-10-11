@@ -1,0 +1,15 @@
+N=64
+nframes=121
+mach0=10.0
+gamma=1.01
+seed=42
+t_cross=0.1
+t_end=0.5
+threads=4
+steps=1665
+rejected_steps=217
+runtime_seconds=33.42967200279236
+max_mass_relative_error=2.5206565723578933e-9
+max_energy_relative_error=4.914311180215236e-9
+initial_condition=3D solenoidal random modes 1<=|k|<=3; amplitude envelope centered at 2
+solver=Orszag-Tang CPU SIMD PLM/LLF; B=psi=0; no forcing

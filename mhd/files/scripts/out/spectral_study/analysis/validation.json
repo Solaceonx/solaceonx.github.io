@@ -1,0 +1,31 @@
+{
+  "max_relative_parseval_residual": 5.790663338092938e-16,
+  "spectra_checked": 496,
+  "reference": "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_1024",
+  "check_reference": "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512",
+  "local_runs": [
+    "/Users/lyxia/Projects/research/abel_mhd/scripts/out/spectral_study/glm_ct_64",
+    "/Users/lyxia/Projects/research/abel_mhd/scripts/out/spectral_study/glm_ct_128",
+    "/Users/lyxia/Projects/research/abel_mhd/scripts/out/spectral_study/glm_ct_256",
+    "/Users/lyxia/Projects/research/abel_mhd/scripts/out/spectral_study/glm_ct_512"
+  ],
+  "comparison_times": [
+    0.0,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "same_resolution_reference_N": [],
+  "limitations": [
+    "1024\u00b2 is provisional, not exact; differences are not rigorous error bounds",
+    "Cell-centered divergence is not CT native face divergence",
+    "Magnetic/kinetic energy changes include ideal energy exchange, not only dissipation",
+    "Restricted thermal remainder includes unresolved kinetic and magnetic energy",
+    "Single timing samples, shared timestep, different compile/output timing scopes; some analysis overlapped the 512\u00b2 run"
+  ],
+  "sha256": {
+    "analyze_mhd_spectra.py": "ec4d9b1ae93b5d202b00c83cb5ee16303e629bd1d9b616203424ab4b8cb5ac1e",
+    "mhd_spectra.py": "d3b241cca946238a0f17efa008a61faab52a6d7321c0fdf978322b278a83f95a",
+    "mhd_2d_cpu.jl": "89f3312c0079b45996878907fc47934a5be25fe30fc0684cdb85ba8d5db9e07b"
+  }
+}

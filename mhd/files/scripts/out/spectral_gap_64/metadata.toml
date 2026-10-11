@@ -1,0 +1,56 @@
+total_seconds = 77.16399502754211
+forcing_peak_k = 2
+cs = 1.0
+preparation_rejected_steps = 0
+gap_initial_mach = 9.49113814548423
+spectral_normalization = "shell sums: 0.5*abs(fft(v-v_bulk))^2/N^6; weighted uses sqrt(rho)*(v-v_bulk); shells [k,k+1)"
+decay_tcross = 0.09670072520507227
+fraction_velocity_variance_removed = 0.13686596687801605
+forcing_kmin = 1
+preparation_seconds = 56.64059281349182
+decay_crossings = 3.0
+threads = 4
+forcing_width = 0.65
+N = 64
+control_initial_kinetic = 53.47004412772806
+solver = "CPU SIMD MUSCL-Hancock PLM/LLF adapted from Orszag-Tang workflow"
+max_mass_error = 1.014225592399498e-8
+forcing_correlation_time = 0.05
+gap_upper_exclusive = 7
+preparation_steps = 5878
+gap_initial_kinetic = 45.04085168297507
+gap_lower = 4
+fraction_kinetic_removed = 0.15764326703410836
+forcing_amplitude_final = 309.4899931729776
+max_momentum_error = 9.014106168783731e-8
+frames = 101
+nominal_preparation_tcross = 0.1
+preparation_crossings = 8.000000000010914
+forcing_update_interval = 0.005
+state_format = "little-endian Float32, Julia column-major (N,N,N,4): rho,mx,my,mz"
+forcing_kmax = 4
+seed = 20260923
+prepared_mach = 10.341184079843352
+eos = "isothermal P=rho*cs^2; four conserved fields; no total-energy equation"
+
+[branches.gap]
+steps = 1084
+rejected_steps = 0
+seconds = 9.40291714668274
+final_kinetic = 1.1185685813941542
+final_mach = 1.495706241372
+
+[branches.control]
+steps = 1170
+rejected_steps = 0
+seconds = 10.494942903518677
+final_kinetic = 1.3633820617094201
+final_mach = 1.651291650070299
+
+[stationarity]
+criteria = "8<=mean Mach<=12; K drift<0.25; log-density std drift<0.15; normalized velocity spectrum L1 drift<0.25"
+mean_mach = 10.114339529304619
+window_crossings = 4
+kinetic_mean_drift = 0.01689475859485229
+normalized_spectrum_l1_drift = 0.024746456389040498
+log_density_std_drift = 0.016279665826029164

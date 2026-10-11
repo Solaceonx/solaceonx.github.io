@@ -1,0 +1,54 @@
+{
+  "N": 512,
+  "meshblock": 128,
+  "threads": 4,
+  "commit": "823614c90b594472747a0ac2a699e4a454f300d2",
+  "configuration": "This Athena++ executable is configured with:\n  Problem generator:          orszag_tang\n  Coordinate system:          cartesian\n  Equation of state:          adiabatic\n  Riemann solver:             hlld\n  Magnetic fields:            ON\n  Relativistic dynamics:      OFF \n  General relativity:         OFF \n  Radiative Transfer:         OFF\n  Implicit Radiation:         OFF\n  Cosmic Ray Transport:       OFF\n  Cosmic Ray Diffusion:       OFF\n  Self-Gravity:               OFF\n  Super-Time-Stepping:        OFF\n  Floating-point precision:   double\n  Number of ghost cells:      3\n  MPI parallelism:            OFF\n  OpenMP parallelism:         ON\n  FFT:                        OFF\n  HDF5 output:                OFF\n  Compiler:                   clang++-apple\n  Compilation command:        clang++ -O3 -std=c++11 -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib  -lomp\n",
+  "input": "/Users/lyxia/Projects/research/abel_mhd/scripts/athena/athinput.reference",
+  "segments": [
+    {
+      "time": 0.1,
+      "seconds": 26.459181000012904,
+      "directory": "t0.100",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-i",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/athena/athinput.reference",
+        "mesh/nx1=512",
+        "mesh/nx2=512",
+        "meshblock/nx1=128",
+        "meshblock/nx2=128",
+        "time/tlim=0.10000000000000001"
+      ]
+    },
+    {
+      "time": 0.25,
+      "seconds": 56.53868020803202,
+      "directory": "t0.250",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512/t0.100/OrszagTang.final.rst",
+        "time/tlim=0.25"
+      ]
+    },
+    {
+      "time": 0.5,
+      "seconds": 150.21203716599848,
+      "directory": "t0.500",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512/t0.250/OrszagTang.final.rst",
+        "time/tlim=0.5"
+      ]
+    }
+  ],
+  "wall_seconds": 233.21363870799541,
+  "coordinate_shift": [
+    0.5,
+    0.5
+  ],
+  "precision": "double evolution; stock VTK outputs float32",
+  "completed": true
+}

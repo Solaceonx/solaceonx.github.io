@@ -1,0 +1,461 @@
+{
+  "N": 512,
+  "meshblock": 128,
+  "threads": 4,
+  "commit": "823614c90b594472747a0ac2a699e4a454f300d2",
+  "configuration": "This Athena++ executable is configured with:\n  Problem generator:          orszag_tang\n  Coordinate system:          cartesian\n  Equation of state:          adiabatic\n  Riemann solver:             hlld\n  Magnetic fields:            ON\n  Relativistic dynamics:      OFF \n  General relativity:         OFF \n  Radiative Transfer:         OFF\n  Implicit Radiation:         OFF\n  Cosmic Ray Transport:       OFF\n  Cosmic Ray Diffusion:       OFF\n  Self-Gravity:               OFF\n  Super-Time-Stepping:        OFF\n  Floating-point precision:   double\n  Number of ghost cells:      3\n  MPI parallelism:            OFF\n  OpenMP parallelism:         ON\n  FFT:                        OFF\n  HDF5 output:                OFF\n  Compiler:                   clang++-apple\n  Compilation command:        clang++ -O3 -std=c++11 -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include  -L/opt/homebrew/opt/libomp/lib  -lomp\n",
+  "input": "/Users/lyxia/Projects/research/abel_mhd/scripts/athena/athinput.reference",
+  "segments": [
+    {
+      "time": 0.0125,
+      "seconds": 3.2823959999950603,
+      "directory": "t0.013",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-i",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/athena/athinput.reference",
+        "mesh/nx1=512",
+        "mesh/nx2=512",
+        "meshblock/nx1=128",
+        "meshblock/nx2=128",
+        "time/tlim=0.012500000000000001"
+      ]
+    },
+    {
+      "time": 0.025,
+      "seconds": 3.340965291019529,
+      "directory": "t0.025",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.013/OrszagTang.final.rst",
+        "time/tlim=0.025000000000000001"
+      ]
+    },
+    {
+      "time": 0.0375,
+      "seconds": 3.3708638339303434,
+      "directory": "t0.037",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.025/OrszagTang.final.rst",
+        "time/tlim=0.037499999999999999"
+      ]
+    },
+    {
+      "time": 0.05,
+      "seconds": 3.3830052909906954,
+      "directory": "t0.050",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.037/OrszagTang.final.rst",
+        "time/tlim=0.050000000000000003"
+      ]
+    },
+    {
+      "time": 0.0625,
+      "seconds": 3.566408459097147,
+      "directory": "t0.062",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.050/OrszagTang.final.rst",
+        "time/tlim=0.0625"
+      ]
+    },
+    {
+      "time": 0.075,
+      "seconds": 3.556178458966315,
+      "directory": "t0.075",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.062/OrszagTang.final.rst",
+        "time/tlim=0.074999999999999997"
+      ]
+    },
+    {
+      "time": 0.0875,
+      "seconds": 3.5944016659632325,
+      "directory": "t0.087",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.075/OrszagTang.final.rst",
+        "time/tlim=0.087499999999999994"
+      ]
+    },
+    {
+      "time": 0.1,
+      "seconds": 3.619853082927875,
+      "directory": "t0.100",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.087/OrszagTang.final.rst",
+        "time/tlim=0.10000000000000001"
+      ]
+    },
+    {
+      "time": 0.1125,
+      "seconds": 3.6909058750607073,
+      "directory": "t0.113",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.100/OrszagTang.final.rst",
+        "time/tlim=0.1125"
+      ]
+    },
+    {
+      "time": 0.125,
+      "seconds": 3.5189712500432506,
+      "directory": "t0.125",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.113/OrszagTang.final.rst",
+        "time/tlim=0.125"
+      ]
+    },
+    {
+      "time": 0.1375,
+      "seconds": 3.545439791982062,
+      "directory": "t0.138",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.125/OrszagTang.final.rst",
+        "time/tlim=0.13750000000000001"
+      ]
+    },
+    {
+      "time": 0.15,
+      "seconds": 3.4987122080055997,
+      "directory": "t0.150",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.138/OrszagTang.final.rst",
+        "time/tlim=0.14999999999999999"
+      ]
+    },
+    {
+      "time": 0.1625,
+      "seconds": 3.6009385000215843,
+      "directory": "t0.163",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.150/OrszagTang.final.rst",
+        "time/tlim=0.16250000000000001"
+      ]
+    },
+    {
+      "time": 0.175,
+      "seconds": 3.689661124954,
+      "directory": "t0.175",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.163/OrszagTang.final.rst",
+        "time/tlim=0.17499999999999999"
+      ]
+    },
+    {
+      "time": 0.1875,
+      "seconds": 3.727037415956147,
+      "directory": "t0.188",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.175/OrszagTang.final.rst",
+        "time/tlim=0.1875"
+      ]
+    },
+    {
+      "time": 0.2,
+      "seconds": 3.774190332973376,
+      "directory": "t0.200",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.188/OrszagTang.final.rst",
+        "time/tlim=0.20000000000000001"
+      ]
+    },
+    {
+      "time": 0.2125,
+      "seconds": 3.8969406669493765,
+      "directory": "t0.212",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.200/OrszagTang.final.rst",
+        "time/tlim=0.21249999999999999"
+      ]
+    },
+    {
+      "time": 0.225,
+      "seconds": 3.898870375007391,
+      "directory": "t0.225",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.212/OrszagTang.final.rst",
+        "time/tlim=0.22500000000000001"
+      ]
+    },
+    {
+      "time": 0.2375,
+      "seconds": 3.9137685829773545,
+      "directory": "t0.237",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.225/OrszagTang.final.rst",
+        "time/tlim=0.23749999999999999"
+      ]
+    },
+    {
+      "time": 0.25,
+      "seconds": 3.9775953750358894,
+      "directory": "t0.250",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.237/OrszagTang.final.rst",
+        "time/tlim=0.25"
+      ]
+    },
+    {
+      "time": 0.2625,
+      "seconds": 3.9852677080780268,
+      "directory": "t0.263",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.250/OrszagTang.final.rst",
+        "time/tlim=0.26250000000000001"
+      ]
+    },
+    {
+      "time": 0.275,
+      "seconds": 3.9791325830155984,
+      "directory": "t0.275",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.263/OrszagTang.final.rst",
+        "time/tlim=0.27500000000000002"
+      ]
+    },
+    {
+      "time": 0.2875,
+      "seconds": 3.971108500030823,
+      "directory": "t0.287",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.275/OrszagTang.final.rst",
+        "time/tlim=0.28749999999999998"
+      ]
+    },
+    {
+      "time": 0.3,
+      "seconds": 4.018890084000304,
+      "directory": "t0.300",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.287/OrszagTang.final.rst",
+        "time/tlim=0.29999999999999999"
+      ]
+    },
+    {
+      "time": 0.3125,
+      "seconds": 3.9296729170018807,
+      "directory": "t0.312",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.300/OrszagTang.final.rst",
+        "time/tlim=0.3125"
+      ]
+    },
+    {
+      "time": 0.325,
+      "seconds": 3.9431875000009313,
+      "directory": "t0.325",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.312/OrszagTang.final.rst",
+        "time/tlim=0.32500000000000001"
+      ]
+    },
+    {
+      "time": 0.3375,
+      "seconds": 3.9664045410463586,
+      "directory": "t0.338",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.325/OrszagTang.final.rst",
+        "time/tlim=0.33750000000000002"
+      ]
+    },
+    {
+      "time": 0.35,
+      "seconds": 4.048027666984126,
+      "directory": "t0.350",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.338/OrszagTang.final.rst",
+        "time/tlim=0.34999999999999998"
+      ]
+    },
+    {
+      "time": 0.3625,
+      "seconds": 4.122058291919529,
+      "directory": "t0.362",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.350/OrszagTang.final.rst",
+        "time/tlim=0.36249999999999999"
+      ]
+    },
+    {
+      "time": 0.375,
+      "seconds": 4.145768416929059,
+      "directory": "t0.375",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.362/OrszagTang.final.rst",
+        "time/tlim=0.375"
+      ]
+    },
+    {
+      "time": 0.3875,
+      "seconds": 4.143091457895935,
+      "directory": "t0.388",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.375/OrszagTang.final.rst",
+        "time/tlim=0.38750000000000001"
+      ]
+    },
+    {
+      "time": 0.4,
+      "seconds": 4.620655584032647,
+      "directory": "t0.400",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.388/OrszagTang.final.rst",
+        "time/tlim=0.40000000000000002"
+      ]
+    },
+    {
+      "time": 0.4125,
+      "seconds": 4.785008415929042,
+      "directory": "t0.412",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.400/OrszagTang.final.rst",
+        "time/tlim=0.41249999999999998"
+      ]
+    },
+    {
+      "time": 0.425,
+      "seconds": 4.897866707993671,
+      "directory": "t0.425",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.412/OrszagTang.final.rst",
+        "time/tlim=0.42499999999999999"
+      ]
+    },
+    {
+      "time": 0.4375,
+      "seconds": 4.4391600410453975,
+      "directory": "t0.438",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.425/OrszagTang.final.rst",
+        "time/tlim=0.4375"
+      ]
+    },
+    {
+      "time": 0.45,
+      "seconds": 4.446136750048026,
+      "directory": "t0.450",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.438/OrszagTang.final.rst",
+        "time/tlim=0.45000000000000001"
+      ]
+    },
+    {
+      "time": 0.4625,
+      "seconds": 4.461935834027827,
+      "directory": "t0.463",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.450/OrszagTang.final.rst",
+        "time/tlim=0.46250000000000002"
+      ]
+    },
+    {
+      "time": 0.475,
+      "seconds": 4.383659707964398,
+      "directory": "t0.475",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.463/OrszagTang.final.rst",
+        "time/tlim=0.47499999999999998"
+      ]
+    },
+    {
+      "time": 0.4875,
+      "seconds": 4.247714249999262,
+      "directory": "t0.487",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.475/OrszagTang.final.rst",
+        "time/tlim=0.48749999999999999"
+      ]
+    },
+    {
+      "time": 0.5,
+      "seconds": 4.18384391698055,
+      "directory": "t0.500",
+      "command": [
+        "/Users/lyxia/Projects/research/abel_mhd/external/athena/bin/athena",
+        "-r",
+        "/Users/lyxia/Projects/research/abel_mhd/scripts/out/athena_512_movie41/t0.487/OrszagTang.final.rst",
+        "time/tlim=0.5"
+      ]
+    }
+  ],
+  "wall_seconds": 157.2190012090141,
+  "coordinate_shift": [
+    0.5,
+    0.5
+  ],
+  "precision": "double evolution; stock VTK outputs float32",
+  "completed": true
+}
