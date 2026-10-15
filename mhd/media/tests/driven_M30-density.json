@@ -1,0 +1,26 @@
+{
+  "width": 1440,
+  "height": 1600,
+  "fps": 20,
+  "snapshots": 201,
+  "encoded_frames": 239,
+  "snapshots_per_T": 20,
+  "nominal_end_T": 10.0,
+  "time_label": "nominal; output may be less than one solver step late",
+  "density_floor": 1e-06,
+  "temporal_interpolation": false,
+  "runs": [
+    {
+      "source": "gpu-hydro-M30-N256-s1",
+      "mach": 30,
+      "N": 256,
+      "seed": 1,
+      "solver": "step_hydro! tb=4 half=false riemann=:hll: 5-variable Euler kernel, Float32 tile, minmod PLM, Hancock, HLL",
+      "vendor_sha256": "36a8431c0bbbb48f6d6a9f7b340d6a270221a439007d05084fdcfe5824b1b35e",
+      "log10_density_limits": [
+        -4.818039927482605,
+        1.7442264145612678
+      ]
+    }
+  ]
+}
