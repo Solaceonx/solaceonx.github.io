@@ -2701,7 +2701,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-15",
         "label": "Oct 15",
-        "points": 5320
+        "points": 0
       }
     ],
     "gamesHistory": [
