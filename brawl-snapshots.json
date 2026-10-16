@@ -55535,72 +55535,115 @@
   {
     "date": "2026-10-16",
     "label": "Oct 16",
-    "fetchedAt": "2026-10-16T00:25:03.700Z",
+    "fetchedAt": "2026-10-16T07:10:20.053Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 38815,
-    "highestTrophies": 38820,
-    "lifetimeWinsTotal": 8511,
-    "threeVsThreeVictories": 7286,
+    "trophies": 38860,
+    "highestTrophies": 38860,
+    "lifetimeWinsTotal": 8518,
+    "threeVsThreeVictories": 7293,
     "soloVictories": 227,
     "duoVictories": 998,
-    "rankedPoints": 3599,
-    "trophyGamesTotal": 396,
-    "trophyWinsTotal": 264,
-    "trophyLossesTotal": 129,
-    "rankedGamesTotal": 604,
-    "rankedWinsTotal": 335,
-    "rankedLossesTotal": 267,
+    "rankedPoints": 3420,
+    "trophyGamesTotal": 407,
+    "trophyWinsTotal": 269,
+    "trophyLossesTotal": 135,
+    "rankedGamesTotal": 615,
+    "rankedWinsTotal": 337,
+    "rankedLossesTotal": 276,
     "trophyRecentGames": [
       {
-        "brawler": "TICK",
-        "image": "assets/brawlers/16000022.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261009T034650.000Z"
-      },
-      {
-        "brawler": "TICK",
-        "image": "assets/brawlers/16000022.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261009T034421.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261009T034106.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
         "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20261009T033821.000Z"
+        "battleTime": "20261016T011953.000Z"
       },
       {
-        "brawler": "JANET",
-        "image": "assets/brawlers/16000057.png",
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
         "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20261009T033635.000Z"
+        "battleTime": "20261016T011856.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261016T011636.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Air Hockey",
+        "result": "defeat",
+        "battleTime": "20261016T011435.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Air Hockey",
+        "result": "victory",
+        "battleTime": "20261016T011153.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Air Hockey",
+        "result": "defeat",
+        "battleTime": "20261016T011040.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Air Hockey",
+        "result": "victory",
+        "battleTime": "20261016T010740.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Air Hockey",
+        "result": "victory",
+        "battleTime": "20261016T010542.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Heist",
+        "result": "defeat",
+        "battleTime": "20261016T010357.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Heist",
+        "result": "victory",
+        "battleTime": "20261016T010126.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Heist",
+        "result": "defeat",
+        "battleTime": "20261016T005948.000Z"
       }
     ],
     "trophyModeCounts": {
       "Knockout": 34,
-      "Brawl Ball": 187,
+      "Brawl Ball": 190,
       "Hot Zone": 21,
       "Knockout5V5": 3,
-      "Air Hockey": 6,
+      "Air Hockey": 11,
       "Solo Showdown": 37,
       "Brawl Ball5V5": 4,
       "Gem Grab": 21,
       "Bounty": 11,
       "Basket Brawl": 10,
       "Duo Showdown": 45,
-      "Trio Showdown": 17
+      "Trio Showdown": 17,
+      "Heist": 3
     },
     "trophyBrawlerCounts": {
       "GENE": 42,
@@ -55611,7 +55654,7 @@
       "RUFFS": 2,
       "8-BIT": 3,
       "SURGE": 73,
-      "KAZE": 30,
+      "KAZE": 33,
       "BYRON": 14,
       "BO": 3,
       "MICO": 1,
@@ -55634,15 +55677,16 @@
       "SHELLY": 6,
       "BELLE": 1,
       "BROCK": 1,
-      "MAISIE": 1
+      "MAISIE": 1,
+      "NORI": 8
     },
     "rankedModeCounts": {
-      "Knockout": 89,
-      "Heist": 101,
-      "Brawl Ball": 106,
-      "Hot Zone": 90,
-      "Bounty": 82,
-      "Gem Grab": 136
+      "Knockout": 90,
+      "Heist": 105,
+      "Brawl Ball": 107,
+      "Hot Zone": 92,
+      "Bounty": 83,
+      "Gem Grab": 138
     },
     "rankedSeasonStart": "2026-10-15",
     "rankedCurrentBrawlerCounts": {
@@ -55650,36 +55694,37 @@
       "POCO": 2,
       "COLETTE": 4,
       "BUZZ": 1,
-      "BYRON": 1,
+      "BYRON": 2,
       "8-BIT": 1,
-      "TICK": 1,
-      "EMZ": 2,
-      "MANDY": 1,
-      "WENDY": 1,
-      "EDGAR": 1,
-      "GUS": 1,
-      "BO": 1,
-      "BELLE": 1
+      "TICK": 2,
+      "EMZ": 4,
+      "MANDY": 2,
+      "WENDY": 2,
+      "EDGAR": 3,
+      "GUS": 2,
+      "BO": 2,
+      "BELLE": 1,
+      "MICO": 1
     },
     "rankedAllTimeBrawlerCounts": {
-      "MICO": 31,
-      "BYRON": 79,
+      "MICO": 32,
+      "BYRON": 80,
       "BARLEY": 3,
       "BELLE": 38,
-      "GUS": 20,
+      "GUS": 21,
       "NITA": 3,
       "GENE": 16,
       "POCO": 46,
       "KIT": 15,
       "JAE-YONG": 1,
       "8-BIT": 55,
-      "MANDY": 9,
+      "MANDY": 10,
       "BUZZ": 12,
-      "EDGAR": 33,
-      "BO": 62,
+      "EDGAR": 35,
+      "BO": 63,
       "COLETTE": 28,
       "BROCK": 45,
-      "TICK": 40,
+      "TICK": 41,
       "RICO": 3,
       "SURGE": 6,
       "LUMI": 1,
@@ -55698,8 +55743,8 @@
       "FRANK": 2,
       "MAISIE": 2,
       "AMBER": 2,
-      "EMZ": 2,
-      "WENDY": 1
+      "EMZ": 4,
+      "WENDY": 2
     },
     "brawlerImages": {
       "SHELLY": {
@@ -56215,28 +56260,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260804T053959.000Z:15001268:hotZone:hotZone:ranked",
-      "20260804T054213.000Z:15001268:hotZone:hotZone:ranked",
-      "20260804T054447.000Z:15001268:hotZone:hotZone:ranked",
-      "20260804T054649.000Z:15001268:hotZone:hotZone:ranked",
-      "20260804T054914.000Z:15001268:hotZone:hotZone:ranked",
-      "20260804T055143.000Z:15001268:hotZone:hotZone:ranked",
-      "20260805T010225.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T010347.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T010648.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T010815.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T011115.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T011456.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T011611.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T012120.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T012243.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T012517.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T013334.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T013558.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T013709.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T013827.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T014123.000Z:15000144:brawlBall:brawlBall:ranked",
-      "20260805T014405.000Z:15000144:brawlBall:brawlBall:ranked",
       "20260805T014542.000Z:15000144:brawlBall:brawlBall:ranked",
       "20260805T014938.000Z:15000144:brawlBall:brawlBall:ranked",
       "20260805T015231.000Z:15000144:brawlBall:brawlBall:ranked",
@@ -56814,7 +56837,29 @@
       "20261016T001202.000Z:15000022:bounty:bounty:soloRanked",
       "20261016T001529.000Z:15000300:hotZone:hotZone:soloRanked",
       "20261016T001922.000Z:15000343:gemGrab:gemGrab:soloRanked",
-      "20261016T002154.000Z:15000082:bounty:bounty:soloRanked"
+      "20261016T002154.000Z:15000082:bounty:bounty:soloRanked",
+      "20261016T002506.000Z:15000115:gemGrab:gemGrab:soloRanked",
+      "20261016T002751.000Z:15000137:heist:heist:soloRanked",
+      "20261016T003034.000Z:15000053:heist:heist:soloRanked",
+      "20261016T003300.000Z:15000118:brawlBall:brawlBall:soloRanked",
+      "20261016T003559.000Z:15000300:hotZone:hotZone:soloRanked",
+      "20261016T003833.000Z:15000300:hotZone:hotZone:soloRanked",
+      "20261016T004153.000Z:15000703:knockout:knockout:soloRanked",
+      "20261016T004526.000Z:15000010:gemGrab:gemGrab:soloRanked",
+      "20261016T004820.000Z:15000019:heist:heist:soloRanked",
+      "20261016T005118.000Z:15000022:bounty:bounty:soloRanked",
+      "20261016T005420.000Z:15000018:heist:heist:soloRanked",
+      "20261016T005948.000Z:15001170:heist:heist:ranked",
+      "20261016T010126.000Z:15001170:heist:heist:ranked",
+      "20261016T010357.000Z:15001170:heist:heist:ranked",
+      "20261016T010542.000Z:15001249:airHockey:brawlBall:ranked",
+      "20261016T010740.000Z:15001249:airHockey:brawlBall:ranked",
+      "20261016T011040.000Z:15001249:airHockey:brawlBall:ranked",
+      "20261016T011153.000Z:15001249:airHockey:brawlBall:ranked",
+      "20261016T011435.000Z:15001249:airHockey:brawlBall:ranked",
+      "20261016T011636.000Z:15001331:brawlBall:brawlBall:ranked",
+      "20261016T011856.000Z:15001331:brawlBall:brawlBall:ranked",
+      "20261016T011953.000Z:15001331:brawlBall:brawlBall:ranked"
     ],
     "rankedGamesLog": [
       {
@@ -57168,6 +57213,50 @@
       {
         "date": "2026-10-16",
         "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Heist"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Heist"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Brawl Ball"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Heist"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-16",
+        "mode": "Heist"
       }
     ]
   }
