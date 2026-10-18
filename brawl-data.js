@@ -430,85 +430,97 @@ window.BRAWL_DATA = {
         "date": "2026-10-17",
         "label": "Oct 17",
         "trophies": 38860
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
+        "trophies": 39005
       }
     ],
     "recentGames": [
       {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261016T011953.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
         "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20261016T011856.000Z"
+        "battleTime": "20261018T002544.000Z"
       },
       {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261018T002311.000Z"
+      },
+      {
+        "brawler": "BARLEY",
+        "image": "assets/brawlers/16000006.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261018T002011.000Z"
+      },
+      {
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261018T001701.000Z"
+      },
+      {
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
         "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20261016T011636.000Z"
+        "battleTime": "20261018T001454.000Z"
       },
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Air Hockey",
-        "result": "defeat",
-        "battleTime": "20261016T011435.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Air Hockey",
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20261016T011153.000Z"
+        "battleTime": "20261018T001317.000Z"
       },
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Air Hockey",
-        "result": "defeat",
-        "battleTime": "20261016T011040.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Air Hockey",
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20261016T010740.000Z"
+        "battleTime": "20261018T001144.000Z"
       },
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Air Hockey",
-        "result": "victory",
-        "battleTime": "20261016T010542.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Heist",
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20261016T010357.000Z"
+        "battleTime": "20261018T000956.000Z"
       },
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Heist",
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20261016T010126.000Z"
+        "battleTime": "20261018T000808.000Z"
       },
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Heist",
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
         "result": "defeat",
-        "battleTime": "20261016T005948.000Z"
+        "battleTime": "20261018T000657.000Z"
+      },
+      {
+        "brawler": "POCO",
+        "image": "assets/brawlers/16000013.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261018T000401.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261018T000104.000Z"
       }
     ],
     "gamesHistory": [
@@ -921,6 +933,11 @@ window.BRAWL_DATA = {
         "date": "2026-10-17",
         "label": "Oct 17",
         "games": 407
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
+        "games": 429
       }
     ],
     "lifetimeWinsHistory": [
@@ -1353,6 +1370,11 @@ window.BRAWL_DATA = {
         "date": "2026-10-17",
         "label": "Oct 17",
         "wins": 8518
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
+        "wins": 8533
       }
     ],
     "winsHistory": [
@@ -1765,6 +1787,11 @@ window.BRAWL_DATA = {
         "date": "2026-10-17",
         "label": "Oct 17",
         "wins": 269
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
+        "wins": 284
       }
     ],
     "lossesHistory": [
@@ -2177,12 +2204,17 @@ window.BRAWL_DATA = {
         "date": "2026-10-17",
         "label": "Oct 17",
         "losses": 135
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
+        "losses": 142
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 190,
+        "count": 212,
         "image": null
       },
       {
@@ -2304,6 +2336,14 @@ window.BRAWL_DATA = {
         "games": 14
       },
       {
+        "name": "POCO",
+        "trophies": 1043,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000013.png",
+        "games": 19
+      },
+      {
         "name": "BELLE",
         "trophies": 1037,
         "power": 11,
@@ -2318,14 +2358,6 @@ window.BRAWL_DATA = {
         "rank": 5,
         "image": "assets/brawlers/16000039.png",
         "games": 72
-      },
-      {
-        "name": "POCO",
-        "trophies": 1022,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000013.png",
-        "games": 11
       }
     ]
   },
@@ -2760,6 +2792,11 @@ window.BRAWL_DATA = {
         "date": "2026-10-17",
         "label": "Oct 17",
         "points": 3420
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
+        "points": 3420
       }
     ],
     "gamesHistory": [
@@ -3171,6 +3208,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-17",
         "label": "Oct 17",
+        "games": 615
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
         "games": 615
       }
     ],
@@ -3584,6 +3626,11 @@ window.BRAWL_DATA = {
         "date": "2026-10-17",
         "label": "Oct 17",
         "wins": 337
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
+        "wins": 337
       }
     ],
     "lossesHistory": [
@@ -3995,6 +4042,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-17",
         "label": "Oct 17",
+        "losses": 276
+      },
+      {
+        "date": "2026-10-18",
+        "label": "Oct 18",
         "losses": 276
       }
     ],
