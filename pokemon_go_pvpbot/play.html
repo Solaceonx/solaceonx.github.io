@@ -547,7 +547,7 @@ function saveNotes() {
 }
 function screen() {
   const s = G.state, now = Date.now();
-  return { ...s, bot: G.config.bot === "engine" ? "engine" : "trained bot", tally: tally(), eval: null, review: null,
+  return { ...s, bot: G.config.bot === "engine" ? "engine" : "trained bot", tally: tally(), eval: null, review: G.review || null,
     charging: now < G.pauseUntil, countdown: Math.max(0, (G.startAt - now) / 1000),
     prompt: G.prompt ? { kind: G.prompt.kind, options: G.prompt.options, seconds: Math.max(0, (G.prompt.until - now) / 1000) } : null };
 }
@@ -559,6 +559,7 @@ setInterval(() => {
 
 async function play(config) {
   $("end-box").classList.remove("open");
+  $("review").dataset.done = ""; $("review").replaceChildren();
   $("notes").value = "";
   $("setup").style.display = "none"; $("game").style.display = "flex";
   const tick = Number(new URLSearchParams(location.search).get("tick")) || 500 * config.speed;  // ?tick= for testing
@@ -594,6 +595,7 @@ async function play(config) {
   try { localStorage.setItem("pvpbot-player", rec.player); } catch (e) { /* nothing kept */ }
   const list = games(); list.push(rec); keep(list);
   G.record = rec;
+  G.review = rec.review;  // the advantage over the battle, drawn by the battle screen's own review
   const [chance, margin] = rec.lineup_win_chance;
   G.endText = `Before anyone decided anything, your line-up wins ${Math.round(100 * chance)}% (± ${Math.round(100 * margin)}) against this one when two equally good bots play it. Saved in this browser; add notes below.`;
 }
