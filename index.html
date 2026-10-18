@@ -4,6 +4,7 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="About a physics PhD researcher, their work, interests, and occasional side quests.">
   <title>About — Luke Y. Xia</title><link rel="stylesheet" href="styles.css?v=20261004b">
+  <link rel="stylesheet" href="extra-pages.css?v=20261017a">
 </head>
 <body class="about-page">
   <canvas id="starfield" aria-hidden="true"></canvas>
@@ -78,4 +79,66 @@
   </main>
   <script src="script.js?v=20260925a"></script>
 <script data-goatcounter="https://solaceonx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <button id="extra-pages-toggle" class="extra-pages-toggle" type="button" aria-label="Unlock extra pages" aria-expanded="false" aria-controls="extra-pages-panel" title="Extra pages">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
+  </button>
+  <aside id="extra-pages-panel" class="extra-pages-panel" aria-label="Extra pages" hidden>
+    <form>
+      <label for="extra-pages-passcode">Enter passcode</label>
+      <input id="extra-pages-passcode" type="password" autocomplete="off" required>
+      <button type="submit">Unlock</button>
+      <p role="status" aria-live="polite"></p>
+    </form>
+    <nav aria-label="Other pages" hidden>
+      <a href="mhd/acoustic-wave.html">Small-amplitude acoustic wave · MHD Field Notes</a>
+      <a href="mhd/entropy-wave.html">Magnetized entropy advection · MHD Field Notes</a>
+      <a href="mhd/hydro-decay.html">Supersonic turbulence decay · MHD Field Notes</a>
+      <a href="mhd/index.html">Papers · MHD Field Notes</a>
+      <a href="mhd/isothermal-decay.html">Prepared isothermal decay · MHD Field Notes</a>
+      <a href="mhd/notes.html">Notes · MHD Field Notes</a>
+      <a href="mhd/orszag-tang.html">Orszag–Tang vortex · MHD Field Notes</a>
+      <a href="mhd/our-figures.html">Our figures · MHD Field Notes</a>
+      <a href="mhd/problems.html">Test definitions · MHD Field Notes</a>
+      <a href="mhd/solver.html">Inside the solver · MHD Field Notes</a>
+      <a href="mhd/sweep-plan.html">Sweep · MHD Field Notes</a>
+      <a href="mhd/test-alfven-oblique.html">Oblique Alfvén wave · MHD Field Notes</a>
+      <a href="mhd/test-alfven.html">Alfvén wave · MHD Field Notes</a>
+      <a href="mhd/test-blast-2d-b0.html">Blast wave, no field · MHD Field Notes</a>
+      <a href="mhd/test-blast-2d-b100.html">Blast wave, Bx = 100/√4π · MHD Field Notes</a>
+      <a href="mhd/test-blast-2d-b50.html">Blast wave, Bx = 50/√4π · MHD Field Notes</a>
+      <a href="mhd/test-blast-3d-b0.html">3D blast wave, no field · MHD Field Notes</a>
+      <a href="mhd/test-blast-3d-b100.html">3D blast wave, Bx = 100/√4π · MHD Field Notes</a>
+      <a href="mhd/test-blast-3d-b50.html">3D blast wave, Bx = 50/√4π · MHD Field Notes</a>
+      <a href="mhd/test-brio-wu-rotated.html">Brio–Wu shock tube at 45° · MHD Field Notes</a>
+      <a href="mhd/test-brio-wu.html">Brio–Wu shock tube · MHD Field Notes</a>
+      <a href="mhd/test-current-sheet.html">Current sheet · MHD Field Notes</a>
+      <a href="mhd/test-decay-supersonic.html">Decaying turbulence from Mach 9 · MHD Field Notes</a>
+      <a href="mhd/test-decay.html">Decaying turbulence from Mach 2 · MHD Field Notes</a>
+      <a href="mhd/test-driven-mach-30.html">Mach 30 turbulence · MHD Field Notes</a>
+      <a href="mhd/test-driven-mach-50.html">Mach 50 turbulence · MHD Field Notes</a>
+      <a href="mhd/test-entropy.html">Entropy wave · MHD Field Notes</a>
+      <a href="mhd/test-field-loop-3d.html">Field loop in 3D · MHD Field Notes</a>
+      <a href="mhd/test-field-loop-novz.html">Field loop, in plane · MHD Field Notes</a>
+      <a href="mhd/test-field-loop.html">Field loop · MHD Field Notes</a>
+      <a href="mhd/test-gem.html">GEM reconnection · MHD Field Notes</a>
+      <a href="mhd/test-kh-localized-dtjump.html">Kelvin–Helmholtz with a timestep jump · MHD Field Notes</a>
+      <a href="mhd/test-kh-localized.html">Kelvin–Helmholtz, localized field · MHD Field Notes</a>
+      <a href="mhd/test-kh-uniform.html">Kelvin–Helmholtz, uniform field · MHD Field Notes</a>
+      <a href="mhd/test-orszag-tang-3d.html">Orszag–Tang vortex in 3D · MHD Field Notes</a>
+      <a href="mhd/test-orszag-tang.html">Orszag–Tang vortex · MHD Field Notes</a>
+      <a href="mhd/test-rotor.html">Rotor · MHD Field Notes</a>
+      <a href="mhd/test-uniform.html">Uniform state · MHD Field Notes</a>
+      <a href="mhd/tests.html">Tests · MHD Field Notes</a>
+      <a href="mhd/turbulence.html">Turbulence · MHD Field Notes</a>
+      <a href="ngc-test-12gyr.html">NGC test — N8e5 overlays (&gt;12 Gyr)</a>
+      <a href="ngc-test.html">NGC test — N8e5 overlays (&gt;9 Gyr)</a>
+      <a href="pokemon.html">Pokédex Collection Vault</a>
+      <a href="pokemon_go_pvpbot/index.html">PvP Line-up Odds</a>
+      <a href="pokemon_go_pvpbot/play.html">Battle the Bot</a>
+      <a href="sbp-match-report.html">SBP match report</a>
+      <a href="stats.html">Analytics</a>
+      <a href="weather.html">KLAX Weather Market Tracker</a>
+    </nav>
+  </aside>
+  <script src="extra-pages.js?v=20261017a"></script>
 </body></html>
