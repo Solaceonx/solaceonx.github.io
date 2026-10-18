@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Battle the Bot</title>
+<style>
+:root {
+  --bg: #0f1720; --panel: #17212c; --ink: #eef3f7; --dim: #93a3b3; --line: #2a3846;
+  --hp: #3ddc97; --hp-mid: #f5c542; --hp-low: #f0544f; --accent: #5ab0ff; --shadow: #8a4fd6;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink);
+  font: 15px/1.35 system-ui, -apple-system, "Segoe UI", sans-serif; }
+body { display: flex; justify-content: center; }
+.phone { width: 100%; max-width: 430px; min-height: 100%; display: flex; flex-direction: column; padding: 12px 16px 16px; gap: 10px; }
+.top { display: flex; justify-content: space-between; align-items: center; color: var(--dim); font-size: 13px; }
+.clock { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.tally b { color: var(--ink); }
+.field { position: relative; flex: 1; min-height: 360px; border-radius: 18px; overflow: hidden;
+  background: linear-gradient(#24476b 0%, #3f7aa8 44%, #6aa65a 44.2%, #4f8a44 100%); }
+.side { position: absolute; display: flex; flex-direction: column; gap: 6px; }
+.side.foe { top: 14px; right: 14px; align-items: flex-end; }
+.side.me { bottom: 14px; left: 14px; align-items: flex-start; }
+.card { background: rgba(10, 16, 24, .72); border-radius: 12px; padding: 8px 10px; min-width: 190px; }
+.name { display: flex; justify-content: space-between; gap: 10px; font-weight: 600; }
+.name small { color: var(--dim); font-weight: 400; }
+.bar { height: 9px; background: #0006; border-radius: 6px; overflow: hidden; margin-top: 6px; }
+.bar i { display: block; height: 100%; background: var(--hp); border-radius: 6px; transition: width .35s ease, background .35s; }
+.marks { display: flex; gap: 10px; align-items: center; margin-top: 6px; font-size: 12px; color: var(--dim); }
+.dots { display: flex; gap: 4px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #fff; border: 1px solid #0008; }
+.dot.out { background: #555; }
+.shield { width: 12px; height: 14px; background: var(--accent); clip-path: polygon(50% 0, 100% 18%, 92% 70%, 50% 100%, 8% 70%, 0 18%); }
+.shield.used { background: #3a4a5a; }
+.sprite { width: 132px; height: 132px; image-rendering: pixelated; object-fit: contain; filter: drop-shadow(0 6px 4px #0006); }
+.me .sprite { width: 160px; height: 160px; }
+.sprite.shadowmon { filter: drop-shadow(0 0 8px var(--shadow)) drop-shadow(0 6px 4px #0006); }
+.badge { width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center; text-align: center;
+  font-weight: 700; font-size: 13px; color: #fff; text-shadow: 0 1px 2px #0008; border: 3px solid #fff6; }
+.hit { animation: hit .3s; }
+@keyframes hit { 0%, 100% { transform: none; filter: none; } 30% { transform: translateX(-6px); filter: brightness(2.2); } 60% { transform: translateX(5px); } }
+.banner { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); background: rgba(10, 16, 24, .86);
+  padding: 10px 16px; border-radius: 12px; font-weight: 600; text-align: center; display: none; max-width: 86%; }
+.controls { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; }
+.charge { position: relative; width: 96px; height: 96px; border-radius: 50%; border: 3px solid var(--line); background: #0b1118;
+  overflow: hidden; cursor: pointer; justify-self: center; color: #fff; padding: 0; }
+.charge .fill { position: absolute; left: 0; right: 0; bottom: 0; height: 0; transition: height .25s ease; }
+.charge .fill2 { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: #fff4; }
+.charge span { position: relative; display: block; font-weight: 700; font-size: 13px; padding: 0 6px; text-shadow: 0 1px 2px #000; }
+.charge em { position: relative; display: block; font-style: normal; font-size: 11px; color: #dde; }
+.charge.ready { border-color: #fff; box-shadow: 0 0 14px #fff8; }
+.charge:disabled { cursor: default; }
+.swap { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--line); background: var(--panel); color: var(--ink);
+  font-weight: 700; display: grid; place-items: center; font-size: 13px; text-align: center; }
+.swap.wait { color: var(--dim); }
+.bench { display: flex; gap: 8px; }
+.pick { flex: 1; display: flex; align-items: center; gap: 8px; background: var(--panel); border: 2px solid var(--line); color: var(--ink);
+  border-radius: 14px; padding: 6px 10px 6px 6px; cursor: pointer; text-align: left; min-height: 72px; }
+.pick:not(:disabled):hover { border-color: var(--accent); }
+.pick .icon { width: 60px; height: 60px; flex: none; display: grid; place-items: center; }
+.pick .icon img { width: 60px; height: 60px; image-rendering: pixelated; object-fit: contain; }
+.pick .icon .badge { width: 52px; height: 52px; font-size: 9px; border-width: 2px; }
+.pick b { display: block; font-size: 14px; }
+.pick small { display: block; color: var(--dim); }
+.pick .bar { margin-top: 4px; }
+.pick kbd { margin-left: auto; color: var(--dim); font: 12px ui-monospace, monospace; border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; }
+.pick:disabled { opacity: .4; cursor: default; }
+.pick.out { display: none; }
+.countdown { position: fixed; inset: 0; display: none; place-items: center; background: rgba(5, 9, 14, .55); font-size: 120px; font-weight: 800; }
+.countdown.open { display: grid; }
+.big .icon { width: 56px; height: 56px; margin: 0 auto 4px; display: grid; place-items: center; }
+.big .icon img { width: 56px; height: 56px; image-rendering: pixelated; object-fit: contain; }
+.big .icon .badge { width: 50px; height: 50px; font-size: 9px; }
+.log { font-size: 12px; color: var(--dim); min-height: 64px; }
+.log div.foe { color: #f3b0ae; }
+.overlay { position: fixed; inset: 0; background: rgba(5, 9, 14, .72); display: none; align-items: center; justify-content: center; padding: 16px; }
+.overlay.open { display: flex; }
+.dialog { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 18px; width: 100%; max-width: 380px; text-align: center; }
+.dialog h2 { margin: 0 0 6px; font-size: 20px; }
+.dialog p { margin: 0 0 14px; color: var(--dim); }
+.row { display: flex; gap: 10px; }
+.big { flex: 1; padding: 14px; font-size: 16px; font-weight: 700; border-radius: 12px; border: 0; cursor: pointer; color: #fff; }
+.yes { background: var(--accent); } .no { background: #3a4a5a; } .go { background: #2f9e6e; }
+.hint { color: var(--dim); font-size: 12px; text-align: center; }
+.evalbar { height: 8px; border-radius: 5px; background: #f0544f55; overflow: hidden; display: none; }
+.evalbar i { display: block; height: 100%; width: 50%; background: var(--hp); transition: width .4s ease; }
+.review { text-align: left; margin: 10px 0 14px; }
+.review svg { width: 100%; height: 110px; background: #0b1118; border-radius: 10px; display: block; }
+.review .swing { font-size: 12px; color: var(--dim); margin-top: 6px; }
+.review .swing b { font-variant-numeric: tabular-nums; }
+.review .up { color: var(--hp); } .review .down { color: var(--hp-low); }
+.review .caption { font-size: 12px; color: var(--dim); margin: 4px 0 2px; }
+.dialog.wide { max-width: 420px; }
+</style>
+</head>
+<body>
+<style>
+#setup { width: 100%; max-width: 430px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+#setup h1 { font-size: 22px; margin: 4px 0 0; }
+#setup .sub { color: var(--dim); font-size: 13px; margin: 0; }
+#setup nav { font-size: 13px; } #setup nav a { color: var(--accent); }
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.box h2 { font-size: 13px; margin: 0; color: var(--dim); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.slotrow { display: flex; align-items: center; gap: 8px; }
+.slotrow img { width: 36px; height: 36px; image-rendering: pixelated; flex: none; }
+.slotrow span { color: var(--dim); font-size: 12px; width: 32px; flex: none; }
+#setup input[type=text], #setup input:not([type]), #setup select, #setup textarea {
+  flex: 1; min-width: 0; width: 100%; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font: inherit; }
+#setup input.bad { border-color: var(--hp-low); }
+.choices { display: flex; gap: 6px; flex-wrap: wrap; }
+.choices label { flex: 1; text-align: center; border: 1px solid var(--line); border-radius: 8px; padding: 7px 4px; cursor: pointer; font-size: 13px; }
+.choices input { display: none; }
+.choices label:has(input:checked) { border-color: var(--accent); color: var(--accent); }
+.small { font-size: 12px; color: var(--dim); }
+.own { font-size: 13px; color: var(--dim); display: flex; gap: 6px; align-items: center; }
+#start { background: var(--accent); color: #06121e; border: 0; border-radius: 12px; padding: 12px; font: 700 16px system-ui; cursor: pointer; }
+#start:disabled { opacity: .5; cursor: wait; }
+#games .game { border-top: 1px solid var(--line); padding: 6px 0; font-size: 13px; }
+#games .game b.win { color: var(--hp); } #games .game b.loss { color: var(--hp-low); }
+#games .game .note { color: var(--dim); white-space: pre-wrap; }
+.linkbtn { background: none; border: 1px solid var(--line); color: var(--ink); border-radius: 8px; padding: 6px 10px; cursor: pointer; font: inherit; font-size: 13px; }
+#notes { width: 100%; min-height: 80px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 8px; font: inherit; margin: 8px 0; }
+</style>
+<div id="setup">
+  <h1>Battle the bot</h1>
+  <p class="sub">A Great League battle against a trained bot, run in your browser. You fast-move all the time; tap a charged move to throw it, a Pokémon to swap.</p>
+  <nav><a href="./">Line-up odds</a> · <b>Battle the bot</b></nav>
+  <datalist id="species"></datalist>
+  <div class="box"><h2>Your team (lead first)</h2><div id="my-team"></div>
+    <label class="own"><input type="checkbox" id="owned" checked> use the owner's own IVs and moves where known</label></div>
+  <div class="box"><h2>The bot's team</h2>
+    <div class="choices">
+      <label><input type="radio" name="foe" value="random" checked>Random</label>
+      <label><input type="radio" name="foe" value="top">Top team</label>
+      <label><input type="radio" name="foe" value="custom">Custom</label>
+    </div>
+    <div id="foe-random" class="small">Three at random from the top 50 of the Great League rankings.</div>
+    <div id="foe-top" hidden><select id="top-team"></select><div class="small">From the project's list of strongest teams in simulation.</div></div>
+    <div id="foe-custom" hidden></div>
+  </div>
+  <div class="box"><h2>Opponent and speed</h2>
+    <div class="choices">
+      <label><input type="radio" name="bot" value="engine" checked>Engine (strongest)</label>
+      <label><input type="radio" name="bot" value="learner">Trained bot</label>
+    </div>
+    <div class="choices">
+      <label><input type="radio" name="speed" value="1">Game speed</label>
+      <label><input type="radio" name="speed" value="1.5" checked>1.5× slower</label>
+      <label><input type="radio" name="speed" value="2">2× slower</label>
+    </div>
+    <input id="player" placeholder="Your name (optional, saved with your games)">
+  </div>
+  <button id="start" disabled>Loading the bot…</button>
+  <div class="box"><h2>Your games</h2><div id="games"></div>
+    <div class="choices"><button class="linkbtn" id="download">Download my games</button></div>
+    <div class="small">Games and notes stay in this browser. Download them to send to the owner: they can be replayed and studied.</div></div>
+  <p class="small">Simulator and bot: <a href="https://github.com/Solaceonx/pokemon_go" style="color:var(--dim)">Solaceonx/pokemon_go</a>. Game data from PvPoke (MIT licence); sprites from Pokémon Showdown. Not affiliated with Niantic, Nintendo or The Pokémon Company.</p>
+</div>
+
+<div id="game" style="display:none; width:100%; justify-content:center">
+<div class="phone">
+  <div class="top">
+    <span>vs <b id="bot">bot</b></span>
+    <span class="clock" id="clock">4:00</span>
+    <span class="tally" id="tally"></span>
+  </div>
+  <div class="evalbar" id="evalbar" title="the engine's evaluation: green is how far ahead you are"><i></i></div>
+  <div class="field" id="field">
+    <div class="side foe">
+      <div class="card">
+        <div class="name"><span id="foe-name">?</span><small id="foe-cp"></small></div>
+        <div class="bar"><i id="foe-hp"></i></div>
+        <div class="marks"><span class="dots" id="foe-left"></span><span class="dots" id="foe-shields"></span></div>
+      </div>
+      <div id="foe-sprite"></div>
+    </div>
+    <div class="side me">
+      <div id="my-sprite"></div>
+      <div class="card">
+        <div class="name"><span id="my-name">?</span><small id="my-hptext"></small></div>
+        <div class="bar"><i id="my-hp"></i></div>
+        <div class="marks"><span class="dots" id="my-left"></span><span class="dots" id="my-shields"></span><span id="my-fast"></span></div>
+      </div>
+    </div>
+    <div class="banner" id="banner"></div>
+  </div>
+  <div class="bench" id="bench"></div>
+  <div class="controls">
+    <button class="charge" id="c0" onclick="act('c0')"><div class="fill"></div><div class="fill2"></div><span></span><em></em></button>
+    <div class="swap" id="swap">Swap</div>
+    <button class="charge" id="c1" onclick="act('c1')"><div class="fill"></div><div class="fill2"></div><span></span><em></em></button>
+  </div>
+  <div class="hint">You fast-move all the time. Keys: 1 and 2 throw, 3 and 4 swap to the Pokémon above, Y / N to shield.</div>
+  <div class="log" id="log"></div>
+</div>
+
+<div class="overlay" id="shield-box"><div class="dialog">
+  <h2 id="shield-title">Attack incoming!</h2><p id="shield-text"></p>
+  <div class="row"><button class="big yes" onclick="answer(true)">Shield (Y)</button><button class="big no" onclick="answer(false)">Take it (N)</button></div>
+</div></div>
+<div class="overlay" id="replace-box"><div class="dialog">
+  <h2>Choose your next Pokémon</h2><p id="replace-text"></p><div class="row" id="replace-row"></div>
+</div></div>
+<div class="countdown" id="countdown"></div>
+<div class="overlay" id="end-box"><div class="dialog wide">
+  <h2 id="end-title"></h2><p id="end-text"></p>
+  <div class="review" id="review"></div>
+  <textarea id="notes" placeholder="Notes on this game: what went right or wrong, what the bot did"></textarea><div class="row"><button class="big go" onclick="newBattle()">Play again</button><button class="big no" onclick="changeTeams()">Change teams</button></div>
+</div></div>
+
+</div>
+<script>
+const TYPES = { normal: "#9fa19f", fire: "#e62829", water: "#2980ef", electric: "#d8b400", grass: "#3fa129", ice: "#3dcef3",
+  fighting: "#ff8000", poison: "#9141cb", ground: "#915121", flying: "#81b9ef", psychic: "#ef4179", bug: "#91a119",
+  rock: "#afa981", ghost: "#704170", dragon: "#5060e1", dark: "#624d4e", steel: "#60a1b8", fairy: "#ef70ef" };
+const $ = (id) => document.getElementById(id);
+let state = null, lastHp = {}, lastSprite = {};
+
+function post(path, body) {
+  return fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body || {}) });
+}
+function act(a) { post("/api/act", { a }); }
+function answer(value) { post("/api/answer", { value }); }
+function newBattle() { $("end-box").classList.remove("open"); $("review").dataset.done = ""; $("review").replaceChildren(); post("/api/new"); }
+// A small still sprite for buttons: Showdown's, then PokeAPI's, then a badge.
+function icon(mon) {
+  const box = document.createElement("span");
+  box.className = "icon";
+  const urls = [`https://play.pokemonshowdown.com/sprites/gen5/${mon.sprite.showdown}.png`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${mon.sprite.dex}.png`];
+  const img = new Image();
+  let k = 0;
+  img.alt = mon.name;
+  let timer = setTimeout(() => img.onerror(), 3000);
+  img.onload = () => clearTimeout(timer);
+  img.onerror = () => {
+    clearTimeout(timer);
+    k += 1;
+    if (k < urls.length) { img.src = urls[k]; timer = setTimeout(() => img.onerror(), 3000); return; }
+    const badge = document.createElement("span");
+    badge.className = "badge"; badge.style.background = TYPES[mon.types[0]] || "#666"; badge.textContent = mon.name;
+    box.replaceChildren(badge);
+  };
+  img.src = urls[0];
+  box.append(img);
+  return box;
+}
+
+// Sprites: Pokémon Showdown's animated ones, then its still ones, then PokeAPI's by Dex number, then a badge.
+function spriteEl(slot, mon, back) {
+  const key = mon.species + (back ? ":back" : "");
+  const holder = $(slot);
+  if (lastSprite[slot] === key) return holder.firstChild;
+  lastSprite[slot] = key;
+  const s = mon.sprite, side = back ? "-back" : "";
+  const urls = [
+    `https://play.pokemonshowdown.com/sprites/ani${side}/${s.showdown}.gif`,
+    `https://play.pokemonshowdown.com/sprites/gen5${side}/${s.showdown}.png`,
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${back ? "back/" : ""}${s.dex}.png`,
+  ];
+  const img = new Image();
+  img.className = "sprite" + (s.shadow ? " shadowmon" : "");
+  img.alt = mon.name;
+  let k = 0;
+  let timer = setTimeout(() => img.onerror(), 3000);  // a site that does not answer counts as missing
+  img.onload = () => clearTimeout(timer);
+  img.onerror = () => {
+    clearTimeout(timer);
+    k += 1;
+    if (k < urls.length) { img.src = urls[k]; timer = setTimeout(() => img.onerror(), 3000); return; }
+    const badge = document.createElement("div");
+    badge.className = "badge";
+    badge.style.background = TYPES[mon.types[0]] || "#666";
+    badge.textContent = mon.name;
+    holder.replaceChildren(badge);
+  };
+  img.src = urls[0];
+  holder.replaceChildren(img);
+  return img;
+}
+
+function hpColour(share) { return share > 0.5 ? "var(--hp)" : share > 0.25 ? "var(--hp-mid)" : "var(--hp-low)"; }
+function dots(el, count, total, cls) {
+  el.replaceChildren(...Array.from({ length: total }, (_, j) => {
+    const d = document.createElement("i");
+    d.className = cls + (j >= count ? (cls === "dot" ? " out" : " used") : "");
+    return d;
+  }));
+}
+function flashIfHit(key, hp, el) {
+  if (lastHp[key] !== undefined && hp < lastHp[key] && el) { el.classList.remove("hit"); void el.offsetWidth; el.classList.add("hit"); }
+  lastHp[key] = hp;
+}
+function clock(seconds) { const s = Math.ceil(seconds); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`; }
+
+function render(s) {
+  state = s;
+  $("bot").textContent = s.bot;
+  $("clock").textContent = clock(s.clock);
+  $("tally").innerHTML = `you <b>${s.tally.win}</b>–<b>${s.tally.loss}</b>`;
+  const foe = s.foe.active, me = s.me.team[s.me.active];
+  // opponent
+  $("foe-name").textContent = foe.name;
+  $("foe-cp").textContent = `CP ${foe.cp}`;
+  const fs = foe.hp / foe.hp_max;
+  $("foe-hp").style.width = `${100 * fs}%`; $("foe-hp").style.background = hpColour(fs);
+  dots($("foe-left"), s.foe.left, 3, "dot"); dots($("foe-shields"), s.foe.shields, 2, "shield");
+  flashIfHit("foe:" + foe.species, foe.hp, spriteEl("foe-sprite", foe, false));
+  // us
+  $("my-name").textContent = me.name;
+  $("my-hptext").textContent = `${me.hp}/${me.hp_max}`;
+  const ms = me.hp / me.hp_max;
+  $("my-hp").style.width = `${100 * ms}%`; $("my-hp").style.background = hpColour(ms);
+  dots($("my-left"), s.me.team.filter((m) => m.hp > 0).length, 3, "dot"); dots($("my-shields"), s.me.shields, 2, "shield");
+  $("my-fast").textContent = `${me.fast.name} · ${me.energy} energy`;
+  flashIfHit("me:" + me.species, me.hp, spriteEl("my-sprite", me, true));
+  // charged-move buttons: each fills by energy / cost, and a second helping shows lighter
+  me.charged.forEach((m, k) => {
+    const b = $("c" + k), share = Math.min(1, me.energy / m.energy), second = Math.min(1, Math.max(0, me.energy - m.energy) / m.energy);
+    b.querySelector(".fill").style.height = `${100 * share}%`;
+    b.querySelector(".fill").style.background = TYPES[m.type] || "#888";
+    b.querySelector(".fill2").style.height = `${100 * second}%`;
+    b.querySelector("span").textContent = m.name;
+    b.querySelector("em").textContent = `${m.energy}`;
+    b.classList.toggle("ready", me.energy >= m.energy);
+    b.disabled = me.energy < m.energy || !!s.winner;
+    b.style.display = "";
+  });
+  for (let k = me.charged.length; k < 2; k++) $("c" + k).style.display = "none";
+  // switching
+  // The two on the bench are always on screen: one tap (or 3 / 4) swaps.
+  const locked = s.me.switch_wait > 0 || !!s.winner;
+  const swap = $("swap");
+  swap.classList.toggle("wait", locked);
+  swap.textContent = s.me.switch_wait > 0 ? `${s.me.switch_wait}s` : "Swap ready";
+  const benchSlots = s.me.team.map((m, j) => j).filter((j) => j !== s.me.active);
+  const benchKey = benchSlots.map((j) => s.me.team[j].species).join(",");
+  if ($("bench").dataset.key !== benchKey) {
+    $("bench").dataset.key = benchKey;
+    $("bench").replaceChildren(...benchSlots.map((j, n) => {
+      const m = s.me.team[j], p = document.createElement("button");
+      p.className = "pick"; p.dataset.slot = j; p.onclick = () => act("s" + j);
+      const text = document.createElement("span"); text.style.flex = "1";
+      text.innerHTML = `<b>${m.name}</b><small></small><div class="bar"><i></i></div>`;
+      const key = document.createElement("kbd"); key.textContent = String(n + 3);
+      p.append(icon(m), text, key);
+      return p;
+    }));
+  }
+  $("bench").querySelectorAll(".pick").forEach((p) => {
+    const m = s.me.team[Number(p.dataset.slot)], share = m.hp / m.hp_max;
+    p.disabled = locked || m.hp <= 0;
+    p.querySelector("small").textContent = m.hp > 0 ? `${m.hp}/${m.hp_max} · ${m.energy} energy` : "fainted";
+    const bar = p.querySelector(".bar i"); bar.style.width = `${100 * share}%`; bar.style.background = hpColour(share);
+  });
+  $("countdown").classList.toggle("open", s.countdown > 0);
+  if (s.countdown > 0) $("countdown").textContent = Math.ceil(s.countdown);
+  // what just happened
+  $("log").replaceChildren(...s.log.slice().reverse().slice(0, 5).map((e) => {
+    const d = document.createElement("div"); d.className = e.side ? "foe" : ""; d.textContent = (e.side ? "Bot: " : "You: ") + e.text; return d;
+  }));
+  const last = s.log.filter((e) => e.text.includes(" throws ")).pop();
+  $("banner").style.display = s.charging && last ? "block" : "none";
+  if (last) $("banner").textContent = last.text;
+  // prompts
+  const pr = s.prompt;
+  $("shield-box").classList.toggle("open", !!pr && pr.kind === "shield");
+  if (pr && pr.kind === "shield") {
+    $("shield-title").textContent = `${foe.name} is attacking!`;
+    $("shield-text").textContent = `${s.me.shields} shield${s.me.shields === 1 ? "" : "s"} left · ${pr.seconds.toFixed(1)} s to decide`;
+  }
+  $("replace-box").classList.toggle("open", !!pr && pr.kind === "replace");
+  if (pr && pr.kind === "replace") {
+    $("replace-text").textContent = `${pr.seconds.toFixed(0)} s to choose (keys 1 and 2); the game waits for you`;
+    const key = pr.options.join(",");
+    if ($("replace-row").dataset.key !== key) {
+      $("replace-row").dataset.key = key;
+      $("replace-row").replaceChildren(...pr.options.map((j) => {
+        const m = s.me.team[j], b = document.createElement("button");
+        b.className = "big go"; b.onclick = () => answer(j);
+        const label = document.createElement("span"); label.textContent = `${m.name} (${m.hp}/${m.hp_max})`;
+        b.append(icon(m), label);
+        return b;
+      }));
+    }
+  }
+  if (s.eval !== null && s.eval !== undefined) {
+    $("evalbar").style.display = "block";
+    $("evalbar").querySelector("i").style.width = `${100 * s.eval}%`;
+  }
+  if (s.review && $("review").dataset.done !== "1") showReview(s.review);
+  if (s.winner) {
+    $("end-title").textContent = { win: "You win", loss: "The bot wins", draw: "A draw" }[s.winner];
+    $("end-text").textContent = `Against the ${s.bot}. Saved to games/played/. You ${s.tally.win}, bot ${s.tally.loss}.`;
+    $("end-box").classList.add("open");
+  }
+}
+
+// The review after a battle: the evaluation over time (above the middle line you were ahead), and the
+// moments it moved most, with what happened then.
+function showReview(r) {
+  const box = $("review");
+  if (!r.points.length) return;
+  box.dataset.done = "1";
+  const W = 380, H = 110, end = Math.max(...r.points.map((p) => p[0]), 1);
+  const xy = (p) => `${(W * p[0] / end).toFixed(1)},${(H * (1 - p[1])).toFixed(1)}`;
+  const line = r.points.map(xy).join(" ");
+  const marks = r.swings.map((sw) => {
+    const x = (W * sw.t / end).toFixed(1);
+    return `<line x1="${x}" x2="${x}" y1="0" y2="${H}" stroke="${sw.change > 0 ? "#3ddc97" : "#f0544f"}" stroke-opacity=".5" stroke-dasharray="3 3"/>`;
+  }).join("");
+  const lineup = r.lineup ? `<div class="caption">Your line-up against the bot's wins <b>${Math.round(100 * r.lineup[0])}%</b>
+    (± ${Math.round(100 * r.lineup[1])}) when two equally good bots play it, before anyone decides anything.</div>` : "";
+  box.innerHTML = lineup + `<div class="caption">${r.learned ? "The engine's evaluation" : "Health and shields left (no trained evaluation found)"}: above the line you were ahead</div>
+    <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+      <line x1="0" x2="${W}" y1="${H / 2}" y2="${H / 2}" stroke="#93a3b3" stroke-opacity=".4"/>
+      ${marks}<polyline points="${line}" fill="none" stroke="#5ab0ff" stroke-width="2"/></svg>` +
+    r.swings.map((sw) => `<div class="swing"><b class="${sw.change > 0 ? "up" : "down"}">${sw.change > 0 ? "+" : ""}${(2 * sw.change).toFixed(2)}</b>
+      at ${clock(240 - sw.t)} — ${sw.what}</div>`).join("");
+}
+
+async function poll() {
+  try { render(await (await fetch("/api/state")).json()); } catch (e) { /* the server restarted or stopped */ }
+  setTimeout(poll, 100);
+}
+document.addEventListener("keydown", (e) => {
+  const pr = state && state.prompt;
+  if (pr && pr.kind === "shield") { if (e.key === "y") answer(true); if (e.key === "n") answer(false); return; }
+  if (pr && pr.kind === "replace") { const j = pr.options[Number(e.key) - 1]; if (j !== undefined) answer(j); return; }
+  if (e.key === "1") act("c0");
+  if (e.key === "2") act("c1");
+  if (e.key === "3" || e.key === "4") {
+    const pick = $("bench").querySelectorAll(".pick")[Number(e.key) - 3];
+    if (pick && !pick.disabled) pick.click();
+  }
+  if (e.key === "Enter" && state && state.winner) newBattle();
+});
+</script>
+<script>
+// The page's side of a battle against the bot: the setup screen, the clock, prompts, notes and saved games.
+// The battle itself runs in play_worker.js (Python, play_api.py); the battle screen is scripts/play/index.html's.
+const ACTIONS = { c0: 1, c1: 2, s0: 3, s1: 4, s2: 5 };
+const STORE = "pvpbot-games";
+const worker = new Worker("play_worker.js");
+const calls = {};
+let callId = 0, INFO = null, BY_NAME = {}, BY_ID = {}, G = null;
+
+worker.onmessage = (e) => {
+  const m = e.data;
+  if (m.type === "status") startButton(m.text, true);
+  else if (m.type === "ready") startButton("Start the battle", false);
+  else if (m.type === "result") { calls[m.id].resolve(m.out); delete calls[m.id]; }
+  else if (m.type === "error") {
+    if (m.id !== undefined && calls[m.id]) { calls[m.id].reject(m.text); delete calls[m.id]; }
+    else startButton("Could not load the bot: " + m.text, true);
+  }
+};
+function call(fn, arg) {
+  return new Promise((resolve, reject) => { const id = callId++; calls[id] = { resolve, reject }; worker.postMessage({ id, fn, arg }); });
+}
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+function startButton(text, disabled) { $("start").textContent = text; $("start").disabled = disabled; }
+
+// --- saved games
+function games() { try { return JSON.parse(localStorage.getItem(STORE) || "[]"); } catch (e) { return []; } }
+function keep(list) { try { localStorage.setItem(STORE, JSON.stringify(list)); } catch (e) { /* private window: nothing kept */ } }
+function tally() { const g = games(); return { win: g.filter((r) => r.result === "win").length, loss: g.filter((r) => r.result === "loss").length }; }
+function stamp(d) { const p = (n) => String(n).padStart(2, "0"); return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}_${p(d.getHours())}-${p(d.getMinutes())}-${p(d.getSeconds())}`; }
+function listGames() {
+  const g = games().slice().reverse();
+  $("games").innerHTML = g.length ? g.slice(0, 30).map((r) => `<div class="game"><b class="${r.result}">${{ win: "Win", loss: "Loss", draw: "Draw" }[r.result]}</b>
+    · ${r.started.replace("_", " ").slice(0, 16)} · ${r.mine.map(name).join(" / ")} vs ${r.theirs.map(name).join(" / ")}
+    ${r.lineup_win_chance ? `· line-up ${Math.round(100 * r.lineup_win_chance[0])}%` : ""}
+    ${r.notes ? `<div class="note">${r.notes.replace(/</g, "&lt;")}</div>` : ""}</div>`).join("") : `<div class="small">No games yet.</div>`;
+}
+$("download").onclick = () => {
+  const who = ($("player").value.trim() || "player").replace(/[^A-Za-z0-9_-]/g, "");
+  const blob = new Blob([JSON.stringify(games(), null, 1)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = `pvpbot-games-${who}-${stamp(new Date()).slice(0, 10)}.json`; a.click();
+};
+
+// --- the setup screen
+const name = (id) => (BY_ID[id] ? BY_ID[id].name : id);
+function find(text) { const t = text.trim().toLowerCase(); return BY_NAME[t] || BY_ID[t] || null; }
+function slots(box, values) {
+  $(box).innerHTML = values.map((v, i) => `<div class="slotrow"><span>${i ? "back" : "lead"}</span><img alt="">
+    <input value="${v}" list="species" autocomplete="off" spellcheck="false"></div>`).join("");
+  $(box).querySelectorAll("input").forEach((inp) => { inp.addEventListener("input", () => look(inp)); look(inp); });
+}
+function look(inp) {
+  const sp = find(inp.value), img = inp.parentElement.querySelector("img");
+  inp.classList.toggle("bad", !sp && inp.value.trim() !== "");
+  img.src = sp ? `https://play.pokemonshowdown.com/sprites/gen5/${sp.showdown}.png` : "";
+  img.style.visibility = sp ? "visible" : "hidden";
+}
+function picked(box) { return [...$(box).querySelectorAll("input")].map((i) => find(i.value)); }
+const radio = (n) => document.querySelector(`input[name=${n}]:checked`).value;
+document.querySelectorAll("input[name=foe]").forEach((r) => r.addEventListener("change", () => {
+  for (const k of ["random", "top", "custom"]) $("foe-" + k).hidden = radio("foe") !== k;
+}));
+function legal(team) { return !team.includes(null) && new Set(team.map((s) => s.dex)).size === 3; }
+function randomTeam() {
+  const pool = INFO.species.slice(0, 50);
+  for (;;) {
+    const t = [...pool].sort(() => Math.random() - 0.5).slice(0, 3);
+    if (new Set(t.map((s) => s.dex)).size === 3) return t.map((s) => s.id);
+  }
+}
+function foeTeam() {
+  const kind = radio("foe");
+  if (kind === "random") return randomTeam();
+  if (kind === "top") {
+    const v = $("top-team").value;
+    const team = v === "any" ? INFO.top[Math.floor(Math.random() * INFO.top.length)].team : INFO.top[Number(v)].team;
+    return team;
+  }
+  const t = picked("foe-custom");
+  return legal(t) ? t.map((s) => s.id) : null;
+}
+
+$("start").onclick = () => {
+  const mine = picked("my-team");
+  if (!legal(mine)) { startButton("Pick three different known Pokémon for your team", false); return; }
+  const theirs = foeTeam();
+  if (!theirs) { startButton("Pick three different known Pokémon for the bot", false); return; }
+  play({ mine: mine.map((s) => s.id), theirs, owned: $("owned").checked, bot: radio("bot"), speed: Number(radio("speed")) });
+};
+
+// --- the battle
+function act(a) { if (G && !G.over && ACTIONS[a] !== undefined) G.queued = ACTIONS[a]; }
+function answer(value) { if (G && G.prompt) { const p = G.prompt; G.prompt = null; p.resolve(value); } }
+function ask(kind, options, seconds, fallback) {
+  return new Promise((resolve) => {
+    G.prompt = { kind, options, until: Date.now() + 1000 * seconds, resolve };
+    setTimeout(() => { if (G.prompt && G.prompt.resolve === resolve) { G.prompt = null; resolve(fallback); } }, 1000 * seconds);
+  });
+}
+function newBattle() { if (G && G.over && G.record) { saveNotes(); play(G.config); } }
+function changeTeams() { saveNotes(); G = null; $("game").style.display = "none"; $("setup").style.display = ""; listGames(); }
+function saveNotes() {
+  if (!G || !G.record) return;
+  const list = games(), i = list.findIndex((r) => r.started === G.record.started);
+  G.record.notes = $("notes").value;
+  if (i >= 0) { list[i].notes = G.record.notes; keep(list); }
+}
+function screen() {
+  const s = G.state, now = Date.now();
+  return { ...s, bot: G.config.bot === "engine" ? "engine" : "trained bot", tally: tally(), eval: null, review: null,
+    charging: now < G.pauseUntil, countdown: Math.max(0, (G.startAt - now) / 1000),
+    prompt: G.prompt ? { kind: G.prompt.kind, options: G.prompt.options, seconds: Math.max(0, (G.prompt.until - now) / 1000) } : null };
+}
+setInterval(() => {
+  if (!G || !G.state) return;
+  render(screen());
+  if (G.over) $("end-text").textContent = G.endText;
+}, 100);
+
+async function play(config) {
+  $("end-box").classList.remove("open");
+  $("notes").value = "";
+  $("setup").style.display = "none"; $("game").style.display = "flex";
+  const tick = Number(new URLSearchParams(location.search).get("tick")) || 500 * config.speed;  // ?tick= for testing
+  G = { config, state: null, queued: null, prompt: null, pauseUntil: 0, startAt: Date.now() + 3000, over: false, record: null,
+        endText: "", started: new Date() };
+  const game = G;
+  const out = await call("new", { mine: config.mine, theirs: config.theirs, owned: config.owned, bot: config.bot, tick_ms: tick });
+  if (G !== game) return;
+  G.state = out.state;
+  await sleep(Math.max(0, G.startAt - Date.now()));
+  while (G === game && !G.state.winner) {
+    const t0 = Date.now(), answers = [];
+    let res;
+    for (;;) {
+      res = await call("step", { action: G.queued, answers });
+      G.state = res.state;
+      if (!res.need) break;
+      answers.push(await ask(res.need, res.options, res.need === "shield" ? 6 : 12, res.need === "shield" ? false : res.options[0]));
+    }
+    if (res.took) G.queued = null;
+    if (G.state.winner) break;
+    // A charged move holds the screen from when it lands: longer after ours, so there is time to choose what next.
+    const hold = Math.max(res.throwers.includes(0) ? 4000 : 0, res.throwers.includes(1) ? 2000 : 0);
+    if (hold) { G.pauseUntil = Date.now() + hold; await sleep(hold); }
+    else await sleep(Math.max(0, tick - (Date.now() - t0)));
+  }
+  if (G !== game) return;
+  G.over = true;
+  G.endText = "Working out how your line-up does against this one…";
+  const rec = await call("finish", "");
+  rec.started = stamp(G.started);
+  rec.player = $("player").value.trim();
+  try { localStorage.setItem("pvpbot-player", rec.player); } catch (e) { /* nothing kept */ }
+  const list = games(); list.push(rec); keep(list);
+  G.record = rec;
+  const [chance, margin] = rec.lineup_win_chance;
+  G.endText = `Before anyone decided anything, your line-up wins ${Math.round(100 * chance)}% (± ${Math.round(100 * margin)}) against this one when two equally good bots play it. Saved in this browser; add notes below.`;
+}
+
+(async () => {
+  INFO = await (await fetch("species.json")).json();
+  for (const s of INFO.species) { BY_NAME[s.name.toLowerCase()] = s; BY_ID[s.id] = s; }
+  $("species").innerHTML = INFO.species.map((s) => `<option value="${s.name}">`).join("");
+  slots("my-team", INFO.mine.map(name));
+  slots("foe-custom", ["Corviknight", "Tinkaton", "Mandibuzz"]);
+  $("top-team").innerHTML = `<option value="any">Any of them at random</option>` +
+    INFO.top.map((t, i) => `<option value="${i}">${t.team.map(name).join(" / ")}</option>`).join("");
+  try { $("player").value = localStorage.getItem("pvpbot-player") || ""; } catch (e) { /* nothing kept */ }
+  listGames();
+})();
+</script>
+</body>
+</html>
