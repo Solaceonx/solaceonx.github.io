@@ -454,10 +454,31 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-22",
         "label": "Oct 22",
-        "trophies": 39005
+        "trophies": 39007
       }
     ],
     "recentGames": [
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261022T193743.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261022T193449.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261022T193347.000Z"
+      },
       {
         "brawler": "LUMI",
         "image": "assets/brawlers/16000091.png",
@@ -520,27 +541,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20261018T000808.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261018T000657.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261018T000401.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261018T000104.000Z"
       }
     ],
     "gamesHistory": [
@@ -977,7 +977,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-22",
         "label": "Oct 22",
-        "games": 429
+        "games": 432
       }
     ],
     "lifetimeWinsHistory": [
@@ -1434,7 +1434,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-22",
         "label": "Oct 22",
-        "wins": 8533
+        "wins": 8534
       }
     ],
     "winsHistory": [
@@ -1871,7 +1871,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-22",
         "label": "Oct 22",
-        "wins": 284
+        "wins": 285
       }
     ],
     "lossesHistory": [
@@ -2308,13 +2308,13 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-22",
         "label": "Oct 22",
-        "losses": 142
+        "losses": 144
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 212,
+        "count": 215,
         "image": null
       },
       {

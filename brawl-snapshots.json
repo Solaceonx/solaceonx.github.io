@@ -59931,23 +59931,44 @@
   {
     "date": "2026-10-22",
     "label": "Oct 22",
-    "fetchedAt": "2026-10-22T04:46:08.227Z",
+    "fetchedAt": "2026-10-22T21:36:15.546Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 39005,
-    "highestTrophies": 39009,
-    "lifetimeWinsTotal": 8533,
-    "threeVsThreeVictories": 7308,
+    "trophies": 39007,
+    "highestTrophies": 39011,
+    "lifetimeWinsTotal": 8534,
+    "threeVsThreeVictories": 7309,
     "soloVictories": 227,
     "duoVictories": 998,
     "rankedPoints": 3420,
-    "trophyGamesTotal": 429,
-    "trophyWinsTotal": 284,
-    "trophyLossesTotal": 142,
+    "trophyGamesTotal": 432,
+    "trophyWinsTotal": 285,
+    "trophyLossesTotal": 144,
     "rankedGamesTotal": 615,
     "rankedWinsTotal": 337,
     "rankedLossesTotal": 276,
     "trophyRecentGames": [
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261022T193743.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261022T193449.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261022T193347.000Z"
+      },
       {
         "brawler": "LUMI",
         "image": "assets/brawlers/16000091.png",
@@ -60010,32 +60031,11 @@
         "mode": "Brawl Ball",
         "result": "victory",
         "battleTime": "20261018T000808.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261018T000657.000Z"
-      },
-      {
-        "brawler": "POCO",
-        "image": "assets/brawlers/16000013.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261018T000401.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261018T000104.000Z"
       }
     ],
     "trophyModeCounts": {
       "Knockout": 34,
-      "Brawl Ball": 212,
+      "Brawl Ball": 215,
       "Hot Zone": 21,
       "Knockout5V5": 3,
       "Air Hockey": 11,
@@ -60050,7 +60050,7 @@
     },
     "trophyBrawlerCounts": {
       "GENE": 42,
-      "LUMI": 46,
+      "LUMI": 49,
       "COLETTE": 72,
       "GUS": 12,
       "TICK": 5,
@@ -60663,9 +60663,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260805T233754.000Z:15001167:brawlBall:brawlBall:ranked",
-      "20260805T234153.000Z:15001167:brawlBall:brawlBall:ranked",
-      "20260805T234445.000Z:15001167:brawlBall:brawlBall:ranked",
       "20260805T234755.000Z:15001167:brawlBall:brawlBall:ranked",
       "20260805T234946.000Z:15001167:brawlBall:brawlBall:ranked",
       "20260805T235222.000Z:15001167:brawlBall:brawlBall:ranked",
@@ -61262,7 +61259,10 @@
       "20261018T001701.000Z:15000050:brawlBall:brawlBall:ranked",
       "20261018T002011.000Z:15000050:brawlBall:brawlBall:ranked",
       "20261018T002311.000Z:15000050:brawlBall:brawlBall:ranked",
-      "20261018T002544.000Z:15000050:brawlBall:brawlBall:ranked"
+      "20261018T002544.000Z:15000050:brawlBall:brawlBall:ranked",
+      "20261022T193347.000Z:15000026:brawlBall:brawlBall:ranked",
+      "20261022T193449.000Z:15000026:brawlBall:brawlBall:ranked",
+      "20261022T193743.000Z:15000026:brawlBall:brawlBall:ranked"
     ],
     "rankedGamesLog": [
       {
