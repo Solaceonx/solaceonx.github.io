@@ -479,10 +479,52 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-27",
         "label": "Oct 27",
-        "trophies": 39110
+        "trophies": 39171
       }
     ],
     "recentGames": [
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261027T051123.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261027T051038.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261027T050935.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261027T050821.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261027T050707.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261027T050505.000Z"
+      },
       {
         "brawler": "ASH",
         "image": "assets/brawlers/16000051.png",
@@ -524,48 +566,6 @@ window.BRAWL_DATA = {
         "mode": "Duo Showdown",
         "result": "win",
         "battleTime": "20261023T000535.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Duo Showdown",
-        "result": "loss",
-        "battleTime": "20261023T000414.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Duo Showdown",
-        "result": "win",
-        "battleTime": "20261023T000115.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Duo Showdown",
-        "result": "loss",
-        "battleTime": "20261023T000027.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261022T235649.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261022T235408.000Z"
-      },
-      {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261022T235216.000Z"
       }
     ],
     "gamesHistory": [
@@ -1027,7 +1027,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-27",
         "label": "Oct 27",
-        "games": 447
+        "games": 453
       }
     ],
     "lifetimeWinsHistory": [
@@ -1509,7 +1509,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-27",
         "label": "Oct 27",
-        "wins": 8543
+        "wins": 8548
       }
     ],
     "winsHistory": [
@@ -1971,7 +1971,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-27",
         "label": "Oct 27",
-        "wins": 295
+        "wins": 300
       }
     ],
     "lossesHistory": [
@@ -2433,13 +2433,13 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-27",
         "label": "Oct 27",
-        "losses": 149
+        "losses": 150
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 221,
+        "count": 227,
         "image": null
       },
       {
