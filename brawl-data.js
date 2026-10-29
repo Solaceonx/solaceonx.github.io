@@ -489,10 +489,25 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "trophies": 39187
+        "trophies": 39196
       }
     ],
-    "recentGames": [],
+    "recentGames": [
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261029T183607.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261029T183248.000Z"
+      }
+    ],
     "gamesHistory": [
       {
         "date": "2026-06-30",
@@ -962,7 +977,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "games": 454
+        "games": 456
       }
     ],
     "lifetimeWinsHistory": [
@@ -1454,7 +1469,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "wins": 8570
+        "wins": 8574
       }
     ],
     "winsHistory": [
@@ -1926,7 +1941,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "wins": 301
+        "wins": 302
       }
     ],
     "lossesHistory": [
@@ -2398,13 +2413,13 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "losses": 150
+        "losses": 151
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 227,
+        "count": 229,
         "image": null
       },
       {
@@ -3041,7 +3056,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "points": 5006
+        "points": 4962
       }
     ],
     "gamesHistory": [
@@ -3513,7 +3528,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "games": 642
+        "games": 649
       }
     ],
     "winsHistory": [
@@ -3985,7 +4000,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "wins": 357
+        "wins": 360
       }
     ],
     "lossesHistory": [
@@ -4457,7 +4472,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "label": "Oct 29",
-        "losses": 283
+        "losses": 287
       }
     ],
     "modes": [
@@ -4477,22 +4492,27 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
+        "mode": "Hot Zone",
+        "count": 97,
+        "image": null
+      },
+      {
         "mode": "Knockout",
         "count": 97,
         "image": null
       },
       {
-        "mode": "Hot Zone",
-        "count": 94,
-        "image": null
-      },
-      {
         "mode": "Bounty",
-        "count": 92,
+        "count": 96,
         "image": null
       }
     ],
     "currentSeasonBrawlers": [
+      {
+        "name": "TICK",
+        "count": 8,
+        "image": "assets/brawlers/16000022.png"
+      },
       {
         "name": "BROCK",
         "count": 6,
@@ -4509,6 +4529,11 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000069.png"
       },
       {
+        "name": "POCO",
+        "count": 5,
+        "image": "assets/brawlers/16000013.png"
+      },
+      {
         "name": "COLETTE",
         "count": 4,
         "image": "assets/brawlers/16000039.png"
@@ -4522,11 +4547,6 @@ window.BRAWL_DATA = {
         "name": "MICO",
         "count": 4,
         "image": "assets/brawlers/16000075.png"
-      },
-      {
-        "name": "TICK",
-        "count": 4,
-        "image": "assets/brawlers/16000022.png"
       },
       {
         "name": "BUZZ",
@@ -4569,11 +4589,6 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000061.png"
       },
       {
-        "name": "POCO",
-        "count": 2,
-        "image": "assets/brawlers/16000013.png"
-      },
-      {
         "name": "8-BIT",
         "count": 1,
         "image": "assets/brawlers/16000027.png"
@@ -4612,12 +4627,12 @@ window.BRAWL_DATA = {
       },
       {
         "name": "POCO",
-        "count": 46,
+        "count": 49,
         "image": "assets/brawlers/16000013.png"
       },
       {
         "name": "TICK",
-        "count": 43,
+        "count": 47,
         "image": "assets/brawlers/16000022.png"
       },
       {
@@ -5313,6 +5328,34 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-29",
         "mode": "Knockout"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
       }
     ]
   },

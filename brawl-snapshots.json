@@ -65086,26 +65086,41 @@
   {
     "date": "2026-10-29",
     "label": "Oct 29",
-    "fetchedAt": "2026-10-29T13:01:34.961Z",
+    "fetchedAt": "2026-10-29T19:38:43.978Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 39187,
-    "highestTrophies": 39187,
-    "lifetimeWinsTotal": 8570,
-    "threeVsThreeVictories": 7343,
+    "trophies": 39196,
+    "highestTrophies": 39196,
+    "lifetimeWinsTotal": 8574,
+    "threeVsThreeVictories": 7347,
     "soloVictories": 227,
     "duoVictories": 1000,
-    "rankedPoints": 5006,
-    "trophyGamesTotal": 454,
-    "trophyWinsTotal": 301,
-    "trophyLossesTotal": 150,
-    "rankedGamesTotal": 642,
-    "rankedWinsTotal": 357,
-    "rankedLossesTotal": 283,
-    "trophyRecentGames": [],
+    "rankedPoints": 4962,
+    "trophyGamesTotal": 456,
+    "trophyWinsTotal": 302,
+    "trophyLossesTotal": 151,
+    "rankedGamesTotal": 649,
+    "rankedWinsTotal": 360,
+    "rankedLossesTotal": 287,
+    "trophyRecentGames": [
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261029T183607.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261029T183248.000Z"
+      }
+    ],
     "trophyModeCounts": {
       "Knockout": 34,
-      "Brawl Ball": 227,
+      "Brawl Ball": 229,
       "Hot Zone": 21,
       "Knockout5V5": 3,
       "Air Hockey": 11,
@@ -65152,25 +65167,25 @@
       "BROCK": 1,
       "MAISIE": 1,
       "NORI": 8,
-      "PIERCE": 7
+      "PIERCE": 9
     },
     "rankedModeCounts": {
       "Knockout": 97,
       "Heist": 107,
       "Brawl Ball": 109,
-      "Hot Zone": 94,
-      "Bounty": 92,
+      "Hot Zone": 97,
+      "Bounty": 96,
       "Gem Grab": 143
     },
     "rankedSeasonStart": "2026-10-15",
     "rankedCurrentBrawlerCounts": {
       "BROCK": 6,
-      "POCO": 2,
+      "POCO": 5,
       "COLETTE": 4,
       "BUZZ": 3,
       "BYRON": 2,
       "8-BIT": 1,
-      "TICK": 4,
+      "TICK": 8,
       "EMZ": 4,
       "MANDY": 3,
       "WENDY": 3,
@@ -65192,7 +65207,7 @@
       "GUS": 21,
       "NITA": 3,
       "GENE": 17,
-      "POCO": 46,
+      "POCO": 49,
       "KIT": 15,
       "JAE-YONG": 1,
       "8-BIT": 55,
@@ -65202,7 +65217,7 @@
       "BO": 63,
       "COLETTE": 28,
       "BROCK": 49,
-      "TICK": 43,
+      "TICK": 47,
       "RICO": 3,
       "SURGE": 6,
       "LUMI": 1,
@@ -65740,15 +65755,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260814T033744.000Z:15000306:hotZone:hotZone:soloRanked",
-      "20260814T034258.000Z:15000007:gemGrab:gemGrab:ranked",
-      "20260814T034457.000Z:15001270:brawlBall:brawlBall:ranked",
-      "20260814T034747.000Z:15001288:bounty:bounty:ranked",
-      "20260814T035112.000Z:15000306:hotZone:hotZone:ranked",
-      "20260814T035337.000Z:15000306:hotZone:hotZone:ranked",
-      "20260814T035637.000Z:15000306:hotZone:hotZone:ranked",
-      "20260814T035950.000Z:15000502:knockout:knockout:ranked",
-      "20260815T234007.000Z:15000010:gemGrab:gemGrab:soloRanked",
       "20260815T234255.000Z:15000010:gemGrab:gemGrab:soloRanked",
       "20260815T234507.000Z:15000010:gemGrab:gemGrab:soloRanked",
       "20260815T234852.000Z:15000403:gemGrab:gemGrab:ranked",
@@ -66339,7 +66345,16 @@
       "20261029T065636.000Z:15000367:knockout:knockout:soloRanked",
       "20261029T065812.000Z:15000367:knockout:knockout:soloRanked",
       "20261029T070128.000Z:15000502:knockout:knockout:soloRanked",
-      "20261029T070251.000Z:15000502:knockout:knockout:soloRanked"
+      "20261029T070251.000Z:15000502:knockout:knockout:soloRanked",
+      "20261029T183248.000Z:15001331:brawlBall:brawlBall:ranked",
+      "20261029T183607.000Z:15001331:brawlBall:brawlBall:ranked",
+      "20261029T184009.000Z:15000292:hotZone:hotZone:soloRanked",
+      "20261029T184148.000Z:15000292:hotZone:hotZone:soloRanked",
+      "20261029T184331.000Z:15000292:hotZone:hotZone:soloRanked",
+      "20261029T184814.000Z:15000005:bounty:bounty:soloRanked",
+      "20261029T185035.000Z:15000005:bounty:bounty:soloRanked",
+      "20261029T185406.000Z:15000022:bounty:bounty:soloRanked",
+      "20261029T185608.000Z:15000022:bounty:bounty:soloRanked"
     ],
     "rankedGamesLog": [
       {
@@ -66845,6 +66860,34 @@
       {
         "date": "2026-10-29",
         "mode": "Knockout"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-10-29",
+        "mode": "Bounty"
       }
     ]
   }
