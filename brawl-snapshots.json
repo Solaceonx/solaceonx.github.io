@@ -67102,36 +67102,106 @@
   {
     "date": "2026-11-01",
     "label": "Nov 1",
-    "fetchedAt": "2026-11-01T06:05:22.466Z",
+    "fetchedAt": "2026-11-01T23:36:07.810Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 39196,
-    "highestTrophies": 39196,
-    "lifetimeWinsTotal": 8574,
-    "threeVsThreeVictories": 7347,
+    "trophies": 39351,
+    "highestTrophies": 39352,
+    "lifetimeWinsTotal": 8592,
+    "threeVsThreeVictories": 7365,
     "soloVictories": 227,
     "duoVictories": 1000,
     "rankedPoints": 4962,
-    "trophyGamesTotal": 456,
-    "trophyWinsTotal": 302,
-    "trophyLossesTotal": 151,
+    "trophyGamesTotal": 478,
+    "trophyWinsTotal": 317,
+    "trophyLossesTotal": 157,
     "rankedGamesTotal": 649,
     "rankedWinsTotal": 360,
     "rankedLossesTotal": 287,
     "trophyRecentGames": [
       {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Brawl Ball",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball5V5",
         "result": "victory",
-        "battleTime": "20261029T183607.000Z"
+        "battleTime": "20261101T233330.000Z"
       },
       {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Brawl Ball",
+        "brawler": "BARLEY",
+        "image": "assets/brawlers/16000006.png",
+        "mode": "Brawl Ball5V5",
         "result": "defeat",
-        "battleTime": "20261029T183248.000Z"
+        "battleTime": "20261101T233004.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261101T232206.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231907.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231628.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231401.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261101T231216.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231035.000Z"
+      },
+      {
+        "brawler": "BROCK",
+        "image": "assets/brawlers/16000003.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261101T230540.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T230050.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T225851.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T225741.000Z"
       }
     ],
     "trophyModeCounts": {
@@ -67141,7 +67211,7 @@
       "Knockout5V5": 3,
       "Air Hockey": 11,
       "Solo Showdown": 37,
-      "Brawl Ball5V5": 4,
+      "Brawl Ball5V5": 26,
       "Gem Grab": 25,
       "Bounty": 11,
       "Basket Brawl": 10,
@@ -67151,8 +67221,8 @@
     },
     "trophyBrawlerCounts": {
       "GENE": 42,
-      "LUMI": 60,
-      "COLETTE": 72,
+      "LUMI": 61,
+      "COLETTE": 77,
       "GUS": 12,
       "TICK": 5,
       "RUFFS": 2,
@@ -67160,11 +67230,11 @@
       "SURGE": 73,
       "KAZE": 34,
       "BYRON": 14,
-      "BO": 3,
+      "BO": 9,
       "MICO": 1,
       "DRACO": 6,
-      "POCO": 19,
-      "EDGAR": 14,
+      "POCO": 23,
+      "EDGAR": 15,
       "JANET": 14,
       "JAE-YONG": 1,
       "FINX": 1,
@@ -67174,13 +67244,13 @@
       "ASH": 37,
       "WENDY": 4,
       "NITA": 1,
-      "MR. P": 2,
+      "MR. P": 5,
       "MANDY": 2,
       "GRAY": 1,
-      "BARLEY": 2,
+      "BARLEY": 3,
       "SHELLY": 6,
       "BELLE": 1,
-      "BROCK": 1,
+      "BROCK": 2,
       "MAISIE": 1,
       "NORI": 8,
       "PIERCE": 9
@@ -67689,6 +67759,22 @@
     },
     "topBrawlers": [
       {
+        "name": "BO",
+        "trophies": 1102,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000014.png",
+        "games": 9
+      },
+      {
+        "name": "EDGAR",
+        "trophies": 1101,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000043.png",
+        "games": 15
+      },
+      {
         "name": "GUS",
         "trophies": 1096,
         "power": 11,
@@ -67697,12 +67783,12 @@
         "games": 12
       },
       {
-        "name": "EDGAR",
-        "trophies": 1091,
+        "name": "COLETTE",
+        "trophies": 1092,
         "power": 11,
         "rank": 5,
-        "image": "assets/brawlers/16000043.png",
-        "games": 14
+        "image": "assets/brawlers/16000039.png",
+        "games": 77
       },
       {
         "name": "JAE-YONG",
@@ -67711,14 +67797,6 @@
         "rank": 5,
         "image": "assets/brawlers/16000093.png",
         "games": 1
-      },
-      {
-        "name": "BO",
-        "trophies": 1069,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000014.png",
-        "games": 3
       },
       {
         "name": "KIT",
@@ -67737,6 +67815,14 @@
         "games": 5
       },
       {
+        "name": "POCO",
+        "trophies": 1061,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000013.png",
+        "games": 23
+      },
+      {
         "name": "BYRON",
         "trophies": 1048,
         "power": 11,
@@ -67745,57 +67831,16 @@
         "games": 14
       },
       {
-        "name": "POCO",
-        "trophies": 1043,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000013.png",
-        "games": 19
-      },
-      {
         "name": "BELLE",
         "trophies": 1037,
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000046.png",
         "games": 1
-      },
-      {
-        "name": "COLETTE",
-        "trophies": 1027,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000039.png",
-        "games": 72
       }
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260815T234255.000Z:15000010:gemGrab:gemGrab:soloRanked",
-      "20260815T234507.000Z:15000010:gemGrab:gemGrab:soloRanked",
-      "20260815T234852.000Z:15000403:gemGrab:gemGrab:ranked",
-      "20260815T235312.000Z:15000050:brawlBall:brawlBall:ranked",
-      "20260815T235831.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260815T235913.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T000127.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T000319.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T000607.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T000759.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T001003.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T001215.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T001500.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T001638.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T001925.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T002218.000Z:15000960:duoShowdown:duoShowdown:ranked",
-      "20260816T042722.000Z:15000009:gemGrab:gemGrab:soloRanked",
-      "20260816T042928.000Z:15000009:gemGrab:gemGrab:soloRanked",
-      "20260816T043147.000Z:15000009:gemGrab:gemGrab:soloRanked",
-      "20260816T043650.000Z:15000019:heist:heist:soloRanked",
-      "20260816T043914.000Z:15000019:heist:heist:soloRanked",
-      "20260816T044249.000Z:15000018:heist:heist:soloRanked",
-      "20260816T044438.000Z:15000018:heist:heist:soloRanked",
-      "20260816T044726.000Z:15000018:heist:heist:soloRanked",
-      "20260818T055742.000Z:15000050:brawlBall:brawlBall:soloRanked",
       "20260818T055949.000Z:15000050:brawlBall:brawlBall:soloRanked",
       "20260818T060347.000Z:15001054:brawlBall:brawlBall:ranked",
       "20260818T060716.000Z:15000007:gemGrab:gemGrab:ranked",
@@ -68370,7 +68415,32 @@
       "20261029T184814.000Z:15000005:bounty:bounty:soloRanked",
       "20261029T185035.000Z:15000005:bounty:bounty:soloRanked",
       "20261029T185406.000Z:15000022:bounty:bounty:soloRanked",
-      "20261029T185608.000Z:15000022:bounty:bounty:soloRanked"
+      "20261029T185608.000Z:15000022:bounty:bounty:soloRanked",
+      "20261101T221528.000Z:15001080:megaBoss:lastStand",
+      "20261101T221709.000Z:15001080:megaBoss:lastStand",
+      "20261101T221930.000Z:15001080:megaBoss:lastStand",
+      "20261101T222359.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T222844.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T223023.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T223306.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T223733.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T224057.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T224417.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T224708.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T225119.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T225523.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T225741.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T225851.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T230050.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T230540.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T231035.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T231216.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T231401.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T231628.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T231907.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T232206.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T233004.000Z:15001043:brawlBall5V5:brawlBall:ranked",
+      "20261101T233330.000Z:15001043:brawlBall5V5:brawlBall:ranked"
     ],
     "rankedGamesLog": [
       {

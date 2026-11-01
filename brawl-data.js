@@ -504,23 +504,93 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-01",
         "label": "Nov 1",
-        "trophies": 39196
+        "trophies": 39351
       }
     ],
     "recentGames": [
       {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Brawl Ball",
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball5V5",
         "result": "victory",
-        "battleTime": "20261029T183607.000Z"
+        "battleTime": "20261101T233330.000Z"
       },
       {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Brawl Ball",
+        "brawler": "BARLEY",
+        "image": "assets/brawlers/16000006.png",
+        "mode": "Brawl Ball5V5",
         "result": "defeat",
-        "battleTime": "20261029T183248.000Z"
+        "battleTime": "20261101T233004.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261101T232206.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231907.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231628.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231401.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261101T231216.000Z"
+      },
+      {
+        "brawler": "BO",
+        "image": "assets/brawlers/16000014.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T231035.000Z"
+      },
+      {
+        "brawler": "BROCK",
+        "image": "assets/brawlers/16000003.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261101T230540.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T230050.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T225851.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T225741.000Z"
       }
     ],
     "gamesHistory": [
@@ -1007,7 +1077,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-01",
         "label": "Nov 1",
-        "games": 456
+        "games": 478
       }
     ],
     "lifetimeWinsHistory": [
@@ -1514,7 +1584,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-01",
         "label": "Nov 1",
-        "wins": 8574
+        "wins": 8592
       }
     ],
     "winsHistory": [
@@ -2001,7 +2071,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-01",
         "label": "Nov 1",
-        "wins": 302
+        "wins": 317
       }
     ],
     "lossesHistory": [
@@ -2488,7 +2558,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-01",
         "label": "Nov 1",
-        "losses": 151
+        "losses": 157
       }
     ],
     "modes": [
@@ -2510,6 +2580,11 @@ window.BRAWL_DATA = {
       {
         "mode": "Knockout",
         "count": 34,
+        "image": null
+      },
+      {
+        "mode": "Brawl Ball5V5",
+        "count": 26,
         "image": null
       },
       {
@@ -2543,11 +2618,6 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Brawl Ball5V5",
-        "count": 4,
-        "image": null
-      },
-      {
         "mode": "Heist",
         "count": 3,
         "image": null
@@ -2560,6 +2630,22 @@ window.BRAWL_DATA = {
     ],
     "topBrawlers": [
       {
+        "name": "BO",
+        "trophies": 1102,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000014.png",
+        "games": 9
+      },
+      {
+        "name": "EDGAR",
+        "trophies": 1101,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000043.png",
+        "games": 15
+      },
+      {
         "name": "GUS",
         "trophies": 1096,
         "power": 11,
@@ -2568,12 +2654,12 @@ window.BRAWL_DATA = {
         "games": 12
       },
       {
-        "name": "EDGAR",
-        "trophies": 1091,
+        "name": "COLETTE",
+        "trophies": 1092,
         "power": 11,
         "rank": 5,
-        "image": "assets/brawlers/16000043.png",
-        "games": 14
+        "image": "assets/brawlers/16000039.png",
+        "games": 77
       },
       {
         "name": "JAE-YONG",
@@ -2582,14 +2668,6 @@ window.BRAWL_DATA = {
         "rank": 5,
         "image": "assets/brawlers/16000093.png",
         "games": 1
-      },
-      {
-        "name": "BO",
-        "trophies": 1069,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000014.png",
-        "games": 3
       },
       {
         "name": "KIT",
@@ -2608,6 +2686,14 @@ window.BRAWL_DATA = {
         "games": 5
       },
       {
+        "name": "POCO",
+        "trophies": 1061,
+        "power": 11,
+        "rank": 5,
+        "image": "assets/brawlers/16000013.png",
+        "games": 23
+      },
+      {
         "name": "BYRON",
         "trophies": 1048,
         "power": 11,
@@ -2616,28 +2702,12 @@ window.BRAWL_DATA = {
         "games": 14
       },
       {
-        "name": "POCO",
-        "trophies": 1043,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000013.png",
-        "games": 19
-      },
-      {
         "name": "BELLE",
         "trophies": 1037,
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000046.png",
         "games": 1
-      },
-      {
-        "name": "COLETTE",
-        "trophies": 1027,
-        "power": 11,
-        "rank": 5,
-        "image": "assets/brawlers/16000039.png",
-        "games": 72
       }
     ]
   },
