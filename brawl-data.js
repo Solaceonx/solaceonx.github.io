@@ -505,9 +505,63 @@ window.BRAWL_DATA = {
         "date": "2026-11-01",
         "label": "Nov 1",
         "trophies": 39351
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
+        "trophies": 39408
       }
     ],
     "recentGames": [
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261102T030742.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T235420.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T235059.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T234703.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T234413.000Z"
+      },
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Brawl Ball5V5",
+        "result": "victory",
+        "battleTime": "20261101T234106.000Z"
+      },
+      {
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Brawl Ball5V5",
+        "result": "defeat",
+        "battleTime": "20261101T233747.000Z"
+      },
       {
         "brawler": "EDGAR",
         "image": "assets/brawlers/16000043.png",
@@ -542,55 +596,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball5V5",
         "result": "victory",
         "battleTime": "20261101T231628.000Z"
-      },
-      {
-        "brawler": "BO",
-        "image": "assets/brawlers/16000014.png",
-        "mode": "Brawl Ball5V5",
-        "result": "victory",
-        "battleTime": "20261101T231401.000Z"
-      },
-      {
-        "brawler": "BO",
-        "image": "assets/brawlers/16000014.png",
-        "mode": "Brawl Ball5V5",
-        "result": "defeat",
-        "battleTime": "20261101T231216.000Z"
-      },
-      {
-        "brawler": "BO",
-        "image": "assets/brawlers/16000014.png",
-        "mode": "Brawl Ball5V5",
-        "result": "victory",
-        "battleTime": "20261101T231035.000Z"
-      },
-      {
-        "brawler": "BROCK",
-        "image": "assets/brawlers/16000003.png",
-        "mode": "Brawl Ball5V5",
-        "result": "defeat",
-        "battleTime": "20261101T230540.000Z"
-      },
-      {
-        "brawler": "COLETTE",
-        "image": "assets/brawlers/16000039.png",
-        "mode": "Brawl Ball5V5",
-        "result": "victory",
-        "battleTime": "20261101T230050.000Z"
-      },
-      {
-        "brawler": "COLETTE",
-        "image": "assets/brawlers/16000039.png",
-        "mode": "Brawl Ball5V5",
-        "result": "victory",
-        "battleTime": "20261101T225851.000Z"
-      },
-      {
-        "brawler": "COLETTE",
-        "image": "assets/brawlers/16000039.png",
-        "mode": "Brawl Ball5V5",
-        "result": "victory",
-        "battleTime": "20261101T225741.000Z"
       }
     ],
     "gamesHistory": [
@@ -1078,6 +1083,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-01",
         "label": "Nov 1",
         "games": 478
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
+        "games": 485
       }
     ],
     "lifetimeWinsHistory": [
@@ -1585,6 +1595,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-01",
         "label": "Nov 1",
         "wins": 8592
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
+        "wins": 8597
       }
     ],
     "winsHistory": [
@@ -2072,6 +2087,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-01",
         "label": "Nov 1",
         "wins": 317
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
+        "wins": 322
       }
     ],
     "lossesHistory": [
@@ -2559,6 +2579,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-01",
         "label": "Nov 1",
         "losses": 157
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
+        "losses": 159
       }
     ],
     "modes": [
@@ -2584,7 +2609,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Brawl Ball5V5",
-        "count": 26,
+        "count": 33,
         "image": null
       },
       {
@@ -3217,6 +3242,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-01",
         "label": "Nov 1",
         "points": 4962
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
+        "points": 4962
       }
     ],
     "gamesHistory": [
@@ -3703,6 +3733,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-01",
         "label": "Nov 1",
+        "games": 649
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
         "games": 649
       }
     ],
@@ -4191,6 +4226,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-01",
         "label": "Nov 1",
         "wins": 360
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
+        "wins": 360
       }
     ],
     "lossesHistory": [
@@ -4677,6 +4717,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-01",
         "label": "Nov 1",
+        "losses": 287
+      },
+      {
+        "date": "2026-11-02",
+        "label": "Nov 2",
         "losses": 287
       }
     ],
