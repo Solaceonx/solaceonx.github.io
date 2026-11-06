@@ -525,15 +525,97 @@ window.BRAWL_DATA = {
         "date": "2026-11-05",
         "label": "Nov 5",
         "trophies": 39428
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
+        "trophies": 39429
       }
     ],
     "recentGames": [
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Brawl Arena",
+        "result": "defeat",
+        "battleTime": "20261106T022039.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261106T021612.000Z"
+      },
+      {
+        "brawler": "MR. P",
+        "image": "assets/brawlers/16000031.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261106T021334.000Z"
+      },
+      {
+        "brawler": "MR. P",
+        "image": "assets/brawlers/16000031.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261106T021105.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261106T020655.000Z"
+      },
+      {
+        "brawler": "PIERCE",
+        "image": "assets/brawlers/16000099.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261106T020441.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261106T020115.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "draw",
+        "battleTime": "20261106T015909.000Z"
+      },
+      {
+        "brawler": "ASH",
+        "image": "assets/brawlers/16000051.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261106T015510.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261106T015033.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
+        "mode": "Brawl Ball",
+        "result": "defeat",
+        "battleTime": "20261106T014807.000Z"
+      },
+      {
+        "brawler": "KAZE",
+        "image": "assets/brawlers/16000094.png",
         "mode": "Brawl Ball",
         "result": "victory",
-        "battleTime": "20261104T205641.000Z"
+        "battleTime": "20261106T014704.000Z"
       }
     ],
     "gamesHistory": [
@@ -1041,6 +1123,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-05",
         "label": "Nov 5",
         "games": 487
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
+        "games": 504
       }
     ],
     "lifetimeWinsHistory": [
@@ -1568,6 +1655,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-05",
         "label": "Nov 5",
         "wins": 8630
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
+        "wins": 8633
       }
     ],
     "winsHistory": [
@@ -2075,6 +2167,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-05",
         "label": "Nov 5",
         "wins": 324
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
+        "wins": 328
       }
     ],
     "lossesHistory": [
@@ -2582,12 +2679,17 @@ window.BRAWL_DATA = {
         "date": "2026-11-05",
         "label": "Nov 5",
         "losses": 159
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
+        "losses": 171
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 231,
+        "count": 238,
         "image": null
       },
       {
@@ -2611,13 +2713,13 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Gem Grab",
-        "count": 25,
+        "mode": "Hot Zone",
+        "count": 26,
         "image": null
       },
       {
-        "mode": "Hot Zone",
-        "count": 21,
+        "mode": "Gem Grab",
+        "count": 25,
         "image": null
       },
       {
@@ -2641,6 +2743,11 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
+        "mode": "Mega Duo Showdown",
+        "count": 4,
+        "image": null
+      },
+      {
         "mode": "Heist",
         "count": 3,
         "image": null
@@ -2648,6 +2755,11 @@ window.BRAWL_DATA = {
       {
         "mode": "Knockout5V5",
         "count": 3,
+        "image": null
+      },
+      {
+        "mode": "Brawl Arena",
+        "count": 1,
         "image": null
       }
     ],
@@ -3260,6 +3372,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-05",
         "label": "Nov 5",
         "points": 5800
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
+        "points": 5800
       }
     ],
     "gamesHistory": [
@@ -3766,6 +3883,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-05",
         "label": "Nov 5",
+        "games": 700
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
         "games": 700
       }
     ],
@@ -4274,6 +4396,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-05",
         "label": "Nov 5",
         "wins": 391
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
+        "wins": 391
       }
     ],
     "lossesHistory": [
@@ -4780,6 +4907,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-05",
         "label": "Nov 5",
+        "losses": 307
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Nov 6",
         "losses": 307
       }
     ],
