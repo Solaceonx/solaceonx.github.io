@@ -73607,23 +73607,51 @@
   {
     "date": "2026-11-10",
     "label": "Nov 10",
-    "fetchedAt": "2026-11-10T04:07:30.516Z",
+    "fetchedAt": "2026-11-10T12:39:49.403Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 39429,
-    "highestTrophies": 39449,
-    "lifetimeWinsTotal": 8633,
-    "threeVsThreeVictories": 7405,
+    "trophies": 39456,
+    "highestTrophies": 39456,
+    "lifetimeWinsTotal": 8636,
+    "threeVsThreeVictories": 7408,
     "soloVictories": 227,
     "duoVictories": 1001,
     "rankedPoints": 5800,
-    "trophyGamesTotal": 504,
-    "trophyWinsTotal": 328,
-    "trophyLossesTotal": 171,
+    "trophyGamesTotal": 508,
+    "trophyWinsTotal": 331,
+    "trophyLossesTotal": 172,
     "rankedGamesTotal": 700,
     "rankedWinsTotal": 391,
     "rankedLossesTotal": 307,
     "trophyRecentGames": [
+      {
+        "brawler": "NORI",
+        "image": "assets/brawlers/16000107.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261110T045632.000Z"
+      },
+      {
+        "brawler": "DRACO",
+        "image": "assets/brawlers/16000080.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261110T045416.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261110T045145.000Z"
+      },
+      {
+        "brawler": "LUMI",
+        "image": "assets/brawlers/16000091.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261110T044943.000Z"
+      },
       {
         "brawler": "LUMI",
         "image": "assets/brawlers/16000091.png",
@@ -73679,40 +73707,12 @@
         "mode": "Brawl Ball",
         "result": "draw",
         "battleTime": "20261106T015909.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261106T015510.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261106T015033.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261106T014807.000Z"
-      },
-      {
-        "brawler": "KAZE",
-        "image": "assets/brawlers/16000094.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261106T014704.000Z"
       }
     ],
     "trophyModeCounts": {
       "Knockout": 34,
       "Brawl Ball": 238,
-      "Hot Zone": 26,
+      "Hot Zone": 30,
       "Knockout5V5": 3,
       "Air Hockey": 11,
       "Solo Showdown": 37,
@@ -73728,7 +73728,7 @@
     },
     "trophyBrawlerCounts": {
       "GENE": 42,
-      "LUMI": 63,
+      "LUMI": 65,
       "COLETTE": 77,
       "GUS": 12,
       "TICK": 5,
@@ -73739,7 +73739,7 @@
       "BYRON": 14,
       "BO": 9,
       "MICO": 1,
-      "DRACO": 6,
+      "DRACO": 7,
       "POCO": 23,
       "EDGAR": 15,
       "JANET": 15,
@@ -73759,7 +73759,7 @@
       "BELLE": 1,
       "BROCK": 2,
       "MAISIE": 1,
-      "NORI": 15,
+      "NORI": 16,
       "PIERCE": 11
     },
     "rankedModeCounts": {
@@ -74357,10 +74357,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260821T223007.000Z:15001285:duoShowdown:duoShowdown:ranked",
-      "20260823T055449.000Z:15000050:brawlBall:brawlBall:ranked",
-      "20260823T055641.000Z:15000050:brawlBall:brawlBall:ranked",
-      "20260823T060006.000Z:15000050:brawlBall:brawlBall:ranked",
       "20260823T060408.000Z:15000031:gemGrab:gemGrab:ranked",
       "20260823T060659.000Z:15000160:brawlBall:brawlBall:ranked",
       "20260823T061011.000Z:15000005:bounty:bounty:ranked",
@@ -74956,7 +74952,11 @@
       "20261106T021105.000Z:15001023:hotZone:hotZone:ranked",
       "20261106T021334.000Z:15001023:hotZone:hotZone:ranked",
       "20261106T021612.000Z:15001023:hotZone:hotZone:ranked",
-      "20261106T022039.000Z:15001241:brawlArena:siege:ranked"
+      "20261106T022039.000Z:15001241:brawlArena:siege:ranked",
+      "20261110T044943.000Z:15001382:hotZone:hotZone:ranked",
+      "20261110T045145.000Z:15001382:hotZone:hotZone:ranked",
+      "20261110T045416.000Z:15001382:hotZone:hotZone:ranked",
+      "20261110T045632.000Z:15001382:hotZone:hotZone:ranked"
     ],
     "rankedGamesLog": [
       {
