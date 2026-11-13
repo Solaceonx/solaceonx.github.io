@@ -75866,22 +75866,22 @@
   {
     "date": "2026-11-13",
     "label": "Nov 13",
-    "fetchedAt": "2026-11-13T01:05:40.071Z",
+    "fetchedAt": "2026-11-13T09:32:18.265Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
     "trophies": 39456,
     "highestTrophies": 39456,
-    "lifetimeWinsTotal": 8638,
-    "threeVsThreeVictories": 7410,
+    "lifetimeWinsTotal": 8639,
+    "threeVsThreeVictories": 7411,
     "soloVictories": 227,
     "duoVictories": 1001,
-    "rankedPoints": 5723,
+    "rankedPoints": 5515,
     "trophyGamesTotal": 508,
     "trophyWinsTotal": 331,
     "trophyLossesTotal": 172,
-    "rankedGamesTotal": 708,
-    "rankedWinsTotal": 393,
-    "rankedLossesTotal": 313,
+    "rankedGamesTotal": 712,
+    "rankedWinsTotal": 394,
+    "rankedLossesTotal": 316,
     "trophyRecentGames": [
       {
         "brawler": "NORI",
@@ -76022,7 +76022,7 @@
       "PIERCE": 11
     },
     "rankedModeCounts": {
-      "Knockout": 114,
+      "Knockout": 118,
       "Heist": 120,
       "Brawl Ball": 116,
       "Hot Zone": 101,
@@ -76044,7 +76044,7 @@
       "EDGAR": 10,
       "GUS": 5,
       "BO": 2,
-      "BELLE": 8,
+      "BELLE": 9,
       "MICO": 4,
       "HANK": 7,
       "GENE": 1,
@@ -76053,13 +76053,13 @@
       "PAM": 2,
       "BARLEY": 2,
       "COLT": 2,
-      "MR. P": 7
+      "MR. P": 10
     },
     "rankedAllTimeBrawlerCounts": {
       "MICO": 35,
       "BYRON": 83,
       "BARLEY": 5,
-      "BELLE": 45,
+      "BELLE": 46,
       "GUS": 24,
       "NITA": 3,
       "GENE": 17,
@@ -76085,7 +76085,7 @@
       "CHESTER": 11,
       "MEG": 2,
       "LARRY & LAWRIE": 2,
-      "MR. P": 14,
+      "MR. P": 17,
       "WILLOW": 2,
       "NORI": 2,
       "ASH": 9,
@@ -76616,10 +76616,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260823T063524.000Z:15001101:knockout5V5:knockout:ranked",
-      "20260823T063858.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T064157.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T064416.000Z:15001214:duoShowdown:duoShowdown:ranked",
       "20260823T064601.000Z:15001214:duoShowdown:duoShowdown:ranked",
       "20260823T064804.000Z:15001214:duoShowdown:duoShowdown:ranked",
       "20260823T064919.000Z:15001214:duoShowdown:duoShowdown:ranked",
@@ -77215,7 +77211,11 @@
       "20261113T005518.000Z:15000018:heist:heist:soloRanked",
       "20261113T005806.000Z:15000018:heist:heist:soloRanked",
       "20261113T010024.000Z:15000018:heist:heist:soloRanked",
-      "20261113T010533.000Z:15000548:knockout:knockout:soloRanked"
+      "20261113T010533.000Z:15000548:knockout:knockout:soloRanked",
+      "20261113T010816.000Z:15000548:knockout:knockout:soloRanked",
+      "20261113T011259.000Z:15000440:knockout:knockout:soloRanked",
+      "20261113T011505.000Z:15000440:knockout:knockout:soloRanked",
+      "20261113T011637.000Z:15000440:knockout:knockout:soloRanked"
     ],
     "rankedGamesLog": [
       {
@@ -77981,6 +77981,22 @@
       {
         "date": "2026-11-13",
         "mode": "Heist"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
       },
       {
         "date": "2026-11-13",

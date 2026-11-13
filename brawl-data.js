@@ -1764,7 +1764,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-13",
         "label": "Nov 13",
-        "wins": 8638
+        "wins": 8639
       }
     ],
     "winsHistory": [
@@ -3586,7 +3586,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-13",
         "label": "Nov 13",
-        "points": 5723
+        "points": 5515
       }
     ],
     "gamesHistory": [
@@ -4133,7 +4133,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-13",
         "label": "Nov 13",
-        "games": 708
+        "games": 712
       }
     ],
     "winsHistory": [
@@ -4680,7 +4680,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-13",
         "label": "Nov 13",
-        "wins": 393
+        "wins": 394
       }
     ],
     "lossesHistory": [
@@ -5227,7 +5227,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-13",
         "label": "Nov 13",
-        "losses": 313
+        "losses": 316
       }
     ],
     "modes": [
@@ -5242,13 +5242,13 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Brawl Ball",
-        "count": 116,
+        "mode": "Knockout",
+        "count": 118,
         "image": null
       },
       {
-        "mode": "Knockout",
-        "count": 114,
+        "mode": "Brawl Ball",
+        "count": 116,
         "image": null
       },
       {
@@ -5274,8 +5274,13 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000043.png"
       },
       {
+        "name": "MR. P",
+        "count": 10,
+        "image": "assets/brawlers/16000031.png"
+      },
+      {
         "name": "BELLE",
-        "count": 8,
+        "count": 9,
         "image": "assets/brawlers/16000046.png"
       },
       {
@@ -5292,11 +5297,6 @@ window.BRAWL_DATA = {
         "name": "HANK",
         "count": 7,
         "image": "assets/brawlers/16000069.png"
-      },
-      {
-        "name": "MR. P",
-        "count": 7,
-        "image": "assets/brawlers/16000031.png"
       },
       {
         "name": "POCO",
@@ -5412,7 +5412,7 @@ window.BRAWL_DATA = {
       },
       {
         "name": "BELLE",
-        "count": 45,
+        "count": 46,
         "image": "assets/brawlers/16000046.png"
       },
       {
@@ -5441,6 +5441,11 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000021.png"
       },
       {
+        "name": "MR. P",
+        "count": 17,
+        "image": "assets/brawlers/16000031.png"
+      },
+      {
         "name": "BUZZ",
         "count": 16,
         "image": "assets/brawlers/16000049.png"
@@ -5449,11 +5454,6 @@ window.BRAWL_DATA = {
         "name": "KIT",
         "count": 15,
         "image": "assets/brawlers/16000076.png"
-      },
-      {
-        "name": "MR. P",
-        "count": 14,
-        "image": "assets/brawlers/16000031.png"
       },
       {
         "name": "MANDY",
@@ -6368,6 +6368,22 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-13",
         "mode": "Heist"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
       },
       {
         "date": "2026-11-13",
