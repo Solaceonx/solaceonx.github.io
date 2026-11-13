@@ -560,6 +560,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "trophies": 39456
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "trophies": 39456
       }
     ],
     "recentGames": [
@@ -1188,6 +1193,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "games": 508
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "games": 508
       }
     ],
     "lifetimeWinsHistory": [
@@ -1750,6 +1760,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "wins": 8636
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "wins": 8638
       }
     ],
     "winsHistory": [
@@ -2292,6 +2307,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "wins": 331
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "wins": 331
       }
     ],
     "lossesHistory": [
@@ -2833,6 +2853,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-12",
         "label": "Nov 12",
+        "losses": 172
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
         "losses": 172
       }
     ],
@@ -3557,6 +3582,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "points": 5800
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "points": 5723
       }
     ],
     "gamesHistory": [
@@ -4099,6 +4129,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "games": 700
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "games": 708
       }
     ],
     "winsHistory": [
@@ -4641,6 +4676,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "wins": 391
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "wins": 393
       }
     ],
     "lossesHistory": [
@@ -5183,6 +5223,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-12",
         "label": "Nov 12",
         "losses": 307
+      },
+      {
+        "date": "2026-11-13",
+        "label": "Nov 13",
+        "losses": 313
       }
     ],
     "modes": [
@@ -5193,22 +5238,22 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Heist",
-        "count": 117,
+        "count": 120,
         "image": null
       },
       {
         "mode": "Brawl Ball",
-        "count": 114,
+        "count": 116,
         "image": null
       },
       {
         "mode": "Knockout",
-        "count": 113,
+        "count": 114,
         "image": null
       },
       {
         "mode": "Bounty",
-        "count": 106,
+        "count": 108,
         "image": null
       },
       {
@@ -5229,6 +5274,11 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000043.png"
       },
       {
+        "name": "BELLE",
+        "count": 8,
+        "image": "assets/brawlers/16000046.png"
+      },
+      {
         "name": "BROCK",
         "count": 8,
         "image": "assets/brawlers/16000003.png"
@@ -5239,14 +5289,24 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000039.png"
       },
       {
-        "name": "BELLE",
-        "count": 7,
-        "image": "assets/brawlers/16000046.png"
-      },
-      {
         "name": "HANK",
         "count": 7,
         "image": "assets/brawlers/16000069.png"
+      },
+      {
+        "name": "MR. P",
+        "count": 7,
+        "image": "assets/brawlers/16000031.png"
+      },
+      {
+        "name": "POCO",
+        "count": 7,
+        "image": "assets/brawlers/16000013.png"
+      },
+      {
+        "name": "8-BIT",
+        "count": 6,
+        "image": "assets/brawlers/16000027.png"
       },
       {
         "name": "SIRIUS",
@@ -5274,16 +5334,6 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000065.png"
       },
       {
-        "name": "MR. P",
-        "count": 5,
-        "image": "assets/brawlers/16000031.png"
-      },
-      {
-        "name": "POCO",
-        "count": 5,
-        "image": "assets/brawlers/16000013.png"
-      },
-      {
         "name": "EMZ",
         "count": 4,
         "image": "assets/brawlers/16000030.png"
@@ -5292,11 +5342,6 @@ window.BRAWL_DATA = {
         "name": "MICO",
         "count": 4,
         "image": "assets/brawlers/16000075.png"
-      },
-      {
-        "name": "8-BIT",
-        "count": 3,
-        "image": "assets/brawlers/16000027.png"
       },
       {
         "name": "WENDY",
@@ -5347,7 +5392,7 @@ window.BRAWL_DATA = {
       },
       {
         "name": "8-BIT",
-        "count": 57,
+        "count": 60,
         "image": "assets/brawlers/16000027.png"
       },
       {
@@ -5362,12 +5407,12 @@ window.BRAWL_DATA = {
       },
       {
         "name": "POCO",
-        "count": 49,
+        "count": 51,
         "image": "assets/brawlers/16000013.png"
       },
       {
         "name": "BELLE",
-        "count": 44,
+        "count": 45,
         "image": "assets/brawlers/16000046.png"
       },
       {
@@ -5406,14 +5451,14 @@ window.BRAWL_DATA = {
         "image": "assets/brawlers/16000076.png"
       },
       {
+        "name": "MR. P",
+        "count": 14,
+        "image": "assets/brawlers/16000031.png"
+      },
+      {
         "name": "MANDY",
         "count": 13,
         "image": "assets/brawlers/16000065.png"
-      },
-      {
-        "name": "MR. P",
-        "count": 12,
-        "image": "assets/brawlers/16000031.png"
       },
       {
         "name": "CHESTER",
@@ -6295,6 +6340,38 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-03",
         "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Bounty"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Brawl Ball"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Brawl Ball"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Heist"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Heist"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Heist"
+      },
+      {
+        "date": "2026-11-13",
+        "mode": "Knockout"
       }
     ]
   },
