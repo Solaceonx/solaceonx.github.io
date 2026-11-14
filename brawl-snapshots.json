@@ -76619,7 +76619,7 @@
   {
     "date": "2026-11-14",
     "label": "Nov 14",
-    "fetchedAt": "2026-11-14T06:23:49.642Z",
+    "fetchedAt": "2026-11-14T15:05:34.983Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
     "trophies": 39456,
@@ -76628,13 +76628,13 @@
     "threeVsThreeVictories": 7411,
     "soloVictories": 227,
     "duoVictories": 1001,
-    "rankedPoints": 5515,
+    "rankedPoints": 5346,
     "trophyGamesTotal": 508,
     "trophyWinsTotal": 331,
     "trophyLossesTotal": 172,
-    "rankedGamesTotal": 712,
+    "rankedGamesTotal": 716,
     "rankedWinsTotal": 394,
-    "rankedLossesTotal": 316,
+    "rankedLossesTotal": 320,
     "trophyRecentGames": [
       {
         "brawler": "NORI",
@@ -76698,27 +76698,6 @@
         "mode": "Hot Zone",
         "result": "defeat",
         "battleTime": "20261106T020655.000Z"
-      },
-      {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261106T020441.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261106T020115.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "draw",
-        "battleTime": "20261106T015909.000Z"
       }
     ],
     "trophyModeCounts": {
@@ -76778,9 +76757,9 @@
       "Knockout": 118,
       "Heist": 120,
       "Brawl Ball": 116,
-      "Hot Zone": 101,
+      "Hot Zone": 103,
       "Bounty": 108,
-      "Gem Grab": 149
+      "Gem Grab": 151
     },
     "rankedSeasonStart": "2026-10-15",
     "rankedCurrentBrawlerCounts": {
@@ -76789,12 +76768,12 @@
       "COLETTE": 8,
       "BUZZ": 5,
       "BYRON": 5,
-      "8-BIT": 6,
+      "8-BIT": 8,
       "TICK": 15,
       "EMZ": 4,
       "MANDY": 5,
       "WENDY": 3,
-      "EDGAR": 10,
+      "EDGAR": 12,
       "GUS": 5,
       "BO": 2,
       "BELLE": 9,
@@ -76819,10 +76798,10 @@
       "POCO": 51,
       "KIT": 15,
       "JAE-YONG": 1,
-      "8-BIT": 60,
+      "8-BIT": 62,
       "MANDY": 13,
       "BUZZ": 16,
-      "EDGAR": 42,
+      "EDGAR": 44,
       "BO": 63,
       "COLETTE": 32,
       "BROCK": 51,
@@ -77369,10 +77348,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260823T064601.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T064804.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T064919.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T065102.000Z:15001214:duoShowdown:duoShowdown:ranked",
       "20260823T065324.000Z:15001214:duoShowdown:duoShowdown:ranked",
       "20260823T065431.000Z:15001214:duoShowdown:duoShowdown:ranked",
       "20260823T065643.000Z:15001214:duoShowdown:duoShowdown:ranked",
@@ -77968,7 +77943,11 @@
       "20261113T010816.000Z:15000548:knockout:knockout:soloRanked",
       "20261113T011259.000Z:15000440:knockout:knockout:soloRanked",
       "20261113T011505.000Z:15000440:knockout:knockout:soloRanked",
-      "20261113T011637.000Z:15000440:knockout:knockout:soloRanked"
+      "20261113T011637.000Z:15000440:knockout:knockout:soloRanked",
+      "20261114T091537.000Z:15000300:hotZone:hotZone:soloRanked",
+      "20261114T091756.000Z:15000300:hotZone:hotZone:soloRanked",
+      "20261114T092316.000Z:15000007:gemGrab:gemGrab:soloRanked",
+      "20261114T092551.000Z:15000007:gemGrab:gemGrab:soloRanked"
     ],
     "rankedGamesLog": [
       {
@@ -78754,6 +78733,22 @@
       {
         "date": "2026-11-13",
         "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Gem Grab"
       }
     ]
   }

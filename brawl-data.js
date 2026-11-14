@@ -635,27 +635,6 @@ window.BRAWL_DATA = {
         "mode": "Hot Zone",
         "result": "defeat",
         "battleTime": "20261106T020655.000Z"
-      },
-      {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261106T020441.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261106T020115.000Z"
-      },
-      {
-        "brawler": "ASH",
-        "image": "assets/brawlers/16000051.png",
-        "mode": "Brawl Ball",
-        "result": "draw",
-        "battleTime": "20261106T015909.000Z"
       }
     ],
     "gamesHistory": [
@@ -3616,7 +3595,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-14",
         "label": "Nov 14",
-        "points": 5515
+        "points": 5346
       }
     ],
     "gamesHistory": [
@@ -4168,7 +4147,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-14",
         "label": "Nov 14",
-        "games": 712
+        "games": 716
       }
     ],
     "winsHistory": [
@@ -5272,13 +5251,13 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-14",
         "label": "Nov 14",
-        "losses": 316
+        "losses": 320
       }
     ],
     "modes": [
       {
         "mode": "Gem Grab",
-        "count": 149,
+        "count": 151,
         "image": null
       },
       {
@@ -5303,7 +5282,7 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Hot Zone",
-        "count": 101,
+        "count": 103,
         "image": null
       }
     ],
@@ -5315,7 +5294,7 @@ window.BRAWL_DATA = {
       },
       {
         "name": "EDGAR",
-        "count": 10,
+        "count": 12,
         "image": "assets/brawlers/16000043.png"
       },
       {
@@ -5327,6 +5306,11 @@ window.BRAWL_DATA = {
         "name": "BELLE",
         "count": 9,
         "image": "assets/brawlers/16000046.png"
+      },
+      {
+        "name": "8-BIT",
+        "count": 8,
+        "image": "assets/brawlers/16000027.png"
       },
       {
         "name": "BROCK",
@@ -5347,11 +5331,6 @@ window.BRAWL_DATA = {
         "name": "POCO",
         "count": 7,
         "image": "assets/brawlers/16000013.png"
-      },
-      {
-        "name": "8-BIT",
-        "count": 6,
-        "image": "assets/brawlers/16000027.png"
       },
       {
         "name": "SIRIUS",
@@ -5437,7 +5416,7 @@ window.BRAWL_DATA = {
       },
       {
         "name": "8-BIT",
-        "count": 60,
+        "count": 62,
         "image": "assets/brawlers/16000027.png"
       },
       {
@@ -5462,7 +5441,7 @@ window.BRAWL_DATA = {
       },
       {
         "name": "EDGAR",
-        "count": 42,
+        "count": 44,
         "image": "assets/brawlers/16000043.png"
       },
       {
@@ -6433,6 +6412,22 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-13",
         "mode": "Knockout"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Hot Zone"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Gem Grab"
+      },
+      {
+        "date": "2026-11-14",
+        "mode": "Gem Grab"
       }
     ]
   },
