@@ -590,6 +590,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-18",
         "label": "Nov 18",
         "trophies": 39456
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
+        "trophies": 39456
       }
     ],
     "recentGames": [
@@ -1227,6 +1232,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-18",
         "label": "Nov 18",
         "games": 508
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
+        "games": 508
       }
     ],
     "lifetimeWinsHistory": [
@@ -1819,6 +1829,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-18",
         "label": "Nov 18",
         "wins": 8639
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
+        "wins": 8639
       }
     ],
     "winsHistory": [
@@ -2391,6 +2406,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-18",
         "label": "Nov 18",
         "wins": 331
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
+        "wins": 331
       }
     ],
     "lossesHistory": [
@@ -2962,6 +2982,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-18",
         "label": "Nov 18",
+        "losses": 172
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
         "losses": 172
       }
     ],
@@ -3716,6 +3741,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-18",
         "label": "Nov 18",
         "points": 5346
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
+        "points": 5346
       }
     ],
     "gamesHistory": [
@@ -4287,6 +4317,11 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-18",
         "label": "Nov 18",
+        "games": 716
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
         "games": 716
       }
     ],
@@ -4860,6 +4895,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-18",
         "label": "Nov 18",
         "wins": 394
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
+        "wins": 394
       }
     ],
     "lossesHistory": [
@@ -5432,6 +5472,11 @@ window.BRAWL_DATA = {
         "date": "2026-11-18",
         "label": "Nov 18",
         "losses": 320
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19",
+        "losses": 320
       }
     ],
     "modes": [
@@ -5466,123 +5511,7 @@ window.BRAWL_DATA = {
         "image": null
       }
     ],
-    "currentSeasonBrawlers": [
-      {
-        "name": "TICK",
-        "count": 15,
-        "image": "assets/brawlers/16000022.png"
-      },
-      {
-        "name": "EDGAR",
-        "count": 12,
-        "image": "assets/brawlers/16000043.png"
-      },
-      {
-        "name": "MR. P",
-        "count": 10,
-        "image": "assets/brawlers/16000031.png"
-      },
-      {
-        "name": "BELLE",
-        "count": 9,
-        "image": "assets/brawlers/16000046.png"
-      },
-      {
-        "name": "8-BIT",
-        "count": 8,
-        "image": "assets/brawlers/16000027.png"
-      },
-      {
-        "name": "BROCK",
-        "count": 8,
-        "image": "assets/brawlers/16000003.png"
-      },
-      {
-        "name": "COLETTE",
-        "count": 8,
-        "image": "assets/brawlers/16000039.png"
-      },
-      {
-        "name": "HANK",
-        "count": 7,
-        "image": "assets/brawlers/16000069.png"
-      },
-      {
-        "name": "POCO",
-        "count": 7,
-        "image": "assets/brawlers/16000013.png"
-      },
-      {
-        "name": "SIRIUS",
-        "count": 6,
-        "image": "assets/brawlers/16000102.png"
-      },
-      {
-        "name": "BUZZ",
-        "count": 5,
-        "image": "assets/brawlers/16000049.png"
-      },
-      {
-        "name": "BYRON",
-        "count": 5,
-        "image": "assets/brawlers/16000042.png"
-      },
-      {
-        "name": "GUS",
-        "count": 5,
-        "image": "assets/brawlers/16000061.png"
-      },
-      {
-        "name": "MANDY",
-        "count": 5,
-        "image": "assets/brawlers/16000065.png"
-      },
-      {
-        "name": "EMZ",
-        "count": 4,
-        "image": "assets/brawlers/16000030.png"
-      },
-      {
-        "name": "MICO",
-        "count": 4,
-        "image": "assets/brawlers/16000075.png"
-      },
-      {
-        "name": "WENDY",
-        "count": 3,
-        "image": "assets/brawlers/16000108.png"
-      },
-      {
-        "name": "ASH",
-        "count": 2,
-        "image": "assets/brawlers/16000051.png"
-      },
-      {
-        "name": "BARLEY",
-        "count": 2,
-        "image": "assets/brawlers/16000006.png"
-      },
-      {
-        "name": "BO",
-        "count": 2,
-        "image": "assets/brawlers/16000014.png"
-      },
-      {
-        "name": "COLT",
-        "count": 2,
-        "image": "assets/brawlers/16000001.png"
-      },
-      {
-        "name": "PAM",
-        "count": 2,
-        "image": "assets/brawlers/16000016.png"
-      },
-      {
-        "name": "GENE",
-        "count": 1,
-        "image": "assets/brawlers/16000021.png"
-      }
-    ],
+    "currentSeasonBrawlers": [],
     "allTimeBrawlers": [
       {
         "name": "BYRON",
@@ -5806,6 +5735,10 @@ window.BRAWL_DATA = {
       {
         "date": "2026-10-15",
         "label": "Oct 15"
+      },
+      {
+        "date": "2026-11-19",
+        "label": "Nov 19"
       }
     ],
     "rankedGamesLog": [
