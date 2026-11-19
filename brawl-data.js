@@ -594,72 +594,72 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-19",
         "label": "Nov 19",
-        "trophies": 39456
+        "trophies": 39526
       }
     ],
     "recentGames": [
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261110T045632.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T075534.000Z"
       },
       {
-        "brawler": "DRACO",
-        "image": "assets/brawlers/16000080.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261110T045416.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T075014.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261110T045145.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "loss",
+        "battleTime": "20261119T074743.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261110T044943.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T074148.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Arena",
-        "result": "defeat",
-        "battleTime": "20261106T022039.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T073454.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T021612.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T072931.000Z"
       },
       {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T021334.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T072536.000Z"
       },
       {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T021105.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T072200.000Z"
       },
       {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T020655.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T071917.000Z"
       }
     ],
     "gamesHistory": [
@@ -1236,7 +1236,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-19",
         "label": "Nov 19",
-        "games": 508
+        "games": 517
       }
     ],
     "lifetimeWinsHistory": [
@@ -1833,7 +1833,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-19",
         "label": "Nov 19",
-        "wins": 8639
+        "wins": 8641
       }
     ],
     "winsHistory": [
@@ -2410,7 +2410,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-19",
         "label": "Nov 19",
-        "wins": 331
+        "wins": 339
       }
     ],
     "lossesHistory": [
@@ -2987,7 +2987,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-19",
         "label": "Nov 19",
-        "losses": 172
+        "losses": 173
       }
     ],
     "modes": [
@@ -3032,6 +3032,11 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
+        "mode": "Mega Duo Showdown",
+        "count": 13,
+        "image": null
+      },
+      {
         "mode": "Air Hockey",
         "count": 11,
         "image": null
@@ -3044,11 +3049,6 @@ window.BRAWL_DATA = {
       {
         "mode": "Basket Brawl",
         "count": 10,
-        "image": null
-      },
-      {
-        "mode": "Mega Duo Showdown",
-        "count": 4,
         "image": null
       },
       {
@@ -3745,7 +3745,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-19",
         "label": "Nov 19",
-        "points": 5346
+        "points": 4000
       }
     ],
     "gamesHistory": [

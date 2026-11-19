@@ -80279,85 +80279,85 @@
   {
     "date": "2026-11-19",
     "label": "Nov 19",
-    "fetchedAt": "2026-11-19T00:23:36.775Z",
+    "fetchedAt": "2026-11-19T10:21:24.579Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 39456,
-    "highestTrophies": 39456,
-    "lifetimeWinsTotal": 8639,
+    "trophies": 39526,
+    "highestTrophies": 39526,
+    "lifetimeWinsTotal": 8641,
     "threeVsThreeVictories": 7411,
     "soloVictories": 227,
-    "duoVictories": 1001,
-    "rankedPoints": 5346,
-    "trophyGamesTotal": 508,
-    "trophyWinsTotal": 331,
-    "trophyLossesTotal": 172,
+    "duoVictories": 1003,
+    "rankedPoints": 4000,
+    "trophyGamesTotal": 517,
+    "trophyWinsTotal": 339,
+    "trophyLossesTotal": 173,
     "rankedGamesTotal": 716,
     "rankedWinsTotal": 394,
     "rankedLossesTotal": 320,
     "trophyRecentGames": [
       {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261110T045632.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T075534.000Z"
       },
       {
-        "brawler": "DRACO",
-        "image": "assets/brawlers/16000080.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261110T045416.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T075014.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261110T045145.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "loss",
+        "battleTime": "20261119T074743.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "victory",
-        "battleTime": "20261110T044943.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T074148.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Brawl Arena",
-        "result": "defeat",
-        "battleTime": "20261106T022039.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T073454.000Z"
       },
       {
-        "brawler": "LUMI",
-        "image": "assets/brawlers/16000091.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T021612.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T072931.000Z"
       },
       {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T021334.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T072536.000Z"
       },
       {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T021105.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T072200.000Z"
       },
       {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Hot Zone",
-        "result": "defeat",
-        "battleTime": "20261106T020655.000Z"
+        "brawler": "JANET",
+        "image": "assets/brawlers/16000057.png",
+        "mode": "Mega Duo Showdown",
+        "result": "win",
+        "battleTime": "20261119T071917.000Z"
       }
     ],
     "trophyModeCounts": {
@@ -80374,7 +80374,7 @@
       "Duo Showdown": 51,
       "Trio Showdown": 17,
       "Heist": 3,
-      "Mega Duo Showdown": 4,
+      "Mega Duo Showdown": 13,
       "Brawl Arena": 1
     },
     "trophyBrawlerCounts": {
@@ -80393,7 +80393,7 @@
       "DRACO": 7,
       "POCO": 23,
       "EDGAR": 15,
-      "JANET": 15,
+      "JANET": 24,
       "JAE-YONG": 1,
       "FINX": 1,
       "BUSTER": 1,
@@ -80984,15 +80984,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260823T065324.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T065431.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T065643.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T065942.000Z:15001214:duoShowdown:duoShowdown:ranked",
-      "20260823T094853.000Z:15000024:brawlBall:brawlBall:ranked",
-      "20260823T095142.000Z:15001263:megaBoss:lastStand",
-      "20260831T071001.000Z:15001020:brawlBall:brawlBall:ranked",
-      "20260831T071047.000Z:15001020:brawlBall:brawlBall:ranked",
-      "20260831T071129.000Z:15001020:brawlBall:brawlBall:ranked",
       "20260831T071212.000Z:15001020:brawlBall:brawlBall:ranked",
       "20260831T071310.000Z:15001020:brawlBall:brawlBall:ranked",
       "20260831T071600.000Z:15001020:brawlBall:brawlBall:ranked",
@@ -81583,7 +81574,16 @@
       "20261114T091537.000Z:15000300:hotZone:hotZone:soloRanked",
       "20261114T091756.000Z:15000300:hotZone:hotZone:soloRanked",
       "20261114T092316.000Z:15000007:gemGrab:gemGrab:soloRanked",
-      "20261114T092551.000Z:15000007:gemGrab:gemGrab:soloRanked"
+      "20261114T092551.000Z:15000007:gemGrab:gemGrab:soloRanked",
+      "20261119T071917.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T072200.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T072536.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T072931.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T073454.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T074148.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T074743.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T075014.000Z:15001368:megaDuoShowdown:duoShowdown:ranked",
+      "20261119T075534.000Z:15001368:megaDuoShowdown:duoShowdown:ranked"
     ],
     "rankedGamesLog": [
       {
