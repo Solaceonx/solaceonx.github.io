@@ -80987,23 +80987,79 @@
   {
     "date": "2026-11-20",
     "label": "Nov 20",
-    "fetchedAt": "2026-11-20T03:15:41.537Z",
+    "fetchedAt": "2026-11-20T12:53:51.675Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
     "trophies": 39543,
     "highestTrophies": 39553,
-    "lifetimeWinsTotal": 8648,
-    "threeVsThreeVictories": 7418,
+    "lifetimeWinsTotal": 8653,
+    "threeVsThreeVictories": 7423,
     "soloVictories": 227,
     "duoVictories": 1003,
     "rankedPoints": 4000,
-    "trophyGamesTotal": 535,
-    "trophyWinsTotal": 346,
-    "trophyLossesTotal": 184,
+    "trophyGamesTotal": 543,
+    "trophyWinsTotal": 351,
+    "trophyLossesTotal": 187,
     "rankedGamesTotal": 716,
     "rankedWinsTotal": 394,
     "rankedLossesTotal": 320,
     "trophyRecentGames": [
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Bounty",
+        "result": "defeat",
+        "battleTime": "20261120T072829.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261120T072552.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Bounty",
+        "result": "victory",
+        "battleTime": "20261120T072321.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Gem Grab",
+        "result": "victory",
+        "battleTime": "20261120T072047.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20261120T071806.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Bounty",
+        "result": "defeat",
+        "battleTime": "20261120T071615.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261120T071319.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261120T070914.000Z"
+      },
       {
         "brawler": "EDGAR",
         "image": "assets/brawlers/16000043.png",
@@ -81031,74 +81087,18 @@
         "mode": "Brawl Ball",
         "result": "defeat",
         "battleTime": "20261120T011641.000Z"
-      },
-      {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T011515.000Z"
-      },
-      {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261120T011230.000Z"
-      },
-      {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T011024.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T010805.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T010512.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261120T010353.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T010259.000Z"
-      },
-      {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T005922.000Z"
       }
     ],
     "trophyModeCounts": {
-      "Knockout": 34,
-      "Brawl Ball": 253,
-      "Hot Zone": 32,
+      "Knockout": 35,
+      "Brawl Ball": 254,
+      "Hot Zone": 34,
       "Knockout5V5": 3,
       "Air Hockey": 11,
       "Solo Showdown": 37,
       "Brawl Ball5V5": 33,
-      "Gem Grab": 25,
-      "Bounty": 12,
+      "Gem Grab": 26,
+      "Bounty": 15,
       "Basket Brawl": 10,
       "Duo Showdown": 51,
       "Trio Showdown": 17,
@@ -81109,7 +81109,7 @@
     "trophyBrawlerCounts": {
       "GENE": 42,
       "LUMI": 65,
-      "COLETTE": 77,
+      "COLETTE": 78,
       "GUS": 12,
       "TICK": 5,
       "RUFFS": 2,
@@ -81121,7 +81121,7 @@
       "MICO": 1,
       "DRACO": 7,
       "POCO": 23,
-      "EDGAR": 18,
+      "EDGAR": 25,
       "JANET": 24,
       "JAE-YONG": 1,
       "FINX": 1,
@@ -81648,7 +81648,7 @@
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000043.png",
-        "games": 18
+        "games": 25
       },
       {
         "name": "GUS",
@@ -81664,7 +81664,7 @@
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000039.png",
-        "games": 77
+        "games": 78
       },
       {
         "name": "JAE-YONG",
@@ -81717,14 +81717,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260831T075934.000Z:15000132:brawlBall:brawlBall:soloRanked",
-      "20260831T080222.000Z:15000132:brawlBall:brawlBall:soloRanked",
-      "20260902T085700.000Z:15001281:soloShowdown:soloShowdown:ranked",
-      "20260902T085935.000Z:15001281:soloShowdown:soloShowdown:ranked",
-      "20260903T070106.000Z:15000368:knockout:knockout:soloRanked",
-      "20260903T070317.000Z:15000368:knockout:knockout:soloRanked",
-      "20260903T070654.000Z:15000368:knockout:knockout:soloRanked",
-      "20260903T071143.000Z:15000132:brawlBall:brawlBall:soloRanked",
       "20260903T071257.000Z:15000132:brawlBall:brawlBall:soloRanked",
       "20260903T071413.000Z:15000132:brawlBall:brawlBall:soloRanked",
       "20260903T071827.000Z:15000143:brawlBall:brawlBall:soloRanked",
@@ -82316,7 +82308,15 @@
       "20261120T011641.000Z:15000026:brawlBall:brawlBall:ranked",
       "20261120T012204.000Z:15001336:bounty:bounty:ranked",
       "20261120T012420.000Z:15000293:hotZone:hotZone:ranked",
-      "20261120T012717.000Z:15001202:hotZone:hotZone:ranked"
+      "20261120T012717.000Z:15001202:hotZone:hotZone:ranked",
+      "20261120T070914.000Z:15000293:hotZone:hotZone:ranked",
+      "20261120T071319.000Z:15000293:hotZone:hotZone:ranked",
+      "20261120T071615.000Z:15000022:bounty:bounty:ranked",
+      "20261120T071806.000Z:15000367:knockout:knockout:ranked",
+      "20261120T072047.000Z:15000010:gemGrab:gemGrab:ranked",
+      "20261120T072321.000Z:15000022:bounty:bounty:ranked",
+      "20261120T072552.000Z:15000118:brawlBall:brawlBall:ranked",
+      "20261120T072829.000Z:15001336:bounty:bounty:ranked"
     ],
     "rankedGamesLog": [
       {

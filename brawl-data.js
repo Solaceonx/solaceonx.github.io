@@ -606,6 +606,62 @@ window.BRAWL_DATA = {
       {
         "brawler": "EDGAR",
         "image": "assets/brawlers/16000043.png",
+        "mode": "Bounty",
+        "result": "defeat",
+        "battleTime": "20261120T072829.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261120T072552.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Bounty",
+        "result": "victory",
+        "battleTime": "20261120T072321.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Gem Grab",
+        "result": "victory",
+        "battleTime": "20261120T072047.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Knockout",
+        "result": "victory",
+        "battleTime": "20261120T071806.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Bounty",
+        "result": "defeat",
+        "battleTime": "20261120T071615.000Z"
+      },
+      {
+        "brawler": "COLETTE",
+        "image": "assets/brawlers/16000039.png",
+        "mode": "Hot Zone",
+        "result": "defeat",
+        "battleTime": "20261120T071319.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
+        "mode": "Hot Zone",
+        "result": "victory",
+        "battleTime": "20261120T070914.000Z"
+      },
+      {
+        "brawler": "EDGAR",
+        "image": "assets/brawlers/16000043.png",
         "mode": "Hot Zone",
         "result": "victory",
         "battleTime": "20261120T012717.000Z"
@@ -630,62 +686,6 @@ window.BRAWL_DATA = {
         "mode": "Brawl Ball",
         "result": "defeat",
         "battleTime": "20261120T011641.000Z"
-      },
-      {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T011515.000Z"
-      },
-      {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261120T011230.000Z"
-      },
-      {
-        "brawler": "MR. P",
-        "image": "assets/brawlers/16000031.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T011024.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T010805.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T010512.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "victory",
-        "battleTime": "20261120T010353.000Z"
-      },
-      {
-        "brawler": "NORI",
-        "image": "assets/brawlers/16000107.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T010259.000Z"
-      },
-      {
-        "brawler": "PIERCE",
-        "image": "assets/brawlers/16000099.png",
-        "mode": "Brawl Ball",
-        "result": "defeat",
-        "battleTime": "20261120T005922.000Z"
       }
     ],
     "gamesHistory": [
@@ -1267,7 +1267,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-20",
         "label": "Nov 20",
-        "games": 535
+        "games": 543
       }
     ],
     "lifetimeWinsHistory": [
@@ -1869,7 +1869,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-20",
         "label": "Nov 20",
-        "wins": 8648
+        "wins": 8653
       }
     ],
     "winsHistory": [
@@ -2451,7 +2451,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-20",
         "label": "Nov 20",
-        "wins": 346
+        "wins": 351
       }
     ],
     "lossesHistory": [
@@ -3033,13 +3033,13 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-20",
         "label": "Nov 20",
-        "losses": 184
+        "losses": 187
       }
     ],
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 253,
+        "count": 254,
         "image": null
       },
       {
@@ -3054,6 +3054,11 @@ window.BRAWL_DATA = {
       },
       {
         "mode": "Knockout",
+        "count": 35,
+        "image": null
+      },
+      {
+        "mode": "Hot Zone",
         "count": 34,
         "image": null
       },
@@ -3063,13 +3068,8 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Hot Zone",
-        "count": 32,
-        "image": null
-      },
-      {
         "mode": "Gem Grab",
-        "count": 25,
+        "count": 26,
         "image": null
       },
       {
@@ -3078,13 +3078,13 @@ window.BRAWL_DATA = {
         "image": null
       },
       {
-        "mode": "Mega Duo Showdown",
-        "count": 13,
+        "mode": "Bounty",
+        "count": 15,
         "image": null
       },
       {
-        "mode": "Bounty",
-        "count": 12,
+        "mode": "Mega Duo Showdown",
+        "count": 13,
         "image": null
       },
       {
@@ -3128,7 +3128,7 @@ window.BRAWL_DATA = {
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000043.png",
-        "games": 18
+        "games": 25
       },
       {
         "name": "GUS",
@@ -3144,7 +3144,7 @@ window.BRAWL_DATA = {
         "power": 11,
         "rank": 5,
         "image": "assets/brawlers/16000039.png",
-        "games": 77
+        "games": 78
       },
       {
         "name": "JAE-YONG",
