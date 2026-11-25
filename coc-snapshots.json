@@ -2039,6 +2039,36 @@
       "troopsProgress": 68,
       "spellsProgress": 86,
       "equipmentProgress": 79
+    },
+    {
+      "id": "solaceonx",
+      "date": "2026-11-25",
+      "label": "Nov 25",
+      "fetchedAt": "2026-11-25T05:38:22.895Z",
+      "townHall": 18,
+      "trophies": 0,
+      "bestTrophies": 5419,
+      "leagueTier": {
+        "id": 105000030,
+        "name": "Dragon League 30",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+        }
+      },
+      "currentLeagueSeasonId": 0,
+      "currentLeagueGroupTag": null,
+      "attackWins": 0,
+      "defenseWins": 0,
+      "attacksWon": 10745,
+      "donations": 237074,
+      "donationsReceived": 1416,
+      "warStars": 1612,
+      "clanCapitalContributions": 3009071,
+      "heroesProgress": 86,
+      "troopsProgress": 64,
+      "spellsProgress": 85,
+      "equipmentProgress": 79
     }
   ],
   "solaceon": [
@@ -4081,6 +4111,36 @@
       "troopsProgress": 66,
       "spellsProgress": 91,
       "equipmentProgress": 70
+    },
+    {
+      "id": "solaceon",
+      "date": "2026-11-25",
+      "label": "Nov 25",
+      "fetchedAt": "2026-11-25T05:38:23.073Z",
+      "townHall": 19,
+      "trophies": 22,
+      "bestTrophies": 4585,
+      "leagueTier": {
+        "id": 105000030,
+        "name": "Dragon League 30",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+        }
+      },
+      "currentLeagueSeasonId": 1795410000,
+      "currentLeagueGroupTag": "#99P28Y8",
+      "attackWins": 0,
+      "defenseWins": 0,
+      "attacksWon": 6541,
+      "donations": 182785,
+      "donationsReceived": 2533,
+      "warStars": 1329,
+      "clanCapitalContributions": 2250165,
+      "heroesProgress": 94,
+      "troopsProgress": 64,
+      "spellsProgress": 88,
+      "equipmentProgress": 73
     }
   ],
   "opelucidian": [
@@ -6123,6 +6183,36 @@
       "troopsProgress": 46,
       "spellsProgress": 67,
       "equipmentProgress": 60
+    },
+    {
+      "id": "opelucidian",
+      "date": "2026-11-25",
+      "label": "Nov 25",
+      "fetchedAt": "2026-11-25T05:38:23.192Z",
+      "townHall": 16,
+      "trophies": 0,
+      "bestTrophies": 5084,
+      "leagueTier": {
+        "id": 105000023,
+        "name": "P.E.K.K.A League 23",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png"
+        }
+      },
+      "currentLeagueSeasonId": 0,
+      "currentLeagueGroupTag": null,
+      "attackWins": 0,
+      "defenseWins": 0,
+      "attacksWon": 2848,
+      "donations": 10649,
+      "donationsReceived": 748,
+      "warStars": 620,
+      "clanCapitalContributions": 1181705,
+      "heroesProgress": 74,
+      "troopsProgress": 44,
+      "spellsProgress": 66,
+      "equipmentProgress": 59
     }
   ],
   "fyr3st0rm3r": [
@@ -8164,6 +8254,36 @@
       "heroesProgress": 69,
       "troopsProgress": 44,
       "spellsProgress": 67,
+      "equipmentProgress": 50
+    },
+    {
+      "id": "fyr3st0rm3r",
+      "date": "2026-11-25",
+      "label": "Nov 25",
+      "fetchedAt": "2026-11-25T05:38:23.311Z",
+      "townHall": 15,
+      "trophies": 0,
+      "bestTrophies": 2888,
+      "leagueTier": {
+        "id": 105000019,
+        "name": "Golem League 19",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png"
+        }
+      },
+      "currentLeagueSeasonId": 0,
+      "currentLeagueGroupTag": null,
+      "attackWins": 0,
+      "defenseWins": 0,
+      "attacksWon": 1912,
+      "donations": 3740,
+      "donationsReceived": 783,
+      "warStars": 434,
+      "clanCapitalContributions": 829850,
+      "heroesProgress": 66,
+      "troopsProgress": 42,
+      "spellsProgress": 65,
       "equipmentProgress": 50
     }
   ],
@@ -10207,6 +10327,36 @@
       "troopsProgress": 40,
       "spellsProgress": 55,
       "equipmentProgress": 52
+    },
+    {
+      "id": "icirrus",
+      "date": "2026-11-25",
+      "label": "Nov 25",
+      "fetchedAt": "2026-11-25T05:38:23.413Z",
+      "townHall": 16,
+      "trophies": 0,
+      "bestTrophies": 2510,
+      "leagueTier": {
+        "id": 105000020,
+        "name": "Golem League 20",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png"
+        }
+      },
+      "currentLeagueSeasonId": 0,
+      "currentLeagueGroupTag": null,
+      "attackWins": 0,
+      "defenseWins": 0,
+      "attacksWon": 1425,
+      "donations": 10580,
+      "donationsReceived": 0,
+      "warStars": 275,
+      "clanCapitalContributions": 824429,
+      "heroesProgress": 65,
+      "troopsProgress": 38,
+      "spellsProgress": 57,
+      "equipmentProgress": 53
     }
   ],
   "budgie": [
@@ -12248,6 +12398,36 @@
       "heroesProgress": 32,
       "troopsProgress": 29,
       "spellsProgress": 49,
+      "equipmentProgress": 31
+    },
+    {
+      "id": "budgie",
+      "date": "2026-11-25",
+      "label": "Nov 25",
+      "fetchedAt": "2026-11-25T05:38:23.515Z",
+      "townHall": 10,
+      "trophies": 0,
+      "bestTrophies": 2070,
+      "leagueTier": {
+        "id": 105000000,
+        "name": "Unranked",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png"
+        }
+      },
+      "currentLeagueSeasonId": 0,
+      "currentLeagueGroupTag": null,
+      "attackWins": 0,
+      "defenseWins": 0,
+      "attacksWon": 296,
+      "donations": 592,
+      "donationsReceived": 0,
+      "warStars": 145,
+      "clanCapitalContributions": 161620,
+      "heroesProgress": 30,
+      "troopsProgress": 26,
+      "spellsProgress": 47,
       "equipmentProgress": 31
     }
   ]
