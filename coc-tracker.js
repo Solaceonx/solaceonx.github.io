@@ -1,6 +1,22 @@
 const cocAccounts = window.COC_ACCOUNTS || [];
 const tabsRoot = document.querySelector("#coc-account-tabs");
 
+const totalAttacksRoot = document.querySelector("#coc-total-attacks");
+if (totalAttacksRoot && cocAccounts.length) {
+  const histories = cocAccounts.map(account => (account.history || [])
+    .filter(point => point.date && Number.isFinite(point.attacksWon))
+    .sort((a, b) => a.date.localeCompare(b.date)));
+  if (histories.every(history => history.length)) {
+    const startDate = histories.map(history => history[0].date).sort()[0];
+    const total = histories.reduce((sum, history) =>
+      sum + Math.max(0, history.at(-1).attacksWon - history[0].attacksWon), 0);
+    const dateLabel = new Date(`${startDate}T00:00:00Z`).toLocaleDateString("en-US", {
+      month: "long", day: "numeric", year: "numeric", timeZone: "UTC"
+    });
+    totalAttacksRoot.textContent = `Since tracking began on ${dateLabel}, I've won ${total.toLocaleString("en-US")} attacks across all ${cocAccounts.length} accounts.`;
+  }
+}
+
 if (tabsRoot && cocAccounts.length) {
   const number = (value) => value == null ? "—" : new Intl.NumberFormat().format(value);
   const percent = (value) => value == null ? "—" : `${number(value)}%`;
