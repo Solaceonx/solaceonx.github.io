@@ -1,12 +1,12 @@
 window.ROYALE_DATA = {
-  "updatedAt": "Updated 2026-09-26",
+  "updatedAt": "Updated 2026-11-25",
   "tag": "#JL8UYPQC",
   "name": "Solaceonx",
-  "currentTrophies": 13440,
-  "bestTrophies": 13493,
-  "recentWinRate": 55,
-  "overallWinRate": 56.5,
-  "totalGames": 7890,
+  "currentTrophies": 14000,
+  "bestTrophies": 14000,
+  "recentWinRate": 95,
+  "overallWinRate": 56.6,
+  "totalGames": 7913,
   "favoriteCard": "Sparky",
   "currentDeck": [
     {
@@ -60,11 +60,11 @@ window.ROYALE_DATA = {
   ],
   "collectionProgress": {
     "cardLevels": {
-      "current": 1709,
-      "max": 1952,
-      "total": 122,
+      "current": 1713,
+      "max": 1968,
+      "total": 123,
       "maxed": 9,
-      "percent": 88
+      "percent": 87
     },
     "maxedCards": {
       "current": 9,
@@ -74,30 +74,35 @@ window.ROYALE_DATA = {
         {
           "level": 16,
           "count": 9,
-          "percent": 7.4
+          "percent": 7.3
         },
         {
           "level": 15,
           "count": 21,
-          "percent": 17.2
+          "percent": 17.1
         },
         {
           "level": 14,
-          "count": 66,
-          "percent": 54.1
+          "count": 67,
+          "percent": 54.5
         },
         {
           "level": 13,
-          "count": 16,
-          "percent": 13.1
+          "count": 15,
+          "percent": 12.2
         },
         {
           "level": 12,
           "count": 9,
-          "percent": 7.4
+          "percent": 7.3
         },
         {
           "level": 10,
+          "count": 1,
+          "percent": 0.8
+        },
+        {
+          "level": 3,
           "count": 1,
           "percent": 0.8
         }
@@ -105,10 +110,10 @@ window.ROYALE_DATA = {
     },
     "evolutions": {
       "current": 28,
-      "max": 76,
-      "total": 55,
-      "unlocked": 20,
-      "percent": 37
+      "max": 81,
+      "total": 58,
+      "unlocked": 19,
+      "percent": 35
     },
     "heroes": {
       "unlocked": 6,
@@ -466,6 +471,11 @@ window.ROYALE_DATA = {
       "label": "Sep 26",
       "date": "2026-09-26",
       "trophies": 13440
+    },
+    {
+      "label": "Nov 25",
+      "date": "2026-11-25",
+      "trophies": 14000
     }
   ],
   "winHistory": [
@@ -803,6 +813,11 @@ window.ROYALE_DATA = {
       "label": "Sep 26",
       "date": "2026-09-26",
       "wins": 4461
+    },
+    {
+      "label": "Nov 25",
+      "date": "2026-11-25",
+      "wins": 4482
     }
   ],
   "lossHistory": [
@@ -1140,6 +1155,11 @@ window.ROYALE_DATA = {
       "label": "Sep 26",
       "date": "2026-09-26",
       "losses": 3429
+    },
+    {
+      "label": "Nov 25",
+      "date": "2026-11-25",
+      "losses": 3431
     }
   ],
   "gameHistory": [
@@ -1477,6 +1497,11 @@ window.ROYALE_DATA = {
       "label": "Sep 26",
       "date": "2026-09-26",
       "games": 7890
+    },
+    {
+      "label": "Nov 25",
+      "date": "2026-11-25",
+      "games": 7913
     }
   ],
   "overallWinRateHistory": [
@@ -1814,9 +1839,194 @@ window.ROYALE_DATA = {
       "label": "Sep 26",
       "date": "2026-09-26",
       "winRate": 56.5
+    },
+    {
+      "label": "Nov 25",
+      "date": "2026-11-25",
+      "winRate": 56.6
     }
   ],
   "battleHistory": [
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
+      "trophyChange": 7,
+      "opponent": "ピチャピチャちゃんねる☆",
+      "battleTime": "20261124T005310.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 26,
+      "opponent": "LinePinkS2",
+      "battleTime": "20261124T004954.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 31,
+      "opponent": "DumDum",
+      "battleTime": "20261124T004641.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 29,
+      "opponent": "YarnBall",
+      "battleTime": "20261124T004427.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 27,
+      "opponent": "FrozenSift",
+      "battleTime": "20261124T004210.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 26,
+      "opponent": "¤CW¤ZOROめ",
+      "battleTime": "20261124T003654.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "BraianB",
+      "battleTime": "20261124T003425.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 31,
+      "opponent": "lion",
+      "battleTime": "20261124T003216.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
+      "trophyChange": 29,
+      "opponent": "javiRH",
+      "battleTime": "20261124T002905.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 26,
+      "opponent": "roronoa zoro",
+      "battleTime": "20261124T002350.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 29,
+      "opponent": "YuKI",
+      "battleTime": "20261124T002040.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "2-0",
+      "trophyChange": 30,
+      "opponent": "Calon Pejabat",
+      "battleTime": "20261124T001718.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 29,
+      "opponent": "Bisungo",
+      "battleTime": "20261124T001403.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "tutuca",
+      "battleTime": "20261124T001040.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "2-1",
+      "trophyChange": 27,
+      "opponent": "wesley",
+      "battleTime": "20261124T000747.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 29,
+      "opponent": "castillo",
+      "battleTime": "20261124T000436.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "雪莉",
+      "battleTime": "20261124T000201.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 32,
+      "opponent": "Gold2",
+      "battleTime": "20261118T051539.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "0-1",
+      "trophyChange": -29,
+      "opponent": "ＸＯＬＯＹ",
+      "battleTime": "20261114T032619.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
+      "trophyChange": 33,
+      "opponent": "Spryzen",
+      "battleTime": "20261103T070529.000Z"
+    },
     {
       "result": "loss",
       "mode": "Trophy Road",
@@ -3161,187 +3371,367 @@ window.ROYALE_DATA = {
   ],
   "recentBattles": [
     {
-      "result": "loss",
+      "result": "win",
       "mode": "Trophy Road",
       "category": "trophy-road",
-      "crowns": "0-3",
-      "trophyChange": -28,
-      "opponent": "Lucas rei",
-      "battleTime": "20260920T025646.000Z"
+      "crowns": "3-1",
+      "trophyChange": 7,
+      "opponent": "ピチャピチャちゃんねる☆",
+      "battleTime": "20261124T005310.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 26,
+      "opponent": "LinePinkS2",
+      "battleTime": "20261124T004954.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 31,
+      "opponent": "DumDum",
+      "battleTime": "20261124T004641.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 29,
+      "opponent": "YarnBall",
+      "battleTime": "20261124T004427.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 27,
+      "opponent": "FrozenSift",
+      "battleTime": "20261124T004210.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 26,
+      "opponent": "¤CW¤ZOROめ",
+      "battleTime": "20261124T003654.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "BraianB",
+      "battleTime": "20261124T003425.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 31,
+      "opponent": "lion",
+      "battleTime": "20261124T003216.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
+      "trophyChange": 29,
+      "opponent": "javiRH",
+      "battleTime": "20261124T002905.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 26,
+      "opponent": "roronoa zoro",
+      "battleTime": "20261124T002350.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 29,
+      "opponent": "YuKI",
+      "battleTime": "20261124T002040.000Z"
     },
     {
       "result": "win",
       "mode": "Trophy Road",
       "category": "trophy-road",
       "crowns": "2-0",
+      "trophyChange": 30,
+      "opponent": "Calon Pejabat",
+      "battleTime": "20261124T001718.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
       "trophyChange": 29,
-      "opponent": "Chilli_Pepper",
-      "battleTime": "20260920T025344.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-3",
-      "trophyChange": null,
-      "opponent": "Bloodbath24",
-      "battleTime": "20260918T004348.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-1",
-      "trophyChange": null,
-      "opponent": "arnold",
-      "battleTime": "20260918T004145.000Z"
+      "opponent": "Bisungo",
+      "battleTime": "20261124T001403.000Z"
     },
     {
       "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "Leon4do89",
-      "battleTime": "20260918T003832.000Z"
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "tutuca",
+      "battleTime": "20261124T001040.000Z"
     },
     {
       "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "_Snevison_",
-      "battleTime": "20260912T065928.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "2v2",
-      "category": "other",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
       "crowns": "2-1",
-      "trophyChange": null,
-      "opponent": "Godess of RNG",
-      "battleTime": "20260912T065615.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-1",
-      "trophyChange": null,
-      "opponent": "CAPITAN AMERICA",
-      "battleTime": "20260912T065205.000Z"
+      "trophyChange": 27,
+      "opponent": "wesley",
+      "battleTime": "20261124T000747.000Z"
     },
     {
       "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "BOLIVIA",
-      "battleTime": "20260912T064645.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "Papotik_Campeon",
-      "battleTime": "20260912T064234.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "lordhell",
-      "battleTime": "20260912T063027.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "NAKANO MIKU",
-      "battleTime": "20260912T062607.000Z"
-    },
-    {
-      "result": "loss",
       "mode": "Trophy Road",
       "category": "trophy-road",
-      "crowns": "0-1",
-      "trophyChange": -28,
-      "opponent": "乙ㄩ尺丨乇ㄥ",
-      "battleTime": "20260908T024609.000Z"
+      "crowns": "3-0",
+      "trophyChange": 29,
+      "opponent": "castillo",
+      "battleTime": "20261124T000436.000Z"
     },
     {
       "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "elga¡¡o",
-      "battleTime": "20260822T082248.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-1",
-      "trophyChange": null,
-      "opponent": "ma",
-      "battleTime": "20260822T081806.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-1",
-      "trophyChange": null,
-      "opponent": "ابو حسن جمعة",
-      "battleTime": "20260822T081337.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "0-1",
-      "trophyChange": null,
-      "opponent": "dilan",
-      "battleTime": "20260822T080859.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "2v2",
-      "category": "other",
-      "crowns": "1-0",
-      "trophyChange": null,
-      "opponent": "BelekaLaZitoune",
-      "battleTime": "20260822T080421.000Z"
-    },
-    {
-      "result": "loss",
       "mode": "Trophy Road",
       "category": "trophy-road",
-      "crowns": "0-1",
-      "trophyChange": -26,
-      "opponent": "Jonaa sdc",
-      "battleTime": "20260815T022453.000Z"
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "雪莉",
+      "battleTime": "20261124T000201.000Z"
     },
     {
       "result": "win",
       "mode": "Trophy Road",
       "category": "trophy-road",
       "crowns": "1-0",
+      "trophyChange": 32,
+      "opponent": "Gold2",
+      "battleTime": "20261118T051539.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "0-1",
+      "trophyChange": -29,
+      "opponent": "ＸＯＬＯＹ",
+      "battleTime": "20261114T032619.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
       "trophyChange": 33,
-      "opponent": "Eliu *-*7",
-      "battleTime": "20260807T222253.000Z"
+      "opponent": "Spryzen",
+      "battleTime": "20261103T070529.000Z"
     }
   ],
   "trophyRoadBattles": [
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
+      "trophyChange": 7,
+      "opponent": "ピチャピチャちゃんねる☆",
+      "battleTime": "20261124T005310.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 26,
+      "opponent": "LinePinkS2",
+      "battleTime": "20261124T004954.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 31,
+      "opponent": "DumDum",
+      "battleTime": "20261124T004641.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 29,
+      "opponent": "YarnBall",
+      "battleTime": "20261124T004427.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 27,
+      "opponent": "FrozenSift",
+      "battleTime": "20261124T004210.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 26,
+      "opponent": "¤CW¤ZOROめ",
+      "battleTime": "20261124T003654.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "BraianB",
+      "battleTime": "20261124T003425.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 31,
+      "opponent": "lion",
+      "battleTime": "20261124T003216.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
+      "trophyChange": 29,
+      "opponent": "javiRH",
+      "battleTime": "20261124T002905.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 26,
+      "opponent": "roronoa zoro",
+      "battleTime": "20261124T002350.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 29,
+      "opponent": "YuKI",
+      "battleTime": "20261124T002040.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "2-0",
+      "trophyChange": 30,
+      "opponent": "Calon Pejabat",
+      "battleTime": "20261124T001718.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 29,
+      "opponent": "Bisungo",
+      "battleTime": "20261124T001403.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "tutuca",
+      "battleTime": "20261124T001040.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "2-1",
+      "trophyChange": 27,
+      "opponent": "wesley",
+      "battleTime": "20261124T000747.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 29,
+      "opponent": "castillo",
+      "battleTime": "20261124T000436.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-0",
+      "trophyChange": 30,
+      "opponent": "雪莉",
+      "battleTime": "20261124T000201.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "1-0",
+      "trophyChange": 32,
+      "opponent": "Gold2",
+      "battleTime": "20261118T051539.000Z"
+    },
+    {
+      "result": "loss",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "0-1",
+      "trophyChange": -29,
+      "opponent": "ＸＯＬＯＹ",
+      "battleTime": "20261114T032619.000Z"
+    },
+    {
+      "result": "win",
+      "mode": "Trophy Road",
+      "category": "trophy-road",
+      "crowns": "3-1",
+      "trophyChange": 33,
+      "opponent": "Spryzen",
+      "battleTime": "20261103T070529.000Z"
+    },
     {
       "result": "loss",
       "mode": "Trophy Road",
@@ -3431,194 +3821,14 @@ window.ROYALE_DATA = {
       "trophyChange": 30,
       "opponent": "damianDG",
       "battleTime": "20260727T182402.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 32,
-      "opponent": "Майя",
-      "battleTime": "20260727T182024.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "0-3",
-      "trophyChange": -30,
-      "opponent": "なかつ",
-      "battleTime": "20260718T023203.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "2-0",
-      "trophyChange": 29,
-      "opponent": "ACE",
-      "battleTime": "20260717T030039.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "3-0",
-      "trophyChange": 28,
-      "opponent": "chelewilber",
-      "battleTime": "20260717T011542.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 30,
-      "opponent": "DmnioSpectcular",
-      "battleTime": "20260717T011202.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 29,
-      "opponent": "wallaf_c",
-      "battleTime": "20260717T010853.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 29,
-      "opponent": "Óscar Aravena A",
-      "battleTime": "20260717T010543.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 31,
-      "opponent": "robertmaggot",
-      "battleTime": "20260714T230638.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "2-1",
-      "trophyChange": 32,
-      "opponent": "callmesoo",
-      "battleTime": "20260714T230326.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "3-0",
-      "trophyChange": 28,
-      "opponent": "ミルクティー",
-      "battleTime": "20260714T225955.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 31,
-      "opponent": "KiManGi",
-      "battleTime": "20260714T203012.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "2-1",
-      "trophyChange": 28,
-      "opponent": "shuvodrago",
-      "battleTime": "20260714T202634.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "2-0",
-      "trophyChange": 31,
-      "opponent": "jedicvl",
-      "battleTime": "20260714T201354.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 29,
-      "opponent": "enzin",
-      "battleTime": "20260714T201043.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 29,
-      "opponent": "zzzVASEFU**zzz",
-      "battleTime": "20260714T200734.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "0-1",
-      "trophyChange": -30,
-      "opponent": "кабанчик",
-      "battleTime": "20260714T200416.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 28,
-      "opponent": "FuzZy",
-      "battleTime": "20260714T200106.000Z"
-    },
-    {
-      "result": "loss",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "0-1",
-      "trophyChange": -28,
-      "opponent": "SoldadoBRntj",
-      "battleTime": "20260710T201423.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "1-0",
-      "trophyChange": 28,
-      "opponent": "( k-joker )",
-      "battleTime": "20260710T201058.000Z"
-    },
-    {
-      "result": "win",
-      "mode": "Trophy Road",
-      "category": "trophy-road",
-      "crowns": "2-0",
-      "trophyChange": 28,
-      "opponent": "adrien le con",
-      "battleTime": "20260710T200716.000Z"
     }
   ],
   "trophyRoadSummary": {
-    "wins": 24,
-    "losses": 6,
+    "wins": 26,
+    "losses": 4,
     "games": 30,
-    "winRate": 80,
-    "trophyChange": 542
+    "winRate": 86.7,
+    "trophyChange": 632
   },
   "otherBattles": [
     {
@@ -3830,9 +4040,9 @@ window.ROYALE_DATA = {
     },
     {
       "label": "Lifetime",
-      "wins": 4461,
-      "losses": 3429,
-      "note": "2517 three-crown wins."
+      "wins": 4482,
+      "losses": 3431,
+      "note": "2528 three-crown wins."
     }
   ],
   "history": [
@@ -26522,6 +26732,356 @@ window.ROYALE_DATA = {
           "trophyChange": 33,
           "opponent": "Eliu *-*7",
           "battleTime": "20260807T222253.000Z"
+        }
+      ],
+      "twoVTwo": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      },
+      "challenges": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      },
+      "pathOfLegends": {
+        "wins": 0,
+        "losses": 0,
+        "games": 0,
+        "winRate": null
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "label": "Nov 25",
+      "fetchedAt": "2026-11-25T05:53:36.607Z",
+      "tag": "#JL8UYPQC",
+      "name": "Solaceonx",
+      "trophies": 14000,
+      "bestTrophies": 14000,
+      "expLevel": 65,
+      "wins": 4482,
+      "losses": 3431,
+      "battleCount": 7913,
+      "threeCrownWins": 2528,
+      "challengeCardsWon": 1087,
+      "challengeMaxWins": 9,
+      "tournamentCardsWon": 0,
+      "tournamentBattleCount": 669,
+      "favoriteCard": "Sparky",
+      "currentDeck": [
+        {
+          "name": "Lumberjack",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/E6RWrnCuk13xMX5OE1EQtLEKTZQV6B78d00y8PlXt6Q.png"
+        },
+        {
+          "name": "Giant",
+          "level": 14,
+          "maxLevel": 14,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/Axr4ox5_b7edmLsoHxBX3vmgijAIibuF6RImTbqLlXE.png"
+        },
+        {
+          "name": "Skeleton Army",
+          "level": 11,
+          "maxLevel": 11,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/fAOToOi1pRy7svN2xQS6mDkhQw2pj9m_17FauaNqyl4.png"
+        },
+        {
+          "name": "Sparky",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/2GKMkBrArZXgQxf2ygFjDs4VvGYPbx8F6Lj_68iVhIM.png"
+        },
+        {
+          "name": "The Log",
+          "level": 8,
+          "maxLevel": 8,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png"
+        },
+        {
+          "name": "Minion Horde",
+          "level": 16,
+          "maxLevel": 16,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/Wyjq5l0IXHTkX9Rmpap6HaH08MvjbxFp1xBO9a47YSI.png"
+        },
+        {
+          "name": "Fireball",
+          "level": 14,
+          "maxLevel": 14,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png"
+        },
+        {
+          "name": "Fire Spirit",
+          "level": 16,
+          "maxLevel": 16,
+          "iconUrl": "https://api-assets.clashroyale.com/cards/300/16-BqusVvynIgYI8_Jci3LDC-r8AI_xaIYLgXqtlmS8.png"
+        }
+      ],
+      "collectionProgress": {
+        "cardLevels": {
+          "current": 1713,
+          "max": 1968,
+          "total": 123,
+          "maxed": 9,
+          "percent": 87
+        },
+        "maxedCards": {
+          "current": 9,
+          "total": 123,
+          "percent": 7,
+          "levelDistribution": [
+            {
+              "level": 16,
+              "count": 9,
+              "percent": 7.3
+            },
+            {
+              "level": 15,
+              "count": 21,
+              "percent": 17.1
+            },
+            {
+              "level": 14,
+              "count": 67,
+              "percent": 54.5
+            },
+            {
+              "level": 13,
+              "count": 15,
+              "percent": 12.2
+            },
+            {
+              "level": 12,
+              "count": 9,
+              "percent": 7.3
+            },
+            {
+              "level": 10,
+              "count": 1,
+              "percent": 0.8
+            },
+            {
+              "level": 3,
+              "count": 1,
+              "percent": 0.8
+            }
+          ]
+        },
+        "evolutions": {
+          "current": 28,
+          "max": 81,
+          "total": 58,
+          "unlocked": 19,
+          "percent": 35
+        },
+        "heroes": {
+          "unlocked": 6,
+          "total": 14,
+          "percent": 43,
+          "names": [
+            "Wizard",
+            "Musketeer",
+            "Giant",
+            "Magic Archer",
+            "Knight",
+            "Mini P.E.K.K.A"
+          ]
+        },
+        "towerTroops": {
+          "current": 56,
+          "max": 64,
+          "total": 4,
+          "maxed": 1,
+          "percent": 88
+        }
+      },
+      "recentWins": 19,
+      "recentLosses": 1,
+      "recentWinRate": 95,
+      "recentBattles": [
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-1",
+          "trophyChange": 7,
+          "opponent": "ピチャピチャちゃんねる☆",
+          "battleTime": "20261124T005310.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 26,
+          "opponent": "LinePinkS2",
+          "battleTime": "20261124T004954.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-0",
+          "trophyChange": 31,
+          "opponent": "DumDum",
+          "battleTime": "20261124T004641.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-0",
+          "trophyChange": 29,
+          "opponent": "YarnBall",
+          "battleTime": "20261124T004427.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 27,
+          "opponent": "FrozenSift",
+          "battleTime": "20261124T004210.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-0",
+          "trophyChange": 26,
+          "opponent": "¤CW¤ZOROめ",
+          "battleTime": "20261124T003654.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-0",
+          "trophyChange": 30,
+          "opponent": "BraianB",
+          "battleTime": "20261124T003425.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 31,
+          "opponent": "lion",
+          "battleTime": "20261124T003216.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-1",
+          "trophyChange": 29,
+          "opponent": "javiRH",
+          "battleTime": "20261124T002905.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 26,
+          "opponent": "roronoa zoro",
+          "battleTime": "20261124T002350.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 29,
+          "opponent": "YuKI",
+          "battleTime": "20261124T002040.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "2-0",
+          "trophyChange": 30,
+          "opponent": "Calon Pejabat",
+          "battleTime": "20261124T001718.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 29,
+          "opponent": "Bisungo",
+          "battleTime": "20261124T001403.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-0",
+          "trophyChange": 30,
+          "opponent": "tutuca",
+          "battleTime": "20261124T001040.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "2-1",
+          "trophyChange": 27,
+          "opponent": "wesley",
+          "battleTime": "20261124T000747.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-0",
+          "trophyChange": 29,
+          "opponent": "castillo",
+          "battleTime": "20261124T000436.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-0",
+          "trophyChange": 30,
+          "opponent": "雪莉",
+          "battleTime": "20261124T000201.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "1-0",
+          "trophyChange": 32,
+          "opponent": "Gold2",
+          "battleTime": "20261118T051539.000Z"
+        },
+        {
+          "result": "loss",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "0-1",
+          "trophyChange": -29,
+          "opponent": "ＸＯＬＯＹ",
+          "battleTime": "20261114T032619.000Z"
+        },
+        {
+          "result": "win",
+          "mode": "Trophy Road",
+          "category": "trophy-road",
+          "crowns": "3-1",
+          "trophyChange": 33,
+          "opponent": "Spryzen",
+          "battleTime": "20261103T070529.000Z"
         }
       ],
       "twoVTwo": {

@@ -61,7 +61,7 @@ if (tabsRoot && cocAccounts.length) {
     });
   };
 
-  const makePath = (points, width, height, pad, leftPad = pad) => {
+  const makePath = (points, width, height, pad, leftPad = pad, tickValues) => {
     const values = points.map(point => point.value);
     const rawMin = Math.min(...values);
     const rawMax = Math.max(...values);
@@ -81,7 +81,9 @@ if (tabsRoot && cocAccounts.length) {
       ? `M ${leftPad} ${height - pad} L ${leftPad} ${plotted[0].y} L ${width - pad} ${plotted[0].y} L ${width - pad} ${height - pad} Z`
       : `${path} L ${plotted.at(-1).x} ${height - pad} L ${plotted[0].x} ${height - pad} Z`;
 
-    const ticks = [
+    const ticks = tickValues ? tickValues.map(value => ({
+      value, y: height - pad - ((value - min) / (max - min)) * (height - pad * 2)
+    })) : [
       { value: max, y: pad },
       { value: (min + max) / 2, y: height / 2 },
       { value: min, y: height - pad }
@@ -100,7 +102,7 @@ if (tabsRoot && cocAccounts.length) {
     const pad = options.pad || 34;
     const yLabelWidth = options.yLabelWidth ?? 44;
     const leftPad = Math.max(pad, yLabelWidth);
-    const { plotted, path, area, ticks } = makePath(points, width, height, pad, leftPad);
+    const { plotted, path, area, ticks } = makePath(points, width, height, pad, leftPad, options.tickValues);
     const gradientId = `coc-area-${metric.key}`;
     const formatValue = options.formatter || number;
     const maxLabels = options.maxLabels || 8;
@@ -141,20 +143,14 @@ if (tabsRoot && cocAccounts.length) {
     };
 
     const chartPoints = rows
-      .filter(row => row.result !== "Tracking" && row.leagueTierId && row.leagueTierId !== 105000000)
+      .filter(row => row.leagueTierId && row.leagueTierId !== 105000000)
       .map(row => ({ label: row.label, date: row.week, value: row.leagueTierId, leagueName: row.league }));
 
     // Build ordered tier list from data for Y axis labels
     const tierMap = new Map();
     chartPoints.forEach(p => tierMap.set(p.value, tierLabel(p.value, p.leagueName)));
-    const sortedTiers = [...tierMap.entries()].sort((a, b) => a[0] - b[0]);
 
-    const leagueFormatter = (val) => {
-      const rounded = Math.round(val);
-      // Find closest tier
-      const closest = sortedTiers.reduce((best, t) => Math.abs(t[0] - rounded) < Math.abs(best[0] - rounded) ? t : best, sortedTiers[0] || [0, "—"]);
-      return closest[1];
-    };
+    const leagueFormatter = value => tierMap.get(value) || "—";
 
     document.querySelector("#coc-league-season").innerHTML = rows.length
       ? `
@@ -187,7 +183,7 @@ if (tabsRoot && cocAccounts.length) {
         document.querySelector("#coc-range-ranked-trophies"),
         chartPoints,
         pts => {
-          // Detect season resets: gaps > 7 days between consecutive points
+          // Mark tracking gaps longer than a week.
           const width = 760, height = 220, pad = 34, yLabelWidth = 140;
           const leftPad = Math.max(pad, yLabelWidth);
           const xStep = pts.length > 1 ? (width - leftPad - pad) / (pts.length - 1) : 0;
@@ -200,7 +196,7 @@ if (tabsRoot && cocAccounts.length) {
             }
             return acc;
           }, []);
-          return renderSvgChart(pts, { key: "rankedLeague", label: "League", color: cocPalette.gold }, { width, height, pad, yLabelWidth, dot: 4, formatter: leagueFormatter, verticalLines });
+          return renderSvgChart(pts, { key: "rankedLeague", label: "League", color: cocPalette.gold }, { width, height, pad, yLabelWidth, dot: 4, formatter: leagueFormatter, verticalLines, tickValues: [...new Set(pts.map(point => point.value))].sort((a, b) => b - a) });
         }
       );
     }
@@ -264,72 +260,7 @@ if (tabsRoot && cocAccounts.length) {
       : "<div class=\"tracker-empty\">Add notable finishes for this account.</div>";
   };
 
-  const DAY_MS = 24 * 60 * 60 * 1000;
-
-  const parseDate = (dateString) => dateString ? new Date(`${dateString}T00:00:00`) : null;
-
-  const latestSnapshotDate = () => cocAccounts
-    .flatMap(account => account.history || [])
-    .map(point => point.date)
-    .filter(Boolean)
-    .sort()
-    .at(-1);
-
-  const positiveDelta = (current, previous, key) => {
-    const currentValue = current?.[key];
-    const previousValue = previous?.[key];
-    if (typeof currentValue !== "number" || typeof previousValue !== "number") return 0;
-    const delta = currentValue - previousValue;
-    return delta > 0 ? delta : 0;
-  };
-
-  const dailyDeltas = (key) => {
-    const totals = new Map();
-    cocAccounts.forEach(account => {
-      const points = (account.history || []).slice().sort((a, b) => (a.date || "").localeCompare(b.date || ""));
-      for (let index = 1; index < points.length; index += 1) {
-        const date = points[index].date;
-        if (!date) continue;
-        totals.set(date, (totals.get(date) || 0) + positiveDelta(points[index], points[index - 1], key));
-      }
-    });
-    return [...totals.entries()]
-      .map(([date, value]) => ({ date, label: formatDateLabel({ date }), value }))
-      .sort((a, b) => a.date.localeCompare(b.date));
-  };
-
-  const sevenDayDelta = (key) => {
-    const latestDateString = latestSnapshotDate();
-    if (!latestDateString) return 0;
-    const latestDate = parseDate(latestDateString);
-    const windowStart = new Date(latestDate.getTime() - 6 * DAY_MS);
-    return dailyDeltas(key)
-      .filter(point => {
-        const date = parseDate(point.date);
-        return date && date >= windowStart && date <= latestDate;
-      })
-      .reduce((sum, point) => sum + point.value, 0);
-  };
-
-  const bestDailyRecord = (key) => dailyDeltas(key)
-    .reduce((best, point) => point.value > best.value ? point : best, { label: "—", value: 0 });
-
-  const bestSevenDayRecord = (key) => {
-    const points = dailyDeltas(key);
-    return points.reduce((best, point, index) => {
-      const date = parseDate(point.date);
-      if (!date) return best;
-      const start = new Date(date.getTime() - 6 * DAY_MS);
-      const total = points
-        .slice(0, index + 1)
-        .filter(item => {
-          const itemDate = parseDate(item.date);
-          return itemDate && itemDate >= start && itemDate <= date;
-        })
-        .reduce((sum, item) => sum + item.value, 0);
-      return total > best.value ? { label: `${formatDateLabel({ date: start.toISOString().slice(0, 10) })}–${point.label}`, value: total } : best;
-    }, { label: "—", value: 0 });
-  };
+  const { sevenDayDelta, bestDailyRecord, bestSevenDayRecord } = window.CocStats.create(cocAccounts);
 
   const renderWeeklySummary = () => {
     const root = document.querySelector("#coc-weekly-summary");
@@ -342,7 +273,8 @@ if (tabsRoot && cocAccounts.length) {
       { label: "Capital gold", key: "clanCapitalContributions" }
     ].map(item => ({
       ...item,
-      value: sevenDayDelta(item.key)
+      value: sevenDayDelta(item.key),
+      note: sevenDayDelta(item.key) == null ? "Incomplete tracking for this 7-day period" : ""
     }));
 
     const attackDayRecord = bestDailyRecord("attacksWon");
