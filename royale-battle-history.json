@@ -1,6 +1,123 @@
 [
   {
     "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "stonewolf",
+    "battleTime": "20261127T071545.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "<c2>SussyBakka",
+    "battleTime": "20261127T071210.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-3",
+    "trophyChange": null,
+    "opponent": "...",
+    "battleTime": "20261127T070651.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "WORM",
+    "battleTime": "20261127T070354.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "XD",
+    "battleTime": "20261127T065931.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-2",
+    "trophyChange": null,
+    "opponent": "Artur",
+    "battleTime": "20261127T065404.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "LiLBabyBop ^_^",
+    "battleTime": "20261127T064933.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "⚡️BL4Z3⚡️",
+    "battleTime": "20261127T064603.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "dayiroxd",
+    "battleTime": "20261127T064155.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "2v2",
+    "category": "other",
+    "crowns": "1-0",
+    "trophyChange": null,
+    "opponent": "ismael",
+    "battleTime": "20261127T063622.000Z"
+  },
+  {
+    "result": "loss",
+    "mode": "Ranked1v1 New Arena2",
+    "category": "other",
+    "crowns": "0-1",
+    "trophyChange": null,
+    "opponent": "Top4ik",
+    "battleTime": "20261126T054518.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Ranked1v1 New Arena2",
+    "category": "other",
+    "crowns": "3-0",
+    "trophyChange": 30,
+    "opponent": "luka1",
+    "battleTime": "20261126T054208.000Z"
+  },
+  {
+    "result": "win",
+    "mode": "Ranked1v1 New Arena2",
+    "category": "other",
+    "crowns": "3-1",
+    "trophyChange": 30,
+    "opponent": "gurjot",
+    "battleTime": "20261126T053931.000Z"
+  },
+  {
+    "result": "win",
     "mode": "Trophy Road",
     "category": "trophy-road",
     "crowns": "3-1",
