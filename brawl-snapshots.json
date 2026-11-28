@@ -86851,23 +86851,30 @@
   {
     "date": "2026-11-28",
     "label": "Nov 28",
-    "fetchedAt": "2026-11-28T07:49:16.326Z",
+    "fetchedAt": "2026-11-28T16:53:30.732Z",
     "tag": "#QVCQGUC99",
     "name": "Solaceonx",
-    "trophies": 39550,
-    "highestTrophies": 39553,
-    "lifetimeWinsTotal": 8655,
-    "threeVsThreeVictories": 7425,
+    "trophies": 39560,
+    "highestTrophies": 39560,
+    "lifetimeWinsTotal": 8656,
+    "threeVsThreeVictories": 7426,
     "soloVictories": 227,
     "duoVictories": 1003,
     "rankedPoints": 4000,
-    "trophyGamesTotal": 550,
-    "trophyWinsTotal": 353,
+    "trophyGamesTotal": 551,
+    "trophyWinsTotal": 354,
     "trophyLossesTotal": 192,
     "rankedGamesTotal": 716,
     "rankedWinsTotal": 394,
     "rankedLossesTotal": 320,
     "trophyRecentGames": [
+      {
+        "brawler": "LOU",
+        "image": "assets/brawlers/16000041.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261128T083219.000Z"
+      },
       {
         "brawler": "NORI",
         "image": "assets/brawlers/16000107.png",
@@ -86944,18 +86951,11 @@
         "mode": "Gem Grab",
         "result": "victory",
         "battleTime": "20261120T072047.000Z"
-      },
-      {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
-        "mode": "Knockout",
-        "result": "victory",
-        "battleTime": "20261120T071806.000Z"
       }
     ],
     "trophyModeCounts": {
       "Knockout": 35,
-      "Brawl Ball": 254,
+      "Brawl Ball": 255,
       "Hot Zone": 38,
       "Knockout5V5": 3,
       "Air Hockey": 11,
@@ -87004,7 +87004,8 @@
       "BROCK": 2,
       "MAISIE": 1,
       "NORI": 24,
-      "PIERCE": 18
+      "PIERCE": 18,
+      "LOU": 1
     },
     "rankedModeCounts": {
       "Knockout": 118,
@@ -87581,7 +87582,6 @@
     ],
     "trackingSchemaVersion": 2,
     "seenBattleKeys": [
-      "20260903T073323.000Z:15000440:knockout:knockout:soloRanked",
       "20260903T073808.000Z:15000072:heist:heist:soloRanked",
       "20260903T074025.000Z:15000072:heist:heist:soloRanked",
       "20260903T074506.000Z:15000082:bounty:bounty:soloRanked",
@@ -88180,7 +88180,8 @@
       "20261126T083757.000Z:15001203:hotZone:hotZone:ranked",
       "20261126T084052.000Z:15001275:gemGrab:gemGrab:ranked",
       "20261126T084333.000Z:15001275:gemGrab:gemGrab:ranked",
-      "20261126T084554.000Z:15001275:gemGrab:gemGrab:ranked"
+      "20261126T084554.000Z:15001275:gemGrab:gemGrab:ranked",
+      "20261128T083219.000Z:15000050:brawlBall:brawlBall:ranked"
     ],
     "rankedGamesLog": [
       {

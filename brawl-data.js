@@ -639,10 +639,17 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-28",
         "label": "Nov 28",
-        "trophies": 39550
+        "trophies": 39560
       }
     ],
     "recentGames": [
+      {
+        "brawler": "LOU",
+        "image": "assets/brawlers/16000041.png",
+        "mode": "Brawl Ball",
+        "result": "victory",
+        "battleTime": "20261128T083219.000Z"
+      },
       {
         "brawler": "NORI",
         "image": "assets/brawlers/16000107.png",
@@ -719,13 +726,6 @@ window.BRAWL_DATA = {
         "mode": "Gem Grab",
         "result": "victory",
         "battleTime": "20261120T072047.000Z"
-      },
-      {
-        "brawler": "EDGAR",
-        "image": "assets/brawlers/16000043.png",
-        "mode": "Knockout",
-        "result": "victory",
-        "battleTime": "20261120T071806.000Z"
       }
     ],
     "gamesHistory": [
@@ -1347,7 +1347,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-28",
         "label": "Nov 28",
-        "games": 550
+        "games": 551
       }
     ],
     "lifetimeWinsHistory": [
@@ -1989,7 +1989,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-28",
         "label": "Nov 28",
-        "wins": 8655
+        "wins": 8656
       }
     ],
     "winsHistory": [
@@ -2611,7 +2611,7 @@ window.BRAWL_DATA = {
       {
         "date": "2026-11-28",
         "label": "Nov 28",
-        "wins": 353
+        "wins": 354
       }
     ],
     "lossesHistory": [
@@ -3239,7 +3239,7 @@ window.BRAWL_DATA = {
     "modes": [
       {
         "mode": "Brawl Ball",
-        "count": 254,
+        "count": 255,
         "image": null
       },
       {
